@@ -1,0 +1,76 @@
+.container-flex-studies {
+    padding: 10px;
+    display: flex;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: 0 8px;
+    align-items: center;
+}
+
+.container-block-studies {
+    display: block;
+    width: 90%;
+}
+
+.list-data {
+    justify-content: start;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    text-align: left;
+}
+
+.container-school {
+    width: 50%;
+}
+
+.container-block-studies h3 {
+    font-size: .8rem;
+    font-weight: 300;
+    color: #c4c4c4;
+    margin: 10px 0;
+    
+}
+
+.container-block-studies h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #757575;
+    margin: 2px 0;
+}
+
+.container-block-button {
+    display: block;
+    text-align: center;
+    width: 10%;
+}
+
+.button-edit {
+    border-style: none;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0 0 5px 0;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.button-remove {
+    border-style: none;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5px 0 0 0;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1024px) {
+
+    .list-data {
+        display: block;
+    }
+
+    .container-flex-studies {
+        
+        margin-bottom: 20px;
+    }
+}

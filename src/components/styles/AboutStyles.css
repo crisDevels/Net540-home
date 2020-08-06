@@ -1,0 +1,172 @@
+.heroAboutUS {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.colOne {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.colOne h1 {
+    color:#6A3DF9;
+    line-height : 45px;
+    text-align: left;
+}
+
+
+
+
+.backHERO {
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.buttonHero {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: #AB97FF;
+    border-radius: 30px;
+    color: white;
+    border-style: none;
+    padding: 15px 30px;
+    margin: 20px 0 0 0;
+    font-weight: 800;
+    box-shadow: 0 3px 8px 0 #00000077;
+}
+
+.buttonHero:hover,
+.buttonHero:focus {
+  outline   : none;
+  background: #8f7dd4;
+  color   : #FFF;
+
+}
+
+.page-about {
+    display: block;
+    text-align: center;
+}
+
+.youtube-player {
+    border-radius: 20px;
+    box-shadow: 0 6px 10px 0 #00000077;
+    width: 615px;
+    height: 345px;
+}
+
+.activeBlur {
+    filter: blur(3px)
+  }
+
+  @media screen and (max-width: 1024px) {
+    
+    .colOne {
+        width: 35%;
+        
+    }
+    .youtube-player {
+        width: 515px;
+        height: 345px;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+
+    
+    .backHERO {
+        padding-bottom: 40px;
+    }
+
+    .youtube-player {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .colOne h1 {
+        color:white;
+        line-height : 2rem;
+        text-align: center;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .colOne {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+    }
+
+    .colTwo {
+        margin-top: 30px;
+    }
+
+    .heroAboutUS {
+        display: flex;
+        text-align: center;
+        padding-top: 30px;
+        justify-content: center;
+    }
+
+    .buttonHero {
+        font-size: .8em;
+        padding: 10px 15px;
+        margin: 30px 15px;
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 425px) {
+
+    .youtube-player {
+        width: 80vw;
+        height: 40vh;
+    }
+
+    .colOne h1 {
+        margin-bottom: 15px;
+    }
+
+    .colOne {
+        width: 70%;
+    }
+
+    .buttonHero {
+        font-size: 1.1em;
+        width: 80%;
+        padding: 15px 15px;
+        margin: 5px 15px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .colOne {
+        width: 80%;
+    }
+
+    .youtube-player {
+        width: 80vw;
+        height: 30vh;
+    }
+
+    .buttonHero {
+        font-size: 1em;
+        padding: 10px 15px;
+        width: 90%;
+    }
+}

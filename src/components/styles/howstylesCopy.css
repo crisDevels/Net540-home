@@ -1,0 +1,312 @@
+.titleComo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blockTitle {
+    margin: 30px;
+    text-align: center;
+}
+
+.blockTitle h2 {
+    font-size: 3rem;
+    color: #6A3DF9;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.4em;
+}
+
+.buttonActive {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: white;
+    border-radius: 30px;
+    color: #6A3DF9;
+    border-style: none;
+    padding: 15px 30px;
+    margin: 0 30px;
+    font-weight: 800;
+    box-shadow: 0 3px 8px 0 #693df9c4;
+    outline   : none;
+}
+
+.buttonDesactive {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: white;
+    border-radius: 30px;
+    color: #a5a5a5;
+    border-style: none;
+    padding: 15px 30px;
+    margin: 0 30px;
+    font-weight: 800;
+    box-shadow: 0 3px 8px 0 #00000027;
+    outline   : none;
+}
+
+.Option {
+    background: linear-gradient(to right, #A341FD, #4F4CF4);
+    border-radius: 70px;
+    padding: 30px;
+    display: flex;
+    width: 400px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    animation-name:  PopIn;
+    animation-duration: 1s;
+}
+
+.Option p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;  
+    color: white;
+    animation-name:  fadeIn;
+    animation-duration: 3s;
+    padding: 50px;
+    font-weight: 700;
+}
+
+
+
+.content {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.lineE{
+    height: 2px;
+    background-color: #A341FD;
+    margin-bottom: -70px;
+    margin-top: 70px;
+  }
+
+
+.buttonOption:hover,
+.buttonOption:focus {
+  outline   : none;
+  box-shadow: 0 3px 8px 0 #00000077;
+
+}
+
+.independiente {
+    text-align: center;
+}
+
+.independienteDesactive  {
+    display: none;
+}
+
+
+.empresa {
+    text-align: center;
+}
+
+.empresaDesactive {
+    text-align: center;
+    display: none;
+}
+
+.pasoApaso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.iconComo {
+    padding: 30px;
+    background: #AB97FF;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.iconComoActive {
+    padding: 30px;
+    background: linear-gradient(to right, #A341FD, #4F4CF4);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.iconComo:hover,
+.iconComo:focus {
+  outline   : none;
+  background: linear-gradient(to right, #A341FD, #4F4CF4);
+  color   : #FFF;
+  box-shadow: 0 3px 8px 0 #00000077;
+
+}
+
+.boxIcon {
+    display: flex;
+    align-items: center;
+}
+
+.paso1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 1s;
+}
+
+.paso2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 2s;
+}
+
+.paso3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 3s;
+}
+
+.paso4 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 4s;
+}
+.paso5 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 5s;
+}
+
+.paso1e {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 1s;
+}
+
+.paso2e {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 2s;
+}
+
+.paso3e {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 3s;
+}
+
+.paso4e {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 35px 0 35px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    animation-name:  fadeIn;
+    animation-duration: 4s;
+}
+
+
+
+/* 
+.paso p {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+} */
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      display: none;
+    }
+  
+    100% {
+      opacity: 1;
+      display: block;
+    }
+  }
+
+/*@keyframes animationIn {*/
+        @keyframes PopIn {
+            0% {
+              width: 0;
+            }
+
+            100% {
+              width: 350px;
+            }
+          }
