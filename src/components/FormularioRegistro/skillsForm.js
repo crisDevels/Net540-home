@@ -206,29 +206,29 @@ class Skills extends React.Component {
                     <div className={this.state.skills}>
                         <div className="container-flex">
                             <div className="blockAdvance">
-                                <div id={this.state.skill} className="circleAdvance">
-                                    <img className={this.state.circle} src={buttonOn} width="30px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                <div className="circleAdvance">
+                                    <img className={this.state.circle} alt="advance" src={buttonOn} width="30px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance"  src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                             </div>
                         </div>
@@ -273,29 +273,29 @@ class Skills extends React.Component {
                     <div className={this.state.study}>
                         <div className="container-flex">
                             <div className="blockAdvance">
-                                <div id={this.state.skill} className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                <div className="circleAdvance">
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={buttonOn} width="30px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={buttonOn} width="30px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                             </div>
                         </div>
@@ -375,29 +375,29 @@ class Skills extends React.Component {
                     <div className={this.state.work}>
                         <div className="container-flex">
                             <div className="blockAdvance">
-                                <div id={this.state.skill} className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                <div className="circleAdvance">
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={buttonOn} width="30px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={buttonOn} width="30px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                             </div>
                         </div>
@@ -485,29 +485,29 @@ class Skills extends React.Component {
                     <div className={this.state.languages}>
                         <div className="container-flex">
                             <div className="blockAdvance">
-                                <div id={this.state.skill} className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                <div className="circleAdvance">
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={buttonOn} width="30px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={buttonOn} width="30px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                             </div>
                         </div>
@@ -576,29 +576,29 @@ class Skills extends React.Component {
                     <div className={this.state.description}>
                         <div className="container-flex">
                             <div className="blockAdvance">
-                                <div id={this.state.skill} className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
+                                <div className="circleAdvance">
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
                                     <img className={this.state.circle} src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={buttonOn} width="30px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={buttonOn} width="30px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={circle} width="10px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                             </div>
                         </div>
@@ -635,29 +635,29 @@ class Skills extends React.Component {
                     <div className={this.state.profile}>
                         <div className="container-flex">
                             <div className="blockAdvance">
-                                <div id={this.state.skill} className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                <div className="circleAdvance">
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circleNone} src={circle} width="10px"/>
-                                    <img className={this.state.circle} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circle} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                                 <div className="circleAdvance">
-                                    <img className={this.state.circle} src={buttonOn} width="30px"/>
-                                    <img className={this.state.circleNone} src={circleBlue} width="10px"/>
+                                    <img className={this.state.circle} alt="advance" src={buttonOn} width="30px"/>
+                                    <img className={this.state.circleNone} alt="advance" src={circleBlue} width="10px"/>
                                 </div>
                             </div>
                         </div>
@@ -674,7 +674,7 @@ class Skills extends React.Component {
                                         <div className="profile-image" style={sectionProfile}>
                                             <img  width="200px" src={ this.state.picture } alt="" />
                                         </div>
-                                        <label for="subirFoto" className="subir">+</label>
+                                        <label htmlFor="subirFoto" className="subir">+</label>
                                         <input id="subirFoto" className="display-none" type="file" onChange={ this.handleUpload } /><br/>
                                         <progress value={this.state.uploadValue} max="100" >
                                             {this.state.uploadValue} %

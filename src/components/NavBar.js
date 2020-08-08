@@ -22,10 +22,16 @@ import load from '../images/loader.gif'
 
 import googleIcon from '../images/googleIcono.png'
 
+import '../fonts/style.css'
+
 var iconGoogle = {
     width: "100%",
     backgroundImage: "url("+ googleIcon + ")"
   };
+
+var NetLogo = {
+    color: "#1DAEFF",
+}
 
 // const user = useUser();
 
@@ -115,7 +121,9 @@ class NavBar extends React.Component {
 
                     <div className="navForm">
                         <div className="logoN">
-                            <Link to="/"><img src={logoSesion} width="50px" alt="Logo de net540"/></Link>
+                            <Link to="/">
+                                <span style={NetLogo} className="icon-Logo_540"></span>
+                            </Link>
                         </div>
                         <div className="nav-flex">
                             <div className="container-buttons">

@@ -11,6 +11,13 @@ grisClaro: #C4C4C4 */
     border-radius: 0 0 40px 0;
     /* box-shadow: 0 3px 8px 0 #00000077; */
     /* margin-right: 750px; */
+    list-style: none;
+    text-decoration: none;
+}
+
+.logoN a {
+    list-style: none;
+    text-decoration: none;
 }
 
 .container-block-nav {
@@ -187,6 +194,11 @@ grisClaro: #C4C4C4 */
     display: none;
 }
 
+.icon-Logo_540 {
+    font-size: 30px;
+    list-style: none;
+    text-decoration: none;
+}
 
 @media screen and (max-width: 425px) {
     

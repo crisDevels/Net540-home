@@ -79,7 +79,8 @@ class HeroHome extends React.Component {
             const nameUser = this.state.name;
             console.log(nameUser);
         
-            
+        window.location.reload(true)
+
         var user = firebase.auth().currentUser;
         //Actualizando nombre de usuario 
         user.updateProfile({
@@ -180,9 +181,7 @@ render() {
                                     className="spaceForm" 
                                     type="date" 
                                     id="FechaNacimiento" 
-                                    placeholder="Fecha de nacimiento" 
                                     name="trip-start" 
-                                    value="2004-07-22" 
                                     min="1920-01-01" 
                                     max="2004-12-31" /><br/>
 
@@ -206,7 +205,7 @@ render() {
                         <img src={registroImageEmpresa} className="imageRegistro" width="310px" alt="Ilustración de registro" />
                     </div>
                     <div>
-                        <div class="titleRegistro">
+                        <div className="titleRegistro">
                             <h2>EMPRESA</h2>
                             <div className="spaceTitleRegistro"></div>
                             <img  className="buttonCerrar" onClick={this.cerrarModal} id="hide-modal-Empresa" src={cerrar} width="10px" alt="boton cerrar" />
@@ -215,7 +214,7 @@ render() {
                             <input className="spaceForm" type="text" name="Nombres" placeholder="Nombre de empresa" size="40" required/>
                             <select className="spaceFormSelect" name="Económico" placeholder="Razón social">
 
-                            <option selected>Actividad Económica</option>
+                            <option defaultValue>Actividad Económica</option>
 
                             <option>Ganadero</option>
                         
@@ -263,8 +262,8 @@ render() {
                         
                             </select>
                             <input className="spaceForm" type="text" name="Email" placeholder="Correo empresarial" size="40" required/>
-                            <input className="spaceForm" type="password" name="password" placeholder="Contraseña" required minlength="8" required />
-                            <input className="spaceForm" type="password" name="password" placeholder="Confirmar contraseña" required minlength="8" required /><br/>
+                            <input className="spaceForm" type="password" name="password" placeholder="Contraseña" minLength="8" required />
+                            <input className="spaceForm" type="password" name="password" placeholder="Confirmar contraseña" minLength="8" required /><br/>
                             <label className="check"><input type="checkbox" id="cbox1" value="checkbox-politicas" className="checkbox"/> Estoy de acuerdo con la <a href="/"><strong>política de privacidad</strong></a> y con los <a href="/"><strong>terminos y condiciones</strong></a></label><br/>
                             <input className="buttonRegistrar" type="submit" value="Registrar" />
                         </form>
