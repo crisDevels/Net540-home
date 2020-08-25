@@ -143,7 +143,9 @@ class NavBar extends React.Component {
 
                     <div className="menuN">
                         <div className="logoN">
-                            <Link to="/"><img src={logoA} width="100px" alt="Logo de net540"/></Link>
+                            <Link to="/">
+                                <span style={NetLogo} className="icon-Logo_net540"></span>
+                            </Link>
                         </div>
                         <div className="nav-flex">
                             <span>

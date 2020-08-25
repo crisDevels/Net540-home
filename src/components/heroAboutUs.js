@@ -2,21 +2,17 @@ import React from "react";
 import firebase from 'firebase';
 
 
-import '../pages/styles/homeStyles.css'
-import Registre from '../components/registre.js'
-import imagefreelancer from '../images/ILUSTRACION-PRUEBA-1.gif'
-import imageProject from '../images/ILUSTRACION-MANOS.gif'
-
+// aqui se estan dando estilos al componente
+import '../components/styles/AboutStyles.css'
 import '../components/styles/popRegistro.css'
+
+// Se importan imagenes para los formularios
 import registroImage from '../images/RegistroILU.png'
 import registroImageEmpresa from '../images/EmpresaILU.png'
 import cerrar from '../images/CERRAR.png'
 
+// Se importa la fuente iconográfica
 import '../fonts/style.css'
-
-var colorIcon = {
-    color: "#1DAEFF",
-}
 
 class HeroHome extends React.Component {
     constructor(props) {
@@ -124,17 +120,14 @@ class HeroHome extends React.Component {
 
 render() {
     return <React.Fragment>
-            <div className="hero">
-                <h1>Te damos la bienvenida</h1>
-            </div>
-            <div className="container-content-registre">
-                <div className="registreBlock">
-                    <div className="boxReg">
-                        <button className="buttonModal" onClick={this.abrirModalProfesional}>< Registre imagenFreelancer={imagefreelancer} buttonRegistre="¿BUSCAS EMPLEO?" /></button>
-                    </div>
-                    <div className="boxReg">
-                        <button className="buttonModal" onClick={this.abrirModalEmpresa}>< Registre imagenFreelancer={imageProject} buttonRegistre="¿ESTÁS CONTRATANDO?" /></button>
-                    </div>
+            <div className="heroAboutUS">
+                <div className="colOne">
+                    <h1>Uniendo Oportunidades</h1>
+                    <button onClick={this.abrirModalProfesional} className="buttonHero">¿BUSCAS EMPLEO?</button>
+                    <button onClick={this.abrirModalEmpresa} className="buttonHero">¿ESTÁS CONTRATANDO?</button>
+                </div>
+                    <div className="colTwo">
+                    <iframe className="youtube-player" type="text/html" src="http://www.youtube.com/embed/2WL3scr8cWI" frameborder="0"></iframe>
                 </div>
             </div>
             <div className={this.state.overlay} id="overlay"></div>
@@ -146,7 +139,7 @@ render() {
                         <div className="titleRegistro">
                             <h2>INDEPENDIENTE</h2>
                             <div className="spaceTitleRegistro"></div>
-                                <span className="icon-Logo_equis"></span>
+                                <span  className="icon-Logo_equis" onClick={this.cerrarModal} src={cerrar} width="10px" alt="boton cerrar"></span>
                             </div>
                             <form className="formRegitre">
 

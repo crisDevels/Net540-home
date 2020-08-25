@@ -200,6 +200,12 @@ grisClaro: #C4C4C4 */
     text-decoration: none;
 }
 
+.icon-Logo_net540 {
+    font-size: 30px;
+    list-style: none;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 425px) {
     
     .logoN {

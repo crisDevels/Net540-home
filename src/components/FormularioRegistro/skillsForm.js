@@ -13,6 +13,7 @@ import Works from './worksComp';
 import profile from './images/profile.png'
 import buttonOn from './images/Button-on.gif'
 
+
 var sectionProfile = {
     width: "100px",
     backgroundImage: "url("+ profile + ")"
@@ -27,7 +28,6 @@ class Skills extends React.Component {
             circle: "gray",
             circleNone: "blue",
             skills: "blockSkills",
-            skill: false,
             study: "null",
             work: "null",
             languages: "null",
@@ -35,41 +35,42 @@ class Skills extends React.Component {
             profile: "null",
             uploadValue: 0,
             picture: null,
-            studies: [
-                {
-                    school: 'Universidad Nacional',
-                    titleStudy: 'Diseñador Industrial',
-                    placeStudy: 'Bogotá, Colombia',
-                    dateStartStudy: 'Noviembre del 2013',
-                    dateEndStudy: 'Mayo del 2019',
-                },
-                {
-                    school: 'Universidad de los Andes',
-                    titleStudy: 'Product Design',
-                    placeStudy: 'Bogotá, Colombia',
-                    dateStartStudy: 'Noviembre del 2019',
-                    dateEndStudy: 'Mayo del 2020',
-                },
-            ],
-            works: [
-                {
-                    empresa: 'Totto',
-                    cargo: 'Diseñador Junior',
-                    placeWork: 'Bogotá, Colombia',
-                    dateStartWork: 'Noviembre del 2013',
-                    dateEndwork: 'Mayo del 2019',
-                },
-                {
-                    empresa: 'Arturo Calle',
-                    cargo: 'Residente de Diseño',
-                    placeWork: 'Bogotá, Colombia',
-                    dateStartWork: 'Noviembre del 2019',
-                    dateEndwork: 'Mayo del 2020',
-                },
-            ]
+            // studies: [
+            //     {
+            //         school: 'Universidad Nacional',
+            //         titleStudy: 'Diseñador Industrial',
+            //         placeStudy: 'Bogotá, Colombia',
+            //         dateStartStudy: 'Noviembre del 2013',
+            //         dateEndStudy: 'Mayo del 2019',
+            //     },
+            //     {
+            //         school: 'Universidad de los Andes',
+            //         titleStudy: 'Product Design',
+            //         placeStudy: 'Bogotá, Colombia',
+            //         dateStartStudy: 'Noviembre del 2019',
+            //         dateEndStudy: 'Mayo del 2020',
+            //     },
+            // ],
+            // works: [
+            //     {
+            //         empresa: 'Totto',
+            //         cargo: 'Diseñador Junior',
+            //         placeWork: 'Bogotá, Colombia',
+            //         dateStartWork: 'Noviembre del 2013',
+            //         dateEndwork: 'Mayo del 2019',
+            //     },
+            //     {
+            //         empresa: 'Arturo Calle',
+            //         cargo: 'Residente de Diseño',
+            //         placeWork: 'Bogotá, Colombia',
+            //         dateStartWork: 'Noviembre del 2019',
+            //         dateEndwork: 'Mayo del 2020',
+            //     },
+            // ]
         };
 
         this.handleUpload = this.handleUpload.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         
     }
 
@@ -79,6 +80,13 @@ class Skills extends React.Component {
         })
         
         
+    }
+
+    handleChange = (e)=> {
+        const { value, name } = e.target;
+        this.setState({
+        [name]: value 
+        })
     }
 
     // aqui se genera la funciónn para seguir al formulario de estudios 
@@ -174,10 +182,10 @@ class Skills extends React.Component {
     // aqui se genera un llamada al storage de firebase para subir una foto de perfil
 
         
-    handleUpload = (event) => {
-            const file = event.target.files[0];
+    handleUpload = (e) => {
+            const file = e.target.files[0];
             const storageRef = firebase.storage().ref(`/fotosPerfil/${file.name}`);
-            const task = storageRef.put(file);
+            var task = storageRef.put(file);
     
             task.on('state_changed', snapshot => {
                 let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -189,7 +197,7 @@ class Skills extends React.Component {
             }, () => {
         
                 this.setState({
-                    uploadValue: 100,
+                    // uploadValue: 100,
                     picture: task.snapshot.downloadURL,   
                 });
             });        
@@ -199,6 +207,7 @@ class Skills extends React.Component {
     
 
     render() {
+    
         return <React.Fragment>
                     <div>
                         <NavBar />
@@ -303,9 +312,9 @@ class Skills extends React.Component {
                         
                         <h2 className="title-studies">Agrega tus estudios</h2>
 
-                        <div className="block-list-studies">
+                        {/* <div className="block-list-studies">
                             <Studies studies={this.state.studies}/>
-                        </div>
+                        </div> */}
                         
                         <div>
                             
@@ -405,9 +414,9 @@ class Skills extends React.Component {
                         
                         <h2 className="title-studies">¿En qué has trabajado?</h2>
 
-                        <div className="block-list-studies">
+                        {/* <div className="block-list-studies">
                             <Works workies={this.state.works}/>
-                        </div>
+                        </div> */}
                         
                         <div>
                             
@@ -527,7 +536,7 @@ class Skills extends React.Component {
 
                                                 <option>Ingles</option>
 
-                                                <option>Italino</option>
+                                                <option>Italiano</option>
 
                                                 <option>Francés</option>
 
@@ -559,6 +568,11 @@ class Skills extends React.Component {
 
                                             </select>
                                         </span>
+                                    </div>
+                                    <div className="buttons-flex-start">
+                                        <div>
+                                            <button type="button" className="button-siguiente">Agregar</button>
+                                        </div>       
                                     </div>
                                 </div>
                                 <div className="buttons-flex">
@@ -671,14 +685,28 @@ class Skills extends React.Component {
                                 <div className="flex-form">
                                     <div className="block-image-profile">
                                         
-                                        <div className="profile-image" style={sectionProfile}>
-                                            <img  width="200px" src={ this.state.picture } alt="" />
-                                        </div>
-                                        <label htmlFor="subirFoto" className="subir">+</label>
-                                        <input id="subirFoto" className="display-none" type="file" onChange={ this.handleUpload } /><br/>
-                                        <progress value={this.state.uploadValue} max="100" >
+                                        {/* <progress value={this.state.uploadValue} max="100" >
                                             {this.state.uploadValue} %
-                                        </progress>
+                                        </progress> */}
+                                        
+                                            { !this.state.picture && 
+                                               <div>
+                                               <img  width="200px" src={ profile } alt="" />
+                                               <label htmlFor="subirFoto" className="subir">+</label> 
+                                               </div>
+                                            }
+
+                                            { this.state.picture && 
+                                               <div>
+                                               <img  width="200px" src={ this.state.picture } alt="" />
+                                               <label htmlFor="subirFoto" className="subir">x</label>
+                                               </div>
+                                            }
+                                        
+                                        
+                                        
+                                        <input id="subirFoto" className="display-none" type="file" onChange={ this.handleUpload } /><br/>
+                                        
                                         
                                         <br/>
                                         

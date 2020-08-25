@@ -6,6 +6,7 @@ import AboutUs from '../pages/AboutUs.js';
 import Forget from '../pages/Forget';
 import Validation from '../pages/Validation';
 import SkillsForm from '../components/FormularioRegistro/skillsForm'
+import Consulta from '../components/consultaAPI'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route exact path="/recuperar-contraseña" component={Forget}/>
             <Route exact path="/validacion-contraseña" component={Validation}/>
             <Route exact path="/skills" component={SkillsForm}/>
+            <Route exact path="/consulta" component={Consulta}/>
         </Switch>
         </BrowserRouter>
     )

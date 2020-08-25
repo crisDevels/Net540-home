@@ -139,7 +139,7 @@ grisClaro: #C4C4C4 */
 }
 
 .title-studies {
-  margin: 20px 0 5px 0;
+  margin: 20px 0 20px 0;
 }
 
 .block-input-date label {
@@ -316,7 +316,7 @@ grisClaro: #C4C4C4 */
   border-radius: 50%;
   position: relative;
   top: -50px;
-  left: 50px;
+  left: -50px;
   z-index: 2;
 }
 

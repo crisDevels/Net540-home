@@ -8,6 +8,8 @@ import NavBar from '../components/NavBar'
 import HeroHome from '../components/heroHome'
 import Comenzar from '../components/FormularioRegistro/comenzemos'
 
+import loader from '../images/loader.gif'
+
 import '../components/styles/popRegistro.css'
 
 
@@ -16,6 +18,7 @@ class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            isLoading: true,
             overlay: "overlay",
             modalProfesional: "modal",
             modalEmpresa: "modal",
@@ -35,8 +38,12 @@ class Home extends React.Component {
 
     componentDidMount () {
         firebase.auth().onAuthStateChanged(user => {
-            this.setState({ user })
-        })     
+            this.setState({ 
+                user,
+                isLoading: false,
+             })
+        })
+
     }
 
 
@@ -111,8 +118,11 @@ class Home extends React.Component {
 
     render() { 
         return <React.Fragment>
-        
-            <section className={this.state.blur}>
+            
+
+        <section className={this.state.blur}>
+
+            {this.state.isLoading ? <div><img src={loader}/></div> :
             
             <div className="opacity">
                 <div className="home-page">
@@ -124,19 +134,21 @@ class Home extends React.Component {
                     { !this.state.user &&
                         <HeroHome />
                     }
-                    { this.state.user &&
-                        < Comenzar user={this.state.user} />
+                    { this.state.isLoading ? <div><img src={loader}/></div> : 
+                         this.state.user &&
+                            < Comenzar user={this.state.user} />
+                        
                     }
                     </div>
         
-                    <div className="container">
+                    <div>
                     { !this.state.user &&
                         <Footer />
                     } 
                         
                     </div>
                 </div>
-            </div>
+            </div>}
         
         </section>
     

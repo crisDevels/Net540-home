@@ -1,4 +1,10 @@
-
+    /* azuloscuro: #378DCA
+azulclaro: #1DAEFF
+grisOscuro: #454545
+grisMedio: #757575
+grisClaro: #C4C4C4 */
+  
+  
   .overlay {
     background: rgba(255, 255, 255, 0.5);
     position: fixed;
@@ -111,7 +117,7 @@
     text-align: center;
     z-index: 2;
     position: absolute;
-    right: 120px;
+    right: 90px;
     top: 70px;
     margin: auto;
     flex-wrap: wrap;
@@ -213,16 +219,20 @@
     animation: 1000ms fadeIn;
   }
 
-  .buttonCerrar {
+  .icon-Logo_equis {
       padding: 10px;
       background: #1DAEFF;
       border-radius: 20px;
+      color: white;
+      font-size: 10px;
   }
 
-  .buttonCerrar:hover,
-  .buttonCerrar:focus {
-    background: #00BDEF;
+  .icon-Logo_equis:hover,
+  .icon-Logo_equis:focus {
+    background: #378DCA;
+    color: rgb(247, 247, 247);
   }
+
 
   .titleRegistro {
       display: flex;
@@ -294,10 +304,10 @@
   width: 250px;
 }
 
-.spaceFormInicio:focus {
-outline: none;
-background: #f0f6f8;
-}
+  .spaceFormInicio:focus {
+  outline: none;
+  background: #f0f6f8;
+  }
 
 
  .buttonRegistrar {
@@ -394,49 +404,48 @@ grisoscuro: #757575 */
     width: 60vw;
     padding: 2em 2em;
   }
+
   .modalEmpresaActive {
     width: 60vw;
     padding: 2em 2em;
   }
+
   .modalInicioActive {
     width: 40vw;
     padding: 1em 1em;
     right: 50px;
   }
 
-
   .titleRegistro {
     padding: 0 5px;
-}
+  }
 
-
-.check {
+  .check {
   font-size: .6rem;
  }
 
-.formRegitre {
+  .formRegitre {
    width: 50vw;
-}
+  }
 
   .imageRegistro {
     display: none;
-}
+  }
 
-.spaceForm {
-  margin: 5px 0;
-  width: 55vw;
-}
+  .spaceForm {
+    margin: 5px 0;
+    width: 55vw;
+  }
 
-.spaceFormSelect {
+  .spaceFormSelect {
+    margin: 5px 0;
+    width: 48vw;
+  }
 
-margin: 5px 0;
-width: 48vw;
-}
-
-.spaceFormInicio {
-  margin: 10px 0;
-  width: 32vw;
-}
+  .spaceFormInicio {
+    margin: 10px 0;
+    width: 32vw;
+  }
 
 }
 
@@ -487,10 +496,10 @@ width: 48vw;
 
 
 @media screen and (max-width: 375px) {
+
   .modalInicioActive {
     right: 10px;
     width: 80vw;
-    
     padding: .8em 1.5em;
 
   }
@@ -506,4 +515,5 @@ width: 48vw;
   .buttonOlvido {
     font-size: 0.7rem;
   }
+
 }

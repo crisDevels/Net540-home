@@ -1,17 +1,9 @@
-/* azuloscuro: #378DCA
-azulclaro: #00BDEF */
+    /* azuloscuro: #378DCA
+azulclaro: #1DAEFF
+grisOscuro: #454545
+grisMedio: #757575
+grisClaro: #C4C4C4 */
 
-
-.footerColor {
-    display: flex;
-    align-items: center;
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    color: #757575;
-    font-weight: 700;
-    margin-top: 50px;
-    padding: 10px 20px;
-}
 
 ol,
 ul {
@@ -23,8 +15,6 @@ justify-content: center;
 align-items: center;
 text-align: center;
 }
-
-
 
 
 .listTerms a {
@@ -39,10 +29,11 @@ text-align: center;
 
 li p {
     display: none;
+    color: #757575;
 }
 
 .listTerms {
-    margin-right: 60px;
+    /* margin-right: 60px; */
     width: 60%;
 }
 
@@ -50,17 +41,41 @@ li p {
     display: flex;
     align-items: center;
     width: 20%;
-    margin-right: 40px;
+    color: #757575;
+    font-weight: 700;
+    /* margin-right: 40px; */
 }
 
+.footer-flex {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.container-block-footer {
+    display: block;
+    text-align: center;
+    width: 100vw;
+    margin-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
 .logofooter img{
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 
 .socialMedia {
     align-items: center;
-    display: flex;
+    justify-content: flex-end;
     width: 20%;
 }
 
@@ -74,20 +89,53 @@ li p {
     font-size: 0.9rem;
 }
 
+.icon-Logo_net540 {
+    margin-right: 10px; 
+}
+
+.icon-Logo_youtube {
+    font-size: 25px;
+}
+
+.icon-Logo_instagram {
+    font-size: 25px;
+}
+
+.icon-Logo_linkedin {
+    font-size: 25px;
+}
+
+.icon-Logo_facebook {
+    font-size: 25px;
+}
+
+
+
+
 @media screen and (max-width: 1024px) {
-    .footerColor {
-        padding: 10px 20px;
+    
+    .footer-flex {
+        width: 95%;
     }
+    
+    .container-block-footer {
+        display: block;
+        text-align: center;
+        width: 100vw;
+        margin-top: 20px;
+    }
+    
+    .footer-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
 
     .logofooter {
         width: 20%;
-        margin-right: 40px;
     }
-
-    .listTerms {
-        margin-right: 40px;
-    }
-
 
     .listTerms a {
         margin: 0 10px;
@@ -114,19 +162,13 @@ li p {
 
 @media screen and (max-width: 768px) {
 
-    .footerColor {
-    
-        font-size: .7rem;
-        padding: 20px;
-    }
 
     .logofooter img{
         width: 60px;
     }
 
     .logofooter {
-        width: 25%;
-        margin-right: 20px;
+        width: 30%;
     }
 
 
@@ -136,9 +178,6 @@ li p {
         font-size: 0.6rem;
     }
 
-    .listTerms {
-        margin-right: 25px;
-    }
 
     ol,
     ul {
@@ -158,38 +197,47 @@ li p {
         display: flex;
     }
 
+    
+    .icon-Logo_youtube {
+        font-size: 20px;
+    }
+    
+    .icon-Logo_instagram {
+        font-size: 20px;
+    }
+    
+    .icon-Logo_linkedin {
+        font-size: 20px;
+    }
+    
+    .icon-Logo_facebook {
+        font-size: 20px;
+    }
+
 }
 
 @media screen and (max-width: 425px) {
 
-    .footerColor {
-      
+
+    .footer-flex {
+        width: 100%;
         display: block;
-        align-items: center;
-        font-family: 'Lato', sans-serif;
-        font-size: .5rem;
-        color: white;
-        font-weight: 500;
-        margin-top: 50px;
-        padding: 15px 20px 30px 20px;
+        padding-bottom: 50px;
     }
+    
 
     .logofooter img{
         width: 150px;
     }
 
     .logofooter {
+        display: block;
         width: 100%;
-        margin:0;
-        padding: 20px 10px;
-        display: flex;
+        margin: 0;
+        padding: 0;
         align-items: center;
         justify-content: center;
         margin-right: 0px;
-    }
-
-    .spacefooter {
-        width: 0
     }
 
     .listTerms a {
@@ -199,7 +247,7 @@ li p {
         font-weight: 600;
         margin: 15px 5px;
         text-align: center;
-        font-size: .7rem;
+        font-size: .75rem;
         display: block;
     }
 
@@ -224,11 +272,24 @@ li p {
     }
 
 
-
     .socialMedia {
         width: 100%;
         align-items: center;
         justify-content: center;
     }
 
+}
+
+@media screen and (max-width: 320px) {
+
+    .listTerms a {
+        text-decoration: none;
+        color: #757575;
+        font-family: 'Lato', sans-serif;
+        font-weight: 600;
+        margin: 15px 5px;
+        text-align: center;
+        font-size: .6rem;
+        display: block;
+    }
 }
