@@ -1,0 +1,444 @@
+    /* azuloscuro: #378DCA
+azulclaro: #1DAEFF
+grisOscuro: #454545
+grisMedio: #757575
+grisClaro: #C4C4C4 */
+
+.titleComo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.howgran {
+    margin: 0 0 40px 0;
+}
+
+.blockTitle {
+    margin: 30px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.blockTitle h2 {
+    font-size: 3rem;
+    color: #1DAEFF;
+    margin-block-start: 0em;
+    margin-block-end: 0.3em;
+}
+
+.buttonActive {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: white;
+    border-radius: 30px;
+    color: #1DAEFF;
+    border-style: none;
+    padding: 15px 30px;
+    margin: 0 30px;
+    font-weight: 800;
+    box-shadow: 0 3px 8px 0 #378dcab4;
+    outline   : none;
+}
+
+.buttonDesactive {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: white;
+    border-radius: 30px;
+    color: #a5a5a5;
+    border-style: none;
+    padding: 15px 30px;
+    margin: 0 30px;
+    font-weight: 800;
+    box-shadow: 0 3px 8px 0 #00000027;
+    outline   : none;
+}
+
+.Option {
+    background: linear-gradient(to right, #A341FD, #4F4CF4);
+    border-radius: 70px;
+    padding: 5px 15px;
+    display: flex;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    animation-name:  PopIn;
+    animation-duration: 1s;
+}
+
+.Option p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;  
+    color: white;
+    animation-name:  fadeIn;
+    animation-duration: 3s;
+    font-weight: 700;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Option:hover,
+.Option:focus {
+  outline   : none;
+  box-shadow: 0 3px 8px 0 #00000077;
+}
+
+.independiente {
+    text-align: center;
+}
+
+.independienteDesactive  {
+    display: none;
+}
+
+.empresa {
+    text-align: center;
+}
+
+.empresaDesactive {
+    text-align: center;
+    display: none;
+}
+
+.pasoApaso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 390px;
+}
+
+.iconComo {
+    padding: 40px;
+    background: #1DAEFF;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.border {
+    box-shadow: 0 3px 4px 0 #00000077;
+    padding: 5px;
+    border-radius: 80px;
+    background: white;
+    position: relative;
+    z-index: 2;   
+}
+
+
+.border:hover,
+.border:focus {
+  outline   : none;
+  box-shadow: 0 3px 10px 0 #378dcab6;
+}
+
+.boxIcon {
+    display: flex;
+    align-items: center;
+}
+
+.paso {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 20px 0 20px;
+    width: 160px;
+    text-align: center;
+    font-size: .7rem;
+    font-weight: 500;
+    animation-name:  fadeIn;
+    animation-duration: 1s;
+    color: rgb(80, 80, 80);
+    height: 350px;
+}
+
+.paso h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #1DAEFF;
+    margin-block-start: 0.23em;
+    margin-block-end: 0.23em;
+}
+
+.paso h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    color: black;
+    margin-block-start: 0.43em;
+    margin-block-end: 0.83em;
+}
+
+
+.swiftActive {
+    border-radius: 30px;
+    width: 150px;
+    height: 70px;
+    align-items: center;
+}
+
+
+.textActive {
+    display:block;
+    color: #757575;
+    margin:0;
+}
+
+
+/* Aqui se dan los estilos de los iconos */
+.icon-Logo_registrate {
+    font-size: 50px;
+}
+
+.icon-Logo_sube-tu-hoja-de-vida {
+    font-size: 50px;
+}
+
+.icon-Logo_cupones_varios {
+    font-size: 50px;
+}
+
+.icon-Logo_comparte {
+    font-size: 50px;
+}
+
+.icon-Logo_crea-tu-red {
+    font-size: 50px;
+}
+
+.icon-Logo_documento {
+    font-size: 50px;
+}
+
+.icon-Logo_maletin {
+    font-size: 50px;
+}
+
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      display: none;
+    }
+
+    100% {
+      opacity: 1;
+      display: block;
+    }
+  }
+
+  @keyframes fadeInT {
+    0% {
+      opacity: 0;
+      display: none;
+    }
+
+    50% {
+        opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+      display: block;
+    }
+  }
+
+/*@keyframes animationIn {*/
+        @keyframes PopIn {
+            0% {
+                top: -180px;
+            }
+
+            100% {
+                top: 10px;
+            }
+          }
+
+/*@keyframes animationIn {*/
+    @keyframes PopOut {
+        0% {
+            top: 10px;   
+        }
+
+        100% {
+            top: -180px;
+        }
+      }
+
+
+@media screen and (max-width: 768px) {
+
+    .blockTitle {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .blockTitle img {
+        display: none;
+    }
+
+    .blockTitle h2 {
+        font-size: 2rem;
+    }
+
+    .pasoApaso {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: 350px;
+    }
+
+    .iconComo {
+        padding: 30px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .iconComo img {
+        width: 30px;
+    }
+
+    .paso {
+        margin: 0 10px;
+        font-size: .65rem;
+        padding: 0;
+        width: 120px;
+    }
+
+    .paso h2 {
+        font-size: 1.7rem;
+        font-weight: 900;
+    
+    }
+    
+    .paso h3 {
+        font-size: .8rem;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .border {
+        padding: 5px;
+        width: 110px;  
+    }
+    
+    .swiftActive {
+        height: 100px;
+        width: 110px;
+        /* padding: 70px 5px 25px 5px; */
+        border-radius: 0 0 80px 80px;
+    }
+    
+    .textActive {
+        margin: 10px 5px;
+    }
+
+    .buttonActive {
+        margin: 0 20px;
+    }
+    
+    .buttonDesactive {
+        margin: 0 20px;
+    }
+
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .blockTitle {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .blockTitle img {
+        display: none;
+    }
+
+    .blockTitle h2 {
+        font-size: 2rem;
+    }
+
+    .pasoApaso {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: max-content;
+    }
+
+
+    .paso h3 {
+        font-size: .8rem;
+        font-weight: 900;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .iconComo {
+        padding: 30px;
+    }
+
+    .border {
+        margin-right: 20px;
+    }
+
+    .paso {
+        display: flex;
+        margin: 0;
+        font-size: 1.3rem;
+        width: 90%;
+        font-weight: 700;
+        color: rgb(80, 80, 80);
+        height: 240px;
+        align-items: center;
+    }
+
+    .paso h3 {
+        font-size: 1rem;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .swiftActive {
+        width: 50%;
+        height: 150px;
+    }
+
+    .textActive {
+        display: block;
+        margin: 10px 5px;
+        color: #757575;
+        font-size: .9rem;
+    }
+
+    .buttonActive {
+        margin: 10px;
+        width: 80%;
+    }
+    
+    .buttonDesactive {
+        margin: 10px;
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .textActive {
+        font-size: .8rem;
+    }
+
+}

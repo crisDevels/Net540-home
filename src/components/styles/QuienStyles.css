@@ -1,0 +1,100 @@
+.quienSomos {
+    display: block;
+    padding: 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.CenterContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.imagenQuien {
+    margin: 0 30px 0;
+    width: 20%;
+}
+
+.textQuien {
+    margin: 0 0 30px;
+    text-align: center;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.699);
+    padding: 30px;
+    border-radius: 50px;
+}
+
+.textQuien h2 {
+    font-size: 50px;
+    color: #1DAEFF;
+    margin-top: 0;
+}
+
+.textQuien p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
+}
+
+@media screen and (max-width: 768px) {
+
+    .quienSomos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .imagenQuien {
+        width: 30%;
+        margin: 0;
+    }
+    
+    .textQuien {
+        width: 40%;
+        padding: 20px;
+    }
+
+    .textQuien h2 {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    .imagenQuien img {
+        width: 220px;
+    }
+    
+    }
+
+    @media screen and (max-width: 425px) {
+
+        .quienSomos {
+            display: block;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 30px;
+        }
+
+        .textQuien {
+            width: 100%;
+        }
+
+    
+        .imagenQuien img {
+            display: none;
+        }
+
+        .textQuien p {
+            font-size: .9rem;
+            font-weight: 700;
+            color: rgb(63, 63, 63);
+        }
+        
+        
+    }
+

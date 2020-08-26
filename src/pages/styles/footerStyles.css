@@ -1,0 +1,295 @@
+    /* azuloscuro: #378DCA
+azulclaro: #1DAEFF
+grisOscuro: #454545
+grisMedio: #757575
+grisClaro: #C4C4C4 */
+
+
+ol,
+ul {
+margin: 0;
+padding: 0;
+list-style: none;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+
+.listTerms a {
+    text-decoration: none;
+    color: #757575;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+li p {
+    display: none;
+    color: #757575;
+}
+
+.listTerms {
+    /* margin-right: 60px; */
+    width: 60%;
+}
+
+.logofooter {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    color: #757575;
+    font-weight: 700;
+    /* margin-right: 40px; */
+}
+
+.footer-flex {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.container-block-footer {
+    display: block;
+    text-align: center;
+    width: 100vw;
+    margin-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.logofooter img{
+    margin-right: 10px;
+}
+
+
+.socialMedia {
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
+}
+
+
+.socialMedia a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+.icon-Logo_net540 {
+    margin-right: 10px; 
+}
+
+.icon-Logo_youtube {
+    font-size: 25px;
+}
+
+.icon-Logo_instagram {
+    font-size: 25px;
+}
+
+.icon-Logo_linkedin {
+    font-size: 25px;
+}
+
+.icon-Logo_facebook {
+    font-size: 25px;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    
+    .footer-flex {
+        width: 95%;
+    }
+    
+    .container-block-footer {
+        display: block;
+        text-align: center;
+        width: 100vw;
+        margin-top: 20px;
+    }
+    
+    .footer-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    .logofooter {
+        width: 20%;
+    }
+
+    .listTerms a {
+        margin: 0 10px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    ol,
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+
+    li {
+        display: flex;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .logofooter img{
+        width: 60px;
+    }
+
+    .logofooter {
+        width: 30%;
+    }
+
+
+    .listTerms a {
+        margin: 0 10px;
+        text-align: center;
+        font-size: 0.6rem;
+    }
+
+
+    ol,
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    li p {
+        display: flex;
+    }
+
+    li {
+        display: flex;
+    }
+
+    
+    .icon-Logo_youtube {
+        font-size: 20px;
+    }
+    
+    .icon-Logo_instagram {
+        font-size: 20px;
+    }
+    
+    .icon-Logo_linkedin {
+        font-size: 20px;
+    }
+    
+    .icon-Logo_facebook {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+
+    .footer-flex {
+        width: 100%;
+        display: block;
+        padding-bottom: 50px;
+    }
+    
+
+    .logofooter img{
+        width: 150px;
+    }
+
+    .logofooter {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0px;
+    }
+
+    .listTerms a {
+        text-decoration: none;
+        color: #757575;
+        font-family: 'Lato', sans-serif;
+        font-weight: 600;
+        margin: 15px 5px;
+        text-align: center;
+        font-size: .75rem;
+        display: block;
+    }
+
+    .listTerms {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+
+    ol,
+    ul {
+        display: flex;
+        width: 100%;
+    }
+
+    .puntoNone {
+        display: none;
+    }
+
+    .politicaNone {
+        display: none;
+    }
+
+
+    .socialMedia {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .listTerms a {
+        text-decoration: none;
+        color: #757575;
+        font-family: 'Lato', sans-serif;
+        font-weight: 600;
+        margin: 15px 5px;
+        text-align: center;
+        font-size: .6rem;
+        display: block;
+    }
+}
