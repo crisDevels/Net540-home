@@ -8,8 +8,10 @@ grisoscuro: #757575 */
 body {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
-    margin: 0;
-    height: 100vh;
+    margin: 30px 0;
+    overflow-x: hidden;
+    /* box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 30px; */
 }
 
 h1 {
@@ -32,30 +34,61 @@ h6 {
     color: #757575;
 }
 
+.wrapper-border {
+    max-width: 1200px;
+    flex: 1;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding-bottom: 20px;
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    .wrapper-border {
+        flex: 1;
+        margin: 0 auto;
+        display: inherit;
+        justify-content: inherit;
+        height: inherit;
+        flex-wrap: inherit;
+        box-shadow: none;
+        border-radius: none;
+        padding-bottom: 0;
+    }
+
+    body {
+        margin:0;
+    }
+    
+}
 
 @media screen and (max-width: 767px) {
 
-    
-body {
-    font-size: 0.8em;
-    width: 100vw;
-}
+
 
 }
 
 
 @media screen and (max-width: 425px) {
+       
+    body {
+        margin: 30px 15px;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+    }
 
     h1 {
-        
         font-size: 30px;
-        
     }
     
     h2 {
-        
         font-size: 20px;
-        
     }
     
     h3
@@ -70,21 +103,16 @@ body {
 @media screen and (max-width: 320px) {
 
     h1 {
-        
         font-size: 25px;
-        
     }
     
     h2 {
-        
         font-size: 18px;
-        
     }
     
     h3
     h4
     h6 {
-        
         font-size: 15px;
     }
 

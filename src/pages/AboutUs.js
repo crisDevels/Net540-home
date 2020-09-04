@@ -18,7 +18,6 @@ import Comenzar from '../components/FormularioRegistro/comenzemos'
 import loader from '../images/loader.gif'
 
 
-
 class AboutUs extends React.Component {
     constructor(props) {
         super(props)
@@ -60,37 +59,40 @@ class AboutUs extends React.Component {
         return <React.Fragment>
             <section className={this.state.blur}>
             
-            {this.state.isLoading ? <div><img src={loader}/></div> : 
-            <div>
-                <div>
-                    <NavBar/>
-                </div>
-                
-                { !this.state.user &&
+            {this.state.isLoading ? <div><img alt="loader de net" src={loader}/></div> : 
+            <div className="wrapper-border">
                 <div>
                     <div>
-                        <HeroAboutUs/>
+                        <NavBar/>
                     </div>
-
+                    
+                    { !this.state.user &&
                     <div>
-                        <HowFuntion/>
-                    </div>
+                        <div>
+                            <HeroAboutUs/>
+                        </div>
 
-                    <div>
-                        <Quien />
-                    </div>
-                </div>}
-                { this.state.isLoading ? <div><img src={loader}/></div> : 
-                        this.state.user &&
-                            < Comenzar user={this.state.user} />
-                        
+                        <div>
+                            <HowFuntion/>
+                        </div>
+
+                        <div>
+                            <Quien />
+                        </div>
+                    </div>}
+                    { this.state.isLoading ? <div><img src={loader}/></div> : 
+                            this.state.user &&
+                                < Comenzar user={this.state.user} />
+                            
+                        }
+
+                    { !this.state.user &&
+                        <Footer/>
                     }
 
-                { !this.state.user &&
-                    <Footer/>
-                }
-
-            </div>}
+                </div>
+            </div>
+            }
 
             </section>
             

@@ -1,22 +1,22 @@
 import React from 'react';
 
-import AdornoQuien from '../images/BarraILU.png'
-import AdornoComofuncionaIzquierda from '../images/LapizDER.png'
-import AdornoComofuncionaDerecha from '../images/LapizDERR.png'
+// import AdornoQuien from '../images/BarraILU.png'
+// import AdornoComofuncionaIzquierda from '../images/LapizDER.png'
+// import AdornoComofuncionaDerecha from '../images/LapizDERR.png'
 
-import candidatoUno from '../images/Candidato-boton-1.png'
-import candidatoDos from '../images/Candidato-boton-2.png'
-import candidatoTres from '../images/Candidato-boton-3.png'
-import candidatoCuatro from '../images/Candidato-boton-4.png'
-import candidatoCinco from '../images/Candidato-boton-5.png'
+// import candidatoUno from '../images/Candidato-boton-1.png'
+// import candidatoDos from '../images/Candidato-boton-2.png'
+// import candidatoTres from '../images/Candidato-boton-3.png'
+// import candidatoCuatro from '../images/Candidato-boton-4.png'
+// import candidatoCinco from '../images/Candidato-boton-5.png'
 
-import empresaUno from '../images/Empleador-boton-1.png'
-import empresaDos from '../images/Empleador-boton-2.png'
-import empresaTres from '../images/Empleador-boton-3.png'
-import empresaCuatro from '../images/Empleador-boton-4.png'
+// import empresaUno from '../images/Empleador-boton-1.png'
+// import empresaDos from '../images/Empleador-boton-2.png'
+// import empresaTres from '../images/Empleador-boton-3.png'
+// import empresaCuatro from '../images/Empleador-boton-4.png'
 
-import cerrar from '../images/ARROWup.png'
-import arrow from '../images/ARROW.png'
+// import cerrar from '../images/ARROWup.png'
+// import arrow from '../images/ARROW.png'
 
 // Se importa la fuente iconográfica
 import '../fonts/style.css'

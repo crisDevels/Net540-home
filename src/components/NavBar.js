@@ -1,26 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase';
-// import { useUser } from 'reactfire';
-// import firebaseApp from '../config/firebase';
 
 import './styles/navStyles.css'
 import './styles/popRegistro.css'
 import '../globalStyles.css'
 import '../pages/styles/homeStyles.css'
 
-import Comenzar from '../components/FormularioRegistro/comenzemos'
-
-import AboutUs from '../pages/AboutUs'
-import Home from '../pages/home'
-
-import logo from "../images/logoNet.png"
-import logoB from "../images/logoNetB.png"
-import logoA from "../images/LOGO-NET540A.png"
-import logoSesion from "../images/logoSesion.png"
-import load from '../images/loader.gif'
-
 import googleIcon from '../images/googleIcono.png'
+import facebookIcon from '../images/facebook-icon.svg'
+import linkedIcon from '../images/linked-icon.svg'
 
 import '../fonts/style.css'
 
@@ -29,20 +18,27 @@ var iconGoogle = {
     backgroundImage: "url("+ googleIcon + ")"
   };
 
+var iconFacebook = {
+    width: "100%",
+    backgroundImage: "url("+ facebookIcon + ")"
+};
+
+var iconLinked = {
+    width: "100%",
+    backgroundImage: "url("+ linkedIcon + ")"
+};
+
 var NetLogo = {
     color: "#1DAEFF",
 }
 
-// const user = useUser();
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            // loading: true,
-            // error: null,
             modalInicio: "modal",
-            buttonCerrar: "inicioCerrarN",
+            overlay: "overlay",
             buttonInicio: "buttonInicioN",
             bienvenido: "blockPerfil",
             user: null, 
@@ -65,21 +61,19 @@ class NavBar extends React.Component {
 
     abrirModalInicio = ()=> {
         this.setState({
+            overlay: "overlayActive",
             modalInicio: "modalInicioActive",
-            buttonCerrar: "buttonInicioCerrarN",
-            buttonInicio: "buttonInicioDesactiveN"
         }) 
     }
 
     cerrarModalInicio = ()=> {
         this.setState({
+            overlay: "overlay",
             modalInicio: "modal",
             buttonCerrar: "inicioCerrarN",
             buttonInicio: "buttonInicioN"
         }) 
     }
-
-    
 
     login = (e)=> {
         e.preventDefault();
@@ -106,7 +100,6 @@ class NavBar extends React.Component {
 
     }
     
-
     handleLogout = ()=> {
         firebase.auth().signOut()
             .then(result => console.log('${result.user.email} ha salido'))
@@ -118,51 +111,61 @@ class NavBar extends React.Component {
         if (this.state.user) {
             return <React.Fragment>
                 <div className="container-block-nav">
-
-                    <div className="navForm">
-                        <div className="logoN">
-                            <Link to="/">
-                                <span style={NetLogo} className="icon-Logo_540"></span>
-                            </Link>
-                        </div>
-                        <div className="nav-flex">
-                            <div className="container-buttons">
-                                < Link to="/" >
-                                    <button className="cerrar-sesion" onClick={this.handleLogout}>Cerrar Sesión</button>
-                                </ Link >
+                    <div className="wrapper-home">
+                        <div className="navForm">
+                            <div className="logoN">
+                                <Link to="/">
+                                    <span style={NetLogo} className="icon-Logo_540"></span>
+                                </Link>
+                            </div>
+                            <div className="nav-flex">
+                                <div className="container-buttons">
+                                    < Link to="/" >
+                                        <button className="cerrar-sesion" onClick={this.handleLogout}>Cerrar Sesión</button>
+                                    </ Link >
+                                </div>
                             </div>
                         </div>
                     </div>
-                   
                 </div>
             </React.Fragment>
         } else {
         //no login
             return <React.Fragment>
                 <div className="container-block-nav-inicio">
-
-                    <div className="menuN">
-                        <div className="logoN">
-                            <Link to="/">
-                                <span style={NetLogo} className="icon-Logo_net540"></span>
-                            </Link>
-                        </div>
-                        <div className="nav-flex">
-                            <span>
-                                <Link to="/aboutUs">
-                                    <input className="buttonConocenosN" type="button" value="CONÓCENOS"></input>
+                    <div className="wrapper-home">
+                        <div className="menuN">
+                            <div className="logoN">
+                                <Link to="/">
+                                    <span style={NetLogo} className="icon-Logo_net540"></span>
                                 </Link>
-                            </span>
-                            <span>
-                                <input onClick={this.abrirModalInicio} className={this.state.buttonInicio} type="button" value="INGRESAR"></input>
-                                <input onClick={this.cerrarModalInicio} className={this.state.buttonCerrar} type="button" value="CERRAR"></input>  
-                            </span>  
+                            </div>
+                            <div className="nav-flex">
+                                <span>
+                                    <Link to="/aboutUs">
+                                        <button className="buttonConocenosN" type="button">Conócenos</button>
+                                    </Link>
+                                </span>
+                                <span>
+                                    <button onClick={this.abrirModalInicio} className={this.state.buttonInicio} type="button">Ingresar</button>  
+                                </span>  
+                            </div>
                         </div>
                     </div>
-
                 </div>
 
+                <div onClick={this.cerrarModalInicio} className={this.state.overlay} id="overlay"></div>
+                
                 <div className={this.state.modalInicio}>
+                        <div className="titleRegistro-inicio-sesion">
+                            <div className="title-modal-inicio">
+                                <h2>INICIAR SESIÓN</h2>
+                            </div>
+                            <div className="button-flex-end">
+                                <span onClick={this.cerrarModalInicio} className="icon-Logo_equis"></span>
+                            </div>
+                        </div>
+    
                         <form className="formRegitreInicio">
                             
                             <input
@@ -193,29 +196,24 @@ class NavBar extends React.Component {
                                 </Link>
                             </div>
                             <hr className="line-login" data-content="or"></hr>
-                            <button style={iconGoogle} className="google-auth" onClick={this.handleAuth} type="buttton">Continuar con Google</button>
+                            <div className="div-buttons-auth">
+                                <button style={iconGoogle} className="google-auth" onClick={this.handleAuth} type="buttton">Continuar con Google</button>
+                                <button style={iconFacebook} className="facebook-auth" onClick={this.handleAuth} type="buttton">Continuar con Facebook</button>
+                                <button style={iconLinked} className="linkedin-auth" onClick={this.handleAuth} type="buttton">Continuar con Linkedin</button>
+                            </div>
                         </form>
                     </div>
                 
             </React.Fragment>
-        }
-        
+        }  
     }
 
     render() {
         return <React.Fragment>
-
-                <div>
-                {/* {this.state.loading &&
-                <div>
-                    <img src={load}/>
-                </div>
-                } */}
+            <div>
                 {this.renderLoginButton()}
-                </div>
-                
-
-                </React.Fragment>
+            </div>
+        </React.Fragment>
         }
     }
 

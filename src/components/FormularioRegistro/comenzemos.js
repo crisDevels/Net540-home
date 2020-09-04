@@ -16,20 +16,21 @@ class Comenzar extends React.Component {
 
     render() {
         return <React.Fragment>
-                <div className={this.state.comenzar}>
-                    <div className="blockPerfil">
-                        <h2 className="title-encuesta">Comencemos</h2>
-                        
-                        <div className="container-inicio">
-                        <p className="texto-inicio">{this.props.user.displayName}, al completar tu perfil das más credibilidad ante los reclutadores</p>
-                        <Link to="/skills">
-                        <button type="button" className="button-comenzar">De una</button>
-                        </Link>
+                <div className="container-comenzamos">
+                    <div className={this.state.comenzar}>
+                        <div className="blockPerfil">
+                            <h2 className="title-encuesta">Comencemos</h2>
+                            <div className="container-inicio">
+                                <p className="texto-inicio">{this.props.user.displayName}, al completar tu perfil das más credibilidad ante los reclutadores</p>
+                                <Link to="/skills">
+                                    <button type="button" className="button-comenzar">De una</button>
+                                </Link>
+                            </div>
                         </div>
+                        <Link to="/">
+                                <button type="button" className="button-omitir">Omitir</button>
+                        </Link>
                     </div>
-                    <Link to="/">
-                            <button type="button" className="button-omitir">Omitir</button>
-                    </Link>
                 </div>
         </React.Fragment>
     } 

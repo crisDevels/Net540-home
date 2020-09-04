@@ -134,7 +134,7 @@ grisClaro: #C4C4C4 */
     border-radius: 80px;
     background: white;
     position: relative;
-    z-index: 2;   
+    z-index: 1;   
 }
 
 
@@ -374,7 +374,7 @@ grisClaro: #C4C4C4 */
     .pasoApaso {
         display: flex;
         flex-wrap: wrap;
-        width: 100vw;
+        width: 100%;
         height: max-content;
     }
 
@@ -398,7 +398,7 @@ grisClaro: #C4C4C4 */
         display: flex;
         margin: 0;
         font-size: 1.3rem;
-        width: 90%;
+        width: 92%;
         font-weight: 700;
         color: rgb(80, 80, 80);
         height: 240px;
@@ -436,6 +436,10 @@ grisClaro: #C4C4C4 */
 }
 
 @media screen and (max-width: 425px) {
+
+    .border {
+        margin-right: 10px;
+    }
 
     .textActive {
         font-size: .8rem;

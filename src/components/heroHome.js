@@ -10,13 +10,8 @@ import imageProject from '../images/ILUSTRACION-MANOS.gif'
 import '../components/styles/popRegistro.css'
 import registroImage from '../images/RegistroILU.png'
 import registroImageEmpresa from '../images/EmpresaILU.png'
-import cerrar from '../images/CERRAR.png'
 
 import '../fonts/style.css'
-
-var colorIcon = {
-    color: "#1DAEFF",
-}
 
 class HeroHome extends React.Component {
     constructor(props) {
@@ -130,87 +125,90 @@ render() {
             <div className="container-content-registre">
                 <div className="registreBlock">
                     <div className="boxReg">
-                        <button className="buttonModal" onClick={this.abrirModalProfesional}>< Registre imagenFreelancer={imagefreelancer} buttonRegistre="¿BUSCAS EMPLEO?" /></button>
+                        <button className="buttonModal" onClick={this.abrirModalProfesional}>< Registre imagenFreelancer={imagefreelancer} buttonRegistre="¿Buscas empleo?" /></button>
                     </div>
                     <div className="boxReg">
-                        <button className="buttonModal" onClick={this.abrirModalEmpresa}>< Registre imagenFreelancer={imageProject} buttonRegistre="¿ESTÁS CONTRATANDO?" /></button>
+                        <button className="buttonModal" onClick={this.abrirModalEmpresa}>< Registre imagenFreelancer={imageProject} buttonRegistre="¿Estás contratando?" /></button>
                     </div>
                 </div>
             </div>
-            <div className={this.state.overlay} id="overlay"></div>
+
+            <div onClick={this.cerrarModal} className={this.state.overlay} id="overlay"></div>
                 <div className={this.state.modalProfesional}>
                     <div>
                         <img src={registroImage} className="imageRegistro" width="310px" alt="Ilustración de registro" />
                     </div>
                     <div>
                         <div className="titleRegistro">
-                            <h2>INDEPENDIENTE</h2>
-                            <div className="spaceTitleRegistro"></div>
-                                <span className="icon-Logo_equis"></span>
+                            <div className="title-modal">
+                                <h2>INDEPENDIENTE</h2>
                             </div>
-                            <form className="formRegitre">
+                            <div>
+                                <span onClick={this.cerrarModal} className="icon-Logo_equis"></span>
+                            </div>   
+                        </div>
+                        <form className="formRegitre">
+                            <input
+                                value={this.state.name}
+                                onChange={this.handleChange} 
+                                className="spaceForm" 
+                                type="text" 
+                                name="name" 
+                                placeholder="Nombre"
+                                id="registryName"
+                                size="40" required/>
 
-                                <input
-                                    value={this.state.name}
-                                    onChange={this.handleChange} 
-                                    className="spaceForm" 
-                                    type="text" 
-                                    name="name" 
-                                    placeholder="Nombre"
-                                    id="registryName"
-                                    size="40" required/>
+                            <input
+                                value={this.state.apellido}
+                                onChange={this.handleChange}
+                                className="spaceForm" 
+                                type="text" 
+                                name="apellido" 
+                                placeholder="Apellido"
+                                id="RegistryApellido" 
+                                size="40" required/>
 
-                                <input
-                                    value={this.state.apellido}
-                                    onChange={this.handleChange}
-                                    className="spaceForm" 
-                                    type="text" 
-                                    name="apellido" 
-                                    placeholder="Apellido"
-                                    id="RegistryApellido" 
-                                    size="40" required/>
+                            <input
+                                value={this.state.registryEmail}
+                                onChange={this.handleChange} 
+                                className="spaceForm" 
+                                type="text" 
+                                name="registryEmail" 
+                                placeholder="Correo Electrónico"
+                                id="RegistryEmail" 
+                                size="40" required/>
 
-                                <input
-                                    value={this.state.registryEmail}
-                                    onChange={this.handleChange} 
-                                    className="spaceForm" 
-                                    type="text" 
-                                    name="registryEmail" 
-                                    placeholder="Correo Electrónico"
-                                    id="RegistryEmail" 
-                                    size="40" required/>
+                            <input
+                                value={this.state.registryPassword}
+                                onChange={this.handleChange} 
+                                className="spaceForm" 
+                                type="password" 
+                                name="registryPassword"
+                                id="RegistryPassword" 
+                                placeholder="Contraseña" required />
 
-                                <input
-                                    value={this.state.registryPassword}
-                                    onChange={this.handleChange} 
-                                    className="spaceForm" 
-                                    type="password" 
-                                    name="registryPassword"
-                                    id="RegistryPassword" 
-                                    placeholder="Contraseña" required />
+                            <input
+                                className="spaceForm" 
+                                type="date" 
+                                id="FechaNacimiento" 
+                                name="fechaNacimiento" 
+                                min="1920-01-01" 
+                                max="2004-12-31" /><br/>
 
-                                <input
+                            <label className="check">
+                                <input 
+                                    type="checkbox" 
+                                    id="check-politicas-independiente" 
+                                    name="checkedPoliticasIndependientes" 
+                                    value="checkbox-politicas" 
+                                    className="checkbox"/> Estoy de acuerdo con la <a href="/"><strong>política de privacidad</strong></a> y con los <a href="/"><strong>terminos y condiciones</strong></a></label><br/>
                                     
-                                    className="spaceForm" 
-                                    type="date" 
-                                    id="FechaNacimiento" 
-                                    name="trip-start" 
-                                    min="1920-01-01" 
-                                    max="2004-12-31" /><br/>
-
-                                <label className="check">
-                                    <input 
-                                        type="checkbox" 
-                                        id="cbox1" 
-                                        value="checkbox-politicas" 
-                                        className="checkbox"/> Estoy de acuerdo con la <a href="/"><strong>política de privacidad</strong></a> y con los <a href="/"><strong>terminos y condiciones</strong></a></label><br/>
-                                <input
-                                    onClick={this.createUser}
-                                    className="buttonRegistrar" 
-                                    type="submit" 
-                                    value="Registrar" />
-
-                            </form>
+                            <button
+                                onClick={this.createUser}
+                                className="buttonRegistrar" 
+                                type="submit" 
+                                >Registrar</button>
+                        </form>
                     </div>
                 </div>
                 <div className={this.state.modalEmpresa}>
@@ -219,14 +217,24 @@ render() {
                     </div>
                     <div>
                         <div className="titleRegistro">
-                            <h2>EMPRESA</h2>
-                            <div className="spaceTitleRegistro"></div>
-                            <span  className="icon-Logo_equis" onClick={this.cerrarModal} src={cerrar} width="10px" alt="boton cerrar"></span>
-
+                            <div className="title-modal">
+                                <h2>EMPRESA</h2>
+                            </div>
+                            <div>
+                                <span onClick={this.cerrarModal} className="icon-Logo_equis"></span>
+                            </div>
                         </div>
                         <form className="formRegitre">
-                            <input className="spaceForm" type="text" name="Nombres" placeholder="Nombre de empresa" size="40" required/>
-                            <select className="spaceFormSelect" name="Económico" placeholder="Razón social">
+                            <input 
+                                className="spaceForm" 
+                                type="text" 
+                                name="nombreEmpresa" 
+                                placeholder="Nombre de empresa" 
+                                size="40" required/>
+                            <select 
+                                className="spaceFormSelect" 
+                                name="sectorEconomicoEmpresas" 
+                                placeholder="Razón social">
 
                             <option defaultValue>Actividad Económica</option>
 
@@ -279,11 +287,37 @@ render() {
                             <option>Venta al por Mayor</option>
 
                             </select>
-                            <input className="spaceForm" type="text" name="Email" placeholder="Correo empresarial" size="40" required/>
-                            <input className="spaceForm" type="password" name="password" placeholder="Contraseña" minLength="8" required />
-                            <input className="spaceForm" type="password" name="password" placeholder="Confirmar contraseña" minLength="8" required /><br/>
-                            <label className="check"><input type="checkbox" id="cbox1" value="checkbox-politicas" className="checkbox"/> Estoy de acuerdo con la <a href="/"><strong>política de privacidad</strong></a> y con los <a href="/"><strong>terminos y condiciones</strong></a></label><br/>
-                            <input className="buttonRegistrar" type="submit" value="Registrar" />
+                            <input 
+                                className="spaceForm" 
+                                type="text" 
+                                name="emailEmpresas" 
+                                placeholder="Correo empresarial" 
+                                size="40" required/>
+
+                            <input 
+                                className="spaceForm" 
+                                type="password" 
+                                name="passwordEmpresas" 
+                                placeholder="Contraseña" 
+                                minLength="8" required />
+
+                            <input 
+                                className="spaceForm" 
+                                type="password" 
+                                name="passwordConfirmationEmpresa" 
+                                placeholder="Confirmar contraseña" 
+                                minLength="8" required /><br/>
+                            <label className="check">
+                            <input 
+                                type="checkbox" 
+                                id="check-politicas-empresas" 
+                                name="checkedPoliticasEmpresas" 
+                                value="checkbox-politicas" 
+                                className="checkbox"/> Estoy de acuerdo con la <a href="/"><strong>política de privacidad</strong></a> y con los <a href="/"><strong>terminos y condiciones</strong></a></label><br/>
+                            <input 
+                                className="buttonRegistrar" 
+                                type="submit" 
+                                value="Registrar" />
                         </form>
                     </div> 
                 </div>

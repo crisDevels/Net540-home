@@ -7,6 +7,8 @@ import Forget from '../pages/Forget';
 import Validation from '../pages/Validation';
 import SkillsForm from '../components/FormularioRegistro/skillsForm'
 import Consulta from '../components/consultaAPI'
+import Company from '../components/FormularioRegistro/FormCompany';
+import VacantForm from '../components/FormularioRegistro/VacantForm';
 
 
 function App() {
@@ -19,9 +21,11 @@ function App() {
             <Route exact path="/validacion-contraseña" component={Validation}/>
             <Route exact path="/skills" component={SkillsForm}/>
             <Route exact path="/consulta" component={Consulta}/>
+            <Route exact path="/company" component={Company}/>
+            <Route exact path="/vacant" component={VacantForm}/>
         </Switch>
         </BrowserRouter>
-    )
+    ) 
 }
 
 export default App;

@@ -1,0 +1,62 @@
+.flex-col-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.flex-skills-benefits {
+    display: flex;
+}
+
+.flex-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.flex-skills {
+    display: flex;
+    align-items: center; 
+}
+
+.flex-checkbox p {
+    margin-left: 10px;
+    color:#757575;
+    font-size: 13px;
+}
+
+.col2-checkbox {
+    margin-left: 30px;
+}
+
+.col2-skills-benefits {
+    margin-left: 70px;
+}
+
+.title-skills-benefits {
+    margin-top: 0;
+}
+
+.input-skills {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    border-style: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 200;
+    font-size: 1rem;
+    color: #757575;
+    outline: none;
+    opacity: .6;
+}
+
+.button-agregar {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: #1DAEFF;
+    border-radius: 50%;
+    color: white;
+    border-style: none;
+    padding: 8px 10px;
+    margin: 0 7px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+

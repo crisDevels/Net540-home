@@ -136,7 +136,7 @@ grisClaro: #C4C4C4 */
     }
 
     .buttonHero {
-        font-size: 1.1em;
+        font-size: 0.8em;
         width: 80%;
         padding: 15px 15px;
         margin: 5px 15px;
@@ -156,7 +156,7 @@ grisClaro: #C4C4C4 */
     }
 
     .buttonHero {
-        font-size: 1em;
+        font-size: .7em;
         padding: 10px 15px;
         width: 90%;
     }

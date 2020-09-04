@@ -24,13 +24,14 @@ grisClaro: #C4C4C4 */
     display: block;
     text-align: center;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-    width: 100vw;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
 }
 
 .container-block-nav-inicio {
     display: block;
     text-align: center;
-    width: 100vw;
+    width: 100%;
 }
 
 .navForm {
@@ -42,7 +43,7 @@ grisClaro: #C4C4C4 */
 }
 
 .nav-flex {
-    width: 80%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -74,7 +75,6 @@ grisClaro: #C4C4C4 */
 }
 
 
-
 .container-inicio {
     display: inline-block;
     width: 250px;
@@ -92,16 +92,13 @@ grisClaro: #C4C4C4 */
 .button-omitir:focus {
   outline   : none;
   color: #1DAEFF;
-  
 }
-
 
 .button-comenzar {
     color: #1DAEFF;
     border-style: none;
     background: none;
     margin: 0;
-
 }
 
 .cerrar-sesion:hover,
@@ -122,13 +119,12 @@ grisClaro: #C4C4C4 */
 .menuN {
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
 .buttonInicioN {
     font-family: 'Lato', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     background: #1DAEFF;
     border-radius: 30px;
     color: white;
@@ -151,9 +147,9 @@ grisClaro: #C4C4C4 */
     font-family: 'Lato', sans-serif;
     border-style: none;
     background: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 800;
-    color: #757575;
+    color: #1DAEFF;
     border-bottom: white;
 }
 
@@ -206,8 +202,48 @@ grisClaro: #C4C4C4 */
     text-decoration: none;
 }
 
+@media screen and (max-width: 1024px) {
+
+    .container-block-nav {
+        
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .icon-Logo_540 {
+        font-size: 25px;
+    }
+
+    .icon-Logo_net540 {
+        font-size: 25px;
+    }
+
+    .buttonConocenosN {
+        font-size: .8rem;
+    }
+
+    .buttonInicioN {
+        font-size: .8rem;
+    }
+
+    .buttonInicioCerrarN {
+        font-size: .8rem;
+    }
+}
+
 @media screen and (max-width: 425px) {
     
+    .title-encuesta {
+        font-size: 2rem;
+        color: #1DAEFF;
+    }
+
+    .container-block-nav {
+        border-radius: 30px 30px 0 0;
+    }
+
     .logoN {
         padding: 25px 30px 25px 25px;
     }
@@ -229,6 +265,14 @@ grisClaro: #C4C4C4 */
         font-size: .8rem;
     }
 
+    .blockPerfil {
+        padding: 30px;
+    }
+
+    .cerrar-sesion {
+        font-size: 0.9rem;
+    }
+
 }
 
 @media screen and (max-width: 320px) {
@@ -244,13 +288,30 @@ grisClaro: #C4C4C4 */
     }
 
     .buttonInicioN {
-        font-size: .8rem;
+        font-size: .7rem;
         margin: 0 10px;
     }
 
     .buttonInicioCerrarN {
-        font-size: .8rem;
+        font-size: .7rem;
         margin: 0 10px;
+    }
+
+    .container-inicio {
+        width: 80%;
+    }
+    
+
+    .icon-Logo_540 {
+        font-size: 20px;
+    }
+    
+    .icon-Logo_net540 {
+        font-size: 20px;
+    }
+
+    .cerrar-sesion {
+        font-size: 0.7rem;
     }
 
 }

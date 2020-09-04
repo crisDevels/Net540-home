@@ -1,0 +1,92 @@
+.publication {
+    display: block;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+.flex-title-vacant {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.div-TypeCompany {
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    margin-right: 20px;
+}
+
+.option-title-vacant {
+    justify-content: flex-end;
+    display: flex;
+    width: 10%;
+}
+
+.titleVacant {
+    font-weight: 700;
+    margin: 5px 0;
+    font-family: 'Lato', sans-serif;
+    color: #757575;
+}
+
+.title-vacant-general {
+    width: 90%;
+}
+
+.subtitleVacant {
+    font-weight: 300;
+    font-style: italic;
+    margin: 5px 0;
+    font-family: 'Lato', sans-serif;
+    color: #757575;
+}
+
+.short-description-vacant {
+    width: 100%;
+    padding: 0;
+    border-radius: 30px;
+    margin: 30px 0;
+    color: #757575;
+}
+
+.short-description-vacant p a {
+    color: #1DAEFF;
+    text-decoration: none;
+}
+
+.flex-buttons-vacant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #757575;
+}
+
+.button-vacant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+}
+
+.button-vacant-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 33%;
+}
+
+.button-vacant-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 33%;
+}
+
+.button-vacant-image {
+    padding: 0 10px;
+}
+
+.button-vacant-p {
+    margin: 0;
+}

@@ -19,7 +19,7 @@ text-align: center;
 
 .listTerms a {
     text-decoration: none;
-    color: #757575;
+    color: #1DAEFF;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
     margin: 0 10px;
@@ -27,10 +27,6 @@ text-align: center;
     text-align: center;
 }
 
-li p {
-    display: none;
-    color: #757575;
-}
 
 .listTerms {
     /* margin-right: 60px; */
@@ -41,13 +37,13 @@ li p {
     display: flex;
     align-items: center;
     width: 20%;
-    color: #757575;
+    color: #1DAEFF;
     font-weight: 700;
     /* margin-right: 40px; */
 }
 
 .footer-flex {
-    width: 80%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -56,7 +52,7 @@ li p {
 .container-block-footer {
     display: block;
     text-align: center;
-    width: 100vw;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -110,8 +106,6 @@ li p {
 }
 
 
-
-
 @media screen and (max-width: 1024px) {
     
     .footer-flex {
@@ -121,7 +115,7 @@ li p {
     .container-block-footer {
         display: block;
         text-align: center;
-        width: 100vw;
+        width: 100%;
         margin-top: 20px;
     }
     
@@ -162,7 +156,6 @@ li p {
 
 @media screen and (max-width: 768px) {
 
-
     .logofooter img{
         width: 60px;
     }
@@ -177,7 +170,6 @@ li p {
         text-align: center;
         font-size: 0.6rem;
     }
-
 
     ol,
     ul {
@@ -217,7 +209,6 @@ li p {
 }
 
 @media screen and (max-width: 425px) {
-
 
     .footer-flex {
         width: 100%;
@@ -271,13 +262,11 @@ li p {
         display: none;
     }
 
-
     .socialMedia {
         width: 100%;
         align-items: center;
         justify-content: center;
     }
-
 }
 
 @media screen and (max-width: 320px) {
@@ -289,7 +278,7 @@ li p {
         font-weight: 600;
         margin: 15px 5px;
         text-align: center;
-        font-size: .6rem;
+        font-size: .7rem;
         display: block;
     }
 }

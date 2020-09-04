@@ -6,7 +6,7 @@ import '../pages/styles/footerStyles.css'
 import '../fonts/style.css'
 
 var colorIcon = {
-    color: "#757575",   
+    color: "#1DAEFF",   
 }
 
 class Footer extends React.Component {
@@ -14,42 +14,29 @@ class Footer extends React.Component {
         return <React.Fragment>
         
         <div className="container-block-footer">
+            <div className="wrapper-home">
+                <div className="footer-container">
 
-            <div className="footer-container">
-
-                <div className="footer-flex">
-                    <span className="logofooter">
-                        <span style={colorIcon} className="icon-Logo_net540"></span>
-                        <p>© 2020</p>
-                    </span>
-                    <ol className="listTerms">
-
-                        <li>
-                            <a href="/">Condiciones de uso</a> 
-                        </li>
-                        <li>
-                            <p>•</p> 
-                        </li>
-                        <li>
-                            <a href="/">Política de privacidad</a>
-                        </li>
-                        <li>
-                            <p>•</p> 
-                        </li>
-                        <li>
-                            <a href="/">Política de copyright</a> 
-                        </li>
+                    <div className="footer-flex">
+                        <span className="logofooter">
+                            <span style={colorIcon} className="icon-Logo_net540"></span>
+                            <p>© 2020</p>
+                        </span>
+                        <ol className="listTerms">
+                            <li>
+                                <a href="/">Terminos y condiciones</a>
+                            </li>
+                        </ol>
                 
-                    </ol>
-            
-                    <div className="socialMedia">
-                        <a href="youTube.com/channel/UCm9SvjlV-2Z4cEdlLgGf8TQ"><span style={colorIcon} className="icon-Logo_youtube"></span></a>
-                        <a href="instagram.com/net_540"><span style={colorIcon} className="icon-Logo_instagram"></span></a>
-                        <a href="linkedin.com/company/campaña-540"><span style={colorIcon} className="icon-Logo_linkedin"></span></a>
-                        <a href="facebook.com/net540"><span style={colorIcon} className="icon-Logo_facebook"></span></a>
+                        <div className="socialMedia">
+                            <a href="youTube.com/channel/UCm9SvjlV-2Z4cEdlLgGf8TQ"><span style={colorIcon} className="icon-Logo_youtube"></span></a>
+                            <a href="instagram.com/net_540"><span style={colorIcon} className="icon-Logo_instagram"></span></a>
+                            <a href="linkedin.com/company/campaña-540"><span style={colorIcon} className="icon-Logo_linkedin"></span></a>
+                            <a href="facebook.com/net540"><span style={colorIcon} className="icon-Logo_facebook"></span></a>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
 
         </div>

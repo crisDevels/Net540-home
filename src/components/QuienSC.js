@@ -1,6 +1,6 @@
 import React from 'react';
 
-import barras from '../images/ILUSTRACION-MANOS.gif'
+import barras from '../images/nosotros.png'
 
 //se traen estilos del componente ¿Quines Somos?
 import './styles/QuienStyles.css'
@@ -11,7 +11,7 @@ class Quien extends React.Component {
             <div className="quienSomos">
                 <div className="CenterContent">
                     <div className="imagenQuien">
-                        <img src={barras} width='400px'/>
+                        <img alt="ilutración de quienes somos" src={barras} width='400px'/>
                     </div>
         
             
