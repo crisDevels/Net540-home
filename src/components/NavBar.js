@@ -159,7 +159,7 @@ class NavBar extends React.Component {
                 <div className={this.state.modalInicio}>
                         <div className="titleRegistro-inicio-sesion">
                             <div className="title-modal-inicio">
-                                <h2>INICIAR SESIÓN</h2>
+                                <h2>Iniciar Sesión</h2>
                             </div>
                             <div className="button-flex-end">
                                 <span onClick={this.cerrarModalInicio} className="icon-Logo_equis"></span>

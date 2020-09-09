@@ -18,7 +18,6 @@ import Benefits from './FormulariosComponents/benefitsVacant.js';
 import MyVacant from './FormulariosComponents/myVacant.js';
 
 
-
 function VacantForm() {
     const [user, setUser] = useState('');
     const [loading, setLoading] = useState(true);
@@ -28,7 +27,7 @@ function VacantForm() {
     const [benefits, setBenefits] = useState('none');
     const [myVacant, setMyVacant] = useState('none');
 
-    // función para que el usuario avance a la descripción de la vacante
+    // función para que el usuario avance en la publicación de la vacante
     const toDescriptionVacant = ()=> {
         setGeneral('none')
         setDescriptionVacant('blockDescription-vacant')
@@ -36,7 +35,7 @@ function VacantForm() {
         setBenefits('none')
         setMyVacant('none')
     }
-    // función para que el usuario retorceda a la descripción de la vacante
+
     const backGeneral = ()=> {
         setGeneral('blockGeneral')
         setDescriptionVacant('none')
@@ -91,6 +90,7 @@ function VacantForm() {
         setLoading(false)
     })
 
+    // retorna el formulario de vacantes
     return <React.Fragment>
         {loading ? <div><img src={loader}/></div> : 
             <div>

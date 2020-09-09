@@ -206,6 +206,14 @@ grisClaro: #C4C4C4 */
   padding: 0 0 0 3px;
 }
 
+.formBlock-profile {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 50%;
+  height: 270px;
+  padding: 0 0 0 3px;
+}
+
 .formblock-characters {
   margin-bottom: 30px;
 }
@@ -281,6 +289,7 @@ grisClaro: #C4C4C4 */
 
 .flex-form {
   display:flex;
+  flex-wrap: wrap;
 }
 
 .block-input {
@@ -312,12 +321,27 @@ grisClaro: #C4C4C4 */
   border-style: none;
   padding: 10px 10px;
   border-radius: 30px;
-  width: 300px;
+  width: 250px;
   font-style: normal;
   font-weight: 200;
   font-size: .8rem;
   color: rgb(31, 31, 31);
   margin: 15px 0 15px 0;
+  outline: none;
+  opacity: .6;
+}
+
+.formInput-short {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  width: 120px;
+  font-style: normal;
+  font-weight: 200;
+  font-size: .8rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 10px 15px 0;
   outline: none;
   opacity: .6;
 }
@@ -431,7 +455,7 @@ ul, ol {
 .input-no-styles-selection {
   border-style: none;
   outline: none;
-  width: 300px;
+  width: 250px;
 }
 
 .input-no-styles-selection-salario {
@@ -542,7 +566,6 @@ ul, ol {
   display: flex;
 }
 
-
 .block-list-studies {
   margin-bottom: 50px;
   display: flex;
@@ -556,6 +579,7 @@ ul, ol {
 .flexInput {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .flexInput p {
@@ -572,6 +596,7 @@ ul, ol {
   display: flex;
   align-items: flex-start;
   margin: 20px 0 20px 0;
+  flex-wrap: wrap;
 }
 
 .flexInput-number label {
@@ -646,6 +671,20 @@ ul, ol {
   outline: none;
 }
 
+.button-actually {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  background: white;
+  border-radius: 30px;
+  color: #757575;
+  border-style: none;
+  padding: 10px 30px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  margin: 10px 5px;
+  font-weight: 700;
+  outline: none;
+}
+
 .profile-image {
   border-radius: 50%;
   position: relative;
@@ -663,7 +702,7 @@ ul, ol {
 .block-image-profile {
     display: block;
     text-align: center;
-    width: 50%;
+    width: 30%;
 }
 
 .display-none {
@@ -679,7 +718,7 @@ ul, ol {
   border-radius: 50%;
   position: relative;
   top: -40px;
-  left: -40px;
+  left: -50px;
   z-index: 2;
 }
 
@@ -760,15 +799,210 @@ ul, ol {
   @media screen and (max-width: 768px) {
 
     .blockSkills {
-      width: 100vw;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockStudy {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockWork {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockLanguages {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockDescription {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockProfile {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockIntro {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockDescriptionCompany {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockAdmin {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockProfileCompany {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .formInput-flex {
+      margin: 10px 0 10px 0px;
+    }
+
+    .block-number {
+      margin: 0 0 0 0px;
+    }
+
+    .formBlock-profile {
+      width: 50%;
+    }
+
+    .block-image-profile {
+      width: 40%;
+    }
+
+    .formInput-large {
+      width: 90%;
+    }
+
+    .block-input {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .formBlock {
+      height: auto;
+    }
+
+    .formBlock-save {
+      height: 200px;
+    }
+
+    .formInput-date {
+      width: 80%;
+    }
+
+    .block-input-date {
+      display: block;
+      width: 100%;
+    }
+
+    .flex-date {
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  }
+
+  @media screen and (max-width: 425px) {
+
+    .formBlock-save {
+      height: auto;
+      width: 90%
+    }
+
+    .input-no-styles-selection {
+      width: 100%;
+    }
+
+    .container-flex {
+      width: 100%;
+    }
+
+    .blockForm-general h2 {
+      text-align: center;
+    }
+    
+    .blockAdvance {
+      display: flex;
+    }
+
+    .blockForm-general {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .block-image-profile {
+      width: 100%;
+    }
+
+    .formBlock-profile {
+      width: 100%;
+    }
+
+    .formInput-large {
+      width: 85%;
+    }
+
+    .container-comenzamos {
+      height: 70vh;
+    }
+
+    .formInput {
+      width: 90%;
+    }
+
+    .blockSkills {
+      margin-bottom: 0;
+    }
+
+    .blockStudy {
+      margin-bottom: 0;
+    }
+
+    .blockWork {
+      margin-bottom: 0;
+    }
+
+    .blockLanguages {
+      margin-bottom: 0;
+    }
+
+    .blockDescription {
+      margin-bottom: 0;
+    }
+
+    .blockProfile {
+      margin-bottom: 0;;
+    }
+
+    .buttons-flex {
+      justify-content: center;
     }
 
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width:375px) {
 
-    .container-comenzamos {
-      height: 70vh;
+    .blockForm-general h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .button-actually {
+      font-size: .7rem;
+    }
+
+    .button-regresar {
+      font-size: .7em;
+    }
+
+    .button-siguiente {
+      font-size: .7em;
     }
 
   }

@@ -34,6 +34,12 @@ h6 {
     color: #757575;
 }
 
+.loader-flex {    
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
 .wrapper-border {
     max-width: 1200px;
     flex: 1;
@@ -71,11 +77,14 @@ h6 {
 @media screen and (max-width: 767px) {
 
 
-
 }
 
 
 @media screen and (max-width: 425px) {
+
+    .wrapper-border {
+        padding-bottom: 30px;
+    }
        
     body {
         margin: 30px 15px;

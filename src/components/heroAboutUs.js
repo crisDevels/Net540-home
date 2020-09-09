@@ -129,7 +129,7 @@ render() {
                     <iframe className="youtube-player" type="text/html" src="http://www.youtube.com/embed/2WL3scr8cWI" frameBorder="0"></iframe>
                 </div>
             </div>
-            <div className={this.state.overlay} id="overlay"></div>
+            <div onClick={this.cerrarModal} className={this.state.overlay} id="overlay"></div>
                 <div className={this.state.modalProfesional}>
                     <div>
                         <img src={registroImage} className="imageRegistro" width="310px" alt="Ilustración de registro" />

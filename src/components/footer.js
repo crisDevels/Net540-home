@@ -11,8 +11,7 @@ var colorIcon = {
 
 class Footer extends React.Component {
     render() {
-        return <React.Fragment>
-        
+        return <React.Fragment>  
         <div className="container-block-footer">
             <div className="wrapper-home">
                 <div className="footer-container">
@@ -24,7 +23,7 @@ class Footer extends React.Component {
                         </span>
                         <ol className="listTerms">
                             <li>
-                                <a href="/">Terminos y condiciones</a>
+                                <a href="/">Términos y condiciones</a>
                             </li>
                         </ol>
                 
@@ -40,7 +39,6 @@ class Footer extends React.Component {
             </div>
 
         </div>
-       
         </React.Fragment> 
     }
 }

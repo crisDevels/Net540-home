@@ -99,10 +99,10 @@ grisClaro: #C4C4C4 */
   }
 
   .modalInicioActive {
-    width: 320px;
-    height: 400px;
+    width: 350px;
+    height: 430px;
     background: white;
-    padding: 1em;
+    padding: 1em 2em;
     border-radius: 25px;
     text-align: center;
     z-index: 2;
@@ -132,7 +132,7 @@ grisClaro: #C4C4C4 */
   color: #757575;
   border-style: none;
   padding: 10px 10px 10px 40px;
-  margin: 5px 0;
+  margin: 10px 0;
   font-weight: 800;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
   background-size: 20px 20px;
@@ -149,7 +149,7 @@ grisClaro: #C4C4C4 */
     color: white;
     border-style: none;
     padding: 10px 10px 10px 40px;
-    margin: 5px 0;
+    margin: 10px 0;
     font-weight: 800;
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
     background-size: 20px 20px;
@@ -166,7 +166,7 @@ grisClaro: #C4C4C4 */
       color: white;
       border-style: none;
       padding: 10px 10px 10px 40px;
-      margin: 5px 0;
+      margin: 10px 0;
       font-weight: 800;
       box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
       background-size: 20px 20px;
@@ -437,6 +437,7 @@ color   : #00BDEF;
 .login {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 5px 0;
 }
 
