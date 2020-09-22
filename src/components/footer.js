@@ -1,50 +1,43 @@
 import React from 'react';
-
-import logo from "../images/logoNet.png"
-import youtube from "../images/YOUTUBE.png"
-import instagram from "../images/INSTAGRAM.png"
-import linkedIn from "../images/LINKEDIN.png"
-import facebook from "../images/FACEBOOK.png"
+import { Link } from 'react-router-dom'
 
 import '../pages/styles/footerStyles.css'
 
+//se referencia a la fuente iconográfica
+import '../fonts/style.css'
+
+var colorIcon = {
+    color: "#1DAEFF",   
+}
 
 class Footer extends React.Component {
     render() {
-        return <React.Fragment>
-        
-        <div className="footerColor">
-            <span className="logofooter">
-                <img src={logo} width="80px"/>
-                <p>© 2020</p>
-            </span>
-            <ol className="listTerms">
-                <li>
-                    <a href="/">Condiciones de uso</a> 
-                </li>
-                <li>
-                    <p>•</p> 
-                </li>
-                <li>
-                    <a href="/">Política de privacidad</a>
-                </li>
-                <li>
-                    <p>•</p> 
-                </li>
-                <li>
-                    <a href="/">Política de copyright</a> 
-                </li>
-                
-            </ol>
-            
-            <div className="socialMedia">
-                <a href="youTube.com/channel/UCm9SvjlV-2Z4cEdlLgGf8TQ"><img src={youtube} width="30px"  alt="icono de youtube"/></a>
-                <a href="instagram.com/net_540"><img src={instagram} width="20px" alt="icono de instagram"/></a>
-                <a href="linkedin.com/company/campaña-540"><img src={linkedIn} width="20px"  alt="icono de facebook"/></a>
-                <a href="facebook.com/net540"><img src={facebook} width="20px"  alt="icono de linkedIn"/></a>
+        return <React.Fragment>  
+        <div className="container-block-footer">
+            <div className="wrapper-home">
+                <div className="footer-container">
+
+                    <div className="footer-flex">
+                        <span className="logofooter">
+                            <p className="logo-footer-case">Net540 © 2020</p>
+                        </span>
+                        <ol className="listTerms">
+                            <li>
+                                <Link to="/condiciones-de-uso">Términos y condiciones</Link>
+                            </li>
+                        </ol>
+                        <div className="socialMedia">
+                            <a href="htts://youTube.com/channel/UCm9SvjlV-2Z4cEdlLgGf8TQ"><span style={colorIcon} className="icon-Logo_youtube"></span></a>
+                            <a href="htts://instagram.com/net_540"><span style={colorIcon} className="icon-Logo_instagram"></span></a>
+                            <a href="htts://linkedin.com/company/campaña-540"><span style={colorIcon} className="icon-Logo_linkedin"></span></a>
+                            <a href="htts://facebook.com/net540"><span style={colorIcon} className="icon-Logo_facebook"></span></a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
         </div>
-       
         </React.Fragment> 
     }
 }

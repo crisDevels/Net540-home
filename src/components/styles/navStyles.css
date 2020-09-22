@@ -5,25 +5,39 @@ grisMedio: #757575
 grisClaro: #C4C4C4 */
 
 .logoN {
-    padding: 20px;
+    padding: 15px 20px;
     background: none;
     /* background: linear-gradient(to right, #378DCA, #00BDEF); */
     border-radius: 0 0 40px 0;
     /* box-shadow: 0 3px 8px 0 #00000077; */
     /* margin-right: 750px; */
+    list-style: none;
+    text-decoration: none;
+}
+
+.logoN-user {
+    padding: 15px 20px;
+    background: none;
+    border-radius: 0 0 40px 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.logoN a {
+    list-style: none;
+    text-decoration: none;
 }
 
 .container-block-nav {
     display: block;
-    text-align: center;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-    width: 100vw;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
 }
 
 .container-block-nav-inicio {
     display: block;
-    text-align: center;
-    width: 100vw;
+    width: 100%;
 }
 
 .navForm {
@@ -31,28 +45,126 @@ grisClaro: #C4C4C4 */
     align-items: center;
     justify-content: center;
     text-align: center;
-    
 }
 
 .nav-flex {
-    width: 80%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
+.nav-flex-login {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.buttonMenu{
+    font-family: 'Lato', sans-serif;
+    font-size: .8rem;
+    width: 250px;
+    background: white;
+    border-radius: 30px;
+    color: #757575;
+    border-style: none;
+    padding: 10px 10px 10px 40px;
+    margin: 10px 0;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+}
+
+.buttonMenu:hover,
+.buttonMenu:focus {
+  outline   : none;
+  color: #1DAEFF;
+}
+
+.buttonMenu img {
+    margin-right: 10px;
+}
+
 .cerrar-sesion {
     font-family: 'Lato', sans-serif;
-    font-size: 1rem;
+    font-size: .8rem;
     background: #1DAEFF;
     border-radius: 30px;
     color: white;
     border-style: none;
-    padding: 10px 30px;
-    margin: 0 25px;
-    font-weight: 700;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    padding: 10px 25px;
+    margin: 0;
+    font-weight: 500;
     outline   : none;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cerrar-sesion:hover,
+.cerrar-sesion:focus {
+  outline   : none;
+  color: #1DAEFF;
+  background: white;
+  
+}
+
+.container-buttons {
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-buttons-flex {
+    width: 170px;
+}
+
+
+.Actionsv2-content {
+    background-color: white;
+    left: auto;
+    right: auto;
+    width: 260px;
+    position: absolute;
+    color: #273b47;
+    margin: 0;
+    z-index: 5;
+    top: 70px;
+    padding: 10px 10px 25px 10px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    animation-name:  fadeIn;
+    animation-duration: .8s
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes trackIn {
+    0% {
+      bottom: -50vw;
+    }
+  
+    100% {
+        bottom: 0;
+    }
+  }
+
+a {
+    text-decoration: none;
+}
+
+.cerrar-sesion img {
+    margin-right: 10px;
 }
 
 .title-encuesta {
@@ -65,8 +177,6 @@ grisClaro: #C4C4C4 */
     color: #757575;
     margin: 0;
 }
-
-
 
 .container-inicio {
     display: inline-block;
@@ -85,24 +195,24 @@ grisClaro: #C4C4C4 */
 .button-omitir:focus {
   outline   : none;
   color: #1DAEFF;
-  
 }
 
+.nonButtonsHeader {
+    background: none;
+    border-style: none;
+    outline: none;
+    margin: 0 2px;
+}
+
+.nonButtonsHeader-search {
+    display: none;
+}
 
 .button-comenzar {
     color: #1DAEFF;
     border-style: none;
     background: none;
     margin: 0;
-
-}
-
-.cerrar-sesion:hover,
-.cerrar-sesion:focus {
-  outline   : none;
-  color: #757575;
-  background: white;
-  
 }
 
 .blockPerfil {
@@ -115,7 +225,6 @@ grisClaro: #C4C4C4 */
 .menuN {
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
@@ -146,7 +255,7 @@ grisClaro: #C4C4C4 */
     background: none;
     font-size: 1rem;
     font-weight: 800;
-    color: #757575;
+    color: #1DAEFF;
     border-bottom: white;
 }
 
@@ -187,14 +296,163 @@ grisClaro: #C4C4C4 */
     display: none;
 }
 
+.icon-Logo_540 {
+    font-size: 22px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.icon-Logo_net540 {
+    font-size: 25px;
+    list-style: none;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .Actionsv2-content {
+        top: 60px;
+    }
+
+    .container-block-nav {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    
+    .overlayActive-menu {
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        z-index: 3;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation-name:  fadeIn;
+        animation-duration: .2s;
+    }
+    
+    .Actionsv2-content {
+        background-color: white;
+        left: auto;
+        top: auto;
+        right: auto;
+        width: 100vw;
+        height: 50vh;
+        bottom: 0;
+        position: fixed;
+        color: #273b47;
+        z-index: 4;
+        padding: 10px 0;
+        border-radius: 15px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+        animation-name:  trackIn;
+        animation-duration: .8s
+    }
+
+    .nonButtonsHeader-search {
+        display: inline;
+        background: none;
+        border-style: none;
+        outline: none;
+        margin: 0 2px;
+    }
+
+    .container-buttons-flex {
+        width: 200px;
+    }
+
+    .icon-Logo_540 {
+        font-size: 25px;
+    }
+
+    .icon-Logo_net540 {
+        font-size: 25px;
+    }
+
+    .buttonConocenosN {
+        font-size: .8rem;
+    }
+
+    .buttonInicioN {
+        font-size: .8rem;
+    }
+
+    .buttonInicioCerrarN {
+        font-size: .8rem;
+    }
+}
 
 @media screen and (max-width: 425px) {
     
-    .logoN {
-        padding: 25px 30px 25px 25px;
+    .container-block-nav {
+        display: block;
+        box-shadow: none;
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    .nav-flex-login {
+        width: 100vw;
     }
 
-    .logoN img {
+    .logoN-user {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        left: auto;
+        right: auto;
+        width: 100vw;
+        padding: 10px 0;
+        background: white;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 0;
+    } 
+
+    .container-buttons-flex {
+        position: fixed;
+        bottom: 0;
+        z-index: 5;
+        left: auto;
+        right: auto;
+        width: 100vw;
+        padding: 10px 0;
+        background: white;
+        box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 0;
+    }
+
+    .container-buttons-flex button img {
+        width: 25px;
+    }
+
+    .container-buttons-flex button {
+        margin: 0 20px;
+    }
+
+    .container-buttons {
+        width: 100vw;
+    }
+
+    .title-encuesta {
+        font-size: 2rem;
+        color: #1DAEFF;
+    }
+
+    .container-block-nav {
+        border-radius: 30px 30px 0 0;
+    }
+
+    .logoN-user {
+        padding: 15px 30px 15px 25px;
+    }
+
+    .logoN-user img {
         width: 70px;
     }
 
@@ -209,15 +467,28 @@ grisClaro: #C4C4C4 */
 
     .buttonInicioCerrarN {
         font-size: .8rem;
+    }
+
+    .blockPerfil {
+        padding: 30px;
+    }
+
+    .cerrar-sesion {
+        font-size: 0.9rem;
     }
 
 }
 
+@media screen and (max-width: 375px) {
+    .container-buttons-flex button {
+        margin: 0 15px;
+    }
+}
+
 @media screen and (max-width: 320px) {
 
-    
-    .logoN img {
-        width: 70px;
+    .container-buttons-flex button {
+        margin: 0 10px;
     }
 
     .buttonConocenosN {
@@ -226,13 +497,30 @@ grisClaro: #C4C4C4 */
     }
 
     .buttonInicioN {
-        font-size: .8rem;
+        font-size: .7rem;
         margin: 0 10px;
     }
 
     .buttonInicioCerrarN {
-        font-size: .8rem;
+        font-size: .7rem;
         margin: 0 10px;
+    }
+
+    .container-inicio {
+        width: 80%;
+    }
+    
+
+    .icon-Logo_540 {
+        font-size: 20px;
+    }
+    
+    .icon-Logo_net540 {
+        font-size: 20px;
+    }
+
+    .cerrar-sesion {
+        font-size: 0.7rem;
     }
 
 }

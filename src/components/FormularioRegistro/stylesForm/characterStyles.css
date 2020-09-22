@@ -1,0 +1,95 @@
+.label-description-requerid {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    font-weight: 500;
+    border-style: none;
+    padding: 10px;
+    border-radius: 20px;
+    width: 350px;
+    font-weight: 200;
+    font-size: 1rem;
+    color: black;
+    margin: 5px 0;
+    outline: none;
+    opacity: .8;
+    overflow-y: auto;
+}
+
+.input-text-character {
+    margin-top: 0;
+}
+
+.input-no-styles-character-title {
+    border-style: none;
+    outline: none;
+    padding: 5px 5px;
+    border-radius: 30px;
+    margin: 0;
+    width: 360px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #1DAEFF;
+    text-align: center;
+}
+
+.input-no-styles-characters {
+    border-style: none;
+    outline: none;
+    padding: 5px 5px;
+    border-radius: 10px;
+    margin: 0;
+    width: 340px;
+    font-family: 'Lato', sans-serif;
+    color: #757575;
+    overflow-y: auto;
+}
+
+.button-viñeta {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: #1DAEFF;
+    border-radius: 50%;
+    color: white;
+    border-style: none;
+    padding: 10px 12px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.add-add {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: #c4c4c470;
+    border-radius: 50%;
+    color: white;
+    border-style: none;
+    padding: 10px 12px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.flex-add-character {
+    display: flex;
+    align-items: center;
+}
+
+.col2-add {
+    margin-left: 30px;
+}
+  
+.button-borrar {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: white;
+    border-radius: 30px;
+    color: #757575;
+    border-style: none;
+    padding: 10px 30px;
+    margin: 10px 5px;
+    font-weight: 700;
+    outline: none;
+}
+
+.centerButton {
+    display: flex;
+    justify-content: center;
+}

@@ -5,7 +5,11 @@ import Home from '../pages/home.js';
 import AboutUs from '../pages/AboutUs.js';
 import Forget from '../pages/Forget';
 import Validation from '../pages/Validation';
-import SkillsForm from '../components/FormularioRegistro/skillsForm'
+import ProfesionForm from '../components/FormularioRegistro/ProfesionForm'
+import NewVacant from '../pages/newVacant';
+import FeedVacant from '../pages/feedVacant';
+import FeedVacantDetails from '../pages/feedVacantDetails';
+import TermsConditions from '../pages/termsAndConditions';
 
 
 function App() {
@@ -16,10 +20,14 @@ function App() {
             <Route exact path="/aboutUs" component={AboutUs}/>
             <Route exact path="/recuperar-contraseña" component={Forget}/>
             <Route exact path="/validacion-contraseña" component={Validation}/>
-            <Route exact path="/skills" component={SkillsForm}/>
+            <Route exact path="/registro-skills" component={ProfesionForm}/>
+            <Route exact path="/publicar-trabajo" component={NewVacant}/>
+            <Route exact path="/home" component={FeedVacant}/>
+            <Route exact path="/home/:workID" component={FeedVacantDetails}/>
+            <Route exact path="/condiciones-de-uso" component={TermsConditions}/>
         </Switch>
         </BrowserRouter>
-    )
+    ) 
 }
 
 export default App;

@@ -8,6 +8,10 @@ import NavBar from '../components/NavBar'
 import HeroHome from '../components/heroHome'
 import Comenzar from '../components/FormularioRegistro/comenzemos'
 
+import PageLoading from './pageLoading'
+
+import loader from '../images/loader.gif'
+
 import '../components/styles/popRegistro.css'
 
 
@@ -16,127 +20,58 @@ class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            overlay: "overlay",
-            modalProfesional: "modal",
-            modalEmpresa: "modal",
-            modalInicio: "modal",
-            blur: "desactiveBlur",
+            isLoading: true,
             user: null,
-            email:"",
-            password:"",
-            name:"",
-            apellido:"",
-            registryEmail:"",
-            registryPassword:"",
         }
-        this.createUser = this.createUser.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount () {
         firebase.auth().onAuthStateChanged(user => {
-            this.setState({ user })
-        })     
-    }
-
-
-    abrirModalProfesional= ()=> {
-        this.setState({
-            overlay: "overlayActive",
-            modalProfesional: "modalProfesionalActive",
-            blur: "activeBlur"
-        }) 
-    }
-
-    abrirModalEmpresa = ()=> {
-        this.setState({
-            overlay: "overlayActive",
-            modalEmpresa: "modalEmpresaActive",
-            blur: "activeBlur"
+            this.setState({ 
+                user,
+                isLoading: false,
+             })
         })
-    }
 
-    cerrarModal= ()=> {
-        this.setState({
-            overlay: "overlay",
-            modalProfesional: "modal",
-            modalEmpresa: "modal",
-            blur: "desactiveBlur"
-        }) 
     }
 
     login = ()=> {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then(result => console.log('${result.user.email} ha iniciado sesión'))
-        .catch(error => console.log('Error ${error.code}: ${error.message}'))   
-    }
-
-    createUser = (e)=> {
-        e.preventDefault();
-        firebase.auth().createUserWithEmailAndPassword(this.state.registryEmail, this.state.registryPassword)
-        .then(() => {
-  
-        alert('Your account has been created');
-            const nameUser = this.state.name;
-            console.log(nameUser);
-        
-            
-        var user = firebase.auth().currentUser;
-        //Actualizando nombre de usuario 
-        user.updateProfile({
-              displayName: this.state.name
-            })
-    
-          })
-
-        .catch((error)=> {
-        // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        if (errorCode === 'auth/weak-password') {
-        alert('The password is too weak.');
-        } else {
-        alert(errorMessage);
-        }
-        console.log(error);
-        });    
-    }
-
-    handleChange = (e)=> {
-        const { value, name } = e.target;
-        this.setState({
-        [name]: value 
-        })
+        .then(result => console.log(`${result.user.email} ha iniciado sesión`))
+        .catch(error => console.log(`Error ${error.code}: ${error.message}`))   
     }
 
     render() { 
         return <React.Fragment>
-        
-            <section className={this.state.blur}>
             
-            <div className="opacity">
-                <div className="home-page">
-                    <div>
-                        <NavBar />
+
+        <section className={this.state.blur}>
+
+            {this.state.isLoading ? <PageLoading /> :
+                    <div className="home-page">
+                        <div className="wrapper-border">
+                            <div>
+                                <NavBar />
+                            </div>
+                            <div className="wrapper-home">
+                                <div>
+                                    { !this.state.user &&
+                                        <HeroHome />
+                                    }
+                                    { this.state.isLoading ? <div><img alt="loader de carga" src={loader}/></div> : 
+                                    this.state.user &&
+                                        < Comenzar user={this.state.user}/>
+                                    }
+                                </div>
+                            </div>
+                            <div>
+                                { !this.state.user &&
+                                    <Footer />
+                                } 
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div>
-                    { !this.state.user &&
-                        <HeroHome />
-                    }
-                    { this.state.user &&
-                        < Comenzar user={this.state.user} />
-                    }
-                    </div>
-        
-                    <div className="container">
-                    { !this.state.user &&
-                        <Footer />
-                    } 
-                        
-                    </div>
-                </div>
-            </div>
+            }
         
         </section>
     

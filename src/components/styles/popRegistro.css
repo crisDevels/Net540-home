@@ -1,23 +1,20 @@
-
+    /* azuloscuro: #378DCA
+azulclaro: #1DAEFF
+grisOscuro: #454545
+grisMedio: #757575
+grisClaro: #C4C4C4 */
+  
+  
   .overlay {
-    background: rgba(255, 255, 255, 0.5);
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*transition: 300s ease-in;*/
-    /*opacity: 0;*/
-    /*visibility: hidden;*/
     display: none;
+    animation-name:  fadeOut;
+    animation-duration: .2s;
   }
 
   .overlayActive {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
+    z-index: 1;
     left: 0;
     right: 0;
     top: 0;
@@ -25,9 +22,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /*transition: 300s ease-in;*/
-    /*opacity: 0;*/
-    /*visibility: hidden;*/
+    animation-name:  fadeIn;
+    animation-duration: .2s;
   }
 
   .modal {
@@ -73,7 +69,7 @@
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
     animation-name:  modalIn;
     animation-duration: .8s;
   }
@@ -97,30 +93,122 @@
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
     animation-name:  modalIn;
     animation-duration: .8s;
   }
 
   .modalInicioActive {
-    width: 300px;
-    height: 230px;
+    width: 350px;
+    height: 430px;
     background: white;
-    padding: 1em;
+    padding: 1em 2em;
     border-radius: 25px;
     text-align: center;
     z-index: 2;
     position: absolute;
-    right: 120px;
-    top: 70px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     margin: auto;
     flex-wrap: wrap;
-    text-align: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
     animation-name:  fadeIn;
     animation-duration: .8s;
+  }
+
+  /* estilos de registro sin modal */
+
+  .flex-registre {
+    display: flex;
+    align-items: center;
+  }
+
+  .wrapper-registre {
+    max-width: 800px;
+    flex: 1;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+  }
+
+  .col-img {
+    width: 50%
+  }
+
+  .center-nonRegistre {
+    display: block;
+    text-align: center;
+  }
+
+  .col-form {
+    width: 50%
+  }
+
+  .center-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .titleRegistro-page {
+    display: flex;
+    align-items: center;
+    padding: 0 ;
+}
+
+  .flex-Registre-name {
+    display: flex;
+    align-items: center;
+  }
+
+  .formRegitre-page {
+    display: block;
+    width: 420px;
+  }
+
+  .spaceForm-registre-name {
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #afafaf;
+    margin: 7px 2px;
+    padding: 10px 20px;
+    width: 34%;
+    outline: none;
+ }
+
+  .spaceForm-registre {
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #afafaf;
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 80%;
+    outline: none;
+ }
+
+ .buttonRegistrar-page {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  background: #1DAEFF;
+  border-radius: 30px;
+  color: white;
+  border-style: none;
+  padding: 10px 40px;
+  margin: 15px 0;
+  font-weight: 800;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  outline: none;
+ }
+
+  /* estilos para los botones de AUTH con redesSociales */
+
+  .div-buttons-auth {
+    margin-top: 15px
   }
 
   .google-auth {
@@ -131,13 +219,47 @@
   color: #757575;
   border-style: none;
   padding: 10px 10px 10px 40px;
-  margin: 5px 0;
+  margin: 10px 0;
   font-weight: 800;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
   background-size: 20px 20px;
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: 40px;
+  }
+
+  .facebook-auth {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: #3b5998;
+    border-radius: 30px;
+    color: white;
+    border-style: none;
+    padding: 10px 10px 10px 40px;
+    margin: 10px 0;
+    font-weight: 800;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 40px;
+  }
+
+  .linkedin-auth {
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      background: #0e76a8;
+      border-radius: 30px;
+      color: white;
+      border-style: none;
+      padding: 10px 10px 10px 40px;
+      margin: 10px 0;
+      font-weight: 800;
+      box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: 40px;
   }
 
   .google-auth:hover,
@@ -190,6 +312,16 @@
     }
   }
 
+  @keyframes fadeOut {
+    100% {
+      opacity: 0;
+    }
+  
+    0% {
+      opacity: 1;
+    }
+  }
+
     /*@keyframes animationIn {*/
       @keyframes PopIn {
         0% {
@@ -213,30 +345,63 @@
     animation: 1000ms fadeIn;
   }
 
-  .buttonCerrar {
+  .icon-Logo_equis {
       padding: 10px;
       background: #1DAEFF;
       border-radius: 20px;
+      color: white;
+      font-size: 10px;
   }
 
-  .buttonCerrar:hover,
-  .buttonCerrar:focus {
-    background: #00BDEF;
+  .icon-Logo_equis:hover,
+  .icon-Logo_equis:focus {
+    background: #378DCA;
+    color: rgb(247, 247, 247);
   }
+
 
   .titleRegistro {
-      display: flex;
-      align-items: center;
-      padding: 0 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
   }
 
- .spaceTitleRegistro {
-     width: 60%;
- }
+  .titleRegistro-inicio-sesion {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+
+  .button-flex-end {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .title-modal-inicio {
+    width: 90%;
+    text-align: left;
+  }
+
+  .title-modal {
+    width: 90%;
+    text-align: left;
+  }
+
+  .title-modal h2 {
+    width: 90%;
+    text-align: left;
+    margin: 15px 0;
+  }
+
+
+  .title-modal-inicio h2 {
+    margin: 0;
+  }
 
  .formRegitre {
-     display: block;
-     width: 420px;
+    display: block;
+    width: 420px;
  }
 
  .check {
@@ -252,15 +417,30 @@
   font-weight: 900;
  }
 
+ .flex-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
  .spaceForm {
-     border-radius: 30px;
-     border-style: solid;
-     border-color: #afafaf;
-     margin: 10px 0;
-     padding: 10px 20px;
-     width: 320px;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #afafaf;
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 320px;
  }
+
+ .spaceForm-name {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #afafaf;
+  margin: 7px 2px;
+  padding: 10px 20px;
+  width: 135px;
+  outline: none;
+}
 
  .spaceFormSelect {
   border-radius: 30px;
@@ -291,13 +471,13 @@
   border-color: #afafaf;
   margin: 10px 0;
   padding: 10px 20px;
-  width: 250px;
+  width: 270px;
 }
 
-.spaceFormInicio:focus {
-outline: none;
-background: #f0f6f8;
-}
+  .spaceFormInicio:focus {
+  outline: none;
+  background: #f0f6f8;
+  }
 
 
  .buttonRegistrar {
@@ -310,12 +490,7 @@ background: #f0f6f8;
   padding: 10px 40px;
   margin: 15px 25px;
   font-weight: 800;
-
  }
-
- .buttonRegistrar:after {
-  content: " >>>";
-}
 
 .buttonRegistrar:hover,
 .buttonRegistrar:focus {
@@ -334,7 +509,6 @@ background: #f0f6f8;
   padding: 10px 35px;
   font-weight: 800;
   margin-right: 10px;
-  
  }
 
  .buttonIniciar:after {
@@ -366,6 +540,7 @@ color   : #00BDEF;
 .login {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 5px 0;
 }
 
@@ -375,11 +550,6 @@ grisoscuro: #757575 */
 
 @media screen and (max-width: 1024px) {
 
-  .modalInicioActive {
-    position: absolute;
-    right: 100px;
-    top: 70px;
-  }
 
 }
 
@@ -394,105 +564,140 @@ grisoscuro: #757575 */
     width: 60vw;
     padding: 2em 2em;
   }
+
   .modalEmpresaActive {
     width: 60vw;
     padding: 2em 2em;
   }
+
   .modalInicioActive {
     width: 40vw;
     padding: 1em 1em;
-    right: 50px;
   }
-
 
   .titleRegistro {
     padding: 0 5px;
-}
+  }
 
-
-.check {
-  font-size: .6rem;
+  .check {
+    font-size: .6rem;
  }
 
-.formRegitre {
+  .formRegitre {
    width: 50vw;
-}
+  }
 
   .imageRegistro {
     display: none;
+  }
+
+  .imageNonRegistro {
+    width: 100%;
+  }
+
+  .col-img {
+    display: none;
+  }
+
+  .col-form {
+    width: 100%;
+    text-align: center;
+  }
+
+  .flex-registre {
+    justify-content: center;
+  }
+
+  .flex-Registre-name {
+    justify-content: center;
 }
 
-.spaceForm {
-  margin: 5px 0;
-  width: 55vw;
-}
+  .spaceForm {
+    margin: 5px 0;
+    width: 55vw;
+  }
 
-.spaceFormSelect {
+  .spaceFormSelect {
+    margin: 5px 0;
+    width: 48vw;
+  }
 
-margin: 5px 0;
-width: 48vw;
-}
+  .spaceFormInicio {
+    margin: 10px 0;
+    width: 32vw;
+  }
 
-.spaceFormInicio {
-  margin: 10px 0;
-  width: 32vw;
-}
+  .wrapper-registre {
+    max-width: 50%;
+  }
 
 }
 
 @media screen and (max-width: 425px) {
 
+  .formRegitre-page {
+    display: block;
+    width: 100%;
+  }
+
+  .formRegitre {
+    display: block;
+    width: 100%;
+  }
+
+  .spaceForm-name {
+    width: 100%;
+  }
+
+  .wrapper-registre {
+    max-width: 90%;
+  }
+
   .modalInicioActive {
     width: 80vw;
-    top: 70px;
     padding: 1em 2em;
-    right: 20px;
   }
 
   .modalProfesionalActive {
     top: 20%;
-    width: 80vw;
-  }
-  .modalEmpresaActive {
-    top: 20%;
-    width: 80vw;
+    width: 75%;
+    padding: 1.5em 1.5em;
   }
 
   .imageRegistro {
   display: none;
   }
 
-  .formRegitre {
-    width: 70vw;
-    margin: 0;
- }
 
   .spaceForm {
-    width: 75vw;
+    width: 70vw;
   }
 
   .spaceFormSelect {
-
   margin: 5px 0;
-  width: 71vw;
+  width: 68vw;
   }
 
   .spaceFormInicio {
     margin: 10px 0;
-    width: 70vw;
+    width: 68vw;
   }
+
+  .spaceForm-registre-name {
+    width: 34%;
+ }
+
+  .spaceForm-registre {
+    width: 80%;
+ }
 
 }
 
 
-
 @media screen and (max-width: 375px) {
-  .modalInicioActive {
-    right: 10px;
-    width: 80vw;
-    
-    padding: .8em 1.5em;
 
+  .modalInicioActive {
+    padding: .8em 1.5em;
   }
 
   .spaceFormInicio {
@@ -506,4 +711,17 @@ width: 48vw;
   .buttonOlvido {
     font-size: 0.7rem;
   }
+
+  .facebook-auth {
+    font-size: .8rem;
+  }
+
+  .google-auth {
+    font-size: .8rem;
+  }
+
+  .linkedin-auth {
+    font-size: .8rem;
+  }
+
 }

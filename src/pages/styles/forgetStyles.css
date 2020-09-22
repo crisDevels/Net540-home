@@ -20,6 +20,10 @@
     text-align: center;
 }
 
+.ilustración-validación {
+    width: 450px;
+}
+
 .correoBox h2 {
     margin-block-start: 0;
     margin-block-end: 0.43em;
@@ -32,8 +36,8 @@
 
 .container-content {
     display: inline-block;
-    width: 800px;
-    margin-top: 50px;
+    width: 600px;
+    margin-top: 20px;
 }
 
 .container-dos {
@@ -47,7 +51,7 @@
 .buttonSubmit {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
-    background: #378DCA;
+    background: #1DAEFF;
     border-radius: 30px;
     color: white;
     border-style: none;
@@ -60,7 +64,7 @@
    .buttonRegresar {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
-    background: #378DCA;
+    background:  #1DAEFF;
     border-radius: 30px;
     color: white;
     border-style: none;

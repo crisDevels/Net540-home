@@ -5,9 +5,13 @@ grisMedio: #757575
 grisClaro: #C4C4C4 */
 
 .block {
-    display: block;
-    animation-name:  fadeIn;
-    animation-duration: 2s;
+  display: block;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+.container-comenzamos {
+  padding-bottom: 50px;
 }
 
 .none {
@@ -28,7 +32,32 @@ grisClaro: #C4C4C4 */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20%;
+  width: 15%;
+}
+
+.wrapper-form {
+  max-width: 800px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.flex-component {
+  display: flex;
+  align-items: center;
+}
+
+.block-container {
+  display: block;
+  width: 100%;
+}
+
+.block-center{
+  margin-top: 30px;
+  overflow-x: hidden;
 }
 
 .circleAdvance {
@@ -41,59 +70,298 @@ grisClaro: #C4C4C4 */
   justify-content: center;
 }
 
+/* se hacen dan estilos a cada componente en el formulario de independientes */
+
 .blockSkills {
   display: flex;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  width: 1100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   animation-name:  fadeIn;
   animation-duration: 2s;
 }
 
 .blockStudy {
   display: flex;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  width: 1100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   animation-name:  fadeIn;
   animation-duration: 2s;
 }
 
 .blockWork {
   display: flex;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  width: 1100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   animation-name:  fadeIn;
   animation-duration: 2s;
 }
 
 .blockLanguages {
   display: flex;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  width: 1100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   animation-name:  fadeIn;
   animation-duration: 2s;
 }
 
 .blockProfile {
   display: flex;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  width: 1100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   animation-name:  fadeIn;
   animation-duration: 2s;
 }
 
 .blockDescription {
   display: flex;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  width: 1100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   animation-name:  fadeIn;
   animation-duration: 2s;
 }
+
+/* se hacen dan estilos a cada componente en el formulario de compañias o empresas */
+
+.blockIntro {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+.blockDescriptionCompany {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+.blockAdmin {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+.blockProfileCompany {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+/* estilos para formulario de públicar vacante */
+
+.blockGeneral {
+  display: flex;
+  justify-content: center;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+.blockDescription-vacant {
+  display: flex;
+  justify-content: center;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+.moreBlock {
+  display: flex;
+  justify-content: center;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+.myVacantBlock {
+  display: flex;
+  justify-content: center;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+.benefitsBlock {
+  display: flex;
+  justify-content: center;
+  animation-name:  fadeIn;
+  animation-duration: 2s;
+}
+
+/* estilos al formulario de vacante MVP */
+
+.formBlock-service {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 0 0 3px;
+}
+
+.block-form-service {
+  margin-bottom: 30px;
+}
+
+.linea-form-service {
+  margin: 30px 0;
+}
+
+.block-form-service h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 30px 0 10px 0;
+}
+
+.block-input-flex-title {
+  display: flex;
+  align-items: center;
+}
+
+.block-input-flex-title label {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 10%;
+}
+
+.block-habilidades-laborales {
+  text-align: center;
+  justify-content: center;
+}
+
+.formInput-title {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  width: 80%;
+  font-style: normal;
+  font-size: 1rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 0 15px 0;
+  outline: none;
+  opacity: .6;
+}
+
+.formInput-service {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 5px 10px;
+  border-radius: 30px;
+  width: 80%;
+  font-style: normal;
+  font-weight: 200;
+  font-size: .8rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 0 15px 0;
+  outline: none;
+  opacity: .6;
+}
+
+.input-no-styles-title {
+  border-style: none;
+  outline: none;
+  padding: 5px 5px;
+  border-radius: 30px;
+  margin: 0 0 0 10px;
+  width: 90%;
+}
+
+.flex-checkbox-urgent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-checkbox-urgent p {
+  margin: 0 10px 0 0;
+  color: #757575;
+}
+
+.col-1 {
+  width: 50%;
+}
+
+.block-input-service {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.centerButton-block {
+  text-align: center;
+}
+
+.formInput-large-service {
+  width: 90%;
+  min-height: 150px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: .9rem;
+  color: #757575;
+  margin: 5px 0;
+  outline: none;
+  opacity: .8;
+  font-family: 'Lato', sans-serif;
+}
+
+.flex-skills-service {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.containerSkills-publication {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+  margin: 5px 5px;
+  color: #757575;
+  border-radius: 30px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+/* se agregan estilos al formulario de skills profesionales */
+
+.formBlock-profesional {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 0 0 3px;
+  height: 280px;
+}
+
+.title-form-profesional {
+  margin-top: 40px;
+}
+
+.containerSkills {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  padding: 10px 10px 10px 20px;
+  margin: 5px 5px;
+  border-radius: 30px;
+  font-size: 13px;
+  color: #757575;
+  display: flex;
+  align-items: center;
+}
+
+.container-list-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.list-skills {
+  width: 100%;
+}
+
+/* Se dan estilos a los input form */
 
 .blockForm-general {
   width: 80%;
@@ -103,16 +371,28 @@ grisClaro: #C4C4C4 */
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
-  height: 210px;
+  height: 270px;
   margin-bottom: 30px;
   padding: 0 0 0 3px;
+}
+
+.formBlock-profile {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 50%;
+  height: 270px;
+  padding: 0 0 0 3px;
+}
+
+.formblock-characters {
+  margin-bottom: 30px;
 }
 
 .formBlock-save {
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
-  height: 195px;
+  height: 180px;
   margin-bottom: 30px;
   padding: 0 0 0 3px;
 }
@@ -139,7 +419,7 @@ grisClaro: #C4C4C4 */
 }
 
 .title-studies {
-  margin: 20px 0 5px 0;
+  margin: 20px 0 20px 0;
 }
 
 .block-input-date label {
@@ -154,7 +434,6 @@ grisClaro: #C4C4C4 */
   padding: 10px 20px;
   border-radius: 20px;
   width: 300px;
-  font-style: italic;
   font-weight: 200;
   font-size: 1rem;
   color: #c4c4c4;
@@ -172,44 +451,234 @@ grisClaro: #C4C4C4 */
   font-family: 'Lato', sans-serif;
   font-size: .6rem;
   align-items: center;
- }
+}
 
 .gray {
   display: block;
 }
 
 .flex-form {
-  display:flex
+  display:flex;
+  flex-wrap: wrap;
 }
 
 .block-input {
+  margin: 20px 0;
   display: block;
   width: 50%;
+}
+
+.block-input-flex {
+  display: flex;
+  align-items: center;
+}
+
+.block-input-flex label {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.block-text {
+  width: 90%;
+  display: flex;
+}
+
+.textEditable {
+  outline: none;
 }
 
 .formInput {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
   border-style: none;
   padding: 10px 10px;
+  border-radius: 30px;
+  width: 250px;
+  font-style: normal;
+  color: rgb(31, 31, 31);
+  margin: 15px 0 15px 0;
+  outline: none;
+  opacity: .6;
+}
+
+.formInput-short {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  width: 120px;
+  font-style: normal;
+  font-weight: 200;
+  font-size: .8rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 10px 15px 0;
+  outline: none;
+  opacity: .6;
+}
+
+.formInput-flex {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  width: 300px;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  color: rgb(31, 31, 31);
+  margin: 10px 0 10px 30px;
+  outline: none;
+  opacity: .6;
+  background-color: white;
+}
+
+.formInput-number {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  width: 300px;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  color: rgb(31, 31, 31);
+  margin: 0;
+  outline: none;
+  opacity: .6;
+  display: flex;
+  align-items: center;
+}
+
+.formInput-salario {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  width: 160px;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 10px 15px 0;
+  outline: none;
+  opacity: .6;
+  display: flex;
+  align-items: center;
+}
+
+.formInput-tiempo {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  width: 80px;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 0;
+  outline: none;
+  opacity: .6;
+  display: flex;
+  align-items: center;
+}
+
+.block-number {
+  margin: 0 0 0 60px;
+}
+
+.block-number p {
+  margin: 0;
+  font-size: 12px;
+  color: #c4c4c4;
+  margin-block-start: -1em;
+  margin-block-end: 0;
+}
+
+.input-no-styles {
+  border-style: none;
+  outline: none;
+  padding: 5px 5px;
+  border-radius: 30px;
+  margin: 0 0 0 10px;
+  width: 250px;
+}
+
+
+.input-no-styles-characters-items {
+  border-style: none;
+  outline: none;
+  padding: 5px 5px;
+  border-radius: 10px;
+  margin: 0;
+  width: 340px;
+  height: 50px;
+  font-family: 'Lato', sans-serif;
+  color: #757575;
+  overflow-y: auto;
+}
+
+ul, ol {
+  align-items: flex-start; 
+}
+
+.input-no-styles-selection {
+  border-style: none;
+  outline: none;
+  width: 250px;
+}
+
+.input-no-styles-selection-salario {
+  border-style: none;
+  outline: none;
+  width: 160px;
+}
+
+.input-no-styles-selection-time {
+  border-style: none;
+  outline: none;
+  width: 80px;
+}
+
+.input-no-styles-code {
+  border-style: none;
+  outline: none;
+  padding: 5px 5px;
+  border-radius: 30px;
+  width: 35px;
+}
+
+ .formInput option {
+   font-style: normal;
+ }
+
+.formInput-Desactive {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 10px;
   border-radius: 20px;
   width: 300px;
-  font-style: italic;
   font-weight: 200;
   font-size: 1rem;
   color: black;
   margin: 15px 0 20px 0;
   outline: none;
-  opacity: .6;
+  opacity: .3;
+}
+
+.formInput-flex:hover,
+.formInput-flex:focus {
+  box-shadow: 0px 3px 6px #378dcaa6;
+  background: none;
+  color: none;
 }
 
 .formInput-large {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
   border-style: none;
-  padding: 5px 20px;
+  padding: 10px;
   border-radius: 20px;
-  width: 500px;
+  width: 700px;
   height: 150px;
-  font-style: italic;
   font-weight: 200;
   font-size: 1rem;
   color: black;
@@ -218,12 +687,52 @@ grisClaro: #C4C4C4 */
   opacity: .8;
 }
 
+.formInput-character {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  font-weight: 500;
+  border-style: none;
+  padding: 5px 10px ;
+  border-radius: 20px;
+  width: 300px;
+  font-weight: 200;
+  font-size: 1rem;
+  color: black;
+  margin: 5px 0;
+  outline: none;
+  opacity: .8;
+}
+
+.formInput-sinBox {
+  font-weight: 500;
+  border-style: none;
+  width: 300px;
+  margin: 20px 0;
+  font-weight: 200;
+  font-size: 1rem;
+  color: black;
+  outline: none;
+}
+
 .label-functions {
   margin-top: 30px;
 }
 
+.label-functions-more {
+  margin: 0 0 20px 0;
+  color:#757575;
+
+}
+
 .label-description {
   margin: 0;
+}
+
+.title-description {
+  margin-bottom: 10px;
+}
+
+.block-question {
+  display: flex;
 }
 
 .block-list-studies {
@@ -236,15 +745,46 @@ grisClaro: #C4C4C4 */
   overflow-y: auto;
 }
 
+.flexInput {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flexInput p {
+  margin: 0 20px;
+  color: #757575;
+  font-size: 14px;
+}
+
+.flexInput label {
+  width: 20%;
+}
+
+.flexInput-number {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0 20px 0;
+  flex-wrap: wrap;
+}
+
+.flex-skills {
+  display: flex;
+  align-items: center; 
+}
+
+.flexInput-number label {
+  width: 20%;
+}
 
 .formInput:placeholder {
   color: #c4c4c4;
+  font-style: italic;
 }
 
 .formInput:hover,
 .formInput:focus {
   box-shadow: 0px 3px 6px #378dcaa6;
-  
 }
 
 .buttons-flex {
@@ -278,29 +818,94 @@ grisClaro: #C4C4C4 */
 }
 
 .button-siguiente {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    background: #1DAEFF;
-    border-radius: 30px;
-    color: white;
-    border-style: none;
-    padding: 10px 30px;
-    margin: 0 5px;
-    font-weight: 700;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-    outline   : none;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  background: #1DAEFF;
+  border-radius: 30px;
+  color: white;
+  border-style: none;
+  padding: 10px 30px;
+  margin: 0 5px;
+  font-weight: 700;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  outline: none;
 }
 
+label {
+  color: #757575
+}
+
+.button-remove {
+  background: #1DAEFF;
+  border-radius: 50%;
+  color: white;
+  border-style: none;
+  padding: 4px 7px;
+  margin: 0 10px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+.button-salario-Active {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  background: #1DAEFF;
+  border-radius: 30px;
+  color: white;
+  border-style: none;
+  padding: 10px 30px;
+  margin-left: 20px;
+  font-weight: 700;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+.button-actually {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  background: white;
+  border-radius: 30px;
+  color: #757575;
+  border-style: none;
+  padding: 10px 30px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  margin: 10px 5px;
+  font-weight: 700;
+  outline: none;
+}
+
+.button-agregar {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  background: #1DAEFF;
+  border-radius: 50%;
+  color: white;
+  border-style: none;
+  padding: 7px 9px;
+  margin: 0 7px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+
 .profile-image {
-    border-radius: 50%;
-    position: relative;
-    z-index: 1;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  size: cover;
+}
+
+.imagenPerfil {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .block-image-profile {
     display: block;
     text-align: center;
-    width: 40%;
+    width: 30%;
 }
 
 .display-none {
@@ -315,13 +920,19 @@ grisClaro: #C4C4C4 */
   font-weight: 700;
   border-radius: 50%;
   position: relative;
-  top: -50px;
-  left: 50px;
+  top: -40px;
+  left: -50px;
   z-index: 2;
 }
 
 .blue {
   display: none;
+}
+
+/* Estilos a las columnas del formulario vacantes */
+
+.col-2-general {
+  margin-left: 20px;
 }
 
 @keyframes fadeIn {
@@ -377,8 +988,7 @@ grisClaro: #C4C4C4 */
     }
 
     .formBlock {
-      width: 770px;
-      height: 250px;
+      height: 270px;
     }
 
     .blockForm {
@@ -391,8 +1001,264 @@ grisClaro: #C4C4C4 */
 
   @media screen and (max-width: 768px) {
 
-    .blockSkills {
-      width: 100vw;
+    .wrapper-form {
+      margin: 0 20px
     }
 
+    .blockSkills {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockStudy {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockWork {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockLanguages {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockDescription {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockProfile {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockIntro {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockDescriptionCompany {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockAdmin {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockProfileCompany {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .formInput-flex {
+      margin: 10px 0 10px 0px;
+    }
+
+    .block-number {
+      margin: 0 0 0 0px;
+    }
+
+    .formBlock-profile {
+      width: 50%;
+    }
+
+    .block-image-profile {
+      width: 40%;
+    }
+
+    .formInput-large {
+      width: 90%;
+    }
+
+    .block-input {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .formBlock {
+      height: auto;
+    }
+
+    .formBlock-save {
+      height: 200px;
+    }
+
+    .formInput-date {
+      width: 80%;
+    }
+
+    .block-input-date {
+      display: block;
+      width: 100%;
+    }
+
+    .flex-date {
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  }
+
+  @media screen and (max-width: 425px) {
+    
+    .block-form-service {
+      margin-top: 70px;
+    }
+
+    .block-input-flex-title {
+      display: block;
+    }
+
+    .flex-checkbox-urgent p {
+      font-size: 13px;
+    }
+
+    .formInput-title {
+      width: 90%;
+    }
+
+    .formInput-service {
+      width: 90%;
+    }
+    
+    .formInput-large-service {
+      width: 90%;
+      padding: 10px;
+    }
+
+    .col-1 {
+      width: 100%;
+    }
+
+    .wrapper-form {
+      margin: 0 20px
+    }
+
+    .wrapper-form h2 {
+      font-size: 25px;
+      text-align: center;
+    }
+
+    .formBlock-save {
+      height: auto;
+      width: 90%
+    }
+
+    .input-no-styles-selection {
+      width: 100%;
+    }
+
+    .container-flex {
+      width: 100%;
+    }
+
+    .blockForm-general h2 {
+      text-align: center;
+    }
+    
+    .blockAdvance {
+      display: flex;
+    }
+
+    .blockForm-general {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .block-image-profile {
+      width: 100%;
+    }
+
+    .formBlock-profile {
+      width: 100%;
+    }
+
+    .formInput-large {
+      width: 85%;
+    }
+
+    .container-comenzamos {
+      height: 70vh;
+    }
+
+    .formInput {
+      width: 90%;
+    }
+
+    .blockSkills {
+      margin-bottom: 0;
+    }
+
+    .blockStudy {
+      margin-bottom: 0;
+    }
+
+    .blockWork {
+      margin-bottom: 0;
+    }
+
+    .blockLanguages {
+      margin-bottom: 0;
+    }
+
+    .blockDescription {
+      margin-bottom: 0;
+    }
+
+    .blockProfile {
+      margin-bottom: 0;;
+    }
+
+    .buttons-flex {
+      justify-content: center;
+    }
+
+  }
+
+  @media screen and (max-width:375px) {
+
+    .blockForm-general h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .button-actually {
+      font-size: .7rem;
+    }
+
+    .button-regresar {
+      font-size: .7em;
+    }
+
+    .button-siguiente {
+      font-size: .7em;
+    }
+
+  }
+
+  @media screen and (max-width:320px) {
+    .flex-skills {
+      flex-wrap: wrap;
+      justify-content:center;
+    }
+
+    .formInput-salario {
+      margin: 20px 0 0 0;
+    }
   }

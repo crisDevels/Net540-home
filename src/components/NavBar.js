@@ -1,42 +1,73 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase';
-// import { useUser } from 'reactfire';
-// import firebaseApp from '../config/firebase';
 
 import './styles/navStyles.css'
 import './styles/popRegistro.css'
 import '../globalStyles.css'
 import '../pages/styles/homeStyles.css'
 
-import Comenzar from '../components/FormularioRegistro/comenzemos'
-
-import AboutUs from '../pages/AboutUs'
-import Home from '../pages/home'
-
-import logo from "../images/logoNet.png"
-import logoB from "../images/logoNetB.png"
-import logoA from "../images/LOGO-NET540A.png"
-import logoSesion from "../images/logoSesion.png"
-import load from '../images/loader.gif'
+import iconHome from '../images/homeIcon.svg'
+import iconJobs from '../images/JobsIcon.svg'
+import iconPublic from '../images/publicIcon.svg'
+import iconProfile from '../images/profileIcon.svg'
+import iconTerms from '../images/termsIcon.svg'
+import iconPublicaciones from '../images/publicacionesIcon.svg'
+import iconSearch from '../images/searchIcon.svg'
 
 import googleIcon from '../images/googleIcono.png'
+import facebookIcon from '../images/facebook-icon.svg'
+import linkedIcon from '../images/linked-icon.svg'
+
+import '../fonts/style.css'
 
 var iconGoogle = {
     width: "100%",
     backgroundImage: "url("+ googleIcon + ")"
   };
 
-// const user = useUser();
+var iconFacebook = {
+    width: "100%",
+    backgroundImage: "url("+ facebookIcon + ")"
+};
+
+var iconLinked = {
+    width: "100%",
+    backgroundImage: "url("+ linkedIcon + ")"
+};
+
+var iconTerminos = {
+    backgroundImage: "url("+ iconTerms + ")"
+};
+
+var iconPublica = {
+    backgroundImage: "url("+ iconPublic + ")"
+};
+
+var iconPublicacionesNet = {
+    backgroundImage: "url("+ iconPublicaciones + ")"
+};
+
+var NetLogo = {
+    color: "#1DAEFF",
+}
+
+var searchIcon = {
+    backgroundImage: "url("+ iconSearch + ")"
+};
+
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            // loading: true,
-            // error: null,
+            open: false,
+            modalProfile: "none",
+            modalPublic: "none",
+            modalBuscar: "none",
             modalInicio: "modal",
-            buttonCerrar: "inicioCerrarN",
+            overlay: "overlay",
+            overlayMenu: "overlay",
             buttonInicio: "buttonInicioN",
             bienvenido: "blockPerfil",
             user: null, 
@@ -59,27 +90,77 @@ class NavBar extends React.Component {
 
     abrirModalInicio = ()=> {
         this.setState({
+            overlay: "overlayActive",
             modalInicio: "modalInicioActive",
-            buttonCerrar: "buttonInicioCerrarN",
-            buttonInicio: "buttonInicioDesactiveN"
         }) 
     }
 
     cerrarModalInicio = ()=> {
         this.setState({
+            overlay: "overlay",
             modalInicio: "modal",
             buttonCerrar: "inicioCerrarN",
             buttonInicio: "buttonInicioN"
         }) 
     }
 
-    
+    modalProfileNav = ()=> {
+        if(this.state.modalProfile === "none") {
+            this.setState ({
+                modalProfile: "Actionsv2-content",
+                modalPublic: "none",
+                modalBuscar: "none",
+                overlayMenu: "overlayActive-menu",
+            })
+        } else{
+            this.setState ({
+                modalProfile: "none",
+                overlayMenu: "overlay",
+            })
+        }
+    }
+
+    modalPublicNav = ()=> {
+        if(this.state.modalPublic === "none") {
+            this.setState ({
+                modalPublic: "Actionsv2-content",
+                modalProfile: "none",
+                modalBuscar: "none",
+                overlayMenu: "overlayActive-menu",
+            })
+        } else{
+            this.setState ({
+                modalPublic: "none",
+                overlayMenu: "overlay",
+            })
+        }
+    }
+
+    modalBuscarNav = ()=> {
+        if(this.state.modalBuscar === "none") {
+            this.setState ({
+                modalBuscar: "Actionsv2-content",
+                modalProfile: "none",
+                modalPublic: "none",
+                overlayMenu: "overlayActive-menu",
+            })
+        } else{
+            this.setState ({
+                modalBuscar: "none",
+                overlayMenu: "overlay",
+            })
+        }
+    }
 
     login = (e)=> {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then(result => console.log('${result.user.email} ha iniciado sesión'))
-        .catch(error => console.log('Error ${error.code}: ${error.message}'))
+        .then(result => {
+            window.location.href = '/home'
+            console.log(`${result.user.email} ha iniciado sesión`)
+            }
+        )
+        .catch(error => console.log(`Error ${error.code}: ${error.message}`))
            
     }
 
@@ -93,18 +174,19 @@ class NavBar extends React.Component {
 
 
     handleAuth = ()=> {
-        const provider = new firebase.auth .GoogleAuthProvider();
+        const provider = firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
-            .then(result => console.log('${result.user.email} ha iniciado sesión'))
-            .catch(error => console.log('Error ${error.code}: ${error.message}'))
+            .then(result => console.log(`${result.user.email} ha iniciado sesión`))
+            .catch(error => console.log(`Error ${error.code}: ${error.message}`))
 
     }
     
-
     handleLogout = ()=> {
         firebase.auth().signOut()
-            .then(result => console.log('${result.user.email} ha salido'))
-            .catch(error => console.log('Error ${error.code}: ${error.message}'))
+            .then(result => {
+                window.location.href = '/'
+                console.log(`${result.user.email} ha salido`)})
+            .catch(error => console.log(`Error ${error.code}: ${error.message}`))
     }
 
     renderLoginButton () {
@@ -112,47 +194,115 @@ class NavBar extends React.Component {
         if (this.state.user) {
             return <React.Fragment>
                 <div className="container-block-nav">
-
-                    <div className="navForm">
-                        <div className="logoN">
-                            <Link to="/"><img src={logoSesion} width="50px" alt="Logo de net540"/></Link>
-                        </div>
-                        <div className="nav-flex">
-                            <div className="container-buttons">
-                                < Link to="/" >
-                                    <button className="cerrar-sesion" onClick={this.handleLogout}>Cerrar Sesión</button>
-                                </ Link >
+                    <div className="wrapper-home">
+                        <div className="navForm">
+                            <div className="logoN-user">
+                                <Link to="/">
+                                    <span style={NetLogo} className="icon-Logo_540"></span>
+                                </Link>
+                            </div>
+                            <div className="nav-flex-login">
+                                <div className="container-buttons">
+                                    <div className="container-buttons-flex">
+                                        < Link to="/home" >
+                                            <button className="nonButtonsHeader" ><img alt="icono de homeNet" src={iconHome} width="20px" /></button>
+                                        </ Link >
+                                        < Link to="/" >
+                                            <button className="nonButtonsHeader" ><img alt="icono de jobsNet" src={iconJobs} width="20px" /></button>
+                                        </ Link >
+                                        <button className="nonButtonsHeader-search" onClick={this.modalBuscarNav} ><img alt="icono de jobsNet" src={iconSearch} width="20px" /></button>
+                                        <button className="nonButtonsHeader" onClick={this.modalPublicNav} ><img alt="icono de jobsNet" src={iconPublic} width="20px" /></button>
+                                        <button className="nonButtonsHeader" onClick={this.modalProfileNav} ><img alt="icono de jobsNet" src={iconProfile} width="20px" /></button>
+                                    </div>
+                                    <div className={this.state.modalProfile}>
+                                        <div className="box-options">
+                                            <p>
+                                                Hola, {this.state.user.displayName}
+                                            </p>
+                                            <hr></hr>
+                                            <Link to="/home">
+                                                <button style={iconTerminos} className="buttonMenu">Términos y condiciones</button>
+                                            </Link>
+                                            <button className="cerrar-sesion" onClick={this.handleLogout}>Cerrar Sesión</button>
+                                        </div>  
+                                    </div>
+                                    <div className={this.state.modalBuscar}>
+                                        <div className="box-options">
+                                            <h2>
+                                                Buscar trabajos
+                                            </h2>
+                                            <hr></hr>
+                                            <input style={searchIcon} 
+                                                className="formInput-search" 
+                                                type="text"
+                                                name="profesionSearch"
+                                                placeholder="Cargo" />
+                                            <input style={searchIcon} 
+                                                className="formInput-search" 
+                                                type="text"
+                                                name="profesionSearch"
+                                                placeholder="Ciudad" />
+                                            <button className="button-siguiente">Buscar</button>
+                                        </div>  
+                                    </div>
+                                    <div className={this.state.overlayMenu} id="overlay"></div>
+                                    <div className={this.state.modalPublic}>
+                                        <div className="box-options">
+                                            <p>
+                                                ¿Necesitas un servicio?
+                                            </p>
+                                            <hr></hr>
+                                            <Link to="/home">
+                                                <button style={iconPublicacionesNet} className="buttonMenu">Mis publicaciones</button>
+                                            </Link>
+                                            <Link to="/publicar-trabajo">
+                                                <button style={iconPublica} className="buttonMenu">Publica un trabajo</button>
+                                            </Link>
+                                        </div>  
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                   
                 </div>
             </React.Fragment>
         } else {
         //no login
             return <React.Fragment>
                 <div className="container-block-nav-inicio">
-
-                    <div className="menuN">
-                        <div className="logoN">
-                            <Link to="/"><img src={logoA} width="100px" alt="Logo de net540"/></Link>
-                        </div>
-                        <div className="nav-flex">
-                            <span>
-                                <Link to="/aboutUs">
-                                    <input className="buttonConocenosN" type="button" value="CONÓCENOS"></input>
+                    <div className="wrapper-home">
+                        <div className="menuN">
+                            <div className="logoN">
+                                <Link to="/">
+                                    <span style={NetLogo} className="icon-Logo_net540"></span>
                                 </Link>
-                            </span>
-                            <span>
-                                <input onClick={this.abrirModalInicio} className={this.state.buttonInicio} type="button" value="INGRESAR"></input>
-                                <input onClick={this.cerrarModalInicio} className={this.state.buttonCerrar} type="button" value="CERRAR"></input>  
-                            </span>  
+                            </div>
+                            <div className="nav-flex">
+                                <span>
+                                    <Link to="/aboutUs">
+                                        <button className="buttonConocenosN" type="button">Conócenos</button>
+                                    </Link>
+                                </span>
+                                <span>
+                                    <button onClick={this.abrirModalInicio} className={this.state.buttonInicio} type="button">Ingresar</button>  
+                                </span>  
+                            </div>
                         </div>
                     </div>
-
                 </div>
 
+                <div onClick={this.cerrarModalInicio} className={this.state.overlay} id="overlay"></div>
+                
                 <div className={this.state.modalInicio}>
+                        <div className="titleRegistro-inicio-sesion">
+                            <div className="title-modal-inicio">
+                                <h2>Iniciar Sesión</h2>
+                            </div>
+                            <div className="button-flex-end">
+                                <span onClick={this.cerrarModalInicio} className="icon-Logo_equis"></span>
+                            </div>
+                        </div>
+    
                         <form className="formRegitreInicio">
                             
                             <input
@@ -183,29 +333,24 @@ class NavBar extends React.Component {
                                 </Link>
                             </div>
                             <hr className="line-login" data-content="or"></hr>
-                            <button style={iconGoogle} className="google-auth" onClick={this.handleAuth} type="buttton">Continuar con Google</button>
+                            <div className="div-buttons-auth">
+                                <button style={iconGoogle} className="google-auth" onClick={this.handleAuth} type="buttton">Continuar con Google</button>
+                                <button style={iconFacebook} className="facebook-auth" onClick={this.handleAuth} type="buttton">Continuar con Facebook</button>
+                                <button style={iconLinked} className="linkedin-auth" onClick={this.handleAuth} type="buttton">Continuar con Linkedin</button>
+                            </div>
                         </form>
                     </div>
                 
             </React.Fragment>
-        }
-        
+        }  
     }
 
     render() {
         return <React.Fragment>
-
-                <div>
-                {/* {this.state.loading &&
-                <div>
-                    <img src={load}/>
-                </div>
-                } */}
+            <div>
                 {this.renderLoginButton()}
-                </div>
-                
-
-                </React.Fragment>
+            </div>
+        </React.Fragment>
         }
     }
 

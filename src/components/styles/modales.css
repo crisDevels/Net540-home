@@ -1,0 +1,105 @@
+.modal-aplication {
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 3;
+    padding: 1em 1.5em;
+    background: white;
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
+    height: 260px;
+    width: 220px;
+    border-radius: 30px;
+    text-align: center;
+    animation-name:  fadeIn;
+    animation-duration: 1.2s;
+}
+
+.descriptionModal {
+    font-size: 12px;
+}
+
+.container-close {
+    padding: 6px 9px;
+    border-radius: 50%;
+    background: #1DAEFF;
+}
+
+.container-close img {
+    width: 12px;
+    height: 12px;
+}
+
+.container-image-modal {
+    display: flex;
+    justify-content: center;
+}
+
+.titleblock-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-modal {
+    text-align: center;
+    font-size: 18px;
+}
+
+.title-modal p {
+    margin: 10px 0;
+}
+
+.confirmar-button {
+    padding: 7px 20px;
+    background: #1DAEFF;
+    border-radius: 30px;
+    color: white;
+    margin: 5px 10px;
+    font-weight: 700;
+    border-style: none;
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.25);
+    outline: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.confirmar-button:hover,
+.confirmar-button:focus {
+    background: transparent;
+    color: #757575;
+}
+
+.cancelar-button {
+    padding: 7px 10px;
+    background: transparent;
+    border-radius: 30px;
+    margin: 5px 10px;
+    color: #757575;
+    border-style: none;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.cancelar-button:hover,
+.cancelar-button:focus {
+    color: #1DAEFF;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .modal-aplication {
+        top: 900px;
+    }
+
+  }

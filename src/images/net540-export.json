@@ -1,0 +1,30 @@
+{
+  "dataProfesional" : {
+    "-MHD2rNeNJ54EAcxP6qB" : {
+      "TimeRateUser" : "Proyecto",
+      "dataSkills" : [ {
+        "conteoSkills" : 0,
+        "skillsUser" : "Organización"
+      }, {
+        "conteoSkills" : 1,
+        "skillsUser" : "Amor"
+      } ],
+      "profesionUser" : "Construcción",
+      "rateUser" : "1'760.000 - 2'630.000",
+      "specialtyUser" : "Asesoria Legal"
+    },
+    "-MHDSrwnmWj3ftECoB_S" : {
+      "TimeRateUser" : "Mes",
+      "dataSkills" : [ {
+        "conteoSkills" : 0,
+        "skillsUser" : "Organización"
+      }, {
+        "conteoSkills" : 1,
+        "skillsUser" : "Proactividad"
+      } ],
+      "profesionUser" : "Construcción",
+      "rateUser" : "1'760.000 - 2'630.000",
+      "specialtyUser" : "Diseño Industrial"
+    }
+  }
+}
