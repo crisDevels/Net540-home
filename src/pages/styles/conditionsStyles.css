@@ -19,7 +19,7 @@
 }
 
 .linea-conditions {
-    margin: 40px 0 20px 0;
+    margin: 20px 0 10px 0;
 }
 
 .button-title-conditions {
@@ -85,4 +85,63 @@
 
 .icon-Logo_facebook {
     font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .col-20 {
+        width: 30%;
+        padding: 20px 20px;
+    }
+
+    .col-80 {
+        width: 60%;
+        padding: 20px 30px;
+    }
+
+    .button-title-conditions {
+        text-align: left;
+    }
+
+    .list-items-conditions {
+        margin-left: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 425px) {
+
+    .flex-container {
+        flex-wrap: wrap;
+        margin: 60px 0;
+    }
+
+    .col-20 {
+        width: 100%;
+        padding: 0px 30px 20px 10px;
+        margin-left: 20px;
+        border-left: #1DAEFF 5px solid;
+    }
+
+    .linea-conditions {
+        margin: 20px 0 10px 0;
+    }
+
+    .col-80 {
+        width: 100%;
+        padding: 20px 30px;
+    }
+
+    .footer-mini {
+        display: none;
+    }
+
+    .button-title-conditions {
+        text-align: left;
+    }
+
+    .list-items-conditions {
+        margin-left: 20px;
+    }
+    
 }

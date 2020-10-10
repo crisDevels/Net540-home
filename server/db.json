@@ -1,0 +1,275 @@
+{
+  "works": [
+    {
+      "dataSkills": [
+        {
+          "skillsUser": "Proactividad",
+          "conteoSkills": 0
+        },
+        {
+          "skillsUser": "AWS",
+          "conteoSkills": 1
+        },
+        {
+          "skillsUser": "Google Cloud",
+          "conteoSkills": 2
+        },
+        {
+          "skillsUser": "Firebase",
+          "conteoSkills": 3
+        }
+      ],
+      "dataDescriptions": [
+        {
+          "descriptionsService": "Debe contar con habilidades en ReactJS y Angular.",
+          "conteoDescriptions": 0
+        },
+        {
+          "descriptionsService": "Debe contar con experiencia en Product Design y UX",
+          "conteoDescriptions": 1
+        }
+      ],
+      "titleDescription": "Requerimientos del cargo",
+      "descriptionService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados. Debe cumplir con aquellas habilidades y requerimientos solicitados en el trabajo.",
+      "titleService": "Arquitecto de AWS",
+      "areaService": "Websites, IT y Software",
+      "specialtyService": "Arquitectura",
+      "modalityJob": "Presencial y Remoto",
+      "locationJob": "Bogotá D.C.",
+      "timeService": "3 meses - 6 meses",
+      "rateJob": "1'760.000 - 2'630.000",
+      "TimeRateUser": "Mes",
+      "urgentJob": true,
+      "id": "Nv_6j1I"
+    },
+    {
+      "dataSkills": [
+        {
+          "skillsUser": "Disciplina",
+          "conteoSkills": 0
+        },
+        {
+          "skillsUser": "Responsable",
+          "conteoSkills": 1
+        },
+        {
+          "skillsUser": "Firebase",
+          "conteoSkills": 2
+        },
+        {
+          "skillsUser": "Respeto",
+          "conteoSkills": 3
+        }
+      ],
+      "dataDescriptions": [
+        {
+          "descriptionsService": "Esta persona debe saber AWS,  Google Cloud ó Semejantes",
+          "conteoDescriptions": 0
+        },
+        {
+          "descriptionsService": "Debe contar con experiencia en nueva tecnologías y manejo de información ",
+          "conteoDescriptions": 1
+        },
+        {
+          "descriptionsService": "Requiere tener aptitudes para el manejo de equipos y trabajo remoto",
+          "conteoDescriptions": 2
+        },
+        {
+          "descriptionsService": "Requiere tener aptitudes para el trabajo bajo presión",
+          "conteoDescriptions": 3
+        }
+      ],
+      "titleService": "Arquitecto de Google",
+      "areaService": "Manejo y administración de datos",
+      "specialtyService": "Administración",
+      "modalityJob": "Presencial y Remoto",
+      "locationJob": "Medellín",
+      "timeService": "1 mes - 3 meses",
+      "rateJob": "1'760.000 - 2'630.000",
+      "TimeRateUser": "Mes",
+      "descriptionService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados. Debe cumplir con aquellas habilidades y requerimientos solicitados en el trabajo.",
+      "titleDescription": "Requermientos del cargo",
+      "urgentJob": true,
+      "id": "R8fTfX5"
+    },
+    {
+      "dataSkills": [
+        {
+          "skillsUser": "Puntualidad",
+          "conteoSkills": 0
+        },
+        {
+          "skillsUser": "Respeto con el grupo",
+          "conteoSkills": 1
+        },
+        {
+          "skillsUser": "AWS",
+          "conteoSkills": 2
+        },
+        {
+          "skillsUser": "ReactJS",
+          "conteoSkills": 3
+        }
+      ],
+      "dataDescriptions": [
+        {
+          "descriptionsService": "Esta persona debe ser muy emprendedora y apasionada",
+          "conteoDescriptions": 0
+        },
+        {
+          "descriptionsService": "Esta persona debe tener conocimientos técnicos en el área de planeación y buena practicas",
+          "conteoDescriptions": 1
+        },
+        {
+          "descriptionsService": "Esta persona debe tener carácter para liderar equipo de desarrollo",
+          "conteoDescriptions": 2
+        },
+        {
+          "descriptionsService": "Esta persona será líder de area",
+          "conteoDescriptions": 3
+        }
+      ],
+      "titleService": "Arquitecto de Backend",
+      "areaService": "Diseño, multumedia y arquitectura",
+      "modalityJob": "Presencial y Remoto",
+      "locationJob": "Bogotá",
+      "timeService": "1 mes - 3 meses",
+      "rateJob": "2'630.000 - 3'500.000",
+      "TimeRateJob": null,
+      "descriptionService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (7) mes(es) en el área/sector previamente mencionados. Debe cumplir con aquellas habilidades y requerimientos solicitados en el trabajo.",
+      "specialtyService": "Ingenieria Civil",
+      "TimeRateUser": "Proyecto",
+      "titleDescription": "Requerimientos del cargo",
+      "urgentJob": true,
+      "id": "wO3Cnds"
+    },
+    {
+      "dataSkills": [
+        {
+          "skillsUser": "Proactividad",
+          "conteoSkills": 0
+        },
+        {
+          "skillsUser": "Paciencia",
+          "conteoSkills": 1
+        },
+        {
+          "skillsUser": "Innovación",
+          "conteoSkills": 2
+        }
+      ],
+      "dataDescriptions": [
+        {
+          "descriptionsService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados",
+          "conteoDescriptions": 0
+        },
+        {
+          "descriptionsService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados",
+          "conteoDescriptions": 1
+        },
+        {
+          "descriptionsService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados",
+          "conteoDescriptions": 2
+        },
+        {
+          "descriptionsService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados",
+          "conteoDescriptions": 3
+        }
+      ],
+      "titleService": "Arquitecto de Producto",
+      "areaService": "Escritura y generación de contenido",
+      "modalityJob": "Presencial y Remoto",
+      "locationJob": "Bogotá D.C.",
+      "timeService": "1 mes - 3 meses",
+      "rateJob": "2'630.000 - 3'500.000",
+      "TimeRateJob": "Proyecto",
+      "descriptionService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados. Debe cumplir con aquellas habilidades y requerimientos solicitados en el trabajo.",
+      "titleDescription": "Requerimientos del cargo",
+      "urgentJob": true,
+      "id": "ZaNgRS-"
+    },
+    {
+      "dataSkills": [
+        {
+          "skillsUser": "Adaptabilidad",
+          "conteoSkills": 0
+        },
+        {
+          "skillsUser": "Versatilidad",
+          "conteoSkills": 1
+        },
+        {
+          "skillsUser": "Firebase",
+          "conteoSkills": 2
+        }
+      ],
+      "dataDescriptions": [
+        {
+          "descriptionsService": "Este Trabajo requiere conocimientos enfocados en machine learning y big data.",
+          "conteoDescriptions": 0
+        },
+        {
+          "descriptionsService": "Debe contar con habilidades técnicas para la solución de problemas y SCRUM",
+          "conteoDescriptions": 1
+        },
+        {
+          "descriptionsService": "Debe algunas recursos tecnológicos para trabajar desde casa",
+          "conteoDescriptions": 2
+        }
+      ],
+      "titleService": "Arquitecto de Producto",
+      "areaService": "Redacción de contenidos",
+      "modalityJob": "Presencial y Remoto",
+      "locationJob": "Medellín",
+      "timeService": "3 meses - 6 meses",
+      "rateJob": "2'630.000 - 3'500.000",
+      "TimeRateJob": "Proyecto",
+      "descriptionService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de 10 años en el área/sector previamente mencionados. Debe cumplir con aquellas habilidades y requerimientos solicitados en el trabajo.",
+      "verify": true,
+      "titleDescription": "Requerimientos profesionales",
+      "urgentJob": true,
+      "id": "NzBka0p"
+    },
+    {
+      "dataSkills": [
+        {
+          "skillsUser": "Organización",
+          "conteoSkills": 0
+        },
+        {
+          "skillsUser": "Proactividad",
+          "conteoSkills": 1
+        },
+        {
+          "skillsUser": "Empatía",
+          "conteoSkills": 2
+        }
+      ],
+      "dataDescriptions": [
+        {
+          "descriptionsService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de dos(2) años en el área y sector previamente mencionados.",
+          "conteoDescriptions": 0
+        },
+        {
+          "descriptionsService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de dos(2) años en el área y sector previamente mencionados.",
+          "conteoDescriptions": 1
+        },
+        {
+          "descriptionsService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de dos(2) años en el área y sector previamente mencionados.",
+          "conteoDescriptions": 2
+        }
+      ],
+      "titleService": "Diseñador Gráfico",
+      "areaService": "Diseño, arquitectura y audiovisual",
+      "modalityJob": "Presencial",
+      "locationJob": "Bogota D.C.",
+      "timeService": "Más 6 meses",
+      "rateJob": "2'630.000 - 3'500.000",
+      "TimeRateJob": "Mes",
+      "descriptionService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de dos(2) años  en el área y sector previamente mencionados. Debe cumplir con aquellas habilidades y requerimientos solicitados en el trabajo.",
+      "verify": true,
+      "titleDescription": "Requermientos del cargo",
+      "id": "690urqB"
+    }
+  ]
+}

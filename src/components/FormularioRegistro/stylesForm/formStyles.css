@@ -7,7 +7,7 @@ grisClaro: #C4C4C4 */
 .block {
   display: block;
   animation-name:  fadeIn;
-  animation-duration: 2s;
+  animation-duration: .8s;
 }
 
 .container-comenzamos {
@@ -191,7 +191,7 @@ grisClaro: #C4C4C4 */
   animation-duration: 2s;
 }
 
-/* estilos al formulario de vacante MVP */
+/* estilos al formulario de vacante MVP1 */
 
 .formBlock-service {
   overflow-x: hidden;
@@ -234,11 +234,11 @@ grisClaro: #C4C4C4 */
 .formInput-title {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
   border-style: none;
-  padding: 10px 10px;
+  padding: 10px 20px;
   border-radius: 30px;
-  width: 80%;
+  width: 75%;
   font-style: normal;
-  font-size: 1rem;
+  font-size: .9rem;
   color: rgb(31, 31, 31);
   margin: 15px 0 15px 0;
   outline: none;
@@ -250,7 +250,7 @@ grisClaro: #C4C4C4 */
   border-style: none;
   padding: 5px 10px;
   border-radius: 30px;
-  width: 80%;
+  width: 85%;
   font-style: normal;
   font-weight: 200;
   font-size: .8rem;
@@ -260,6 +260,70 @@ grisClaro: #C4C4C4 */
   opacity: .6;
 }
 
+.formInput-location {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 11px 0 11px 20px;
+  border-radius: 30px;
+  width: 85%;
+  font-style: normal;
+  font-weight: 300;
+  font-size: .9rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 0 15px 0;
+  outline: none;
+  opacity: .6;
+}
+
+.formInput-salario {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 0 10px 20px;
+  border-radius: 30px;
+  width: 210px;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 10px 15px 0;
+  outline: none;
+  opacity: .6;
+  display: flex;
+  align-items: center;
+}
+
+.formInput-tiempo {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-style: none;
+  padding: 10px 0 10px 20px;
+  border-radius: 30px;
+  width: 120px;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  color: rgb(31, 31, 31);
+  margin: 15px 0;
+  outline: none;
+  opacity: .6;
+  display: flex;
+  align-items: center;
+}
+
+.formInput-title:focus,
+.formInput-location:focus,
+.formInput-service:focus,
+.formInput-title:hover,
+.formInput-location:hover,
+.formInput-service:hover,
+.formInput-large-service:hover,
+.formInput-large-service:focus,
+.formInput-salario:hover,
+.formInput-salario:focus,
+.formInput-tiempo:hover,
+.formInput-tiempo:focus {
+  box-shadow: 0px 3px 6px #378dcaa6;
+}
+
 .input-no-styles-title {
   border-style: none;
   outline: none;
@@ -267,6 +331,27 @@ grisClaro: #C4C4C4 */
   border-radius: 30px;
   margin: 0 0 0 10px;
   width: 90%;
+}
+
+.input-no-styles-selection-salario {
+  border-style: none;
+  outline: none;
+  width: 190px;
+}
+
+.input-no-styles-selection-time {
+  border-style: none;
+  outline: none;
+  width: 100px;
+}
+
+.label-description {
+  margin: 10px 0;
+}
+
+.label-description label {
+  font-size: 13px;
+  padding: 10px 0;
 }
 
 .flex-checkbox-urgent {
@@ -287,25 +372,6 @@ grisClaro: #C4C4C4 */
 .block-input-service {
   margin: 20px 0;
   width: 100%;
-}
-
-.centerButton-block {
-  text-align: center;
-}
-
-.formInput-large-service {
-  width: 90%;
-  min-height: 150px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-  border-style: none;
-  padding: 20px;
-  border-radius: 20px;
-  font-size: .9rem;
-  color: #757575;
-  margin: 5px 0;
-  outline: none;
-  opacity: .8;
-  font-family: 'Lato', sans-serif;
 }
 
 .flex-skills-service {
@@ -349,6 +415,13 @@ grisClaro: #C4C4C4 */
   color: #757575;
   display: flex;
   align-items: center;
+  animation-name:  fadeIn;
+  animation-duration: 1s;
+  transition: .5s ease;
+}
+
+.containerSkills:hover {
+  transform: translateY(-3px)
 }
 
 .container-list-skills {
@@ -359,6 +432,16 @@ grisClaro: #C4C4C4 */
 
 .list-skills {
   width: 100%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Se dan estilos a los input form */
@@ -548,40 +631,6 @@ grisClaro: #C4C4C4 */
   align-items: center;
 }
 
-.formInput-salario {
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-  border-style: none;
-  padding: 10px 10px;
-  border-radius: 30px;
-  width: 160px;
-  font-style: normal;
-  font-weight: 200;
-  font-size: 1rem;
-  color: rgb(31, 31, 31);
-  margin: 15px 10px 15px 0;
-  outline: none;
-  opacity: .6;
-  display: flex;
-  align-items: center;
-}
-
-.formInput-tiempo {
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-  border-style: none;
-  padding: 10px 10px;
-  border-radius: 30px;
-  width: 80px;
-  font-style: normal;
-  font-weight: 200;
-  font-size: 1rem;
-  color: rgb(31, 31, 31);
-  margin: 15px 0;
-  outline: none;
-  opacity: .6;
-  display: flex;
-  align-items: center;
-}
-
 .block-number {
   margin: 0 0 0 60px;
 }
@@ -602,7 +651,6 @@ grisClaro: #C4C4C4 */
   margin: 0 0 0 10px;
   width: 250px;
 }
-
 
 .input-no-styles-characters-items {
   border-style: none;
@@ -625,18 +673,6 @@ ul, ol {
   border-style: none;
   outline: none;
   width: 250px;
-}
-
-.input-no-styles-selection-salario {
-  border-style: none;
-  outline: none;
-  width: 160px;
-}
-
-.input-no-styles-selection-time {
-  border-style: none;
-  outline: none;
-  width: 80px;
 }
 
 .input-no-styles-code {
@@ -721,10 +757,6 @@ ul, ol {
   margin: 0 0 20px 0;
   color:#757575;
 
-}
-
-.label-description {
-  margin: 0;
 }
 
 .title-description {
@@ -829,6 +861,7 @@ ul, ol {
   font-weight: 700;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
   outline: none;
+  transition: 1s ease;
 }
 
 label {
@@ -844,6 +877,11 @@ label {
   margin: 0 10px;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
   outline: none;
+  transition: .5s ease;
+}
+
+.button-remove:active {
+  transform: translateY(5px)
 }
 
 .button-salario-Active {
@@ -885,6 +923,20 @@ label {
   margin: 0 7px;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
   outline: none;
+  transition: 1s ease;
+}
+
+.button-siguiente:active,
+.button-agregar:active {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    transform: translateY(10px);
+    color: #1DAEFF;
+}
+
+.button-siguiente:hover {
+  outline   : none;
+  color: #1DAEFF;
+  background: white;
 }
 
 
@@ -1111,14 +1163,14 @@ label {
     .flex-date {
       display: flex;
       flex-wrap: wrap;
-  }
+    }
 
   }
 
   @media screen and (max-width: 425px) {
     
     .block-form-service {
-      margin-top: 70px;
+      margin-top: 20px;
     }
 
     .block-input-flex-title {
@@ -1130,7 +1182,7 @@ label {
     }
 
     .formInput-title {
-      width: 90%;
+      width: 85%;
     }
 
     .formInput-service {
@@ -1229,6 +1281,10 @@ label {
       justify-content: center;
     }
 
+    .flex-skills {
+      display: block;
+    }
+
   }
 
   @media screen and (max-width:375px) {
@@ -1253,9 +1309,9 @@ label {
   }
 
   @media screen and (max-width:320px) {
-    .flex-skills {
-      flex-wrap: wrap;
-      justify-content:center;
+
+    .formInput-title {
+      width: 80%;
     }
 
     .formInput-salario {

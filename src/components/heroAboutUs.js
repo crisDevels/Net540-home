@@ -81,7 +81,7 @@ class HeroHome extends React.Component {
 
         .then(() => {
         
-        window.location.reload(true)
+        window.location.href = '/works'
 
         alert('Your account has been created');
             const nameUser = this.state.name;

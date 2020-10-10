@@ -64,6 +64,7 @@ class NavBar extends React.Component {
             open: false,
             modalProfile: "none",
             modalPublic: "none",
+            modalJobs: "none",
             modalBuscar: "none",
             modalInicio: "modal",
             overlay: "overlay",
@@ -109,6 +110,7 @@ class NavBar extends React.Component {
             this.setState ({
                 modalProfile: "Actionsv2-content",
                 modalPublic: "none",
+                modalJobs: "none",
                 modalBuscar: "none",
                 overlayMenu: "overlayActive-menu",
             })
@@ -125,12 +127,30 @@ class NavBar extends React.Component {
             this.setState ({
                 modalPublic: "Actionsv2-content",
                 modalProfile: "none",
+                modalJobs: "none",
                 modalBuscar: "none",
                 overlayMenu: "overlayActive-menu",
             })
         } else{
             this.setState ({
                 modalPublic: "none",
+                overlayMenu: "overlay",
+            })
+        }
+    }
+
+    modalJobsNav = ()=> {
+        if(this.state.modalJobs === "none") {
+            this.setState ({
+                modalJobs: "Actionsv2-content",
+                modalProfile: "none",
+                modalPublic: "none",
+                modalBuscar: "none",
+                overlayMenu: "overlayActive-menu",
+            })
+        } else{
+            this.setState ({
+                modalJobs: "none",
                 overlayMenu: "overlay",
             })
         }
@@ -141,6 +161,7 @@ class NavBar extends React.Component {
             this.setState ({
                 modalBuscar: "Actionsv2-content",
                 modalProfile: "none",
+                modalJobs: "none",
                 modalPublic: "none",
                 overlayMenu: "overlayActive-menu",
             })
@@ -152,11 +173,21 @@ class NavBar extends React.Component {
         }
     }
 
+    closeModales = ()=> {
+        this.setState ({
+            modalBuscar: "none",
+            modalProfile: "none",
+            modalJobs: "none",
+            modalPublic: "none",
+            overlayMenu: "overlay",
+        })
+    }
+
     login = (e)=> {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(result => {
-            window.location.href = '/home'
+            window.location.href = '/works'
             console.log(`${result.user.email} ha iniciado sesión`)
             }
         )
@@ -184,7 +215,6 @@ class NavBar extends React.Component {
     handleLogout = ()=> {
         firebase.auth().signOut()
             .then(result => {
-                window.location.href = '/'
                 console.log(`${result.user.email} ha salido`)})
             .catch(error => console.log(`Error ${error.code}: ${error.message}`))
     }
@@ -197,30 +227,28 @@ class NavBar extends React.Component {
                     <div className="wrapper-home">
                         <div className="navForm">
                             <div className="logoN-user">
-                                <Link to="/">
+                                <Link to="/works">
                                     <span style={NetLogo} className="icon-Logo_540"></span>
                                 </Link>
                             </div>
                             <div className="nav-flex-login">
                                 <div className="container-buttons">
                                     <div className="container-buttons-flex">
-                                        < Link to="/home" >
+                                        < Link to="/works" >
                                             <button className="nonButtonsHeader" ><img alt="icono de homeNet" src={iconHome} width="20px" /></button>
                                         </ Link >
-                                        < Link to="/" >
-                                            <button className="nonButtonsHeader" ><img alt="icono de jobsNet" src={iconJobs} width="20px" /></button>
-                                        </ Link >
+                                        <button className="nonButtonsHeader" onClick={this.modalJobsNav} ><img alt="icono de jobsNet" src={iconJobs} width="20px" /></button>
                                         <button className="nonButtonsHeader-search" onClick={this.modalBuscarNav} ><img alt="icono de jobsNet" src={iconSearch} width="20px" /></button>
                                         <button className="nonButtonsHeader" onClick={this.modalPublicNav} ><img alt="icono de jobsNet" src={iconPublic} width="20px" /></button>
                                         <button className="nonButtonsHeader" onClick={this.modalProfileNav} ><img alt="icono de jobsNet" src={iconProfile} width="20px" /></button>
                                     </div>
                                     <div className={this.state.modalProfile}>
                                         <div className="box-options">
-                                            <p>
+                                            <p className="title-modal-nav">
                                                 Hola, {this.state.user.displayName}
                                             </p>
                                             <hr></hr>
-                                            <Link to="/home">
+                                            <Link to="/condiciones-de-uso">
                                                 <button style={iconTerminos} className="buttonMenu">Términos y condiciones</button>
                                             </Link>
                                             <button className="cerrar-sesion" onClick={this.handleLogout}>Cerrar Sesión</button>
@@ -245,18 +273,32 @@ class NavBar extends React.Component {
                                             <button className="button-siguiente">Buscar</button>
                                         </div>  
                                     </div>
-                                    <div className={this.state.overlayMenu} id="overlay"></div>
+                                    <div onClick={this.closeModales} className={this.state.overlayMenu} id="overlay"></div>
                                     <div className={this.state.modalPublic}>
                                         <div className="box-options">
-                                            <p>
+                                            <p className="title-modal-nav">
                                                 ¿Necesitas un servicio?
                                             </p>
                                             <hr></hr>
-                                            <Link to="/home">
+                                            <Link to="/my-publications">
                                                 <button style={iconPublicacionesNet} className="buttonMenu">Mis publicaciones</button>
                                             </Link>
                                             <Link to="/publicar-trabajo">
                                                 <button style={iconPublica} className="buttonMenu">Publica un trabajo</button>
+                                            </Link>
+                                        </div>  
+                                    </div>
+                                    <div className={this.state.modalJobs}>
+                                        <div className="box-options">
+                                            <p className="title-modal-nav">
+                                                Mis trabajos
+                                            </p>
+                                            <hr></hr>
+                                            <Link to="/home">
+                                                <button style={iconPublicacionesNet} className="buttonMenu">Guardados</button>
+                                            </Link>
+                                            <Link to="/publicar-trabajo">
+                                                <button style={iconPublica} className="buttonMenu">Mis aplicaciones</button>
                                             </Link>
                                         </div>  
                                     </div>
@@ -326,19 +368,22 @@ class NavBar extends React.Component {
                                 
                             <div className="login">
                                 {/* <Link to="/barrainteractiva"> */}
-                                    <input onClick={this.login} className="buttonIniciar" type="submit" value="ACCEDER"/>
+                                    <button onClick={this.login} className="buttonIniciar" type="submit">Acceder</button>
                                 {/* </Link> */}
                                 <Link to="/recuperar-contraseña">
-                                    <input className="buttonOlvido" type="button" value="Olvidé mi contraseña" />
+                                    <button className="buttonOlvido" type="button">Olvidé mi contraseña</button>
                                 </Link>
                             </div>
-                            <hr className="line-login" data-content="or"></hr>
-                            <div className="div-buttons-auth">
-                                <button style={iconGoogle} className="google-auth" onClick={this.handleAuth} type="buttton">Continuar con Google</button>
-                                <button style={iconFacebook} className="facebook-auth" onClick={this.handleAuth} type="buttton">Continuar con Facebook</button>
-                                <button style={iconLinked} className="linkedin-auth" onClick={this.handleAuth} type="buttton">Continuar con Linkedin</button>
-                            </div>
                         </form>
+                        <hr className="line-login" data-content="or"></hr>
+                        <div className="div-buttons-auth">
+                            <button style={iconGoogle} className="google-auth" onClick={this.handleAuth} type="buttton">Continuar con Google</button>
+                            <button style={iconFacebook} className="facebook-auth" onClick={this.handleAuth} type="buttton">Continuar con Facebook</button>
+                            <button style={iconLinked} className="linkedin-auth" onClick={this.handleAuth} type="buttton">Continuar con Linkedin</button>
+                        </div>
+                        <div>
+                            <p>¿Eres nuevo en Net540? < Link to="/registro-net"> Regístrate ahora</Link></p>
+                        </div>
                     </div>
                 
             </React.Fragment>

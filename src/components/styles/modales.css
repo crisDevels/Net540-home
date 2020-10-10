@@ -6,19 +6,55 @@
     bottom: 0;
     margin: auto;
     z-index: 3;
-    padding: 1em 1.5em;
+    padding: 1em 1.8em;
     background: white;
     box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
     height: 260px;
     width: 220px;
-    border-radius: 30px;
+    border-radius: 20px;
+    text-align: center;
+    animation-name:  fadeIn;
+    animation-duration: 1.2s;
+}
+
+.modal-options {
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: 30px;
+    width: 150px;
+    z-index: 3;
+    background: white;
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
+    border-radius: 15px;
+    padding: 5px 12px 7px 12px ;
     text-align: center;
     animation-name:  fadeIn;
     animation-duration: 1.2s;
 }
 
 .descriptionModal {
-    font-size: 12px;
+    font-size: 13px;
+}
+
+.iconURLmodal {
+    font-family: 'Lato', sans-serif;
+    font-size: .8rem;
+    color: #757575;
+    border-style: none;
+    background: none;
+    padding: 10px 10px 10px 40px;
+    font-weight: 400;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+    outline: none;
+}
+
+.iconURLmodal:hover,
+.iconURLmodal:focus {
+    color: #1DAEFF;
 }
 
 .container-close {
@@ -45,11 +81,11 @@
 
 .title-modal {
     text-align: center;
-    font-size: 18px;
 }
 
 .title-modal p {
     margin: 10px 0;
+    font-size: 18px;
 }
 
 .confirmar-button {
@@ -60,7 +96,20 @@
     margin: 5px 10px;
     font-weight: 700;
     border-style: none;
-    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+    outline: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.delete-button {
+    padding: 7px 20px;
+    background: #FF524B;
+    border-radius: 30px;
+    color: white;
+    margin: 5px 10px;
+    font-weight: 700;
+    border-style: none;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
     outline: none;
     font-family: 'Lato', sans-serif;
 }
@@ -95,7 +144,11 @@
     100% {
       opacity: 1;
     }
-  }
+}
+
+  @media screen and (max-width: 1200px) {
+
+}
 
   @media screen and (max-width: 425px) {
     .modal-aplication {

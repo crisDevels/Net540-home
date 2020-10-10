@@ -9,9 +9,9 @@ import iconLocation from '../images/locationIcon.svg'
 import iconModality from '../images/modalityIcon.svg'
 import iconSector from '../images/sectorIcon.svg'
 import iconTime from '../images/timeIcon.svg'
-import optionsImage from '../images/options.svg'
 import imagePubli from '../images/image-publication.svg'
-import equis from '../images/cerrarG.svg'
+import descriptionIcon from '../images/iconDescriptions.svg'
+import checkIcon from '../../../images/check.svg'
 
 
 class MyVacant extends React.Component {
@@ -20,24 +20,22 @@ class MyVacant extends React.Component {
     render() {
         return <React.Fragment>
             <div>
-                <h2 className="view-vacant">Visualiza tu vacante</h2>
                 <div className="publication">
                     <div className="flex-title-vacant">
                         <div className="div-TypeCompany">
-                            <img alt="modelo ilutración compañias" src={typeCompanyImage} width="35px"/>
+                            <img alt="modelo ilutración compañias" className="icon-sector-style" src={typeCompanyImage} width="35px"/>
+                            <div className={this.props.checkVerify}>
+                                <img alt="solo es un check" src={checkIcon} className="check-icon-publication" />
+                            </div>
                         </div>
                         <div className="title-vacant-general">
                             <p className="titleVacant">
                                 {this.props.title} 
-                                <strong>{this.props.urgent}</strong>
+                                <strong> {this.props.urgent && "URGENTE"}</strong>
                             </p>
                             <p className="subtitleVacant-fecha">
                                 30 de Septiembre, 2020
                             </p>
-                        </div>
-                        <div className="option-title-vacant">
-                            <img src={optionsImage} alt="iconos opciones de publicación" height="15px"/>
-                            <img src={equis} alt="cerrar publicación" height="15px"/>
                         </div>
                     </div>
                     <div className="blockSubs">
@@ -46,14 +44,31 @@ class MyVacant extends React.Component {
                             Valor del servicio: {this.props.rate}
                         </p>
                         <p className="subtitleVacant">
-                            <img alt="icono localización" src={iconLocation} height="15px"/>
+                            <img alt="icono localización" src={iconLocation} height="19px"/>
                             Ubicación: {this.props.location}
                         </p>
                     </div>
                     <hr className="linea-form-service"></hr>
-                    <div className="short-description-vacant">
+                    <div className="description-vacant">
                         <div>
                             <p>{this.props.description}</p>
+                            <p className="title-decriptions-feed">{this.props.titleDescription}</p>
+                            <div className="block-items-descriptions">
+                                <div>
+                                    <ul className="list-descriptions">
+                                        {this.props.descriptions.map((descriptions, i)=>{
+                                            return (
+                                                <li key={descriptions.conteoDescriptions} className="containerDescriptions">
+                                                    <div className="descriptions-p">
+                                                        <img alt="icon-items-descriptions" className="icon-items" src={descriptionIcon} width="12px"/>
+                                                        {descriptions.descriptionsService}
+                                                    </div> 
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="flex-items">
@@ -106,9 +121,6 @@ class MyVacant extends React.Component {
                         </div>
                     </div>
                     <hr className="linea-form-service"></hr>
-                    <div className="centerButton-block">
-                        <button type="button" className="button-siguiente">Aplicar (-5 cupones)</button>
-                    </div>
                     <div className="image-center">
                         <img src={imagePubli} width="400px" alt="contexto publicación de vacantes" />
                     </div> 

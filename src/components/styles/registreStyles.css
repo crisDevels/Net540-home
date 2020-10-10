@@ -36,6 +36,49 @@ azulclaro: #00BDEF */
     font-weight: 800;
 }
 
+/* registro page */
+
+.background-registro {
+    padding: 20px 0;    
+}
+
+.col-registry {
+    width: 32%;
+    text-align: left;
+    padding: 0 35px;
+}
+
+.flex-registry {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.hero-p {
+    font-size: 18px;
+}
+
+.border-form {
+    width: 40%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.subtitle-strong {
+    color: #1DAEFF;
+}
+
+.flex-Registre-names {
+    display: flex;
+    justify-content: center;
+}
+
+.formRegitre-pages {
+    display: block;
+    width: 350px;
+}
+
 
 
 
@@ -48,10 +91,28 @@ azulclaro: #00BDEF */
     .boxRegistre img {
         width: 30vw;
     }
+
+    .flex-registry {
+        flex-wrap: wrap;
+    }
+
+    .col-registry {
+        width: 100%;
+        text-align: center;
+        padding: 0 35px;
+    }
 }
 
 @media screen and (max-width: 425px) {
+
+    .border-form {
+        width: 100%;
+    }
     
+    .background-registro {
+        padding: 30px 0 0px 0;    
+    }
+
     .boxRegistre {
         margin: 10px 0;
         width: 60vw;
@@ -63,6 +124,11 @@ azulclaro: #00BDEF */
 
     .buttonRegistre {
         font-size: .9rem;
+    }
+
+    .formRegitre-pages {
+        display: block;
+        width: 100%;
     }
 }
 

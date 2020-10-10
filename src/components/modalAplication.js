@@ -3,7 +3,6 @@ import React from 'react'
 import './styles/modales.css'
 
 import ilusModal from '../images/IlustracionCupones.svg'
-import cerrar from '../components/FormularioRegistro/images/cerrar.svg';
 
 function ModalAplication(props) {
     return (
@@ -13,7 +12,6 @@ function ModalAplication(props) {
                     <div className="title-modal">
                         <p>Confirmación</p>
                     </div>
-                    <div onClick={props.onAplication} className="container-close"><img alt="cerrar modal icono" src={cerrar}/></div>
                 </div>
                 <div className="container-image-modal">
                     <img alt="ilustracion modal" width="150px" src={ilusModal}/>

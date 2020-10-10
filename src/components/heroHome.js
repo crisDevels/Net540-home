@@ -7,7 +7,7 @@ import Registre from '../components/registre.js'
 import imagefreelancer from '../images/ILUSTRACION-PRUEBA-1.gif'
 
 import '../components/styles/popRegistro.css'
-import registroImage from '../images/RegistroILU.png'
+import registroImage from '../images/registroILU2.svg'
 
 import '../fonts/style.css'
 
@@ -72,7 +72,7 @@ class HeroHome extends React.Component {
         .then(() => {
         
         // window.location.reload(true)
-        window.location.href = '/home'
+        window.location.href = '/works'
 
         alert('Your account has been created');
             const nameUser = this.state.name;
@@ -114,7 +114,7 @@ render() {
                 <div className="registreBlock">
                     <div className="boxReg">
                         <h1>Te damos la bienvenida</h1>
-                        <p className="hero-p">Que las empresas no se pierdan de tu talento, cuentanos sobre tí, que nosotros hacemos el resto <strong>¿Qué estas esperando?</strong></p>
+                        <p className="hero-p">Que el mundo no se pierda de tu talento, cuentanos sobre tí, que nosotros hacemos el resto <strong className="subtitle-strong">¿Qué estas esperando?</strong></p>
                         {/* <button className="buttonModal" onClick={this.abrirModalEmpresa}>< Registre imagenFreelancer={imageProject} buttonRegistre="¿Estás contratando?" /></button> */}
                     </div>
                     <div className="boxReg">

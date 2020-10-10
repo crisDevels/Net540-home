@@ -5,4 +5,16 @@
         display: block;
         justify-content: left;
         text-align: left;
+        animation-name:  fadeIn;
+        animation-duration: .8s;
 }
+
+@keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+      
+        100% {
+          opacity: 1;
+        }
+    }

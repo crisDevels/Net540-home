@@ -6,11 +6,9 @@ import './styles/homeStyles.css'
 
 import NavBar from '../components/NavBar'
 import HeroHome from '../components/heroHome'
-import Comenzar from '../components/FormularioRegistro/comenzemos'
 
 import PageLoading from './pageLoading'
 
-import loader from '../images/loader.gif'
 
 import '../components/styles/popRegistro.css'
 
@@ -22,6 +20,8 @@ class Home extends React.Component {
         this.state = {
             isLoading: true,
             user: null,
+            registryEmail:"",
+            registryPassword:"",
         }
     }
 
@@ -35,46 +35,70 @@ class Home extends React.Component {
 
     }
 
-    login = ()=> {
-        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then(result => console.log(`${result.user.email} ha iniciado sesión`))
-        .catch(error => console.log(`Error ${error.code}: ${error.message}`))   
+    createUser = (e)=> {
+        e.preventDefault();
+        firebase.auth().createUserWithEmailAndPassword(this.state.registryEmail, this.state.registryPassword)
+
+        .then(() => {
+        
+        // window.location.reload(true)
+        window.location.href = '/works'
+
+        alert('Your account has been created');
+            const nameUser = this.state.name;
+            console.log(nameUser);
+
+        var user = firebase.auth().currentUser;
+        //Actualizando nombre de usuario 
+        user.updateProfile({
+              displayName: this.state.name
+            })
+        })
+
+        .catch((error)=> {
+        // Handle Errors here.
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        if (errorCode === 'auth/weak-password') {
+        alert('The password is too weak.');
+        } else {
+        alert(errorMessage);
+        }
+        console.log(error);
+        });    
+    }
+
+    handleChange = (e)=> {
+        const { value, name } = e.target;
+        this.setState({
+        [name]: value 
+        })
     }
 
     render() { 
         return <React.Fragment>
-            
-
-        <section className={this.state.blur}>
-
             {this.state.isLoading ? <PageLoading /> :
-                    <div className="home-page">
-                        <div className="wrapper-border">
+                <div className="home-page">
+                    {
+                        !this.state.user ? 
                             <div>
-                                <NavBar />
-                            </div>
-                            <div className="wrapper-home">
-                                <div>
-                                    { !this.state.user &&
+                                <div className="wrapper-border">
+                                    <div>
+                                        <NavBar />
+                                    </div>
+                                    <div className="wrapper-home">
                                         <HeroHome />
-                                    }
-                                    { this.state.isLoading ? <div><img alt="loader de carga" src={loader}/></div> : 
-                                    this.state.user &&
-                                        < Comenzar user={this.state.user}/>
-                                    }
+                                        <Footer />
+                                    </div>
                                 </div>
-                            </div>
+                            </div> :
                             <div>
-                                { !this.state.user &&
-                                    <Footer />
-                                } 
+                                <PageLoading />
                             </div>
-                        </div>
-                    </div>
+                    }
+                </div>
             }
         
-        </section>
-    
         </React.Fragment>
     }
 }

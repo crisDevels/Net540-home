@@ -1,24 +1,24 @@
 import React from 'react'
 
-import './FormularioRegistro/stylesForm/PublicationStyle.css'
+import './styles/PublicationStyle.css'
 import './FormularioRegistro/stylesForm/formStyles.css'
 import '../pages/styles/feedStyles.css'
 
 import iconSearch from '../images/searchIcon.svg'
 
-
 var searchIcon = {
     backgroundImage: "url("+ iconSearch + ")"
 };
 
-class SearchFeed extends React.Component {
-    render() {
+function SearchFeed(props) {
         return (
-            <div className={this.props.blockSearch}>
+            <div className={props.blockSearch}>
                 <div>
-                    <h2>Buscar trabajos</h2>
+                    <h2 className="titleSearch">Buscar trabajos</h2>
                     <div className="center-search">
-                        <input style={searchIcon} 
+                        <input style={searchIcon}
+                            onChange={props.handleQuery}
+                            value={props.query}
                             className="formInput-search" 
                             type="text"
                             name="profesionSearch"
@@ -33,7 +33,6 @@ class SearchFeed extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default SearchFeed;
