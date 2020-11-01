@@ -3,436 +3,589 @@ azulclaro: #1DAEFF
 grisOscuro: #454545
 grisMedio: #757575
 grisClaro: #C4C4C4 */
+/* block how function Landing */
+
+.flex-title-how {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.wrapper-function {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  flex-wrap: inherit;
+}
+
+.block-how-landing {
+  margin: 50px 0 0 0;
+}
+
+.container-paso-paso {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  margin: 40px 0 0 0;
+}
 
 .titleComo {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .howgran {
-    margin: 0 0 40px 0;
+  margin: 0 0 40px 0;
 }
 
 .blockTitle {
-    margin: 30px;
-    text-align: center;
-    flex-wrap: wrap;
+  margin: 30px;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
-.blockTitle h2 {
-    font-size: 3rem;
-    color: #1DAEFF;
-    margin-block-start: 0em;
-    margin-block-end: 0.3em;
+.title-how-function {
+  color: #1DAEFF;
+  margin: 0 0 25px 0;
+  font-size: 22px;
 }
 
-.buttonActive {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    background: white;
-    border-radius: 30px;
-    color: #1DAEFF;
-    border-style: none;
-    padding: 15px 30px;
-    margin: 0 30px;
-    font-weight: 800;
-    box-shadow: 0 3px 8px 0 #378dcab4;
-    outline   : none;
+.buttons-how {
+  display: flex;
 }
 
-.buttonDesactive {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    background: white;
-    border-radius: 30px;
-    color: #a5a5a5;
-    border-style: none;
-    padding: 15px 30px;
-    margin: 0 30px;
-    font-weight: 800;
-    box-shadow: 0 3px 8px 0 #00000027;
-    outline   : none;
-}
-
-.Option {
-    background: linear-gradient(to right, #A341FD, #4F4CF4);
-    border-radius: 70px;
-    padding: 5px 15px;
-    display: flex;
-    width: 200px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
-    animation-name:  PopIn;
-    animation-duration: 1s;
-}
-
-.Option p {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;  
-    color: white;
-    animation-name:  fadeIn;
-    animation-duration: 3s;
-    font-weight: 700;
-}
-
-.content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.Option:hover,
-.Option:focus {
+.buttonFreelancer {
+  font-family: 'Lato', sans-serif;
+  font-size: .9rem;
+  background: #1DAEFF;
+  border: 1px solid #1DAEFF;
+  border-radius: 7px;
+  color: white;
+  padding: 10px 30px;
+  margin: 10px;
+  font-weight: 700;
   outline   : none;
-  box-shadow: 0 3px 8px 0 #00000077;
+  transition: .5s ease;
+}
+
+.buttonFreelancer-desactive {
+  font-family: 'Lato', sans-serif;
+  font-size: .9rem;
+  background: white;
+  border-radius: 7px;
+  color: #a5a5a5;
+  padding: 10px 30px;
+  margin: 10px;
+  font-weight: 700;
+  outline   : none;
+  border: 1px solid #1DAEFF;
+  transition: .5s ease;
+}
+
+.buttonContratante {
+  font-family: 'Lato', sans-serif;
+  font-size: .9rem;
+  background: #1DAEFF;
+  border: 1px solid #1DAEFF;
+  border-radius: 7px;
+  color: white;
+  padding: 10px 30px;
+  margin: 10px;
+  font-weight: 700;
+  outline   : none;
+  transition: .5s ease;
+}
+
+.buttonContratanteDesactive {
+  font-family: 'Lato', sans-serif;
+  font-size: .9rem;
+  background: white;
+  border-radius: 7px;
+  color: #a5a5a5;
+  padding: 10px 30px;
+  margin: 10px;
+  font-weight: 700;
+  outline   : none;
+  border: 1px solid #1DAEFF;
+  transition: .5s ease;
+}
+
+.buttonContratante:hover,
+.buttonFreelancer:hover {
+  background: #1DAEFF;
+  color: white;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.independiente.active {
+  display: block;
+  text-align: center;
 }
 
 .independiente {
-    text-align: center;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
-.independienteDesactive  {
-    display: none;
+.independiente-desactive {
+  display: none;
 }
 
-.empresa {
-    text-align: center;
+.contratante-active {
+  display: block;
+  text-align: center;
 }
 
-.empresaDesactive {
-    text-align: center;
-    display: none;
+.contratante {
+  text-align: center;
+  display: none;
+  height: 100%;
+  width: 100%;
 }
 
 .pasoApaso {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    height: 390px;
+  position: relative;
+  height: 300px;
+  width: 100%;
 }
 
-.iconComo {
-    padding: 40px;
-    background: #1DAEFF;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.line-time-animation {
+  width: 0%;
+  height: 15px;
+  background: linear-gradient(90deg,#1DAEFF, #1dacff7c);
+  border-radius: 30px;
+  position: absolute;
+  top: 45px;
+  animation-name:  lineAnimation;
+  animation-delay: .5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
-
-.border {
-    box-shadow: 0 3px 4px 0 #00000077;
-    padding: 5px;
-    border-radius: 80px;
-    background: white;
-    position: relative;
-    z-index: 1;   
+@keyframes lineAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
-
-.border:hover,
-.border:focus {
-  outline   : none;
-  box-shadow: 0 3px 10px 0 #378dcab6;
-}
-
-.boxIcon {
-    display: flex;
-    align-items: center;
+.paso-paso {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .paso {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 0px 20px 0 20px;
-    width: 160px;
-    text-align: center;
-    font-size: .7rem;
-    font-weight: 500;
-    animation-name:  fadeIn;
-    animation-duration: 1s;
-    color: rgb(80, 80, 80);
-    height: 350px;
+  display: block;
+  width: 20%;
+  text-align: center;
+  animation-name:  fadeIn;
+  animation-duration: .5s;
+  height: 100%;
 }
 
-.paso h2 {
-    font-size: 2rem;
-    font-weight: 900;
-    color: #1DAEFF;
-    margin-block-start: 0.23em;
-    margin-block-end: 0.23em;
+.container-paso-number {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconComo {
+  background: #1DAEFF;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border: 10px solid white;
+  box-shadow: 0 3px 4px 0 #00000077;
+}
+
+.border:hover,
+.border:focus {
+outline   : none;
+box-shadow: 0 3px 10px 0 #378dcab6;
+}
+
+.boxIcon {
+  display: flex;
+  align-items: center;
+}
+
+/* .paso {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 20px 0 20px;
+  width: 200px;
+  text-align: center;
+  font-weight: 500;
+  animation-name:  fadeIn;
+  animation-duration: 1s;
+  color: rgb(80, 80, 80);
+  height: 250px;
+} */
+
+.paso h4 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  margin-block-start: 0.23em;
+  margin-block-end: 0.23em;
 }
 
 .paso h3 {
-    font-size: 1rem;
-    font-weight: 900;
-    color: black;
-    margin-block-start: 0.43em;
-    margin-block-end: 0.83em;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1DAEFF;
+  margin-block-start: 0.43em;
+  margin-block-end: 0.83em;
 }
 
+.container-text-paso {
+  margin: 30px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .swiftActive {
-    border-radius: 30px;
-    width: 150px;
-    height: 70px;
-    align-items: center;
+  width: 70%;
+  text-align: center;
 }
-
 
 .textActive {
-    display:block;
-    color: #757575;
-    margin:0;
+  display:block;
+  color: #757575;
+  margin:0;
+  font-size: 14px;
 }
-
-
-/* Aqui se dan los estilos de los iconos */
-.icon-Logo_registrate {
-    font-size: 50px;
-}
-
-.icon-Logo_sube-tu-hoja-de-vida {
-    font-size: 50px;
-}
-
-.icon-Logo_cupones_varios {
-    font-size: 50px;
-}
-
-.icon-Logo_comparte {
-    font-size: 50px;
-}
-
-.icon-Logo_crea-tu-red {
-    font-size: 50px;
-}
-
-.icon-Logo_documento {
-    font-size: 50px;
-}
-
-.icon-Logo_maletin {
-    font-size: 50px;
-}
-
 
 @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      display: none;
-    }
-
-    100% {
-      opacity: 1;
-      display: block;
-    }
+  0% {
+    opacity: 0;
+    display: none;
   }
-
-  @keyframes fadeInT {
-    0% {
-      opacity: 0;
-      display: none;
-    }
-
-    50% {
-        opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-      display: block;
-    }
+  100% {
+    opacity: 1;
+    display: block;
   }
+}
+
+@keyframes fadeInT {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
 
 /*@keyframes animationIn {*/
-        @keyframes PopIn {
-            0% {
-                top: -180px;
-            }
-
-            100% {
-                top: 10px;
-            }
-          }
+@keyframes PopIn {
+  0% {
+    top: -180px;
+  }
+  100% {
+    top: 10px;
+  }
+}
 
 /*@keyframes animationIn {*/
-    @keyframes PopOut {
-        0% {
-            top: 10px;   
-        }
+@keyframes PopOut {
+  0% {
+    top: 10px;   
+  }
+  100% {
+    top: -180px;
+  }
+}
 
-        100% {
-            top: -180px;
-        }
-      }
-
+@media screen and (max-width: 1024px) {
+  .paso {
+    width: auto;
+  }
+}
 
 @media screen and (max-width: 768px) {
-
-    .blockTitle {
-        padding: 5px;
-        margin: 5px;
-    }
-
-    .blockTitle img {
-        display: none;
-    }
-
-    .blockTitle h2 {
-        font-size: 2rem;
-    }
-
-    .pasoApaso {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100vw;
-        height: 350px;
-    }
-
-    .iconComo {
-        padding: 30px;
-        width: 50px;
-        height: 50px;
-    }
-
-    .iconComo img {
-        width: 30px;
-    }
-
-    .paso {
-        margin: 0 10px;
-        font-size: .65rem;
-        padding: 0;
-        width: 120px;
-    }
-
-    .paso h2 {
-        font-size: 1.7rem;
-        font-weight: 900;
+  .blockTitle {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .blockTitle img {
+    display: none;
+  }
+  
+  .blockTitle h2 {
+    font-size: 2rem;
+  }
+  
+  .pasoApaso {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 350px;
+  }
+  
+  .iconComo {
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .paso {
+    margin: 0 10px;
+    font-size: .65rem;
+    padding: 0;
+    width: 120px;
+  }
+  
+  .paso h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+  }
     
-    }
+  .paso h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+  }
+  
+  .border {
+    padding: 5px;  
+  }
     
-    .paso h3 {
-        font-size: .8rem;
-        font-weight: 900;
-        text-align: center;
-    }
-
-    .border {
-        padding: 5px;
-        width: 110px;  
-    }
+  .swiftActive {
+    height: 100px;
+    width: 110px;
+    /* padding: 70px 5px 25px 5px; */
+    border-radius: 0 0 80px 80px;
+  }
     
-    .swiftActive {
-        height: 100px;
-        width: 110px;
-        /* padding: 70px 5px 25px 5px; */
-        border-radius: 0 0 80px 80px;
-    }
+  .textActive {
+    margin: 10px 5px;
+    font-size: 12px;
+  }
+  
+  .buttonActive {
+    margin: 0 20px;
+  }
     
-    .textActive {
-        margin: 10px 5px;
-    }
-
-    .buttonActive {
-        margin: 0 20px;
-    }
-    
-    .buttonDesactive {
-        margin: 0 20px;
-    }
-
-
+  .buttonDesactive {
+    margin: 0 20px;
+  }
 }
 
 @media screen and (max-width: 425px) {
+  .flex-title-how {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .blockTitle {
-        padding: 5px;
-        margin: 5px;
+  .flex-title-how {
+    margin: 0;
+  }
+
+  .wrapper-function {
+    max-width: 95%;
+  }
+
+  .buttons-how {
+    display: flex;
+    width: 100%;
+  }
+
+  .buttons-50 {
+    width: 50%;
+    text-align: center;
+  }
+
+  .buttonFreelancer {
+    width: 97%;
+    margin: 0;
+  }
+
+  .buttonContratanteDesactive {
+    width: 97%;
+    margin: 0;
+  }
+
+  .buttonFreelancer-desactive {
+    width: 97%;
+    margin: 0;
+  }
+
+  .buttonContratante-active {
+    width: 97%;
+    margin: 0;
+  }
+
+  .blockTitle {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .blockTitle img {
+    display: none;
+  }
+  
+  .blockTitle h2 {
+    font-size: 2rem;
+  }
+
+  .container-paso-paso  {
+    top: -5px;
+    background: white;
+    border: 1px solid #1DAEFF;
+    border-radius: 10px;
+    height: auto;
+    position: relative;
+    margin: 0;
+  }
+
+  .line-time-animation {
+    width: 10px;
+    height: 0%;
+    top: 50px;
+    left: 72px;
+    background: linear-gradient(#1DAEFF, #1dacff8a);
+  }
+
+  @keyframes lineAnimation {
+    0% {
+      width: 10px;
+      height: 0%;
     }
-
-    .blockTitle img {
-        display: none;
+    100% {
+      width: 10px;
+      height: 85%;
     }
+  }
 
-    .blockTitle h2 {
-        font-size: 2rem;
-    }
+  .container-paso-number {
+    width: 40%;
+  }
 
-    .pasoApaso {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: max-content;
-    }
+  .container-text-paso {
+    margin: 0;
+  }
+  
+  .pasoApaso {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: max-content;
+  }
 
+  .paso-paso {
+    flex-wrap: wrap;
+  }
 
-    .paso h3 {
-        font-size: .8rem;
-        font-weight: 900;
-        text-align: center;
-        padding: 15px;
-    }
+  .paso {
+    display: flex;
+    margin: 20px 0;
+    font-size: 1.3rem;
+    width: 90%;
+    font-weight: 700;
+    color: rgb(80, 80, 80);
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .paso h3 {
+    font-size: .8rem;
+    font-weight: 900;
+    text-align: center;
+    padding: 0;
+  }
 
-    .iconComo {
-        padding: 30px;
-    }
+  .paso h4 {
+    font-size: 20px;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  
+  .iconComo {
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    border: 5px solid white;
+  }
+  
+  .border {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
 
-    .border {
-        margin-right: 20px;
-    }
-
-    .paso {
-        display: flex;
-        margin: 0;
-        font-size: 1.3rem;
-        width: 92%;
-        font-weight: 700;
-        color: rgb(80, 80, 80);
-        height: 240px;
-        align-items: center;
-    }
-
-    .paso h3 {
-        font-size: 1rem;
-        font-weight: 900;
-        text-align: center;
-    }
-
-    .swiftActive {
-        width: 50%;
-        height: 150px;
-    }
-
-    .textActive {
-        display: block;
-        margin: 10px 5px;
-        color: #757575;
-        font-size: .9rem;
-    }
-
-    .buttonActive {
-        margin: 10px;
-        width: 80%;
-    }
+  .container-number-how {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .paso h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+  }
+  
+  .swiftActive {
+    width: 70%;
+    height: auto;
+    margin: 0;
+  }
+  
+  .textActive {
+    display: block;
+    margin: 10px 0;
+    color: #757575;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  .buttonActive {
+    margin: 10px;
+    width: 80%;
+  }
     
-    .buttonDesactive {
-        margin: 10px;
-        width: 80%;
-    }
-
+  .buttonDesactive {
+    margin: 10px;
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -442,7 +595,7 @@ grisClaro: #C4C4C4 */
     }
 
     .textActive {
-        font-size: .8rem;
+        font-size: .7rem;
     }
 
 }

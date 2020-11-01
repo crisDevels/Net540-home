@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './styles/modales.css'
+import '../styles/modales.css'
 
-import ilusModal from '../images/IlustracionCupones.svg'
-import ModalShort from './modalShort'
+import ilusModal from '../../images/IlustracionCupones.svg'
+import ModalShort from '../modalShort'
 
 function ModalDesactive(props) {
     return (

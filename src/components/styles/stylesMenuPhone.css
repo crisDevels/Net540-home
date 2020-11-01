@@ -1,0 +1,45 @@
+.container-menu-phone {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: fixed;
+  top: 80px;
+  z-index: 5;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0px -6px 15px rgba(0, 0, 0, .35);
+  animation: modalMenuAnimate 1s ease forwards;
+  padding: 20px 0 0 0;
+}
+
+@keyframes modalMenuAnimate {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transition: translateY(0);
+  }
+}
+
+.button-phone {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0 0 0 20px;
+  border-bottom: .2px solid #c4c4c4;
+}
+
+.button-phone:hover,
+.button-phone:active {
+  background-color: #f3f3f3;
+}
+
+.p-button-menu {
+  color: #757575;
+  font-size: 18px;
+}
+
+.icon-menu-burguer {
+  color: #1DAEFF;
+}

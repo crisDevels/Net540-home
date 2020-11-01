@@ -683,9 +683,9 @@ ul, ol {
   width: 35px;
 }
 
- .formInput option {
-   font-style: normal;
- }
+.formInput option {
+  font-style: normal;
+}
 
 .formInput-Desactive {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);

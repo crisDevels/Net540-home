@@ -1,8 +1,8 @@
 import React from 'react'
 
-import './styles/modales.css'
+import '../styles/modales.css'
 
-import ilusModal from '../images/IlustracionCupones.svg'
+import ilusModal from '../../images/IlustracionCupones.svg'
 
 function ModalAplication(props) {
     return (

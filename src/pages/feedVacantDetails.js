@@ -8,7 +8,7 @@ import RegistroPage from '../components/registroPage';
 
 import ListWorks from '../components/listWorks'
 import WorkLarge from '../components/workLarge'
-import ModalAplication from '../components/modalAplication'
+import ModalAplication from '../components/Modales/modalAplication'
 import PageLoading from '../pages/pageLoading'
 
 import '../components/styles/popRegistro.css'

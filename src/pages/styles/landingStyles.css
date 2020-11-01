@@ -1,0 +1,1926 @@
+/* title landing joobbi */
+.title-landing-joobbi {
+  color: #1DAEFF;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.wrapper-landing {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.wrapper-border-landing {
+  max-width: 1250px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  padding: 10px 0 100px 0;
+  border-radius: 50px;
+  margin-top: 50px
+}
+
+/* daremos estilos al navLanding */
+
+.block-buttons-inicio {
+  background-color: transparent;
+  position: sticky;
+  z-index: 2;
+  padding: 20px 0;
+}
+
+.container-navBar-Landing {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  width: 20%;
+}
+
+.wrapper-nav-inicio {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.list-buttons-nav {
+  align-items: center;
+  display: flex;
+}
+
+.list-item-nav {
+  align-items: center;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: flex-end;
+}
+
+.button-nav {
+  border-style: none;
+  background: none;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 5px 20px;
+  outline: none;
+  transition: 1s ease;
+}
+
+.border-button-botom {
+  width: 0;
+  border-color: transparent;
+  transition: 1s ease ;
+  margin: 0;
+}
+
+.button-nav:hover .border-button-botom {
+  width: 100%;
+  border-color: white;
+}
+
+.button-inicio {
+  border-style: none;
+  background:  white;
+  font-family: 'Lato', sans-serif;
+  color: #1DAEFF;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 25px;
+  outline: none;
+  border-radius: 30px;
+  margin-left: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  transition: 1s ease;
+}
+
+.button-inicio:active {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  transform: scale(.95);
+}
+
+.modalInicioActiveLanding {
+  width: 340px;
+  height: 460px;
+  background: white;
+  padding: 1.7em 2.2em;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
+  animation-name:  fadeIn;
+  animation-duration: .8s;
+}
+
+.background-x {
+  background-color: #1DAEFF;
+  padding: 5px 6px 3px 6px;
+  border-radius: 50%;
+  color: white;
+  transition: .5s ease;
+}
+
+.background-x:hover,
+.background-x:focus {
+  transform: scale(.95);
+}
+
+/* button icon animations */
+.burguer-menu {
+  display: none;
+  position: relative;
+  z-index: 5;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.burguer-menu-cerrar {
+  display: none;
+  position: relative;
+  z-index: 5;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.burguer-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.burguer-icon-sub {
+  position: absolute;
+  top: 6px;
+  width: 35px;
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.burguer-icon-inf {
+  position: absolute;
+  top: 22px;
+  width: 35px;
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.burguer-icon-sub- {
+  position: absolute;
+  top: 6px;
+  width: 35px;
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.burguer-icon-inf- {
+  position: absolute;
+  top: 22px;
+  width: 35px;
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* animation x menu */
+
+.burguer-icon-sub-x {
+  position: absolute;
+  top: 6px;
+  width: 35px;
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+  top: auto;
+  transform: rotateZ(-45deg);
+  animation-name: iconSub;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
+}
+
+.burguer-icon-inf-x {
+  position: absolute;
+  top: 22px;
+  width: 35px;
+  height: 6px;
+  background-color: white;
+  border-radius: 10px;
+  top: auto;
+  transform: rotateZ(45deg);
+  animation-name: iconInf;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
+}
+
+/*@keyframes animationIconX {*/
+@keyframes iconSub {
+  0% {
+    transform: rotateZ(0deg);
+    top: 6px;
+  }
+  100% {
+    transform: rotateZ(-45deg);
+    top: 17px;
+  }
+}
+
+@keyframes iconInf {
+  0% {
+    transform: rotateZ(0deg);
+    top: 22px;
+  }
+  100% {
+    transform: rotateZ(45deg);
+    top: 17px;
+  }
+}
+
+/* daremos estilos al imagen background del HEROhome */
+.container-block-hero {
+  height: 550px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);
+  box-shadow: inset 0px 8px 25px 0px rgba(0,0,0,0.40);
+  background-position: initial;
+  background-attachment: fixed;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.3)), url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/EyvF0jkPg/videoblocks-camera-moves-round-happy-multi-ethnic-business-people-relaxing-at-office-party-dancing-celebrating-success-slow-motion_s49gjyvgi_thumbnail-1080_01.png'); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.3)), url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/EyvF0jkPg/videoblocks-young-european-businessman-dancing-in-circle-with-colleagues-at-office-party-celebrating-career-promotion-slow-motion_rdzssrivb7_thumbnail-1080_01.png');
+}
+
+@keyframes swipAnimation {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  }
+}
+
+@keyframes swipAnimationIn {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container-hero-resume {
+  height: 550px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);
+  box-shadow: inset 0px 8px 25px 0px rgba(0,0,0,0.40);
+  background-position: initial;
+  background-attachment: fixed;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.3)), url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/EyvF0jkPg/videoblocks-camera-moves-round-happy-multi-ethnic-business-people-relaxing-at-office-party-dancing-celebrating-success-slow-motion_s49gjyvgi_thumbnail-1080_01.png'); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.1)), url('http://joobbi.com/wp-content/uploads/2020/10/backgroung-resume-home-definitivo.png');
+}
+
+.button-container-resume {
+  height: 50px;
+  width: 50px;
+  right: 50px;
+  top: 370px;
+  z-index: 4;
+  border-radius: 50%;
+  position: absolute;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container-resume.desactive {
+  display: none;
+}
+
+.button-container-resume-close.active {
+  display: flex;
+}
+
+.button-container-resume-close {
+  height: 50px;
+  width: 50px;
+  right: 50px;
+  top: 370px;
+  z-index: 4;
+  border-radius: 50%;
+  position: absolute;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.button-container-resume1 {
+  height: 50px;
+  width: 50px;
+  right: 50px;
+  top: 370px;
+  z-index: 3;
+  border-radius: 50%;
+  position: absolute;
+  background: white;
+  animation-name: circleAnimation;
+  animation-delay: 2s;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.button-container-resume2 {
+  height: 50px;
+  width: 50px;
+  right: 50px;
+  top: 370px;
+  z-index: 3;
+  border-radius: 50%;
+  position: absolute;
+  background: white;
+  animation-name: circleAnimation;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes circleAnimation {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+.arrow-button {
+  width: 20px;
+}
+
+.arrow-button-close {
+  width: 20px;
+}
+
+@keyframes arrowRotate {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(180deg);
+  }
+}
+
+@keyframes arrowRotate0 {
+  0% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+.container-hero-design-resume {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  height: 300px;
+  display: none;
+  animation: fade 2s ease;
+}
+
+.container-hero-design-resume.active {
+  display: block;
+}
+
+.info-resume-curriculum {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.title-update-resume {
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 20px 0 20px 0;
+  line-height: 30px;
+}
+
+/* daremos estilos al content del HEROhome */
+.block-content-hero {
+  position: relative;
+  top: 0;
+  z-index: 1;
+  height: 350px;
+  animation: fade 2s ease;
+}
+
+.block-content-hero.desactive {
+  display: none;
+}
+
+.wrapper-hero-landing {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+  border-radius: 30px;
+}
+
+.container-logo-hero {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.div-logo-texto {
+  width: 40%;
+}
+
+.hero-text {
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+/* se daran al container popular link */
+.block-carrusel-relative {
+  position: relative;
+  top: 0px;
+  z-index: 1;
+}
+
+.list-pupular-most {
+  display: flex;
+}
+
+.wrapper-most-popular {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.title-carrusel {
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.container-box-popular {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+  height: 120px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+}
+
+.container-scroll-popular {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: none;
+  width: 100%;
+  height: 100px;
+  border-radius: 20px;
+  overflow-x: scroll;
+  transition: 1s ease;
+}
+
+.container-scroll-popular::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 5px;
+  height: 5px;
+}
+
+.container-scroll-popular::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.container-scroll-popular::-webkit-scrollbar-button {
+  width: 10px;
+  height: 10px;
+}
+
+.container-scroll-popular::-webkit-scrollbar-thumb {
+  background: #e6e5e5;
+  border-radius: 10px;
+}
+
+.container-scroll-popular::-webkit-scrollbar-thumb:hover {
+  background: #c4c4c4;
+}
+
+.sector-item-popular {
+  display: flex;
+  margin: 0 25px;
+  align-items: center;
+  justify-content: space-around;
+  width: 190px;
+}
+
+.imagen-sector {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+}
+
+.text-sector-popular {
+  font-weight: 700;
+  font-size: 14px;
+  text-align: left;
+  margin: 0 0 0 10px;
+  line-height: 15px;
+  color: #757575;
+}
+
+/* block why joobbi */
+.block-why-joobbi {
+  margin: 50px 0;
+}
+
+.wrapper-why-joobbi {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.col-1-100 {
+  width: 100%;
+}
+
+.flex-title-why {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+
+.title-why-joobbi {
+  color: #1DAEFF;
+  margin: 0;
+  font-size: 22px;
+}
+
+.subtitle-why {
+  color: #1DAEFF;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.p-why-description {
+  margin: 0 0 10px 0;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.list-why-joobbi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.color-icon-why {
+  color: #1DAEFF;
+  margin-right: 20px;
+}
+
+.item-list-why {
+  color: #757575;
+  display: block;
+  width: 28%;
+  text-align: left;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.button-flex-why {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button-flex-why-phone {
+  display: none;
+}
+
+/* block areas */
+.container-areas-title {
+  position: relative;
+}
+
+.block-areas-list {
+  height: 440px;
+  width: 100%;
+  background-color: #56CCF2;
+  clip-path: polygon(0% 30%, 100% 0%, 100% 70%, 0% 100%);
+  background-position: center;
+  position: absolute;
+  top: -60px;
+  z-index: 1;
+}
+
+.wrapper-areas {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  flex-wrap: inherit;
+}
+
+.block-items {
+  position: relative;
+  z-index: 2;
+  padding: 1px 0 50px 0;
+  background-color: #1DAEFF;
+}
+
+.title-gran-areas {
+  margin: 35px 0 30px 0;
+  font-size: 22px;
+  color: white
+}
+
+.center-items {
+  display: flex;
+  align-items: center;
+}
+
+.areas-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.areas-item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 16%;
+  height: 120px;
+  align-items: flex-start;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.areas-item-list p {
+  color: white;
+}
+
+.div-button-areas {
+  width: 100%;
+}
+
+.color-icon-areas {
+  color: white;
+}
+
+/* se daran estilos al block list blog */
+
+.block-blog {
+  margin: 0 0 50px 0;
+}
+
+.list-ul-blog-landing {
+  align-items: center;
+  width: auto;
+  display: flex;
+}
+
+.scroll-blog {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: none;
+  width: 100%;
+  height: 360px;
+  transition: 1s ease;
+}
+
+.list-item {
+  width: 200px;
+  margin: 0 20px;
+  position: relative;
+}
+
+/* scroll blog list */
+.scroll-blog::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 5px;
+  height: 5px;
+}
+
+.scroll-blog::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scroll-blog::-webkit-scrollbar-thumb {
+  background: #e6e5e5;
+  border-radius: 10px;
+}
+
+.scroll-blog::-webkit-scrollbar-thumb:hover {
+  background: #c4c4c4;
+}
+
+/**/
+
+.image-blog-landing {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+  object-fit: cover;
+  filter: brightness(.4);
+}
+
+.container-date-blog {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background: white;
+  width: 40px;
+  border-radius: 0px 0px 7px 7px;
+  border: 1px solid white;
+  padding: 10px;
+  top: 0px;
+  right: 20px;
+}
+
+.styles-p-date-landing-blog {
+  color: #1DAEFF;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.container-title-description-blog {
+  position: absolute;
+  top: 55%;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.title-blog-landing {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.description-blog-landing {
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.block-button-blog {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* se dan estilos al bloque de call to action */
+.block-call-to {
+  margin: 10px 0 0 0;
+  height: 400px;
+  background-position: center;
+  box-shadow: inset 0 -10px 25px rgba(0,0,0,0.25);
+  background:black;
+  max-width: 1200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.5)), url('https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2015/12/09112429/work-life-balance-working-from-home.jpg');
+}
+
+.wrapper-call-to {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.flex-container-call-to {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button-flex-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.block-text-button-call {
+  text-align: right;
+  margin: 0 40px 0 0;
+  width: 400px;
+}
+
+.container-text-call {
+  width: 100%;
+}
+
+.p-styles-call {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  line-height: 25px;
+}
+
+/* footer styles */
+
+.listTerms a {
+    text-decoration: none;
+    color: #1DAEFF;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+.listTerms {
+  width: 60%;
+  margin: 0;
+}
+
+.logofooter {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    color: #1DAEFF;
+    font-weight: 700;
+    /* margin-right: 40px; */
+}
+
+.footer-flex {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo-footer-case {
+    color: #1DAEFF;
+    margin: 0;
+}
+
+.container-block-footer {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.logofooter img{
+    margin-right: 10px;
+}
+
+
+.socialMedia {
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
+}
+
+
+.socialMedia a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1024px) {
+  
+  /* daremos estilos al navLanding */
+
+  .wrapper-nav-inicio {
+    max-width: 900px;
+  }
+
+  .wrapper-hero-landing {
+    max-width: 900px;
+  }
+
+  .wrapper-most-popular {
+    max-width: 900px;
+  }
+
+  /* responsive why list */
+  .item-list-why {
+    width: 25%;
+  }
+
+  /* responsive de how function */
+  .paso {
+    width: auto;
+  }
+
+  /* blog landing blog styles */
+  .scroll-blog {
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  /* responsive footer styles */
+  .footer-flex {
+    width: 95%;
+}
+
+.container-block-footer {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.logofooter {
+    width: 20%;
+}
+
+.listTerms a {
+    margin: 0 10px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+}
+
+
+li {
+    display: flex;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+
+  /* daremos estilos al buttons Joobbi */
+  .button-line-white {
+    font-size: 13px;
+  }
+
+  .button-line {
+    font-size: 13px;
+  }
+
+  .button-joobbi {
+    font-size: 13px;
+    margin: 0;
+  }
+
+
+  /*wrapper de landing */
+  .wrapper-nav-inicio {
+    max-width: 95%;
+  }
+
+  .wrapper-hero-landing {
+    max-width: 95%;
+  }
+
+  .wrapper-most-popular {
+    max-width: 95%;
+  }
+
+  .wrapper-why-joobbi {
+    max-width: 95%;
+  }
+
+  .wrapper-areas {
+    max-width: 95%;
+  }
+
+  .wrapper-function {
+    max-width: 95%;
+  }
+
+  .wrapper-landing {
+    max-width: 100%;
+  }
+
+  /* Se dan estilos al content */
+
+  .block-areas-list {
+    display: none;
+  }
+
+  .div-logo-texto {
+    width: 70%;
+  }
+
+  /* responsive de why joobbi */
+
+  .item-list-why {
+    width: 25%;
+    text-align: center;
+  }
+
+  /* estilos a las areas responsive */
+
+  .areas-item-list {
+    width: 25%;
+  }
+
+  /* se dan estilos responsive al paso a paso */
+
+  .blockTitle {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .blockTitle img {
+    display: none;
+  }
+  
+  .blockTitle h2 {
+    font-size: 2rem;
+  }
+  
+  .pasoApaso {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 350px;
+  }
+  
+  .iconComo {
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .paso {
+    margin: 0 10px;
+    font-size: .65rem;
+    padding: 0;
+    width: 120px;
+  }
+  
+  .paso h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+  }
+    
+  .paso h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+  }
+  
+  .border {
+    padding: 5px;  
+  }
+    
+  .swiftActive {
+    height: 100px;
+    width: 110px;
+    /* padding: 70px 5px 25px 5px; */
+    border-radius: 0 0 80px 80px;
+  }
+    
+  .textActive {
+    margin: 10px 5px;
+    font-size: 12px;
+  }
+  
+  .buttonActive {
+    margin: 0 20px;
+  }
+    
+  .buttonDesactive {
+    margin: 0 20px;
+  }
+
+  /* blog styles responsive */
+  .scroll-blog {
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .scroll-blog::-webkit-scrollbar {
+    display: none;
+  }
+
+  .title-landing-joobbi {
+    margin: 0 0 30px 20px;
+  }
+
+  /* container call to action styles */
+  .p-styles-call {
+    font-size: 18px;
+  }
+
+  /* responsive footer styles */
+  .logofooter img{
+    width: 60px;
+  }
+
+  .logofooter {
+    width: 30%;
+  }
+
+  .listTerms {
+    width: 40%;
+  }
+
+  .socialMedia {
+    width: 30%;
+  }
+
+  .listTerms a {
+    margin: 0 10px;
+    text-align: center;
+    font-size: 0.6rem;
+  }
+
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  li {
+    display: flex;
+  }
+
+  .icon-Logo_youtube {
+    font-size: 20px;
+  }
+
+  .icon-Logo_instagram {
+    font-size: 20px;
+  }
+
+  .icon-Logo_linkedin {
+    font-size: 20px;
+  }
+
+  .icon-Logo_facebook {
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  body.hidden {
+    overflow-y: hidden;
+  }
+
+  /* daremos estilos al buttons Joobbi */
+  .button-line-white {
+    font-size: 14px;
+    padding: 10px;;
+  }
+
+  .button-inicio {
+    font-size: 14px;
+    padding: 10px 12px
+  }
+
+  .button-nav {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .button-line {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .button-joobbi {
+    font-size: 14px;
+    padding: 10px 7px;
+  }
+
+  .modalInicioActiveLanding {
+    top: 100px;
+    width: 75%;
+  }
+
+  /* daremos estilos al navLanding */
+  .logo-container {
+    width: 50%;
+  }
+
+  .container-navBar-Landing {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px;
+  }
+
+  .burguer-menu {
+    display: flex;
+  }
+
+  .burguer-menu.desactive {
+    display: none;
+  }
+
+  .burguer-menu-cerrar.active {
+    display: flex;
+  }
+
+  .buttons-container {
+    display: none;
+  }
+
+  .buttons-container.active {
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 4;
+    background-color: #1dacffec;
+    width: 70vw;
+    padding-bottom: 20px;
+    justify-content: flex-end;
+    align-items: initial;
+    box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.40);
+  }
+
+  .block-buttons-inicio {
+    z-index: 5;
+  }
+
+  .list-buttons-nav {
+    display: block;
+  }
+
+  .list-item-nav {
+    width: 100%;
+    margin: 25px 10px;
+  }
+
+  /* le damos estilos al HERO IMAGE */
+  .container-block-hero {
+    background-position: center;
+    background-attachment: scroll;
+    height: 580px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .container-hero-resume {
+    background-position: center;
+    background-attachment: scroll;
+    height: 580px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.2)), url('http://joobbi.com/wp-content/uploads/2020/10/backgroung-resume-home-definitivo.png');
+  }
+
+  .button-container-resume {
+    height: 30px;
+    width: 30px;
+    top: 420px;
+    right: 0;
+    left: 0;
+    z-index: 4;
+    margin: auto;
+  }
+
+  .button-container-resume-close {
+    height: 30px;
+    width: 30px;
+    top: 420px;
+    right: 0;
+    left: 0;
+    z-index: 4;
+    margin: auto;
+  }
+
+  .button-container-resume1 {
+    height: 30px;
+    width: 30px;
+    top: 420px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  .button-container-resume2 {
+    height: 30px;
+    width: 30px;
+    top: 420px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  .arrow-button {
+    width: 15px;
+  }
+
+  .arrow-button-close {
+    width: 15px;
+  }
+
+  @keyframes swipAnimation {
+    0% {
+      height: 580px;
+    }
+    100% {
+      height: 0;
+    }
+  }
+  
+  @keyframes swipAnimationIn {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 580px;
+    }
+  }
+  
+  /* le damos estilos al HEROcontent */
+  .styles-logo-hero {
+    width: 80%;
+  }
+
+  .block-content-hero {
+    z-index: 2;
+    margin: 0 10px;
+    height: 400px;
+  }
+
+  .container-hero-design-resume {
+    z-index: 1;
+    margin: 0 10px;
+    height: 400px;
+  }
+
+  .info-resume-curriculum {
+    text-align: center;
+  }
+
+  .div-logo-texto {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* se dan estilos al carrusel de mostPopular */
+
+  .block-carrusel-relative {
+    position: relative;
+    top: 0;
+}
+
+  .wrapper-most-popular {
+    max-width: 97%;
+  }
+
+  .title-carrusel {
+    text-align: center;
+  }
+
+  .container-box-popular {
+    height: 75px;
+  }
+
+  .container-scroll-popular {
+    height: 100%;
+  }
+
+  .container-scroll-popular::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container-scroll-popular::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  
+  .list-pupular-most {
+    align-items: center;
+    width: auto;
+  }
+
+  .sector-item-popular {
+    justify-content: center;
+    margin: 0 7px;
+    width: 170px;
+  }
+
+  .imagen-sector {
+    width: 45px;
+    height: 45px;
+  }
+
+  .text-sector-popular {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* block why joobbi */
+
+  .flex-title-why {
+    display: block;
+  }
+
+  .block-why-joobbi {
+    margin-top: 40px;
+  }
+  .col-1-100 {
+    width: 100%;
+  }
+
+  .list-why-joobbi {
+    justify-content: center;
+  }
+
+  .title-why-joobbi {
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
+
+  .item-list-why {
+    width: 75%;
+  }
+
+  .item-list-why p {
+    font-size: 14px;
+  }
+
+  .button-flex-why {
+    display: none;
+  }
+  
+  .button-flex-why-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  /* se dan responsive al block areas */
+
+  .areas-item-list {
+    width: 50%;
+  }
+
+  .areas-list {
+    justify-content: center;
+  }
+
+  .wrapper-areas {
+    max-width: 95%;
+  }
+
+  /* responsive de how to function */
+  .flex-title-how {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flex-title-how {
+    margin: 0;
+  }
+
+  .wrapper-function {
+    max-width: 95%;
+  }
+
+  .buttons-how {
+    display: flex;
+    width: 100%;
+  }
+
+  .buttons-50 {
+    width: 50%;
+    text-align: center;
+  }
+
+  .buttonFreelancer {
+    width: 97%;
+    margin: 0;
+  }
+
+  .buttonContratante {
+    width: 97%;
+    margin: 0;
+  }
+
+  .buttonFreelancer.desactive {
+    width: 97%;
+    margin: 0;
+  }
+
+  .buttonContratante.active {
+    width: 97%;
+    margin: 0;
+  }
+
+  .blockTitle {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .blockTitle img {
+    display: none;
+  }
+  
+  .blockTitle h2 {
+    font-size: 2rem;
+  }
+
+  .container-paso-paso  {
+    top: -5px;
+    background: white;
+    border: 1px solid #1DAEFF;
+    border-radius: 10px;
+    height: auto;
+    position: relative;
+    margin: 0;
+  }
+
+  .line-time-animation {
+    width: 10px;
+    height: 0%;
+    top: 50px;
+    left: 65px;
+    background: linear-gradient(#1DAEFF, #1dacff8a);
+  }
+
+  @keyframes lineAnimation {
+    0% {
+      width: 10px;
+      height: 0%;
+    }
+    100% {
+      width: 10px;
+      height: 85%;
+    }
+  }
+
+  .container-paso-number {
+    width: 40%;
+  }
+
+  .container-text-paso {
+    margin: 0;
+  }
+  
+  .pasoApaso {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: max-content;
+  }
+
+  .paso-paso {
+    flex-wrap: wrap;
+  }
+
+  .paso {
+    display: flex;
+    margin: 20px 0;
+    font-size: 1.3rem;
+    width: 90%;
+    font-weight: 700;
+    color: rgb(80, 80, 80);
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .paso h3 {
+    font-size: .8rem;
+    font-weight: 900;
+    text-align: center;
+    padding: 0;
+  }
+
+  .paso h4 {
+    font-size: 20px;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  
+  .iconComo {
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    border: 5px solid white;
+  }
+  
+  .border {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .container-number-how {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .paso h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+  }
+  
+  .swiftActive {
+    width: 70%;
+    height: auto;
+    margin: 0;
+  }
+  
+  .textActive {
+    display: block;
+    margin: 10px 0;
+    color: #757575;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  .buttonActive {
+    margin: 10px;
+    width: 80%;
+  }
+    
+  .buttonDesactive {
+    margin: 10px;
+    width: 80%;
+  }
+
+  /* responsive blog landing */
+  .block-blog {
+    margin: 30px 0 0 0;
+  }
+
+  .title-landing-joobbi {
+    margin-left: 10px;
+  }
+
+  .scroll-blog::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-blog {
+    overflow-x: scroll;
+    justify-content: left;
+  }
+
+
+  /* responsive call to action end */
+
+  .block-call-to {
+    background-position: left;
+    margin: 40px 0 0 0;
+    border-radius: 0;
+  }
+
+  .block-text-button-call {
+    text-align: center;
+    margin: 0;
+  }
+
+  .flex-container-call-to {
+    justify-content: center;
+  }
+
+  .container-text-call {
+    width: 100%;
+  }
+
+  /* respnsive footer styles */
+  .footer-flex {
+    width: 100%;
+    display: block;
+    padding-bottom: 30px;
+}
+
+.logofooter img{
+    width: 150px;
+}
+
+.logofooter {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+}
+
+.listTerms a {
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 10px 5px;
+    text-align: center;
+    font-size: .9rem;
+    display: block;
+}
+
+.listTerms {
+    width: 100%;
+    margin-right: 0px;
+}
+
+ol,
+ul {
+    display: flex;
+    width: 100%;
+}
+
+.puntoNone {
+    display: none;
+}
+
+.politicaNone {
+    display: none;
+}
+
+.socialMedia {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+}
+
+@media screen and (max-width: 320px) {
+
+  /* se realizan estilos al content hero */
+  .hero-text {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .container-box-popular {
+    height: 70px;
+  }
+
+  .container-scroll-popular {
+    height: 70px;
+  }
+
+  .sector-item-popular {
+    width: auto;
+    margin: 0 15px;
+  }
+
+  .iconComo {
+    padding: 10px;
+  }
+
+  .text-sector-popular {
+    font-size: 10px;
+  }
+
+  .title-carrusel {
+    font-size: 18px;
+  }
+
+  .item-list-why {
+    width: 80%;
+  }
+
+  .areas-item-list {
+    width: 50%;
+  }
+
+  .listTerms a {
+    font-size: .7rem;
+  }
+}

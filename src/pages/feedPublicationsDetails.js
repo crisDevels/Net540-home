@@ -8,8 +8,8 @@ import RegistroPage from '../components/registroPage';
 
 import ListPublications from '../components/listPublications'
 import WorkDetailsEdit from '../components/workDetailsEdit'
-import ModalDelete from '../components/modalDelete';
-import ModalDesactive from '../components/modalDesactive';
+import ModalDelete from '../components/Modales/modalDelete';
+import ModalDesactive from '../components/Modales/modalDesactive';
 import PageLoading from '../pages/pageLoading'
 
 import '../components/styles/popRegistro.css'
