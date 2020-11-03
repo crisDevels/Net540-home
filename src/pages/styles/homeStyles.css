@@ -65,13 +65,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-body {
-    background-image: url('${fondoTextura}');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(255, 255, 255, 0.616);
-}
-
 .opacity {
     background: rgba(255, 255, 255, 0.95);
     height: 100%;

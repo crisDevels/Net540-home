@@ -73,7 +73,7 @@ export const ModalInicioSesion = (props) => {
         <button style={iconLinked} className='linkedin-auth' onClick={props.handleAuth} type='buttton'>Continuar con Linkedin</button>
       </div>
       <div>
-        <p>¿Eres nuevo en Net540? < Link to='/registro-net'> Regístrate ahora</Link></p>
+        <p>¿Eres nuevo en Net540? < Link to='/registro-joobbi'> Regístrate ahora</Link></p>
       </div>
     </div>
   ) 

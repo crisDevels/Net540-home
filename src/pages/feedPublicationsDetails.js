@@ -131,67 +131,66 @@ class FeedPublicationsDetails extends React.Component {
 
   render () {
     return <React.Fragment>
-        {this.state.LoadingUser ? 
-            <PageLoading /> :
-
-            <div className="wrapper-border">
-                <div>
-                    <NavBar />
-                </div>
-                {this.state.user &&
-                  <div>
-                    <div className="flex-feed">
-                      <div className="col-50">
-                        <div className="container-worksList">
-                          <ListPublications  handleClick={this.infoCarge}
-                                             feed={this.state.dataWorks} />
-                        </div>
-                      </div>
-                      <div className="container-modales-details">
-                        <div className={this.state.overlayApplication}></div>
-                        <div className={this.state.modalOverlay}>
-                            <WorkDetailsEdit  DesactiveOpenModal={this.DesactiveOpenModal}
-                                              DeleteOpenModal={this.DeleteOpenModal} 
-                                              block={this.state.blockWorkExtend}
-                                              dataNull = {this.state.dataWorksLarge}
-                                              reLoading = {this.state.LoadingReData}
-                                              id={this.state.dataWorksLarge.id}
-                                              title={this.state.dataWorksLarge.titleService}
-                                              area={this.state.dataWorksLarge.areaService}
-                                              modality={this.state.dataWorksLarge.modalityJob}
-                                              specialty={this.state.dataWorksLarge.specialtyService}
-                                              location={this.state.dataWorksLarge.locationJob}
-                                              time={this.state.dataWorksLarge.timeService}
-                                              rate={this.state.dataWorksLarge.rateJob}
-                                              timeRate={this.state.dataWorksLarge.TimeRateJob}
-                                              titleDescription={this.state.dataWorksLarge.titleDescription}
-                                              description={this.state.dataWorksLarge.descriptionService}
-                                              descriptions={this.state.dataWorksLarge.dataDescriptions}
-                                              skills={this.state.dataWorksLarge.dataSkills}
-                                              urgent={this.state.dataWorksLarge.urgentJob}
-                                              verify={this.state.dataWorksLarge.verify} />
-                        </div>
-                        <ModalDelete isOpenDelete={this.state.isOpenDelete} 
-                                     DeleteOpenModal={this.DeleteOpenModal}
-                                     DeletePublication={this.DeletePublication} />
-                        <ModalDesactive isOpenDesactive={this.state.isOpenDesactive} 
-                                        DesactiveOpenModal={this.DesactiveOpenModal} />
-                      </div>
-                    </div>
+      {
+      this.state.LoadingUser ? <PageLoading /> : <div>
+        <NavBar />
+        <div className="wrapper-border">
+          {
+          this.state.user &&
+            <div>
+              <div className="flex-feed">
+                <div className="col-50">
+                  <div className="container-worksList">
+                    <ListPublications handleClick={this.infoCarge}
+                                      feed={this.state.dataWorks} />
                   </div>
-                }
-                {!this.state.user &&
-                  <div className="containerRegistre">
-                    <div className="wrapper-registre">
-                      <RegistroPage />
-                    </div>
-                    <Footer />
-                  </div> 
-                }
+                </div>
+              <div className="container-modales-details">
+                <div className={this.state.overlayApplication}></div>
+                <div className={this.state.modalOverlay}>
+                  <WorkDetailsEdit  DesactiveOpenModal={this.DesactiveOpenModal}
+                                    DeleteOpenModal={this.DeleteOpenModal} 
+                                    block={this.state.blockWorkExtend}
+                                    dataNull = {this.state.dataWorksLarge}
+                                    reLoading = {this.state.LoadingReData}
+                                    id={this.state.dataWorksLarge.id}
+                                    title={this.state.dataWorksLarge.titleService}
+                                    area={this.state.dataWorksLarge.areaService}
+                                    modality={this.state.dataWorksLarge.modalityJob}
+                                    specialty={this.state.dataWorksLarge.specialtyService}
+                                    location={this.state.dataWorksLarge.locationJob}
+                                    time={this.state.dataWorksLarge.timeService}
+                                    rate={this.state.dataWorksLarge.rateJob}
+                                    timeRate={this.state.dataWorksLarge.TimeRateJob}
+                                    titleDescription={this.state.dataWorksLarge.titleDescription}
+                                    description={this.state.dataWorksLarge.descriptionService}
+                                    descriptions={this.state.dataWorksLarge.dataDescriptions}
+                                    skills={this.state.dataWorksLarge.dataSkills}
+                                    urgent={this.state.dataWorksLarge.urgentJob}
+                                    verify={this.state.dataWorksLarge.verify} />
+                </div>
+                <ModalDelete isOpenDelete={this.state.isOpenDelete} 
+                             DeleteOpenModal={this.DeleteOpenModal}
+                             DeletePublication={this.DeletePublication} />
+                <ModalDesactive isOpenDesactive={this.state.isOpenDesactive} 
+                                DesactiveOpenModal={this.DesactiveOpenModal} />
+              </div>
             </div>
-        }
+          </div>
+          }
+          {
+          !this.state.user &&
+            <div className="containerRegistre">
+              <div className="wrapper-registre">
+                <RegistroPage />
+              </div>
+              <Footer />
+            </div> 
+          }
+          </div>
+        </div>
+      }
     </React.Fragment>
-
   }
 }
 

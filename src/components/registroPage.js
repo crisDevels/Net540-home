@@ -9,7 +9,7 @@ import '../components/styles/popRegistro.css'
 class registroPage extends React.Component {
     state = {
       overlay: "overlayActive",
-      modalProfesional: "modalProfesionalActive",
+      modalProfesional: "modalActive",
       email:"",
       password:"",
       name:"",
@@ -21,7 +21,7 @@ class registroPage extends React.Component {
     cerrarModal= ()=> {
       this.setState({
           overlay: "overlay",
-          modalProfesional: "modal",
+          modalProfesional: "none",
       }) 
     }
 
@@ -75,7 +75,7 @@ class registroPage extends React.Component {
             <div onClick={this.cerrarModal} className={this.state.overlay} id="overlay"></div>
               <div className={this.state.modalProfesional}>
                 <div className="center-nonRegistre">
-                  <h2>Parece que aún no te has registrado</h2>
+                  <h2 className='title-registro'>Parece que aún no te has registrado</h2>
                   <img src={nonRegistroImage} className="imageNonRegistro" width="500px" alt="Ilustración de registro" />
                   <div className="center-button">
                     <button
@@ -95,12 +95,12 @@ class registroPage extends React.Component {
                       <h2>Regístrate ahora</h2>
                     </div>   
                   </div>
-                  <form className="formRegitre-page">
-                    <div className="flex-Registre-name">
+                  <form>
+                    <div className='flex-registre'>
                       <input
                         value={this.state.name}
                         onChange={this.handleChange} 
-                        className="spaceForm-registre-name" 
+                        className="space-form-input-50" 
                         type="text" 
                         name="name" 
                         placeholder="Nombre"
@@ -110,7 +110,7 @@ class registroPage extends React.Component {
                       <input
                         value={this.state.lastName}
                         onChange={this.handleChange}
-                        className="spaceForm-registre-name" 
+                        className="space-form-input-50" 
                         type="text" 
                         name="lastName" 
                         placeholder="Apellido"
@@ -121,7 +121,7 @@ class registroPage extends React.Component {
                     <input
                       value={this.state.phone}
                       onChange={this.handleChange} 
-                      className="spaceForm-registre" 
+                      className="space-form-input" 
                       type="phone" 
                       name="phoneNumber" 
                       placeholder="Celular"
@@ -131,7 +131,7 @@ class registroPage extends React.Component {
                     <input
                       value={this.state.registryEmail}
                       onChange={this.handleChange} 
-                      className="spaceForm-registre" 
+                      className="space-form-input" 
                       type="text" 
                       name="registryEmail" 
                       placeholder="Correo Electrónico"
@@ -141,7 +141,7 @@ class registroPage extends React.Component {
                     <input
                       value={this.state.registryPassword}
                       onChange={this.handleChange} 
-                      className="spaceForm-registre" 
+                      className="space-form-input" 
                       type="password" 
                       name="registryPassword"
                       id="registryPassword" 
@@ -150,7 +150,7 @@ class registroPage extends React.Component {
                     <input
                       value={this.state.registryPasswordConf}
                       onChange={this.handleChange} 
-                      className="spaceForm-registre" 
+                      className="space-form-input" 
                       type="password" 
                       name="confregistryPassword"
                       id="confRegistryPassword" 
@@ -166,7 +166,7 @@ class registroPage extends React.Component {
                         className="checkbox"/> Estoy de acuerdo con la <a href="/"><strong>política de privacidad</strong></a> y con los <a href="/"><strong>terminos y condiciones</strong></a></label><br/>
                     <button
                       onClick={this.createUser}
-                      className="buttonRegistrar-page" 
+                      className="button-joobbi" 
                       type="submit">Registrar</button>                      
                 </form>
               </div>

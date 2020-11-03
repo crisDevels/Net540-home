@@ -21,7 +21,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={LandingHome} />
         <Route exact path="/aboutUs" component={AboutUs}/>
-        <Route exact path="/registro-net" component={NewRegistry}/>
+        <Route exact path="/registro-joobbi" component={NewRegistry}/>
         <Route exact path="/recuperar-contraseña" component={Forget}/>
         <Route exact path="/validacion-contraseña" component={Validation}/>
         <Route exact path="/registro-skills" component={ProfesionForm}/>

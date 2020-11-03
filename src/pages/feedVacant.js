@@ -13,7 +13,6 @@ import '../components/styles/popRegistro.css'
 import './styles/feedStyles.css'
 
 class FeedVacant extends React.Component {
-    
   state = {
     user: null,
     isLoading: true,
@@ -22,7 +21,6 @@ class FeedVacant extends React.Component {
     dataWorks: [],
     query: ""
   }
-   
   componentDidMount () {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({
@@ -32,7 +30,6 @@ class FeedVacant extends React.Component {
     })
     this.fetchDataWorks()
   }
-
   fetchDataWorks =  async () => {
     this.setState({isLoading: true, error: null})
     try {
@@ -42,58 +39,50 @@ class FeedVacant extends React.Component {
       this.setState({ loading: false, error: error})
     }
   }
-
   changeQuery = (e)=> {
     this.setState ({
       query: e.target.value
     })
   }
-
   render () {
     return <React.Fragment>
-        {this.state.isLoading ? 
-            <PageLoading /> :
-
-            <div className="wrapper-border">
-                <div>
-                    <NavBar />
+      {this.state.isLoading ? <PageLoading /> :
+        <div>
+          <NavBar />
+          <div className="wrapper-border">
+            {this.state.user &&
+              <div>
+                <div className="flex-feed">
+                  <div className="col-50">
+                    <ListWorks feed={this.state.dataWorks} />
+                  </div>
+                  <div className="container-modales">
+                    <div className={this.state.modalOverlay}>
+                      <SearchFeed blockSearch={this.state.blockBuscar} />
+                    </div>
+                  </div>
                 </div>
-                {
-                  this.state.user &&
-                  <div>
-                    <div className="flex-feed">
-                      <div className="col-50">
-                        <ListWorks feed={this.state.dataWorks} />
-                      </div>
-                      <div className="container-modales">
-                        <div className={this.state.modalOverlay}>
-                          <SearchFeed blockSearch={this.state.blockBuscar} />
-                        </div>
-                      </div>
+              </div>
+            }
+            {!this.state.user &&
+              <div>
+                <div className="flex-feed">
+                  <div className="col-50">
+                    <ListWorks handleClick={this.infoComplete}
+                               feed={this.state.dataWorks} />
+                  </div>
+                  <div className="container-modales">
+                    <div className={this.state.modalOverlay}>
+                      <SearchFeed blockSearch={this.state.blockBuscar} />
                     </div>
                   </div>
-                }
-                
-                {
-                  !this.state.user &&
-                  <div>
-                    <div className="flex-feed">
-                      <div className="col-50">
-                        <ListWorks  handleClick={this.infoComplete}
-                                    feed={this.state.dataWorks} />
-                      </div>
-                      <div className="container-modales">
-                        <div className={this.state.modalOverlay}>
-                          <SearchFeed blockSearch={this.state.blockBuscar} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                }
-            </div>
-        }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
     </React.Fragment>
-
   }
 }
 

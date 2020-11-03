@@ -1,20 +1,23 @@
 .list-unstyled-feed {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: block;
-        justify-content: left;
-        text-align: left;
-        animation-name:  fadeIn;
-        animation-duration: .8s;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  justify-content: left;
+  text-align: left;
+  animation-name:  fadeIn;
+  animation-duration: .8s;
+}
+
+.title-list-works-feed {
+  color: #1daeff;
 }
 
 @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-      
-        100% {
-          opacity: 1;
-        }
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -102,13 +102,10 @@ class ProfesionForm extends React.Component {
         return <React.Fragment>
 
             {this.state.loading ? <PageLoading /> :
-
+                <div>
+                <NavBar />
                 <div className="wrapper-border">
-                    <div>
-                        <NavBar />
-                    </div>
                     {
-
                     this.state.user &&
                         <div className="wrapper-form">
                             <h2 className="title-form-profesional">{this.state.user.displayName}, queremos conocer algunas cosas de ti</h2>
@@ -249,6 +246,8 @@ class ProfesionForm extends React.Component {
                           <Footer />
                         </div>
                     }
+                </div>
+
                 </div>
                 }
 

@@ -53,13 +53,13 @@ class FeedVacantDetails extends React.Component {
     }
 
     if(this.state.LoadingReData) {
-        try {
-          const reDatas = await api.works.read(this.props.match.params.workId)
-          this.setState({ LoadingReData: false, dataWorksLarge: reDatas })
-        }catch(error) {
-          this.setState({ LoadingReData: false, error })
-        }
+      try {
+        const reDatas = await api.works.read(this.props.match.params.workId)
+        this.setState({ LoadingReData: false, dataWorksLarge: reDatas })
+      }catch(error) {
+        this.setState({ LoadingReData: false, error })
       }
+    }
   }
 
   fetchDataWorks =  async () => {
@@ -99,63 +99,56 @@ class FeedVacantDetails extends React.Component {
 
   render () {
     return <React.Fragment>
-        {this.state.LoadingUser ? 
-            <PageLoading /> :
-
-            <div className="wrapper-border">
-                <div>
-                    <NavBar />
+      {this.state.LoadingUser ? <PageLoading /> : <div>
+        <NavBar />
+        <div className="wrapper-border">
+          {this.state.user && <div>
+            <div className="flex-feed">
+              <div className="col-50">
+                <div className="container-worksList">
+                  <ListWorks  handleClick={this.infoCarge}
+                              feed={this.state.dataWorks} />
                 </div>
-                {this.state.user &&
-                  <div>
-                    <div className="flex-feed">
-                      <div className="col-50">
-                        <div className="container-worksList">
-                          <ListWorks  handleClick={this.infoCarge}
-                                      feed={this.state.dataWorks} />
-                        </div>
-                      </div>
-                      <div className="container-modales-details">
-                        <div className={this.state.overlayApplication}></div>
-                        <div className={this.state.modalOverlay}>
-                            <WorkLarge  onAplication={this.AplicationCup} 
-                                        block={this.state.blockWorkExtend}
-                                        dataNull = {this.state.dataWorksLarge}
-                                        reLoading = {this.state.LoadingReData}
-                                        id={this.state.dataWorksLarge.id}
-                                        title={this.state.dataWorksLarge.titleService}
-                                        area={this.state.dataWorksLarge.areaService}
-                                        modality={this.state.dataWorksLarge.modalityJob}
-                                        specialty={this.state.dataWorksLarge.specialtyService}
-                                        location={this.state.dataWorksLarge.locationJob}
-                                        time={this.state.dataWorksLarge.timeService}
-                                        rate={this.state.dataWorksLarge.rateJob}
-                                        timeRate={this.state.dataWorksLarge.TimeRateJob}
-                                        titleDescription={this.state.dataWorksLarge.titleDescription}
-                                        description={this.state.dataWorksLarge.descriptionService}
-                                        descriptions={this.state.dataWorksLarge.dataDescriptions}
-                                        skills={this.state.dataWorksLarge.dataSkills}
-                                        urgent={this.state.dataWorksLarge.urgentJob}
-                                        verify={this.state.dataWorksLarge.verify}
-                                        />
-                        </div>
-                        <ModalAplication onAplication={this.AplicationCup} modal={this.state.modalAplication} />
-                      </div>
-                    </div>
-                  </div>
-                }
-                {!this.state.user &&
-                  <div className="containerRegistre">
-                    <div className="wrapper-registre">
-                      <RegistroPage />
-                    </div>
-                    <Footer />
-                  </div> 
-                }
+              </div>
+              <div className="container-modales-details">
+                <div className={this.state.overlayApplication}></div>
+                <div className={this.state.modalOverlay}>
+                  <WorkLarge  onAplication={this.AplicationCup} 
+                              block={this.state.blockWorkExtend}
+                              dataNull = {this.state.dataWorksLarge}
+                              reLoading = {this.state.LoadingReData}
+                              id={this.state.dataWorksLarge.id}
+                              title={this.state.dataWorksLarge.titleService}
+                              area={this.state.dataWorksLarge.areaService}
+                              modality={this.state.dataWorksLarge.modalityJob}
+                              specialty={this.state.dataWorksLarge.specialtyService}
+                              location={this.state.dataWorksLarge.locationJob}
+                              time={this.state.dataWorksLarge.timeService}
+                              rate={this.state.dataWorksLarge.rateJob}
+                              timeRate={this.state.dataWorksLarge.TimeRateJob}
+                              titleDescription={this.state.dataWorksLarge.titleDescription}
+                              description={this.state.dataWorksLarge.descriptionService}
+                              descriptions={this.state.dataWorksLarge.dataDescriptions}
+                              skills={this.state.dataWorksLarge.dataSkills}
+                              urgent={this.state.dataWorksLarge.urgentJob}
+                              verify={this.state.dataWorksLarge.verify} />
+                </div>
+                <ModalAplication onAplication={this.AplicationCup} modal={this.state.modalAplication} />
+              </div>
             </div>
-        }
+          </div>
+          }
+          {!this.state.user && <div className="containerRegistre">
+            <div className="wrapper-registre">
+              <RegistroPage />
+            </div>
+            <Footer />
+          </div>
+          }
+        </div>
+      </div>
+      }
     </React.Fragment>
-
   }
 }
 

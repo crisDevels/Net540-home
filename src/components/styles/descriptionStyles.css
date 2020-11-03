@@ -2,50 +2,6 @@
     font-size: 18px;
 }
 
-.title-description-work {
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-  border-style: none;
-  padding: 10px 20px;
-  border-radius: 30px;
-  width: 90%;
-  font-style: normal;
-  font-size: .9rem;
-  color: rgb(31, 31, 31);
-  margin: 0 0 15px 0;
-  outline: none;
-  opacity: .6;
-}
-
-.description-work {
-    width: 90%;
-    min-height: 90px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-    border-style: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    font-size: .9rem;
-    color: #757575;
-    margin: 5px 0;
-    outline: none;
-    opacity: .8;
-    font-family: 'Lato', sans-serif;
-}
-  
-.description-work-interactive {
-  width: 90%;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-  border-style: none;
-  min-height: 60px;
-  padding: 15px 20px;
-  border-radius: 20px;
-  font-size: .9rem;
-  color: #757575;
-  margin: 5px 0;
-  outline: none;
-  opacity: .8;
-  font-family: 'Lato', sans-serif;
-}
-
 .title-description-work:hover,
 .title-description-work:focus,
 .description-work-interactive:hover,
@@ -94,21 +50,20 @@
 
 .relative-options-area {
   position: relative;
-  margin-top: 15px;
 }
 
 .modal-options-area {
   position: absolute;
-  top: 50px;
+  top: 45px;
   left: 0;
   display: flex;
   flex-wrap: wrap;
-  width: 475px;
+  width: 482px;
   z-index: 2;
   padding: 15px 0 20px 0;
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 .selected-label {
@@ -167,6 +122,94 @@
 .selected-area {
   appearance: none;
   width: 0;
+}
+
+/* estilos al formulario de vacante MVP1 */
+
+.flex-form {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.block-form-service {
+  margin: 20px 0 30px 0;
+}
+
+.linea-form-service {
+  margin: 30px 0;
+}
+
+.block-form-service h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 30px 0 10px 0;
+}
+
+.block-input-flex-title {
+  display: flex;
+  align-items: center;
+}
+
+.block-input-flex-title label {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 10%;
+}
+
+.block-habilidades-laborales {
+  text-align: center;
+  justify-content: center;
+}
+
+.title-form-service {
+  color: #1DAEFF;
+}
+
+.label-description {
+  margin: 10px 0;
+}
+
+.label-description label {
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+.flex-checkbox-urgent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-checkbox-urgent p {
+  margin: 0 10px 0 0;
+  color: #757575;
+}
+
+.col-1 {
+  width: 45%;
+}
+
+.block-input-service {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.flex-skills-service {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.containerSkills-publication {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+  margin: 5px 5px;
+  color: #757575;
+  border-radius: 30px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width:1024px) {

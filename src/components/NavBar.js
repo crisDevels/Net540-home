@@ -7,34 +7,24 @@ import './styles/popRegistro.css'
 import '../globalStyles.css'
 import '../pages/styles/homeStyles.css'
 
-import iconHome from '../images/homeIcon.svg'
-import iconJobs from '../images/JobsIcon.svg'
+import logoJoobbi from '../images/LOGOjoobbiW.svg'
+import logoJoobbiBlue from '../images/logo-joobbi-blue.svg'
+
+import { AiFillHome } from 'react-icons/ai'
+import { GoBriefcase } from 'react-icons/go'
 import iconPublic from '../images/publicIcon.svg'
-import iconProfile from '../images/profileIcon.svg'
+import { GoMegaphone } from 'react-icons/go'
+import { CgUserlane } from 'react-icons/cg'
 import iconTerms from '../images/termsIcon.svg'
 import iconPublicaciones from '../images/publicacionesIcon.svg'
 import iconSearch from '../images/searchIcon.svg'
-
-import googleIcon from '../images/googleIcono.png'
-import facebookIcon from '../images/facebook-icon.svg'
-import linkedIcon from '../images/linked-icon.svg'
+import { ImSearch } from 'react-icons/im'
 
 import '../fonts/style.css'
 
-var iconGoogle = {
-  width: '100%',
-  backgroundImage: 'url('+ googleIcon + ')'
-};
-
-var iconFacebook = {
-  width: '100%',
-  backgroundImage: 'url('+ facebookIcon + ')'
-};
-
-var iconLinked = {
-  width: '100%',
-  backgroundImage: 'url('+ linkedIcon + ')'
-};
+var iconColor = {
+  color: 'white'
+}
 
 var iconTerminos = {
   backgroundImage: 'url('+ iconTerms + ')'
@@ -47,10 +37,6 @@ var iconPublica = {
 var iconPublicacionesNet = {
   backgroundImage: 'url('+ iconPublicaciones + ')'
 };
-
-var NetLogo = {
-  color: '#1DAEFF',
-}
 
 var searchIcon = {
   backgroundImage: 'url('+ iconSearch + ')'
@@ -76,10 +62,7 @@ class NavBar extends React.Component {
         password:'',
         name:'',
     }
-    this.handleAuth =  this.handleAuth.bind(this);
     this.handleLogout =  this.handleLogout.bind(this);
-    this.login = this.login.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
 
@@ -182,29 +165,6 @@ class NavBar extends React.Component {
       overlayMenu: 'overlay',
       })
   }
-
-  login = (e)=> {
-    e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-    .then(result => {
-      window.location.href = '/works'
-      console.log(`${result.user.email} ha iniciado sesión`)
-    }).catch(error => console.log(`Error ${error.code}: ${error.message}`))         
-  }
-
-  handleChange = (e)=> {
-    const { value, name } = e.target;    
-    this.setState({
-      [name]: value 
-    })
-  }
-
-  handleAuth = ()=> {
-    const provider = firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
-      .then(result => console.log(`${result.user.email} ha iniciado sesión`))
-      .catch(error => console.log(`Error ${error.code}: ${error.message}`))
-  }
     
   handleLogout = ()=> {
     firebase.auth().signOut()
@@ -221,19 +181,19 @@ class NavBar extends React.Component {
             <div className='navForm'>
               <div className='logoN-user'>
                 <Link to='/works'>
-                  <span style={NetLogo} className='icon-Logo_540'></span>
+                  <img src={logoJoobbi} alt='logo Joobbi png sin fondo' />
                 </Link>
               </div>
               <div className='nav-flex-login'>
                 <div className='container-buttons'>
                   <div className='container-buttons-flex'>
                     < Link to='/works'>
-                      <button className='nonButtonsHeader' ><img alt='icono de homeNet' src={iconHome} width='20px' /></button>
+                      <button className='nonButtonsHeader' ><AiFillHome style={iconColor} size='20px' /></button>
                     </ Link>
-                    <button className='nonButtonsHeader' onClick={this.modalJobsNav} ><img alt='icono de jobsNet' src={iconJobs} width='20px' /></button>
-                    <button className='nonButtonsHeader-search' onClick={this.modalBuscarNav} ><img alt='icono de jobsNet' src={iconSearch} width='20px' /></button>
-                    <button className='nonButtonsHeader' onClick={this.modalPublicNav} ><img alt='icono de jobsNet' src={iconPublic} width='20px' /></button>
-                    <button className='nonButtonsHeader' onClick={this.modalProfileNav} ><img alt='icono de jobsNet' src={iconProfile} width='20px' /></button>
+                    <button className='nonButtonsHeader' onClick={this.modalJobsNav} ><GoBriefcase style={iconColor} size='20px' /></button>
+                    <button className='nonButtonsHeader-search' onClick={this.modalBuscarNav} ><ImSearch style={iconColor} size='20px' /></button>
+                    <button className='nonButtonsHeader' onClick={this.modalPublicNav} ><GoMegaphone style={iconColor} size='20px' /></button>
+                    <button className='nonButtonsHeader' onClick={this.modalProfileNav} ><CgUserlane style={iconColor} size='20px' /></button>
                   </div>
                   <div className={this.state.modalProfile}>
                     <div className='box-options'>
@@ -244,7 +204,7 @@ class NavBar extends React.Component {
                       <Link to='/condiciones-de-uso'>
                         <button style={iconTerminos} className='buttonMenu'>Términos y condiciones</button>
                       </Link>
-                      <button className='cerrar-sesion' onClick={this.handleLogout}>Cerrar Sesión</button>
+                      <button className='button-joobbi' onClick={this.handleLogout}>Cerrar Sesión</button>
                     </div>  
                   </div>
                   <div className={this.state.modalBuscar}>
@@ -307,65 +267,34 @@ class NavBar extends React.Component {
             <div className='menuN'>
               <div className='logoN'>
                 <Link to='/'>
-                  <span style={NetLogo} className='icon-Logo_net540'></span>
+                  <img src={logoJoobbiBlue} alt='logo Joobbi blue png sin fondo' />
                 </Link>
               </div>
-              <div className='nav-flex'>
-                <span>
-                  <Link to='/aboutUs'>
-                    <button className='buttonConocenosN' type='button'>Conócenos</button>
-                  </Link>
-                </span>
-                <span>
-                  <button onClick={this.abrirModalInicio} className={this.state.buttonInicio} type='button'>Ingresar</button>  
-                </span>  
+              <div className='buttons-container'>
+                <ul className='list-buttons-nav'>
+                  <li className='list-item-nav'>
+                    <Link to='/'>
+                      <button className='button-line'>Contenidos <hr className='border-button-botom-line'></hr></button>
+                    </Link>
+                  </li>
+                  <li className='list-item-nav'>
+                    <Link to='/'>
+                      <button className='button-line'>Conócenos <hr className='border-button-botom-line'></hr></button>
+                    </Link>
+                  </li>
+                  <li className='list-item-nav'>
+                    <Link to='/'>
+                      <button className='button-line'>Registrarme <hr className='border-button-botom-line'></hr></button>
+                    </Link>
+                  </li>
+                  <li className='list-item-nav'>
+                    <Link to='/'>
+                    <button className='button-joobbi'>Ingresar</button>
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-        </div>
-        <div onClick={this.cerrarModalInicio} className={this.state.overlay} id='overlay'></div>
-        <div className={this.state.modalInicio}>
-          <div className='titleRegistro-inicio-sesion'>
-            <div className='title-modal-inicio'>
-              <h2>Iniciar Sesión</h2>
-            </div>
-            <div className='button-flex-end'>
-              <span onClick={this.cerrarModalInicio} className='icon-Logo_equis'></span>
-            </div>
-          </div>
-          <form className='formRegitreInicio'>
-            <input
-              value={this.state.email}
-              onChange={this.handleChange} 
-              className='spaceFormInicio' 
-              type='email' 
-              name='email' 
-              placeholder='Correo Electrónico'
-              id='inputEmail' 
-              size='40' required/>
-            <input
-              value={this.state.password}
-              onChange={this.handleChange} 
-              className='spaceFormInicio' 
-              type='password' 
-              name='password'
-              id='inputPassword' 
-              placeholder='Contraseña' required /> 
-            <div className='login'>
-              <button onClick={this.login} className='buttonIniciar' type='submit'>Acceder</button>
-              <Link to='/recuperar-contraseña'>
-                <button className='buttonOlvido' type='button'>Olvidé mi contraseña</button>
-              </Link>
-            </div>
-          </form>
-          <hr className='line-login' data-content='or'></hr>
-          <div className='div-buttons-auth'>
-            <button style={iconGoogle} className='google-auth' onClick={this.handleAuth} type='buttton'>Continuar con Google</button>
-            <button style={iconFacebook} className='facebook-auth' onClick={this.handleAuth} type='buttton'>Continuar con Facebook</button>
-            <button style={iconLinked} className='linkedin-auth' onClick={this.handleAuth} type='buttton'>Continuar con Linkedin</button>
-          </div>
-          <div>
-            <p>¿Eres nuevo en Net540? < Link to='/registro-net'> Regístrate ahora</Link></p>
           </div>
         </div> 
       </React.Fragment>

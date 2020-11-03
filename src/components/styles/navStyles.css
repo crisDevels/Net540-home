@@ -30,9 +30,8 @@ grisClaro: #C4C4C4 */
 
 .container-block-nav {
     display: block;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    background: #1DAEFF;
     width: 100%;
-    border-radius: 30px 30px 0 0;
 }
 
 .container-block-nav-inicio {
@@ -63,10 +62,9 @@ grisClaro: #C4C4C4 */
 
 .buttonMenu{
     font-family: 'Lato', sans-serif;
-    font-size: .8rem;
+    font-size: 16px;
     width: 250px;
     background: white;
-    border-radius: 30px;
     color: #757575;
     border-style: none;
     padding: 10px 10px 10px 40px;
@@ -76,12 +74,12 @@ grisClaro: #C4C4C4 */
     background-position-y: center;
     background-position-x: 40px;
     transition: .5s ease;
+    outline   : none;
 }
 
 .buttonMenu:hover,
 .buttonMenu:focus {
-  outline   : none;
-  color: #1DAEFF;
+  background-color: #f1f1f1;
 }
 
 .buttonMenu img {
@@ -132,7 +130,7 @@ grisClaro: #C4C4C4 */
     margin: 0;
     z-index: 6;
     top: 40px;
-    padding: 10px 10px 25px 10px;
+    padding: 15px 0 25px 0;
     border-radius: 15px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
     animation-name:  fadeIn;
@@ -210,12 +208,12 @@ a {
     outline: none;
     margin: 0 2px;
     border-radius: 50%;
-    padding: 9px;
+    padding: 7px 9px;
     transition: 1s ease;
 }
 
 .nonButtonsHeader:focus {
-    background: #ecf6fc;
+    background: #5cb9f0;
     transform: translateY(-2px);
 }
 
@@ -241,7 +239,7 @@ a {
 .menuN {
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
 }
 
 .buttonInicioN {

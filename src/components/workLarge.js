@@ -122,7 +122,7 @@ class WorkLarge extends React.Component {
                     <div className="blockSubs">
                         <p className="subtitleVacant">
                             <img alt="icono salario" src={iconRate} width="15px"/>
-                            Valor del servicio: {this.props.rate}
+                            Valor del servicio: $ {this.props.rate} USD
                         </p>
                         <p className="subtitleVacant">
                             <img alt="icono localización" src={iconLocation} height="19px"/>

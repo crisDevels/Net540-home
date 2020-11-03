@@ -13,7 +13,7 @@ class ErrorNotPage extends React.Component {
                             <img src={errorIMG} alt="error en el URL" />
                             <h2>Parace que no hemos encontrado esta página.</h2>
                             <Link to="/works">
-                                <button className="button-net">Buscar trabajos</button>
+                                <button className="button-joobbi">Buscar trabajos</button>
                             </Link>
                         </div>
                     </div>

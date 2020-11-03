@@ -46,53 +46,46 @@ class MyPublications extends React.Component {
 
   render () {
     return <React.Fragment>
-        {this.state.isLoading ? 
-            <PageLoading /> :
-
-            <div className="wrapper-border">
-                <div>
-                    <NavBar />
+      {
+      this.state.isLoading ? <PageLoading /> : <div>
+        <NavBar />
+        <div className="wrapper-border">       
+          {
+          this.state.user &&
+            <div>
+              <div className="flex-feed">
+                <div className="col-50">
+                  <ListPublications feed={this.state.dataWorks} />
                 </div>
-                {
-                  this.state.user &&
-    
+                <div className="container-ILU-hero-public">
                   <div>
-                    <div className="flex-feed">
-                      <div className="col-50">
-                        < ListPublications feed={this.state.dataWorks} />
-                      </div>
-                      <div className="container-ILU-hero-public">
-                        <div>
-                          <h2 className="title-publication-ilu">Selecciona una de tus publicaciones</h2>
-                          <img alt="ilustración del feed" src={ILUpublication}/>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                }
-                
-                {
-                  !this.state.user &&
-                  
-                  <div>
-                  <div className="flex-feed">
-                    <div className="col-50">
-                      <ListPublications  handleClick={this.infoComplete}
-                                  feed={this.state.dataWorks} />
-                    </div>
-                    <div className="container-modales">
-                      <div className={this.state.modalOverlay}>
-                        <SearchFeed blockSearch={this.state.blockBuscar} />
-                      </div>
-                    </div>
+                    <h2 className="title-publication-ilu">Selecciona una de tus publicaciones</h2>
+                    <img alt="ilustración del feed" src={ILUpublication}/>
                   </div>
                 </div>
-
-                }
+              </div>
             </div>
-        }
+          }
+          {
+          !this.state.user &&
+            <div>
+              <div className="flex-feed">
+                <div className="col-50">
+                  <ListPublications  handleClick={this.infoComplete}
+                                     feed={this.state.dataWorks} />
+                </div>
+                <div className="container-modales">
+                  <div className={this.state.modalOverlay}>
+                    <SearchFeed blockSearch={this.state.blockBuscar} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      }
     </React.Fragment>
-
   }
 }
 
