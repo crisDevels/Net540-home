@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 const imageCall = 'https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2015/12/09112429/work-life-balance-working-from-home.jpg'
 
@@ -21,7 +22,9 @@ export const BlockCallToAction = () => (
                     tu idea o negocio.
                     </p>
                 </div>
-                <button className='button-joobbi'>Regístrate ahora</button>
+                <Link to='/registro-joobbi'>
+                  <button className='button-joobbi'>Regístrate ahora</button>
+                </Link>
             </div>
         </div>
       </div>

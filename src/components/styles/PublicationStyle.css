@@ -1,14 +1,227 @@
+.container-publication-large {
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+}
+
 .publication {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.publication-list {
     display: block;
     width: 100%;
     margin-bottom: 30px;
-    margin-top: 20px;
+    border-bottom: 1px solid #757575;
+}
+
+.cabecera-publication-large {
+  width: 100%;
+  height: 150px;
+  background: #B2DDF4;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.title-service-context {
+  color: white;
+  font-size: 20px;
+  width: 35%;
+  margin: 0 0 0 20px;
+}
+
+.image-position-context {
+  position: absolute;
+  top: -50px;
+  right: 0;
+}
+
+.image-position-context img {
+  width: 400px;
+}
+
+.flex-info-service {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  top: -10px;
+}
+
+.info-service {
+  width: 85%;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 3px -3px 20px rgba(0, 0, 0, 0.25);
 }
 
 .flex-title-vacant {
     display: flex;
     width: 100%;
     align-items: center;
+    position: relative;
+}
+
+
+/* styles container character */
+
+.flex-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container-item-service {
+  width: 32%;
+  height: 80px;
+  background: #f2f2f2;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-item-service {
+  width: 90%;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+}
+
+/* styles a botones de interacción en my publication edit */
+
+.flex-buttons-large {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.buttonEdit {
+    font-family: 'Lato', sans-serif;
+    font-size: .8rem;
+    color: #757575;
+    border-style: none;
+    background: none;
+    padding: 10px 10px 10px 40px;
+    font-weight: 400;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+    outline: none;
+    transition: 0.5s ease;
+}
+
+.buttonEdit:hover {
+    color: #1DAEFF;
+}
+
+.buttonEdit:active {
+    color: #6DF49D;
+}
+
+.buttonVer {
+    font-family: 'Lato', sans-serif;
+    font-size: .8rem;
+    color: white;
+    border-style: none;
+    border-radius: 7px;
+    background: #1DAEFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px 20px 10px 40px;
+    font-weight: 400;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+    outline: none;
+    transition: 0.5s ease;
+}
+
+.buttonVer:hover {
+    transform: translateY(1px);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.container-ILU-hero-public {
+    padding: 20px 40px;
+    text-align: center;
+    width: 50%;
+}
+
+.candidates-p {
+    margin: 0;
+}
+
+.button-candidates {
+    font-family: 'Lato', sans-serif;
+    font-size: .8rem;
+    color: #1DAEFF;
+    border-style: none;
+    background: none;
+}
+
+/* styles to my publications list */
+.my-publication {
+    display: block;
+    width: 90%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-style: solid;
+    border-width: .5px;
+    border-color: #c4c4c4;
+    border-radius: 15px;
+}
+
+.flex-title-myService {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 10px 0;
+}
+
+.flex-description-candidates {
+    display: flex;
+}
+ 
+.blockSubs-candidates {
+    width: 95%;
+}
+
+.border-candidate {
+    width: 50%;
+    border-left: solid #c4c4c4;
+    border-width: .5px;
+    text-align: center;
+    padding: 0 0 0 10px;
+}
+
+.title-my-publications {
+  color: #1DAEFF;
+}
+
+.title-publication-ilu {
+    margin-bottom: 50px;
+    color: #1DAEFF;
+}
+
+.flex-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
 /* verify work */
@@ -40,14 +253,13 @@
     width: 10px;
 }
 
-.flex-items {
-    display: flex;
-}
-
-
 .option-title-vacant {
-    justify-content: flex-end;
-    display: flex;
+  justify-content: space-around;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: -55px;
+  width: 80px;
 }
 
 .iconOptions {
@@ -55,15 +267,21 @@
 }
 
 .spaceModal {
-    position: relative;
-    padding: 10px;
-    border-radius: 50%;
-    transition: .3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transition: .3s ease;
+  background: #f2f2f280;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .spaceModal:hover {
-    background: rgba(0, 0, 0, 0.03);
-    transform: translateY(-2px);
+  background: #f2f2f2;
+  transform: translateY(-2px);
 }
 
 .title-decriptions-feed {
@@ -95,7 +313,7 @@
 }
 
 .title-vacant-general {
-    width: 80%;
+    width: 70%;
 }
 
 .title-skill {
@@ -105,10 +323,11 @@
 .view-vacant {
     font-weight: 600;
     margin: 20px 0 20px 0;
+    color: #1DAEFF;
 }
 
 .subtitleVacant {
-    font-weight: 300;
+    font-weight: 500;
     font-style: italic;
     margin: 10px 0;
     font-size: 14px;
@@ -189,18 +408,11 @@
     color: #757575;
 }
 
-.centerButton-block {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 80px;
-}
-
 .button-aplicar {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     background: #1DAEFF;
-    border-radius: 30px;
+    border-radius: 7px;
     color: white;
     border-style: none;
     padding: 10px 20px;
@@ -216,7 +428,7 @@
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     background: none;
-    border-radius: 30px;
+    border-radius: 7px;
     color: #757575;
     border-style: none;
     padding: 10px 10px 10px 10px;
@@ -253,7 +465,7 @@
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     background-color: #c4c4c4;
-    border-radius: 30px;
+    border-radius: 7px;
     color: white;
     border-style: none;
     padding: 10px 10px 10px 40px;

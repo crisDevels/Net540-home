@@ -28,7 +28,7 @@ function ListWorks(props) {
           return (
             <li onClick={props.handleClick} key={dataWork.id}>
               <Link to={`/works/${dataWork.id}`}>
-                <div className="publication">
+                <div className="publication-list">
                   <div className="flex-title-vacant">
                     <div className="div-TypeCompany">
                       <img alt="modelo ilutración compañias" className="icon-sector-style" src={typeCompanyImage} width="35px"/>
@@ -50,7 +50,7 @@ function ListWorks(props) {
                   <div className="blockSubs">
                     <p className="subtitleVacant">
                       <img alt="icono salario" src={iconRate} height="15px"/>
-                      Valor del servicio: $ {dataWork.rateJob} USD
+                      Valor del servicio: USD {dataWork.rateJob}
                     </p>
                     <p className="subtitleVacant">
                       <img alt="icono localización" src={iconLocation} height="19px" />

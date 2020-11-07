@@ -1,17 +1,20 @@
 .modal-aplication {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    left: auto;
-    right: auto;
+    left: 0;
+    right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
-    z-index: 3;
+    z-index: 4;
     padding: 1em 1.8em;
     background: white;
     box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
-    height: 260px;
-    width: 220px;
-    border-radius: 20px;
+    height: 300px;
+    width: 250px;
+    border-radius: 15px;
     text-align: center;
     animation-name:  fadeIn;
     animation-duration: 1.2s;
@@ -23,7 +26,7 @@
     right: 0;
     top: 30px;
     width: 150px;
-    z-index: 3;
+    z-index: 4;
     background: white;
     box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
     border-radius: 15px;
@@ -35,6 +38,17 @@
 
 .descriptionModal {
     font-size: 13px;
+}
+
+.flex-buttons-modal-short {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flex-buttons-modal-short button {
+  width: 100%;
 }
 
 .iconURLmodal {
@@ -104,7 +118,7 @@
 .delete-button {
     padding: 7px 20px;
     background: #FF524B;
-    border-radius: 30px;
+    border-radius: 7px;
     color: white;
     margin: 5px 10px;
     font-weight: 700;

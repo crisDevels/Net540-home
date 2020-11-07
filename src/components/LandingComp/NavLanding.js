@@ -16,14 +16,14 @@ class NavLanding extends React.Component {
     email:'',
     password:'',
     name:'',
+    apellido: '',
+    registryEmail: '',
+    registryPassword: '',
     blockModalInicio: 'none',
     overlay: 'none',
     blockModalRegistro: 'none',
     isOpenInicio: false,
     isOpenRegistro: false,
-    apellido: '',
-    registryEmail: '',
-    registryPassword: '',
     buttonsContainer: 'buttons-container',
     burguerIconInf: 'burguer-icon-sub',
     burguerIconSub: 'burguer-icon-inf',
@@ -67,18 +67,35 @@ class NavLanding extends React.Component {
     }).catch(error => console.log(`Error ${error.code}: ${error.message}`))         
   }
   // metodo para autentficar usuarios con google
-  handleAuth = ()=> {
-    const provider = firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
-      .then(result => console.log(`${result.user.email} ha iniciado sesión`))
-      .catch(error => console.log(`Error ${error.code}: ${error.message}`))
+  handleAuth = (e)=> {
+    e.preventDefault()
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+    firebase.auth().getRedirectResult()
+      .then(result => {
+        console.log(`${result.user.email} ha iniciado sesión`)
+      }).catch(error => {
+      console.log(`Error ${error.code}: ${error.message}`)
+      });
   }
+  //auth con facebook
+  handleAuthFacebook = (e)=> {
+    e.preventDefault()
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+      .then(result => {
+        console.log(`${result.user.email} ha iniciado sesión`)
+      }).catch(error => {
+        console.log(`Error ${error.code}: ${error.message}`)
+      });
+  }
+
   //conjunto metodos para formulario de registro de usuarios
   //metodo para abrir el modal registro
   abrirModalRegistro= ()=> {
     this.setState({
       overlay: 'overlayActive',
-      blockModalRegistro: 'modalActive',
+      blockModalRegistro: 'modalRegistreActive',
       isOpenRegistro: true,
       burguerIconInf: 'burguer-icon-sub',
       burguerIconSub: 'burguer-icon-inf',
@@ -100,7 +117,6 @@ class NavLanding extends React.Component {
     .then(() => {
       // window.location.reload(true)
       window.location.href = '/works'
-      alert('Your account has been created')
       const nameUser = this.state.name
       console.log(nameUser)
       var user = firebase.auth().currentUser;
@@ -170,12 +186,12 @@ class NavLanding extends React.Component {
                 <ul className='list-buttons-nav'>
                   <li className='list-item-nav'>
                     <Link to='/'>
-                      <button className='button-line-white' onClick={this.abrirModalRegistro}>Contenidos <hr className='border-button-botom-line-white'></hr></button>
+                      <button className='button-line-white'>Contenidos <hr className='border-button-botom-line-white'></hr></button>
                     </Link>
                   </li>
                   <li className='list-item-nav'>
-                    <Link to='/'>
-                      <button className='button-line-white' onClick={this.abrirModalRegistro}>Conócenos <hr className='border-button-botom-line-white'></hr></button>
+                    <Link to='/somos-joobbi'>
+                      <button className='button-line-white'>Conócenos <hr className='border-button-botom-line-white'></hr></button>
                     </Link>
                   </li>
                   <li className='list-item-nav'>
@@ -199,7 +215,8 @@ class NavLanding extends React.Component {
               password={this.state.password}
               handleChange={this.handleChange}
               login={this.login}
-              handleAuth={this.handleAuth} />,
+              handleAuth={this.handleAuth}
+              handleAuthFacebook={this.handleAuthFacebook} />,
             document.getElementById('modalInicio')
           )
         }
@@ -214,6 +231,8 @@ class NavLanding extends React.Component {
               registryPassword={this.state.registryPassword}
               handleChange={this.handleChange}
               createUser={this.createUser}
+              handleAuth={this.handleAuth}
+              handleAuthFacebook={this.handleAuthFacebook}
               cerrarModalRegistro={this.cerrarModalRegistro}/>,
             document.getElementById('modalRegistre')
           )

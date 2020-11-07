@@ -1,15 +1,120 @@
 import React from 'react'
+import firebase from 'firebase';
+import ReactDOM from 'react-dom'
 
 import '../FormularioRegistro/stylesForm/formStyles.css'
 import '../FormularioRegistro/stylesForm/switchStyles.css'
-import '../styles/descriptionStyles.css'
+import '../styles/FormServiceStyles.css'
 
 import plusImage from './images/plus.svg'
 import equis from './images/cerrar.svg'
 import descriptionIcon from './images/iconDescriptions.svg'
-import typeCompanyImage from './images/factoryTypeCompany.svg'
+import { ButtonRegistreDemo } from '../buttonRegistreDemo';
+import { ModalAreaSelection } from '../Modales/modalAreaSelection';
 
 class FormService extends React.Component {
+  state = {
+    user: null,
+    loading: false,
+    blockModalRegistro: 'none',
+    isOpenRegistro: false,
+    overlay: 'none',
+    registryEmail: '',
+    registryPassword: '',
+    email:'',
+    password:'',
+    name:'',
+    apellido: '',
+  }
+
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ user, loading: false })
+    })
+  }
+
+  //conjunto metodos para formulario de registro de usuarios
+    
+  // metodo handle para change del formulario de inicio
+  handleChange = (e)=> {
+    const { value, name } = e.target;    
+    this.setState({
+      [name]: value 
+    })
+  }
+  
+  //metodo para abrir el modal registro
+
+  abrirModalRegistro= ()=> {
+    this.setState({
+      overlay: 'overlayActive',
+      blockModalRegistro: 'modalRegistreActive',
+      isOpenRegistro: true,
+      burguerIconInf: 'burguer-icon-sub',
+      burguerIconSub: 'burguer-icon-inf',
+      openMenuPhone: false,
+    }) 
+  }
+  //metodo para cerrar el modal registro
+  cerrarModalRegistro= ()=> {
+    this.setState({
+      overlay: 'none',
+      blockModalRegistro: 'none',
+      isOpenRegistro: false,
+    }) 
+  }
+  //metodo para crear usuarios con firebase
+  createUser = (e)=> {
+    e.preventDefault()
+    firebase.auth().createUserWithEmailAndPassword(this.state.registryEmail, this.state.registryPassword)
+    .then(() => {
+      // window.location.reload(true)
+      window.location.href = '/works'
+      alert('Your account has been created')
+      const nameUser = this.state.name
+      console.log(nameUser)
+      var user = firebase.auth().currentUser;
+      //Actualizando nombre de usuario 
+      user.updateProfile({
+        displayName: this.state.name
+      })
+    }).catch((error)=> {
+      // Handle Errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      if (errorCode === 'auth/weak-password') {
+        alert('The password is too weak.');
+      } else {
+      alert(errorMessage);
+      }
+      console.log(error);
+    });    
+  }
+
+  // metodo para autentficar usuarios con google
+  handleAuth = (e)=> {
+    e.preventDefault()
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+    firebase.auth().getRedirectResult()
+      .then(result => {
+        console.log(`${result.user.email} ha iniciado sesión`)
+      }).catch(error => {
+      console.log(`Error ${error.code}: ${error.message}`)
+      });
+  }
+  //auth con facebook
+  handleAuthFacebook = (e)=> {
+    e.preventDefault()
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+      .then(result => {
+        console.log(`${result.user.email} ha iniciado sesión`)
+      }).catch(error => {
+        console.log(`Error ${error.code}: ${error.message}`)
+      });
+  }
+  
   render () {
     return <React.Fragment>
       <div className='block-form-service'>
@@ -22,7 +127,7 @@ class FormService extends React.Component {
                 onChange={this.props.onChange} 
                 className='space-form-input' 
                 type='text'
-                placeholder='Ejemplo: Diseñador gráfico, Ingeniero civil, etc...'
+                placeholder='Ejemplo: Diseño de Interfaces, Estructuras para construcción, etc...'
                 value={this.props.formValues.titleService} 
                 name='titleService' required />
               </div>
@@ -32,116 +137,15 @@ class FormService extends React.Component {
                     <label>Área del servicio</label><br/>
                     <div className='relative-options-area'>
                       <button type='button' onClick={this.props.clickOpenModalArea} className='selected-area-input'>{this.props.areaSelected}</button>
-                      <div className={this.props.modalArea}>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Redacción de contenidos' className='selected-area' type='radio' name='areaService'/>
-                          Redacción de contenidos
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Desarrollo web' className='selected-area' type='radio' name='areaService'/>
-                          Desarrollo web
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>        
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Desarrollo de Apps' className='selected-area' type='radio' name='areaService'/>
-                          Desarrollo de App's
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Diseño, arquitectura y audiovisual' className='selected-area' type='radio' name='areaService'/>
-                          Diseño, arquitectura y audiovisual
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Administración y manejo de datos' className='selected-area' type='radio' name='areaService'/>
-                          Administración y manejo de datos
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Ingeniería y ciencia' className='selected-area' type='radio' name='areaService'/>
-                          Ingeniería y ciencia 
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Producción y manufactura' className='selected-area' type='radio' name='areaService'/>
-                          Producción y manufactura 
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Logística y transporte' className='selected-area' type='radio' name='areaService'/>
-                          Logística y transporte 
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Marketing y ventas' className='selected-area' type='radio' name='areaService'/>
-                          Marketing y ventas 
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Finanzas, RRHH y legal' className='selected-area' type='radio' name='areaService'/>
-                          Finanzas, RRHH y legal
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Traducción e idiomas' className='selected-area' type='radio' name='areaService'/>
-                          Traducción e idiomas
-                        </label>
-                        <label onClick={this.props.closeModalArea} className='selected-label'>
-                          <div className='width-img'>
-                            <div className='container-image-area'>
-                              <img alt='modelo ilutración compañias' src={typeCompanyImage} width='20px' />
-                            </div>
-                          </div>
-                          <input onChange={this.props.onChange} value='Servicios y oficios generales' className='selected-area' type='radio' name='areaService'/>
-                          Servicios y oficios generales
-                        </label>
-                      </div>
+                      <div onClick={this.props.closeModalArea} className={this.props.overlay}></div>
+                      {ReactDOM.createPortal(
+                        <ModalAreaSelection
+                        modalArea={this.props.modalArea}
+                        onChange={this.props.onChange}
+                        closeModalArea={this.props.closeModalArea}
+                        isOpenModalArea={this.props.isOpenModalArea} />,
+                        document.getElementById('modalAreaSelection'))
+                      }
                     </div>
                   </div>
                   <div className='block-input-service'>
@@ -166,7 +170,7 @@ class FormService extends React.Component {
                       className='form-input-text-col'
                       onChange={this.props.onChange} 
                       value={this.props.formValues.rateJob}
-                      placeholder='Ej: 40 USD' 
+                      placeholder='Ej: USD 15' 
                       type='text'
                       name={'rateJob'} />
                     </div>
@@ -205,9 +209,9 @@ class FormService extends React.Component {
                       <select 
                       className='input-no-styles-selection'
                       onChange={this.props.onChange} 
-                      value={this.props.formValues.TimeRateJob}                    
+                      value={this.props.formValues.timeRateJob}                    
                       type='text'
-                      name={'TimeRateJob'}>
+                      name={'timeRateJob'}>
                         <option>Hora</option>
                         <option>Proyecto</option>
                         <option>Asesoría</option>
@@ -314,10 +318,28 @@ class FormService extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='centerButton-block'>
-              <button className='button-joobbi'>Publicar ( -10 cupones )</button>
-            </div>                            
+            {
+            this.state.user &&
+              <div className='centerButton-block'>
+                  <button className='button-joobbi'>Publicar ( -10 cupones )</button>
+              </div>                            
+            }
           </form>
+          <ButtonRegistreDemo 
+          blockModalRegistro={this.state.blockModalRegistro}
+          isOpenRegistro={this.state.isOpenRegistro}
+          email={this.state.email}
+          password={this.state.password}
+          registryEmail={this.state.registryEmail}
+          registryPassword={this.state.registryPassword}
+          handleChange={this.handleChange}
+          createUser={this.createUser}
+          handleAuth={this.handleAuth}
+          handleAuthFacebook={this.handleAuthFacebook}
+          cerrarModalRegistro={this.cerrarModalRegistro}
+          abrirModalRegistro= {this.abrirModalRegistro}
+          overlay={this.state.overlay}
+          user={this.state.user} />
         </div>
       </div>   
     </React.Fragment>

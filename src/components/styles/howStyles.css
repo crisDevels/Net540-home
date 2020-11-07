@@ -400,7 +400,7 @@ box-shadow: 0 3px 10px 0 #378dcab6;
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .flex-title-how {
     flex-wrap: wrap;
     justify-content: center;
@@ -588,7 +588,7 @@ box-shadow: 0 3px 10px 0 #378dcab6;
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 375px) {
 
     .border {
         margin-right: 10px;

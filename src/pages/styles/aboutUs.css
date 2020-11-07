@@ -1,0 +1,1146 @@
+/* title landing joobbi */
+.title-landing-joobbi {
+  color: #1DAEFF;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.wrapper-landing {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.wrapper-border-landing {
+  max-width: 1250px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  padding: 10px 0 100px 0;
+  border-radius: 50px;
+  margin-top: 50px
+}
+
+/* daremos estilos al imagen background del HEROhome */
+.container-block-hero {
+  height: 650px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);
+  box-shadow: inset 0px 8px 25px 0px rgba(0,0,0,0.40);
+  background-position: initial;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.3)), url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/EyvF0jkPg/videoblocks-camera-moves-round-happy-multi-ethnic-business-people-relaxing-at-office-party-dancing-celebrating-success-slow-motion_s49gjyvgi_thumbnail-1080_01.png'); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.4)), url('http://joobbi.com/wp-content/uploads/2020/10/Portada-Joobbi-1-1.png');
+}
+
+/* daremos estilos al content del HEROhome */
+.block-content-hero {
+  position: relative;
+  z-index: 0;
+  height: 400px;
+}
+
+.wrapper-hero-landing {
+  max-width: 600px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+  border-radius: 30px;
+}
+
+.container-logo-hero {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.div-logo-texto {
+  width: 100%;
+  text-align: center;
+}
+
+.styles-logo-hero {
+  margin: 0 0 50px;
+}
+
+.hero-text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.hero-text-h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.strong-hero {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* se daran estilos a los valores link */
+
+.block-valores {
+  margin: 50px 0 0 0;
+}
+
+.wrapper-valores {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.container-valor {
+  width: 100%;
+  height: 300px;
+  background: #f3f3f3;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  margin: 0 0 40px 0;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.container-adorno-back {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 0 20px 20px 0px;
+}
+
+.container-adorno-back-start {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 20px 0 0 20px;
+}
+
+.square-gray {
+  position: absolute;
+  background: #c4c4c4;
+  width: 600px;
+  height: 400px;
+  z-index: 0;
+  left: 150px;
+  top: 0px;
+  border-radius: 30px;
+  transform: rotateZ(45deg);
+}
+
+.square-gray-start {
+  position: absolute;
+  background: #c4c4c4;
+  width: 600px;
+  height: 400px;
+  z-index: 0;
+  right: 150px;
+  top: 0px;
+  border-radius: 30px;
+  transform: rotateZ(135deg);
+}
+
+.adornos-puntos {
+  position: absolute;
+  right: 150px;
+  top: 50px;
+  z-index: 1;
+}
+
+.container-images-valores {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-images-valores-start {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container-flex-text {
+  width: 60%;
+  padding: 0 0 0 60px;
+  align-self: center;
+}
+
+.container-flex-text-left {
+  width: 60%;
+  display: flex;
+  padding: 0 60px 0 0;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+.container-justify-text {
+  width: 80%;
+}
+
+.conianer-text-valores {
+  width: 60%;
+}
+
+.conianer-text-valores-rigth {
+  width: 100%;
+}
+
+.title-valor {
+  font-size: 80px;
+  color: #1DAEFF;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+.p-valor {
+  font-size: 18px;
+  font-weight: 500;
+  color: #757575;
+  line-height: 22px;
+}
+
+.title-valor-rigth {
+  font-size: 80px;
+  color: #1DAEFF;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-align: right;
+}
+
+.p-valor-rigth {
+  font-size: 18px;
+  font-weight: 500;
+  color: #757575;
+  line-height: 22px;
+  text-align: right;
+}
+
+/* block areas */
+.container-areas-title {
+  position: relative;
+}
+
+.wrapper-areas {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  flex-wrap: inherit;
+}
+
+.container-vision {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-50-text {
+  width: 45%;
+}
+
+.text-p-vision {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.block-items {
+  position: relative;
+  z-index: 2;
+  padding: 50px 0 80px 0;
+  background-color: #1DAEFF;
+}
+
+.title-gran-areas {
+  margin: 35px 0 30px 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+.areas-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.areas-item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 16%;
+  height: 120px;
+  align-items: flex-start;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.areas-item-list p {
+  color: white;
+}
+
+.div-button-areas {
+  width: 100%;
+}
+
+.color-icon-areas {
+  color: white;
+}
+
+/* estilos de los bloques white */
+
+.block-blog-joobbi {
+  margin: 80px 0;
+}
+
+.wrapper-white {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.container-history-joobbi {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.block-justify-history {
+  width: 70%;
+}
+
+.flex-container-blog-joobbi {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.block-text-blog {
+  width: 40%;
+}
+
+.title-blog {
+  font-size: 25px;
+  font-weight: 700;
+  color: #1DAEFF;
+  margin: 30px 0 30px 0;
+}
+
+.p-styles-blog {
+  font-size: 18px;
+  font-weight: 500;
+  color: #757575;
+  line-height: 25px;
+}
+
+.background-container-history {
+  position: relative;
+  width: 50%;
+  height: 200px;
+  border-radius: 20px;
+  background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/EyvF0jkPg/videoblocks-young-european-businessman-dancing-in-circle-with-colleagues-at-office-party-celebrating-career-promotion-slow-motion_rdzssrivb7_thumbnail-1080_01.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background-container-blog {
+  position: relative;
+  width: 50%;
+  height: 200px;
+  border-radius: 20px;
+  background-image: url('http://joobbi.com/wp-content/uploads/2020/10/Imagen_para_blog.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.position-button-blog {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+
+/* se dan estilos al bloque de call to action */
+
+.block-call-to {
+  margin: 10px 0 0 0;
+  height: 400px;
+  background-position: center;
+  box-shadow: inset 0 -10px 25px rgba(0,0,0,0.25);
+  background:black;
+  max-width: 1200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.5)), url('https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2015/12/09112429/work-life-balance-working-from-home.jpg');
+}
+
+.wrapper-call-to {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.flex-container-call-to {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.block-text-button-call {
+  text-align: right;
+  margin: 0 40px 0 0;
+  width: 400px;
+}
+
+.container-text-call {
+  width: 100%;
+}
+
+.container-text-call {
+  width: 100%;
+}
+
+.container-text-call-rigth {
+  width: 100%;
+  text-align: right;
+}
+
+.p-styles-call {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  line-height: 25px;
+}
+
+.button-flex-call-to {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* footer styles */
+
+.listTerms a {
+    text-decoration: none;
+    color: #1DAEFF;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+.listTerms {
+  width: 60%;
+  margin: 0;
+}
+
+.logofooter {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    color: #1DAEFF;
+    font-weight: 700;
+    /* margin-right: 40px; */
+}
+
+.footer-flex {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo-footer-case {
+    color: #1DAEFF;
+    margin: 0;
+}
+
+.container-block-footer {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.logofooter img{
+    margin-right: 10px;
+}
+
+
+.socialMedia {
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
+}
+
+
+.socialMedia a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1024px) {
+  
+  /* daremos estilos al navLanding */
+  .block-buttons-inicio {
+    background-color: transparent;
+    padding: 20px 0;
+    position: sticky;
+    z-index: 1;
+  }
+
+  .wrapper-nav-inicio {
+    max-width: 900px;
+  }
+
+  .wrapper-hero-landing {
+    max-width: 900px;
+  }
+
+  .wrapper-most-popular {
+    max-width: 900px;
+  }
+
+  /* responsive why list */
+  .item-list-why {
+    width: 25%;
+  }
+
+  /* responsive de how function */
+  .paso {
+    width: auto;
+  }
+
+  /* blog landing blog styles */
+  .scroll-blog {
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  /* responsive footer styles */
+  .footer-flex {
+    width: 95%;
+}
+
+.container-block-footer {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.logofooter {
+    width: 20%;
+}
+
+.listTerms a {
+    margin: 0 10px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+}
+
+
+li {
+    display: flex;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+
+  /* daremos estilos al buttons Joobbi */
+  .button-line-white {
+    font-size: 13px;
+  }
+
+  .button-line {
+    font-size: 13px;
+  }
+
+  .button-joobbi {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  
+  /* daremos estilos al navLanding */
+  .block-buttons-inicio {
+    background-color: transparent;
+    padding: 20px 0;
+    position: sticky;
+    z-index: 1;
+  }
+
+  /*wrapper de landing */
+  .wrapper-nav-inicio {
+    max-width: 95%;
+  }
+
+  .wrapper-hero-landing {
+    max-width: 95%;
+  }
+
+  .wrapper-most-popular {
+    max-width: 95%;
+  }
+
+  .wrapper-why-joobbi {
+    max-width: 95%;
+  }
+
+  .wrapper-areas {
+    max-width: 95%;
+  }
+
+  .wrapper-function {
+    max-width: 95%;
+  }
+
+  .wrapper-landing {
+    max-width: 100%;
+  }
+
+  /* Se dan estilos al content */
+
+  .block-areas-list {
+    display: none;
+  }
+
+  .div-logo-texto {
+    width: 70%;
+  }
+
+  /* estilos a las areas responsive */
+
+  .areas-item-list {
+    width: 25%;
+  }
+
+  /* responsive footer styles */
+  .logofooter img{
+    width: 60px;
+  }
+
+  .logofooter {
+    width: 30%;
+  }
+
+  .listTerms {
+    width: 40%;
+  }
+
+  .socialMedia {
+    width: 30%;
+  }
+
+  .listTerms a {
+    margin: 0 10px;
+    text-align: center;
+    font-size: 0.6rem;
+  }
+
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  li {
+    display: flex;
+  }
+
+  .icon-Logo_youtube {
+    font-size: 20px;
+  }
+
+  .icon-Logo_instagram {
+    font-size: 20px;
+  }
+
+  .icon-Logo_linkedin {
+    font-size: 20px;
+  }
+
+  .icon-Logo_facebook {
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  body.hidden {
+    overflow-y: hidden;
+  }
+
+  /* daremos estilos al buttons Joobbi */
+  .button-line-white {
+    font-size: 14px;
+    padding: 10px;;
+  }
+
+  .button-inicio {
+    font-size: 14px;
+    padding: 10px 12px
+  }
+
+  .button-nav {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .button-line {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .button-joobbi {
+    font-size: 14px;
+    padding: 10px 7px;
+  }
+
+  /* daremos estilos al navLanding */
+  .logo-container {
+    width: 50%;
+  }
+
+  .container-navBar-Landing {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px;
+  }
+
+  .burguer-menu {
+    display: flex;
+  }
+
+  .burguer-menu.desactive {
+    display: none;
+  }
+
+  .burguer-menu-cerrar.active {
+    display: flex;
+  }
+
+  .buttons-container {
+    display: none;
+  }
+
+  .buttons-container.active {
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 4;
+    background-color: #1dacffec;
+    width: 70vw;
+    padding-bottom: 20px;
+    justify-content: flex-end;
+    align-items: initial;
+    box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.40);
+  }
+
+  .list-buttons-nav {
+    display: block;
+  }
+
+  .list-item-nav {
+    width: 100%;
+    margin: 25px 10px;
+  }
+
+  /* le damos estilos al HERO IMAGE */
+  .container-block-hero {
+    background-position: center;
+    height: 580px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  
+  /* le damos estilos al HEROcontent */
+  .styles-logo-hero {
+    width: 80%;
+  }
+
+  .block-content-hero {
+    z-index: 0;
+    margin: 0 10px;
+    height: 400px;
+  }
+
+  .div-logo-texto {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* responsive valore joobbi */
+  .wrapper-valores {
+    max-width: 95%;
+  }
+
+  .container-valor {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 30px 0;
+    z-index: 0;
+  }
+
+  .container-images-valores {
+    left: auto;
+    right: -10px;
+    width: auto;
+    height: auto;
+    z-index: 0;
+  }
+
+  .container-images-valores-start {
+    left: -10px;
+    width: auto;
+    height: auto;
+  }
+
+  .image-valores {
+    height: 140px;
+  }
+
+  .container-adorno-back {
+    display: none;  
+  }
+
+  .container-adorno-back-start {
+    display: none;  
+  }
+
+  .container-flex-text {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    padding: 0 0 0 20px;
+  }
+
+  .container-flex-text-left {
+    width: 100%;
+    padding: 0 20px 0 0;
+  }
+
+  .title-valor {
+    font-size: 30px;
+  }
+
+  .title-valor-rigth {
+    font-size: 30px;
+  }
+
+  .p-valor {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  
+  .p-valor-rigth {
+    font-size: 14px;
+  }
+
+  /* responsive vision */
+  .container-vision {
+    flex-wrap: wrap;
+  }
+
+  .container-50-text {
+    width: 100%;
+  }
+
+  .text-p-vision {
+    color: white;
+    font-size: 14px;
+  }
+
+  /* responsive history */
+  .wrapper-white {
+    max-width: 95%;
+  }
+
+  .block-justify-history {
+    width: 90%;
+  }
+
+  .flex-container-blog-joobbi {
+    flex-wrap: wrap;
+  }
+
+  .block-text-blog {
+    width: 100%;
+  }
+
+  .background-container-blog {
+    width: 100%;
+  }
+
+  /* se dan responsive al block areas */
+
+  .areas-item-list {
+    width: 50%;
+  }
+
+  .areas-list {
+    justify-content: center;
+  }
+
+  .wrapper-areas {
+    max-width: 95%;
+  }
+
+  /* responsive call to action end */
+
+  .wrapper-call-to {
+    max-width: 95%;
+  }
+
+  .container-justify-text {
+    width: 60%;
+  }
+
+  .title-blog {
+    text-align: center;
+  }
+
+  .p-styles-blog {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .button-flex-call-to {
+    align-items: center;
+  }
+
+  .block-call-to {
+    background-position: left;
+    margin: 40px 0 0 0;
+    border-radius: 0;
+  }
+
+  .block-text-button-call {
+    text-align: center;
+    margin: 0;
+  }
+
+  .flex-container-call-to {
+    justify-content: center;
+  }
+
+  .container-text-call {
+    width: 100%;
+  }
+
+  /* respnsive footer styles */
+  .footer-flex {
+    width: 100%;
+    display: block;
+    padding-bottom: 30px;
+}
+
+.logofooter img{
+    width: 150px;
+}
+
+.logofooter {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+}
+
+.listTerms a {
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 10px 5px;
+    text-align: center;
+    font-size: .9rem;
+    display: block;
+}
+
+.listTerms {
+    width: 100%;
+    margin-right: 0px;
+}
+
+ol,
+ul {
+    display: flex;
+    width: 100%;
+}
+
+.puntoNone {
+    display: none;
+}
+
+.politicaNone {
+    display: none;
+}
+
+.socialMedia {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  /* se realizan estilos al content hero */
+  .hero-text {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .container-box-popular {
+    height: 70px;
+  }
+
+  .container-scroll-popular {
+    height: 70px;
+  }
+
+  .container-images-valores-start {
+    left: -10px;
+    width: auto;
+    height: auto;
+  }
+
+  .container-images-valores {
+    left: auto;
+    right: -5px;
+    width: auto;
+    height: auto;
+    z-index: 0;
+  }
+
+  .image-valores {
+    height: 120px;
+  }
+
+  .sector-item-popular {
+    width: auto;
+    margin: 0 15px;
+  }
+
+  .iconComo {
+    padding: 10px;
+  }
+
+  .text-sector-popular {
+    font-size: 10px;
+  }
+
+  .title-carrusel {
+    font-size: 18px;
+  }
+
+  .item-list-why {
+    width: 80%;
+  }
+
+  .areas-item-list {
+    width: 50%;
+  }
+
+  .listTerms a {
+    font-size: .7rem;
+  }
+}

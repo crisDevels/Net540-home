@@ -1,6 +1,7 @@
 import React from 'react'
 import firebase from 'firebase'
 import api from '../api'
+import ReactDOM from 'react-dom'
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/footer.js'
@@ -30,6 +31,7 @@ class FeedPublicationsDetails extends React.Component {
     dataWorksLarge: [],
     isOpenDelete: false,
     isOpenDesactive: false,
+    overlay: "none"
   }
    
   componentDidMount () {
@@ -91,12 +93,14 @@ class FeedPublicationsDetails extends React.Component {
   DeleteOpenModal = ()=> {
     if(!this.state.isOpenDelete) {
       this.setState({
+        overlay: "overlayActive",
         isOpenDelete: true,
         modalOverlay: "col-50-modal-Active",
         overlayApplication: "overlay-Active",
       })
     }else {
       this.setState({
+        overlay: "none",
         isOpenDelete: false,
         modalOverlay: "col-50-modal",
         overlayApplication: "none",
@@ -107,12 +111,14 @@ class FeedPublicationsDetails extends React.Component {
   DesactiveOpenModal = ()=> {
     if(!this.state.isOpenDesactive) {
       this.setState({
+        overlay: "overlayActive",
         isOpenDesactive: true,
         modalOverlay: "col-50-modal-Active",
         overlayApplication: "overlay-Active",
       })
     }else {
       this.setState({
+        overlay: "none",
         isOpenDesactive: false,
         modalOverlay: "col-50-modal",
         overlayApplication: "none",
@@ -134,6 +140,7 @@ class FeedPublicationsDetails extends React.Component {
       {
       this.state.LoadingUser ? <PageLoading /> : <div>
         <NavBar />
+        <div onClick={this.DesactiveOpenModal} className={this.state.overlay}></div>
         <div className="wrapper-border">
           {
           this.state.user &&
@@ -145,38 +152,43 @@ class FeedPublicationsDetails extends React.Component {
                                       feed={this.state.dataWorks} />
                   </div>
                 </div>
-              <div className="container-modales-details">
-                <div className={this.state.overlayApplication}></div>
-                <div className={this.state.modalOverlay}>
-                  <WorkDetailsEdit  DesactiveOpenModal={this.DesactiveOpenModal}
-                                    DeleteOpenModal={this.DeleteOpenModal} 
-                                    block={this.state.blockWorkExtend}
-                                    dataNull = {this.state.dataWorksLarge}
-                                    reLoading = {this.state.LoadingReData}
-                                    id={this.state.dataWorksLarge.id}
-                                    title={this.state.dataWorksLarge.titleService}
-                                    area={this.state.dataWorksLarge.areaService}
-                                    modality={this.state.dataWorksLarge.modalityJob}
-                                    specialty={this.state.dataWorksLarge.specialtyService}
-                                    location={this.state.dataWorksLarge.locationJob}
-                                    time={this.state.dataWorksLarge.timeService}
-                                    rate={this.state.dataWorksLarge.rateJob}
-                                    timeRate={this.state.dataWorksLarge.TimeRateJob}
-                                    titleDescription={this.state.dataWorksLarge.titleDescription}
-                                    description={this.state.dataWorksLarge.descriptionService}
-                                    descriptions={this.state.dataWorksLarge.dataDescriptions}
-                                    skills={this.state.dataWorksLarge.dataSkills}
-                                    urgent={this.state.dataWorksLarge.urgentJob}
-                                    verify={this.state.dataWorksLarge.verify} />
-                </div>
-                <ModalDelete isOpenDelete={this.state.isOpenDelete} 
-                             DeleteOpenModal={this.DeleteOpenModal}
-                             DeletePublication={this.DeletePublication} />
-                <ModalDesactive isOpenDesactive={this.state.isOpenDesactive} 
-                                DesactiveOpenModal={this.DesactiveOpenModal} />
+              <div className="col-50-">
+                <WorkDetailsEdit DesactiveOpenModal={this.DesactiveOpenModal}
+                                DeleteOpenModal={this.DeleteOpenModal} 
+                                block={this.state.blockWorkExtend}
+                                dataNull = {this.state.dataWorksLarge}
+                                reLoading = {this.state.LoadingReData}
+                                id={this.state.dataWorksLarge.id}
+                                title={this.state.dataWorksLarge.titleService}
+                                area={this.state.dataWorksLarge.areaService}
+                                modality={this.state.dataWorksLarge.modalityJob}
+                                specialty={this.state.dataWorksLarge.specialtyService}
+                                location={this.state.dataWorksLarge.locationJob}
+                                time={this.state.dataWorksLarge.timeService}
+                                rate={this.state.dataWorksLarge.rateJob}
+                                timeRate={this.state.dataWorksLarge.TimeRateJob}
+                                titleDescription={this.state.dataWorksLarge.titleDescription}
+                                description={this.state.dataWorksLarge.descriptionService}
+                                descriptions={this.state.dataWorksLarge.dataDescriptions}
+                                skills={this.state.dataWorksLarge.dataSkills}
+                                urgent={this.state.dataWorksLarge.urgentJob}
+                                verify={this.state.dataWorksLarge.verify} />
+              </div>
+              {ReactDOM.createPortal(
+                <ModalDelete 
+                isOpenDelete={this.state.isOpenDelete} 
+                DeleteOpenModal={this.DeleteOpenModal}
+                DeletePublication={this.DeletePublication} />,
+                document.getElementById('modalDelete')
+              )}
+              {ReactDOM.createPortal(
+                <ModalDesactive 
+                isOpenDesactive={this.state.isOpenDesactive} 
+                DesactiveOpenModal={this.DesactiveOpenModal} />,
+                document.getElementById('modalDesactive')
+              )}
               </div>
             </div>
-          </div>
           }
           {
           !this.state.user &&

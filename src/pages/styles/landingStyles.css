@@ -118,28 +118,6 @@
   transform: scale(.95);
 }
 
-.modalInicioActiveLanding {
-  width: 340px;
-  height: 460px;
-  background: white;
-  padding: 1.7em 2.2em;
-  border-radius: 20px;
-  text-align: center;
-  z-index: 5;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: column;
-  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
-  animation-name:  fadeIn;
-  animation-duration: .8s;
-}
-
 .background-x {
   background-color: #1DAEFF;
   padding: 5px 6px 3px 6px;
@@ -490,6 +468,10 @@
   border-radius: 30px;
 }
 
+.container-button-hero {
+  margin: 20px 0 20px 0;
+}
+
 .container-logo-hero {
   height: 100%;
   display: flex;
@@ -712,8 +694,6 @@
 }
 
 .block-items {
-  position: relative;
-  z-index: 2;
   padding: 1px 0 50px 0;
   background-color: #1DAEFF;
 }
@@ -1283,7 +1263,7 @@ li {
 
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
 
   body.hidden {
     overflow-y: hidden;
@@ -1313,11 +1293,6 @@ li {
   .button-joobbi {
     font-size: 14px;
     padding: 10px 7px;
-  }
-
-  .modalInicioActiveLanding {
-    top: 100px;
-    width: 75%;
   }
 
   /* daremos estilos al navLanding */
@@ -1828,11 +1803,11 @@ li {
     padding-bottom: 30px;
 }
 
-.logofooter img{
+  .logofooter img{
     width: 150px;
-}
+  }
 
-.logofooter {
+  .logofooter {
     display: block;
     width: 100%;
     margin: 0;
@@ -1841,7 +1816,7 @@ li {
     align-items: center;
     justify-content: center;
     margin-right: 0px;
-}
+  }
 
 .listTerms a {
     text-decoration: none;

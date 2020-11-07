@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles/stylesListWork.css'
-import './styles/myPublicationStyle.css'
+import './styles/PublicationStyle.css'
 import './styles/modales.css'
 import './styles/searchAnimated.css'
 
@@ -62,7 +62,7 @@ function ListPublications(props) {
           return (
             <li onClick={props.handleClick} key={dataWork.id}>
               <div className="my-publication">
-                <div className="flex-title-vacant">
+                <div className="flex-title-myService">
                   <div className="title-publication-general">
                     <p className="titleVacant">
                       {dataWork.titleService}<strong> {dataWork.urgentJob && "URGENTE"}</strong>
@@ -83,7 +83,7 @@ function ListPublications(props) {
                   <div className="blockSubs-candidates">
                     <p className="subtitleVacant">
                       <img alt="icono salario" src={iconRate} height="15px"/>
-                      Valor del servicio: $ {dataWork.rateJob} USD
+                      Valor del servicio: USD {dataWork.rateJob}
                     </p>
                     <p className="subtitleVacant">
                       <img alt="icono localización" src={iconLocation} height="19px" />

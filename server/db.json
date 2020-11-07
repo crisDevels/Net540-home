@@ -1,4 +1,90 @@
 {
+  "areas": [
+    {
+      "id": 1,
+      "name": "Desarrollo web",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-desarrollo-web.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/DesarrolloWeb-Icon.svg",
+      "description": "El desarrollo de aplicaciones web tiene una gran evolución en la última decada. Hoy en día existen multitud de aplicaciones, frameworks, librerías y arquitecturas que diariamente reciben actualizaciones y mejoran la experiencia de desarrollo. Conecta con nuevos colaboradores y optimiza las experiencias digitales a tus usuarios o futuros clientes."
+    },
+    {
+      "id": 2,
+      "name": "Desarrollo apps",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-desarrollo-app.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/DesarrolloDeApps-Icon.svg",
+      "description": "Desarrollar aplicaciones móviles se define como implementar software en pequeños dispositivos inalámbircos como smartphones y tablets. En este sector se habla de kits de desarrollo los cuales permiten obtener un entornos simulados y de esta manera probar el código fuente. Los kits o SDK más usados son: Unity, Android SDK, Licencia IOS. ¡Contrata a los expertos!"
+    },
+    {
+      "id": 3,
+      "name": "Redacción de contenido",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-copywritting.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/RedaccionDeContenidos-Icon.svg",
+      "description": "La habilidad de escribir se convierte en uno de la oficios más antiguos de la humanidad. Sin embargo, actualmente esta profesión se ha enfocado en la capacidad de crear textos que generan leads y llaman a la acción. Descubre como generar contenido que atraen clientes y potencian la imagen de tu negocio."
+    },
+    {
+      "id": 4,
+      "name": "Diseño, arquitectura y audiovisual",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-design.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/Disenoarquitecturayaudiovisual-icon.svg",
+      "description": "La palabra diseño nace de la acción de atribuir significado a las cosas. El oficio de arquitecto, diseñador o productor audiovisual se traduce en la habilidad creativa para convertir un idea en potenciales objetos o productos necesarios para la vida."
+    },
+    {
+      "id": 5,
+      "name": "Administración y manejo de datos",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-analityc-data.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/AdministracionManejoDatos-Icon.svg",
+      "description": "Nuestra vida digital se mueve principalmente con datos, por tanto, cada acción humana en la internet tiene la capacidad de mejorar la experiencia de los usuarios. Implementa big data y machine learning como estrategía para ofrecer mejores productos a tus clientes."
+    },
+    {
+      "id": 6,
+      "name": "Ingeniería y ciencia",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-science.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/IngenieriasCiencias-Icon.svg",
+      "description": "La ingeniería nace con el objetivo de analizar y resolver problemas cotidianos de manera ingeniosa y práctica. Por este motivo, estas habilidades resultan indespensables para las empresas o proyectos, ¡Conecta con nuestros genios!"
+    },
+    {
+      "id": 7,
+      "name": "Producción y manufactura",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-production.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/ProduccionManufactura-Icon.svg",
+      "description": "A pesar de la gran revolución digital, ¡La revolución industrial llegó para quedarse!. Ya que las empresas siguen mejorando sus infraestructuras tecnológicas para aprovechar mejorar sus recursos e impactar de manera positiva al ambiente."
+    },
+    {
+      "id": 8,
+      "name": "Logística y transporte",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-logistic.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/LogisticaTransporte-Icon.svg",
+      "description": ""
+    },
+    {
+      "id": 9,
+      "name": "Marketing y ventas",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-marketing.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/VentasMarketing-Icon.svg",
+      "description": ""
+    },
+    {
+      "id": 10,
+      "name": "Finanzas, RRHH, legal",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-business.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/RRHH-Icon.svg",
+      "description": ""
+    },
+    {
+      "id": 11,
+      "name": "Traducción e idiomas",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-language.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/Traduccion-Icon.svg",
+      "description": ""
+    },
+    {
+      "id": 12,
+      "name": "Servicios y oficios generales",
+      "cover": "https://joobbi.com/wp-content/uploads/2020/11/Ilustracion-area-services.png",
+      "icon": "https://joobbi.com/wp-content/uploads/2020/10/ServiciosOficiosGenerales-Icon.svg",
+      "description": ""
+    }
+  ],
   "works": [
     {
       "dataSkills": [
@@ -270,6 +356,42 @@
       "verify": true,
       "titleDescription": "Requermientos del cargo",
       "id": "690urqB"
+    },
+    {
+      "dataSkills": [
+        {
+          "skillsUser": "ReactJS",
+          "conteoSkills": 0
+        },
+        {
+          "skillsUser": "AWS",
+          "conteoSkills": 1
+        },
+        {
+          "skillsUser": "AWS",
+          "conteoSkills": 2
+        },
+        {
+          "skillsUser": "AWS",
+          "conteoSkills": 3
+        }
+      ],
+      "dataDescriptions": [],
+      "titleService": "Diseñador Gráfico",
+      "areaService": "Marketing y ventas",
+      "modalityJob": "Presencial",
+      "locationJob": "Bogota D.C.",
+      "timeService": "1 mes - 3 meses",
+      "rateJob": "750",
+      "TimeRateJob": "Proyecto",
+      "descriptionService": "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados.",
+      "verify": true,
+      "save": false,
+      "active": true,
+      "timeRateJob": "Asesoría",
+      "titleDescription": "Arquitecto de Producto",
+      "urgentJob": true,
+      "id": "vP3xV_0"
     }
   ]
 }

@@ -11,7 +11,7 @@
     position: sticky;
     width: 100%;
     top: 0;
-    z-index: 5;
+    z-index: 3;
     background-color: white;
 }
 
@@ -92,7 +92,7 @@
 
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:426px) {
 
     .container-flow {
         width: 90%;
@@ -106,10 +106,7 @@
 
     .block-center-gamification {
         z-index: 0;
-    }
-
-    .block-center-gamification {
-        margin-top: 70px;
+        position: relative;
     }
 
 }

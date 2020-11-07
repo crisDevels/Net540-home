@@ -92,8 +92,51 @@
   transition: .5s ease;
 }
 
+.button-short-google {
+  background-color: white;
+  border-style: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  width: 30%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  transition: .5s ease;
+}
+
+.button-short-face {
+  background-color: #3b5998;
+  border-style: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  width: 30%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  transition: .5s ease;
+}
+
+.button-short-linkedin {
+  background-color:#0e76a8;
+  border-style: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  width: 30%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  transition: .5s ease;
+}
+
 .line-login {
   margin: 20px 0 5px 0;
+}
+
+.button-short-google:hover,
+.button-short-google:focus,
+.button-short-face:hover,
+.button-short-face:focus,
+.button-short-linkedin:hover,
+.button-short-linkedin:focus {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  transform: scale(.95);
 }
 
 .google-auth:hover,
@@ -108,8 +151,10 @@
 
 /* se daran estilos al los input del formulario de registro servicios y trabajos */
 .selected-area-input {
+  font-family: 'Lato', sans-serif;
   text-align: left;
   background: none;
+  font-size: 14px;
   border: 1px;
   border-radius: 7px;
   border-style: solid;

@@ -19,7 +19,12 @@ class FeedVacant extends React.Component {
     modalOverlay: "col-50-modal",
     blockBuscar: "flex-search",
     dataWorks: [],
-    query: ""
+    query: "",
+    //modal de areas estados
+    areaService: 'Selecciona un área',
+    modalArea: "none",
+    isOpenModalArea: false,
+    overlay: 'none'
   }
   componentDidMount () {
     firebase.auth().onAuthStateChanged(user => {
@@ -44,6 +49,28 @@ class FeedVacant extends React.Component {
       query: e.target.value
     })
   }
+  //metodo change para el formulario de buscar
+  handleChange = (e)=> {
+    const { value, name } = e.target;    
+    this.setState({
+      [name]: value 
+    })
+  }
+  //click Modal Area 
+  clickOpenModalArea = ()=> {
+    this.setState({
+      modalArea: "modal-options-area",
+      isOpenModalArea: true,
+      overlay: 'overlayActive'
+    }) 
+  }
+
+  closeModalArea = ()=> {
+    this.setState({
+      modalArea: "none",
+      overlay: 'none'
+    })
+  }
   render () {
     return <React.Fragment>
       {this.state.isLoading ? <PageLoading /> :
@@ -56,9 +83,17 @@ class FeedVacant extends React.Component {
                   <div className="col-50">
                     <ListWorks feed={this.state.dataWorks} />
                   </div>
-                  <div className="container-modales">
+                  <div className="col-50-">
                     <div className={this.state.modalOverlay}>
-                      <SearchFeed blockSearch={this.state.blockBuscar} />
+                      <SearchFeed
+                      areaSelected={this.state.areaService}
+                      blockSearch={this.state.blockBuscar}
+                      modalArea={this.state.modalArea}
+                      overlay={this.state.overlay}
+                      isOpenModalArea={this.state.isOpenModalArea}
+                      onChange={this.handleChange}
+                      clickOpenModalArea={this.clickOpenModalArea}
+                      closeModalArea={this.closeModalArea} />
                     </div>
                   </div>
                 </div>
@@ -68,12 +103,22 @@ class FeedVacant extends React.Component {
               <div>
                 <div className="flex-feed">
                   <div className="col-50">
-                    <ListWorks handleClick={this.infoComplete}
-                               feed={this.state.dataWorks} />
+                    <ListWorks 
+                    handleClick={this.infoComplete}         
+                    feed={this.state.dataWorks} />
                   </div>
-                  <div className="container-modales">
+                  <div className="col-50-">
                     <div className={this.state.modalOverlay}>
-                      <SearchFeed blockSearch={this.state.blockBuscar} />
+                      <SearchFeed 
+                      areaSelected={this.state.areaService}
+                      blockSearch={this.state.blockBuscar}
+                      modalArea={this.state.modalArea}
+                      overlay={this.state.overlay}
+                      isOpenModalArea={this.isOpenModalArea}
+                      onChange={this.handleChange}
+                      clickOpenModalArea={this.clickOpenModalArea}
+                      closeModalArea={this.closeModalArea}
+                       />
                     </div>
                   </div>
                 </div>

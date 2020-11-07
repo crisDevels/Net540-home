@@ -20,11 +20,11 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LandingHome} />
-        <Route exact path="/aboutUs" component={AboutUs}/>
+        <Route exact path="/somos-joobbi" component={AboutUs}/>
         <Route exact path="/registro-joobbi" component={NewRegistry}/>
         <Route exact path="/recuperar-contraseña" component={Forget}/>
         <Route exact path="/validacion-contraseña" component={Validation}/>
-        <Route exact path="/registro-skills" component={ProfesionForm}/>
+        <Route exact path="/registro-freelancer" component={ProfesionForm}/>
         <Route exact path="/publicar-trabajo" component={NewVacant}/>
         <Route exact path="/works" component={FeedVacant}/>
         <Route exact path="/works/:workId" component={FeedVacantDetails}/>

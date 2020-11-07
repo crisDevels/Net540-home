@@ -48,6 +48,32 @@ const api = {
       });
     },
   },
+  areas: {
+    list() {
+      return callApi('/areas');
+    },
+    create(areas) {
+      return callApi(`/areas`, {
+        method: 'POST',
+        body: JSON.stringify(areas),
+      });
+    },
+    read(areasId) {
+      return callApi(`/areas/${areasId}`);
+    },
+    update(areasId, updates) {
+      return callApi(`/areas/${areasId}`, {
+        method: 'PUT',
+        body: JSON.stringify(updates),
+      });
+    },
+    // Lo hubiera llamado `delete`, pero `delete` es un keyword en JavaScript asi que no es buena idea :P
+    remove(areasId) {
+      return callApi(`/areas/${areasId}`, {
+        method: 'DELETE',
+      });
+    },
+  },
 };
 
 export default api;

@@ -6,8 +6,6 @@ import api from '../api'
 import NavBar from '../components/NavBar';
 import FormService from '../components/FormularioRegistro/formService'
 import MyVacant from '../components/FormularioRegistro/FormulariosComponents/myVacant'
-import Footer from '../components/footer.js'
-import RegistroPage from '../components/registroPage';
 import PageLoading from './pageLoading'
 import GamificationAdvance from '../components/gamificationAdvance.js'
 
@@ -44,7 +42,10 @@ class NewVacant extends React.Component {
     copyAdvance: "Empecemos por el título",
     styleBarraProgress: {width: '0%'},
     checkVerify: "none",
-    modalArea: "none"
+    //modalArea open
+    modalArea: "none",
+    isOpenModalArea: false,
+    overlay: 'none'
   }
     
   componentDidMount () {
@@ -153,13 +154,16 @@ class NewVacant extends React.Component {
   //click Modal Area 
   clickOpenModalArea = ()=> {
     this.setState({
-      modalArea: "modal-options-area"
+      modalArea: "modal-options-area",
+      isOpenModalArea: true,
+      overlay: 'overlayActive'
     }) 
   }
 
   closeModalArea = ()=> {
     this.setState({
-      modalArea: "none"
+      modalArea: "none",
+      overlay: 'none'
     })
   }
   // submit del formulario completo de trabajos
@@ -317,6 +321,8 @@ class NewVacant extends React.Component {
                   clickOpenModalArea={this.clickOpenModalArea}
                   closeModalArea={this.closeModalArea}
                   modalArea={this.state.modalArea}
+                  isOpenModalArea={this.state.isOpenModalArea}
+                  overlay={this.state.overlay}
                   onChange={this.handleChange}
                   onSubmitForm={this.onSubmitWork}
                   formValues={this.state.formServices}
@@ -339,14 +345,14 @@ class NewVacant extends React.Component {
                   <h2 className="view-vacant">Visualiza tu solicitud</h2>
                   <MyVacant
                   checkVerify={this.state.checkVerify}
-                  title={this.state.formServices.titleService || "Ingeniero Mecatrónico"}
+                  title={this.state.formServices.titleService || "Marketing para productos industriales"}
                   area={this.state.formServices.areaService || "Metalmecánica"}
                   modality={this.state.formServices.modalityJob || "Remoto"}
                   specialty={this.state.formServices.specialtyService || "Planimetria de producto"}
                   location={this.state.formServices.locationJob || "Medellín"}
                   time={this.state.formServices.timeService || "Menos de 1 mes"}
-                  rate={this.state.formServices.rateJob || "$3'500.000 - $5'300.000"}
-                  timeRate={this.state.formServices.TimeRateJob || "Quincenal"}
+                  rate={this.state.formServices.rateJob || "40"}
+                  timeRate={this.state.formServices.timeRateJob || "Hora"}
                   titleDescription={this.state.formServices.titleDescription}
                   description={this.state.formServices.descriptionService || "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados. Debe cumplir con aquellas habilidades y requerimientos solicitados en el trabajo."}
                   descriptions={this.state.dataDescriptions || []}
@@ -360,6 +366,7 @@ class NewVacant extends React.Component {
             !this.state.user && <div>
               <div className="flex-feed">
                 <div className="col-50">
+                  <h2 className='title-form-service'>Publica un trabajo</h2>
                   <GamificationAdvance 
                   positionCheck={this.state.positionCheck} 
                   advanceBarra={this.state.advanceBarra} 
@@ -371,6 +378,8 @@ class NewVacant extends React.Component {
                   clickOpenModalArea={this.clickOpenModalArea}
                   closeModalArea={this.closeModalArea}
                   modalArea={this.state.modalArea}
+                  isOpenModalArea={this.state.isOpenModalArea}
+                  overlay={this.state.overlay}
                   onChange={this.handleChange}
                   onSubmitForm={this.onSubmitWork}
                   formValues={this.state.formServices}
@@ -393,14 +402,14 @@ class NewVacant extends React.Component {
                   <h2 className="view-vacant">Visualiza tu solicitud</h2>
                   <MyVacant
                   checkVerify={this.state.checkVerify}
-                  title={this.state.formServices.titleService || "Ingeniero Mecatrónico"}
+                  title={this.state.formServices.titleService || "Marketing para productos industriales"}
                   area={this.state.formServices.areaService || "Metalmecánica"}
                   modality={this.state.formServices.modalityJob || "Remoto"}
                   specialty={this.state.formServices.specialtyService || "Planimetria de producto"}
                   location={this.state.formServices.locationJob || "Medellín"}
                   time={this.state.formServices.timeService || "Menos de 1 mes"}
-                  rate={this.state.formServices.rateJob || "$3'500.000 - $5'300.000"}
-                  timeRate={this.state.formServices.TimeRateJob || "Quincenal"}
+                  rate={this.state.formServices.rateJob || "40"}
+                  timeRate={this.state.formServices.timeRateJob || "Hora"}
                   titleDescription={this.state.formServices.titleDescription}
                   description={this.state.formServices.descriptionService || "Se requiere a un profesional con la especialidad especificada, con experiencia mínimo de (x) mes(es) en el área y sector previamente mencionados. Debe cumplir con aquellas habilidades y requerimientos solicitados en el trabajo."}
                   descriptions={this.state.dataDescriptions || []}

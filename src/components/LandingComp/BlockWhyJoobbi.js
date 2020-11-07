@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const WhyJooby = () => (
   <div className='block-why-joobbi'>
@@ -6,14 +7,6 @@ export const WhyJooby = () => (
       <div className='col-1-100'>
         <div className='flex-title-why'>
           <h3 className='title-why-joobbi'>¿Porqué Joobbi?</h3>
-          <div className='button-flex-why'>
-            <div className='buttons-50'>
-              <a href='https://joobbi.com/soy-freelancer/'><button className='button-line'>Ofrece tus servicios <hr className='border-button-botom-line'></hr></button></a>
-            </div>
-            <div className='buttons-50'>
-              <a href='https://joobbi.com/solicitud-servicios/'><button className='button-joobbi'>Contacta un freelancer </button></a>
-            </div>
-          </div>
         </div>
         <ul className='list-why-joobbi'>
           <li className='item-list-why'>
@@ -32,13 +25,13 @@ export const WhyJooby = () => (
             <p className='p-why-description'>Estudiamos los perfiles profesionales y aquellos proyectos que generan conexiones genuinas.</p>
           </li>
         </ul>
-        <div className='button-flex-why-phone'>
-          <div className='buttons-50'>
-            <a href='https://joobbi.com/soy-freelancer/'><button className='button-line'>Ofrece tus servicios <hr className='border-button-botom-line'></hr></button></a>
-          </div>
-          <div className='buttons-50'>
-            <a href='https://joobbi.com/solicitud-servicios/'><button className='button-joobbi'>Contacta un freelancer </button></a>
-          </div>
+        <div className='button-flex-why'>
+            <div className='buttons-50'>
+              <Link to='/registro-freelancer'><button className='button-line'>Ofrece tus servicios <hr className='border-button-botom-line'></hr></button></Link>
+            </div>
+            <div className='buttons-50'>
+              <Link to='/publicar-trabajo'><button className='button-joobbi'>Contacta un freelancer </button></Link>
+            </div>
         </div>
       </div>
     </div>

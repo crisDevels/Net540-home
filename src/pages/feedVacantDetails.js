@@ -1,10 +1,9 @@
 import React from 'react'
 import firebase from 'firebase'
 import api from '../api'
+import ReactDOM from 'react-dom'
 
 import NavBar from '../components/NavBar';
-import Footer from '../components/footer.js'
-import RegistroPage from '../components/registroPage';
 
 import ListWorks from '../components/listWorks'
 import WorkLarge from '../components/workLarge'
@@ -22,11 +21,13 @@ class FeedVacantDetails extends React.Component {
     LoadingUser: true,
     LoadingReData: false,
     blockWorkExtend: "block-active",
+    overlay: 'none',
     modalAplication: "none",
     modalOverlay: "col-50-modal",
     overlayApplication: "none",
     dataWorks: [],
     dataWorksLarge: [],
+    isOpenAplication: false,
   }
    
   componentDidMount () {
@@ -73,17 +74,17 @@ class FeedVacantDetails extends React.Component {
   }
 
   AplicationCup = ()=> {
-    if(this.state.modalAplication === "none") {
+    if(this.state.overlay === "none") {
       this.setState({
+        isOpenAplication: true,
+        overlay: 'overlayActive',
         modalAplication: "modal-aplication",
-        modalOverlay: "col-50-modal-Active",
-        overlayApplication: "overlay-Active",
       })
     }else {
       this.setState({
+        isOpenAplication: false,
+        overlay: 'none',
         modalAplication: "none",
-        modalOverlay: "col-50-modal",
-        overlayApplication: "none",
       })
     }
   }
@@ -101,6 +102,7 @@ class FeedVacantDetails extends React.Component {
     return <React.Fragment>
       {this.state.LoadingUser ? <PageLoading /> : <div>
         <NavBar />
+        <div onClick={this.AplicationCup} className={this.state.overlay}></div>
         <div className="wrapper-border">
           {this.state.user && <div>
             <div className="flex-feed">
@@ -110,39 +112,72 @@ class FeedVacantDetails extends React.Component {
                               feed={this.state.dataWorks} />
                 </div>
               </div>
-              <div className="container-modales-details">
-                <div className={this.state.overlayApplication}></div>
-                <div className={this.state.modalOverlay}>
-                  <WorkLarge  onAplication={this.AplicationCup} 
-                              block={this.state.blockWorkExtend}
-                              dataNull = {this.state.dataWorksLarge}
-                              reLoading = {this.state.LoadingReData}
-                              id={this.state.dataWorksLarge.id}
-                              title={this.state.dataWorksLarge.titleService}
-                              area={this.state.dataWorksLarge.areaService}
-                              modality={this.state.dataWorksLarge.modalityJob}
-                              specialty={this.state.dataWorksLarge.specialtyService}
-                              location={this.state.dataWorksLarge.locationJob}
-                              time={this.state.dataWorksLarge.timeService}
-                              rate={this.state.dataWorksLarge.rateJob}
-                              timeRate={this.state.dataWorksLarge.TimeRateJob}
-                              titleDescription={this.state.dataWorksLarge.titleDescription}
-                              description={this.state.dataWorksLarge.descriptionService}
-                              descriptions={this.state.dataWorksLarge.dataDescriptions}
-                              skills={this.state.dataWorksLarge.dataSkills}
-                              urgent={this.state.dataWorksLarge.urgentJob}
-                              verify={this.state.dataWorksLarge.verify} />
-                </div>
-                <ModalAplication onAplication={this.AplicationCup} modal={this.state.modalAplication} />
+              <div className="col-50-">
+                <WorkLarge onAplication={this.AplicationCup} 
+                           block={this.state.blockWorkExtend}
+                           dataNull = {this.state.dataWorksLarge}
+                           reLoading = {this.state.LoadingReData}
+                           id={this.state.dataWorksLarge.id}
+                           title={this.state.dataWorksLarge.titleService}
+                           area={this.state.dataWorksLarge.areaService}
+                           modality={this.state.dataWorksLarge.modalityJob}
+                           specialty={this.state.dataWorksLarge.specialtyService}
+                           location={this.state.dataWorksLarge.locationJob}
+                           time={this.state.dataWorksLarge.timeService}
+                           rate={this.state.dataWorksLarge.rateJob}
+                           timeRate={this.state.dataWorksLarge.timeRateJob}
+                           titleDescription={this.state.dataWorksLarge.titleDescription}
+                           description={this.state.dataWorksLarge.descriptionService}
+                           descriptions={this.state.dataWorksLarge.dataDescriptions}
+                           skills={this.state.dataWorksLarge.dataSkills}
+                           urgent={this.state.dataWorksLarge.urgentJob}
+                           verify={this.state.dataWorksLarge.verify} />
               </div>
+              {ReactDOM.createPortal(
+                <ModalAplication 
+                onAplication={this.AplicationCup} 
+                isOpenAplication={this.state.isOpenAplication} 
+                modal={this.state.modalAplication} />,
+                document.getElementById('modalAplication')
+              )}
             </div>
           </div>
           }
-          {!this.state.user && <div className="containerRegistre">
-            <div className="wrapper-registre">
-              <RegistroPage />
+          {!this.state.user && <div className="flex-feed">
+            <div className="col-50">
+              <div className="container-worksList">
+                <ListWorks  handleClick={this.infoCarge}
+                            feed={this.state.dataWorks} />
+              </div>
             </div>
-            <Footer />
+            <div className="col-50-">
+              <WorkLarge onAplication={this.AplicationCup} 
+                         block={this.state.blockWorkExtend}
+                         dataNull = {this.state.dataWorksLarge}
+                         reLoading = {this.state.LoadingReData}
+                         id={this.state.dataWorksLarge.id}
+                         title={this.state.dataWorksLarge.titleService}
+                         area={this.state.dataWorksLarge.areaService}
+                         modality={this.state.dataWorksLarge.modalityJob}
+                         specialty={this.state.dataWorksLarge.specialtyService}
+                         location={this.state.dataWorksLarge.locationJob}
+                         time={this.state.dataWorksLarge.timeService}
+                         rate={this.state.dataWorksLarge.rateJob}
+                         timeRate={this.state.dataWorksLarge.timeRateJob}
+                         titleDescription={this.state.dataWorksLarge.titleDescription}
+                         description={this.state.dataWorksLarge.descriptionService}
+                         descriptions={this.state.dataWorksLarge.dataDescriptions}
+                         skills={this.state.dataWorksLarge.dataSkills}
+                         urgent={this.state.dataWorksLarge.urgentJob}
+                         verify={this.state.dataWorksLarge.verify} />
+            </div>
+            {ReactDOM.createPortal(
+              <ModalAplication 
+              onAplication={this.AplicationCup} 
+              isOpenAplication={this.state.isOpenAplication} 
+              modal={this.state.modalAplication} />,
+              document.getElementById('modalAplication')
+            )}
           </div>
           }
         </div>

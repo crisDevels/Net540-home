@@ -8,17 +8,18 @@ import '../globalStyles.css'
 import '../pages/styles/homeStyles.css'
 
 import logoJoobbi from '../images/LOGOjoobbiW.svg'
-import logoJoobbiBlue from '../images/logo-joobbi-blue.svg'
 
 import { AiFillHome } from 'react-icons/ai'
 import { GoBriefcase } from 'react-icons/go'
-import iconPublic from '../images/publicIcon.svg'
 import { GoMegaphone } from 'react-icons/go'
-import { CgUserlane } from 'react-icons/cg'
-import iconTerms from '../images/termsIcon.svg'
-import iconPublicaciones from '../images/publicacionesIcon.svg'
+/* import { CgUserlane } from 'react-icons/cg' */
+import { RiUser6Fill } from 'react-icons/ri'
 import iconSearch from '../images/searchIcon.svg'
 import { ImSearch } from 'react-icons/im'
+import { IoIosListBox } from 'react-icons/io'
+import { MdSecurity } from 'react-icons/md'
+import { IoIosSave } from 'react-icons/io'
+import { BsFillFolderFill } from 'react-icons/bs'
 
 import '../fonts/style.css'
 
@@ -26,17 +27,9 @@ var iconColor = {
   color: 'white'
 }
 
-var iconTerminos = {
-  backgroundImage: 'url('+ iconTerms + ')'
-};
-
-var iconPublica = {
-  backgroundImage: 'url('+ iconPublic + ')'
-};
-
-var iconPublicacionesNet = {
-  backgroundImage: 'url('+ iconPublicaciones + ')'
-};
+var iconColorBlue = {
+  color: '#1daeff',
+}
 
 var searchIcon = {
   backgroundImage: 'url('+ iconSearch + ')'
@@ -64,8 +57,7 @@ class NavBar extends React.Component {
     }
     this.handleLogout =  this.handleLogout.bind(this);
   }
-
-
+  
   componentDidMount () {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ user })
@@ -179,6 +171,9 @@ class NavBar extends React.Component {
         <div className='container-block-nav'>
           <div className='wrapper-home'>
             <div className='navForm'>
+              <div className='icon-search-phone'>
+                <ImSearch onClick={this.modalBuscarNav} size='20px' style={iconColor} />
+              </div>
               <div className='logoN-user'>
                 <Link to='/works'>
                   <img src={logoJoobbi} alt='logo Joobbi png sin fondo' />
@@ -191,9 +186,9 @@ class NavBar extends React.Component {
                       <button className='nonButtonsHeader' ><AiFillHome style={iconColor} size='20px' /></button>
                     </ Link>
                     <button className='nonButtonsHeader' onClick={this.modalJobsNav} ><GoBriefcase style={iconColor} size='20px' /></button>
-                    <button className='nonButtonsHeader-search' onClick={this.modalBuscarNav} ><ImSearch style={iconColor} size='20px' /></button>
+                    <button className='nonButtonsHeader-search' onClick={this.modalBuscarNav} ><img src={logoJoobbi} alt='logo Joobbi png sin fondo' /></button>
                     <button className='nonButtonsHeader' onClick={this.modalPublicNav} ><GoMegaphone style={iconColor} size='20px' /></button>
-                    <button className='nonButtonsHeader' onClick={this.modalProfileNav} ><CgUserlane style={iconColor} size='20px' /></button>
+                    <button className='nonButtonsHeader' onClick={this.modalProfileNav} ><RiUser6Fill style={iconColor} size='20px' /></button>
                   </div>
                   <div className={this.state.modalProfile}>
                     <div className='box-options'>
@@ -202,9 +197,14 @@ class NavBar extends React.Component {
                       </p>
                       <hr></hr>
                       <Link to='/condiciones-de-uso'>
-                        <button style={iconTerminos} className='buttonMenu'>Términos y condiciones</button>
+                        <button className='buttonMenu'>
+                          <MdSecurity style={iconColorBlue} size='20px' />
+                          Términos y condiciones
+                        </button>
                       </Link>
-                      <button className='button-joobbi' onClick={this.handleLogout}>Cerrar Sesión</button>
+                      <div className='container-cerrar-sesion'>
+                        <button className='button-joobbi' onClick={this.handleLogout}>Cerrar Sesión</button>
+                      </div>
                     </div>  
                   </div>
                   <div className={this.state.modalBuscar}>
@@ -232,10 +232,16 @@ class NavBar extends React.Component {
                       </p>
                       <hr></hr>
                       <Link to='/my-publications'>
-                        <button style={iconPublicacionesNet} className='buttonMenu'>Mis publicaciones</button>
+                        <button className='buttonMenu'>
+                          <BsFillFolderFill style={iconColorBlue} size='20px' />
+                          Mis publicaciones
+                        </button>
                       </Link>
                       <Link to='/publicar-trabajo'>
-                        <button style={iconPublica} className='buttonMenu'>Publica un trabajo</button>
+                        <button className='buttonMenu'>
+                          <GoMegaphone style={iconColorBlue} size='20px' />
+                          Publica un trabajo
+                        </button>
                       </Link>
                     </div>  
                   </div>
@@ -246,10 +252,16 @@ class NavBar extends React.Component {
                       </p>
                       <hr></hr>
                       <Link to='/home'>
-                        <button style={iconPublicacionesNet} className='buttonMenu'>Guardados</button>
+                        <button className='buttonMenu'>
+                          <IoIosSave style={iconColorBlue} size='20px' />
+                          Guardados
+                        </button>
                       </Link>
                       <Link to='/publicar-trabajo'>
-                        <button style={iconPublica} className='buttonMenu'>Mis aplicaciones</button>
+                        <button className='buttonMenu'>
+                          <IoIosListBox style={iconColorBlue} size='20px' />
+                          Mis aplicaciones
+                        </button>
                       </Link>
                     </div>  
                   </div>
@@ -267,29 +279,29 @@ class NavBar extends React.Component {
             <div className='menuN'>
               <div className='logoN'>
                 <Link to='/'>
-                  <img src={logoJoobbiBlue} alt='logo Joobbi blue png sin fondo' />
+                  <img src={logoJoobbi} alt='logo Joobbi blue png sin fondo' />
                 </Link>
               </div>
               <div className='buttons-container'>
                 <ul className='list-buttons-nav'>
                   <li className='list-item-nav'>
-                    <Link to='/'>
-                      <button className='button-line'>Contenidos <hr className='border-button-botom-line'></hr></button>
+                    <Link to='/works'>
+                      <button className='button-line-white'>Ver trabajos <hr className='border-button-botom-line'></hr></button>
                     </Link>
                   </li>
                   <li className='list-item-nav'>
-                    <Link to='/'>
-                      <button className='button-line'>Conócenos <hr className='border-button-botom-line'></hr></button>
+                    <Link to='/publicar-trabajo'>
+                      <button className='button-line-white'>Contacta un freelancer <hr className='border-button-botom-line'></hr></button>
                     </Link>
                   </li>
                   <li className='list-item-nav'>
-                    <Link to='/'>
-                      <button className='button-line'>Registrarme <hr className='border-button-botom-line'></hr></button>
+                    <Link to='/registro-joobbi'>
+                      <button className='button-line-white'>Registrarme <hr className='border-button-botom-line'></hr></button>
                     </Link>
                   </li>
                   <li className='list-item-nav'>
-                    <Link to='/'>
-                    <button className='button-joobbi'>Ingresar</button>
+                    <Link to='/registro-joobbi'>
+                    <button className='button-joobbi-white'>Ingresar</button>
                     </Link>
                   </li>
                 </ul>
