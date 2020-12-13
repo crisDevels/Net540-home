@@ -23,7 +23,7 @@ grisClaro: #C4C4C4 */
 }
 
 .block-how-landing {
-  margin: 50px 0 0 0;
+  margin: 100px 0 100px 0;
 }
 
 .container-paso-paso {
@@ -324,13 +324,13 @@ box-shadow: 0 3px 10px 0 #378dcab6;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
   .paso {
     width: auto;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .blockTitle {
     padding: 5px;
     margin: 5px;
@@ -353,8 +353,8 @@ box-shadow: 0 3px 10px 0 #378dcab6;
   
   .iconComo {
     padding: 20px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
   
   .paso {
@@ -417,14 +417,21 @@ box-shadow: 0 3px 10px 0 #378dcab6;
   .buttons-how {
     display: flex;
     width: 100%;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .buttons-50 {
-    width: 50%;
+    width: 49%;
     text-align: center;
   }
 
   .buttonFreelancer {
+    width: 97%;
+    margin: 0;
+  }
+
+  .buttonContratante {
     width: 97%;
     margin: 0;
   }
@@ -588,14 +595,18 @@ box-shadow: 0 3px 10px 0 #378dcab6;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
 
-    .border {
-        margin-right: 10px;
-    }
+  .border {
+    margin-right: 10px;
+  }
 
-    .textActive {
-        font-size: .7rem;
-    }
+  .textActive {
+    font-size: .7rem;
+  }
+
+  .line-time-animation {
+    left: 65px;
+  }
 
 }

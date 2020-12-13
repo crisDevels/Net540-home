@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './styles/forgetStyles.css'
-import NavBar from '../components/NavBar'
+import { NavBar } from '../components/NavBar'
 import Footer from '../components/footer'
 
 

@@ -2,10 +2,38 @@
   border: 1px;
   border-radius: 7px;
   border-style: solid;
-  border-color: #afafaf;
+  border-color: #c4c4c4;
   padding: 10px 20px;
   margin: 10px 0;
   width: 85%;
+}
+
+.space-form-input-title {
+  border: 1px;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: #c4c4c4;
+  padding: 10px 20px;
+  margin: 10px 0;
+  width: 92%;
+}
+
+.selected-area-input:disabled,
+.form-input-text-col:disabled,
+.textarea-description-work:disabled,
+.space-form-input:disabled,
+.space-form-input-title:disabled {
+  opacity: .7;
+  border-color: #c4c4c4;
+  color: #c4c4c4;
+}
+
+.selected-area-input:enabled,
+.form-input-text-col:enabled,
+.textarea-description-work:enabled,
+.space-form-input:enabled,
+.space-form-input-title:enabled {
+  opacity: 1;
 }
 
 .space-form-input:focus,
@@ -31,6 +59,29 @@
   background: #f1f1f1;
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.05);
 }
+
+/* animation selected choice type radio */
+.selected-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin: 0 10px 0 10px;
+
+  position: relative;
+  outline: none;
+}
+
+.selected-radio:checked {
+  border: 5px solid #1DAEFF;
+}
+
 
 /* estilos para los botones de AUTH con redesSociales */
 
@@ -158,10 +209,10 @@
   border: 1px;
   border-radius: 7px;
   border-style: solid;
-  border-color: #afafaf;
+  border-color: #c4c4c4;
   padding: 10px 20px;
   margin: 10px 0;
-  width: 99%;
+  width: 95%;
   outline: none;
   color: #757575;
   font-weight: 500;
@@ -171,10 +222,16 @@
   border: 1px;
   border-radius: 7px;
   border-style: solid;
-  border-color: #afafaf;
   padding: 5px 0;
-  margin: 10px 0;
+  margin: 20px 0;
   width: 99%;
+  border-color: #c4c4c4;
+}
+
+.input-no-styles-selection:disabled {
+  opacity: .7;
+  border-color: #c4c4c4;
+  color: #c4c4c4;
 }
 
 .input-no-styles-selection {
@@ -187,11 +244,17 @@
   width: 90%;
 }
 
+.input-no-styles-selection:enabled .form-input-selection {
+  background-color: aquamarine;
+  color: #c4c4c4;
+  opacity: .7;
+}
+
 .form-input-text-col {
   border: 1px;
   border-radius: 7px;
   border-style: solid;
-  border-color: #afafaf;
+  border-color: #c4c4c4;
   padding: 10px 20px;
   margin: 10px 0;
   width: 80%;
@@ -201,11 +264,26 @@
   border: 1px;
   border-radius: 7px;
   border-style: solid;
-  width: 90%;
+  border-color: #c4c4c4;
+  width: 92%;
   min-height: 90px;
   padding: 10px 20px;
   margin: 5px 0;
   outline: none;
+}
+
+.textarea-description-work::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+}
+
+.textarea-description-work::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+
+.textarea-description-work::-webkit-scrollbar-thumb:hover {
+  background:  #c4c4c4;
 }
 
 .title-input-description-work {
@@ -233,8 +311,84 @@
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.05);
 }
 
-@media screen and (max-width: 375px) {
+/* buttons complementarios de formularios */
+
+.center-buttons-skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.press-enter {
+  color: #757575;
+}
+
+.button-agregar {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  background: #1DAEFF;
+  border-radius: 50%;
+  color: white;
+  border-style: none;
+  margin: 0 7px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  outline: none;
+  transition: 1s ease;
+}
+
+.button-agregar:active {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  transform: translateY(10px);
+  color: #1DAEFF;
+}
+
+.button-remove {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1DAEFF;
+  border-radius: 50%;
+  color: white;
+  border-style: none;
+  margin: 0 10px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  outline: none;
+  transition: .5s ease;
+}
+
+.button-remove:active {
+  transform: translateY(5px)
+}
+
+@media screen and (max-width: 426px) {
   .space-form-input-50 {
     width: 33%;
   }
+
+  .selected-area-input {
+    width: 100%;
+  }
+
+  .space-form-input-title {
+    width: 88%;
+  }
+
+  .input-no-styles-selection {
+    width: 90%;
+  }
+
+  .form-input-text-col {
+    width: 87%;
+  }
+
+  .textarea-description-work {
+    width: 87%;
+  }
+
 }

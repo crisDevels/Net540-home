@@ -1,92 +1,91 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import firebase from 'firebase'
 import api from '../api'
 
-import NavBar from '../components/NavBar';
+import { NavBar } from '../components/NavBar';
 
 import ListPublications from '../components/listPublications'
-import SearchFeed from '../components/searchFeed'
+import { NewRegistry } from './newRegistry';
 
 import PageLoading from '../pages/pageLoading'
 
 import ILUpublication from '../images/iluPublications.svg'
 
+import LoaderSkeletonPublicationList from '../components/loaderPublicationList'
+
 import '../components/styles/popRegistro.css'
 import './styles/feedStyles.css'
 
-class MyPublications extends React.Component {
-    
-  state = {
-    user: null,
-    isLoading: true,
-    modalOverlay: "col-50-modal",
-    blockBuscar: "flex-search",
-    dataWorks: [],
-  }
-   
-  componentDidMount () {
+const MyPublications = () => {
+  const [ user, setUser ] = useState(null)
+  const [ isLoading, setLoading ] = useState(true)
+  const [ isLoadingUser, setLoadingUser ] = useState(true)
+  const [ dataWorks, setDataWorks ] = useState([])
+  const [ error, setError ] = useState(null)
+  
+  useEffect (() => {
+    var mounted = true
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({
-        user: user,
-        isLoading: false,
-      })
+      if(mounted) {
+        setUser(user)
+        setLoadingUser(false)
+      }
     })
-    this.fetchDataWorks()
-  }
+    return function cleanup() {
+      mounted = false
+    }
+  }, [])
 
-  fetchDataWorks =  async () => {
-    this.setState({isLoading: true, error: null})
+  useEffect (() => {
+    fetchDataWorks()
+  }, [])
+
+  const fetchDataWorks =  async () => {
+    setLoading(true)
+    setError(null)
     try {
       const dataWorks = await api.works.list();
-      this.setState({ loading: false, dataWorks: dataWorks })
+      setLoading(false)
+      setDataWorks(dataWorks)
     } catch(error) {
-      this.setState({ loading: false, error: error})
+      setLoading(false)
+      setError(error)
     }
   }
 
-  render () {
-    return <React.Fragment>
-      {
-      this.state.isLoading ? <PageLoading /> : <div>
-        <NavBar />
-        <div className="wrapper-border">       
-          {
-          this.state.user &&
-            <div>
-              <div className="flex-feed">
-                <div className="col-50">
-                  <ListPublications feed={this.state.dataWorks} />
+  return <React.Fragment>
+    {
+    isLoadingUser ? <PageLoading /> : <div>
+      <NavBar />
+      <div className="wrapper-border">       
+        {
+        user &&
+          <div>
+            <div className="flex-feed">
+              <div className="col-50">
+                <div className='block-center-feed'>
+                  { isLoading ? <LoaderSkeletonPublicationList /> : 
+                    <ListPublications feed={dataWorks} />
+                  }
                 </div>
-                <div className="container-ILU-hero-public">
-                  <div>
-                    <h2 className="title-publication-ilu">Selecciona una de tus publicaciones</h2>
-                    <img alt="ilustración del feed" src={ILUpublication}/>
-                  </div>
+              </div>
+              <div className="container-ILU-hero-public">
+                <div className='block-center-feed'>
+                  <h2 className="title-publication-ilu">Selecciona una de tus publicaciones</h2>
+                  <img alt="ilustración del feed" src={ILUpublication}/>
                 </div>
               </div>
             </div>
-          }
-          {
-          !this.state.user &&
-            <div>
-              <div className="flex-feed">
-                <div className="col-50">
-                  <ListPublications  handleClick={this.infoComplete}
-                                     feed={this.state.dataWorks} />
-                </div>
-                <div className="container-modales">
-                  <div className={this.state.modalOverlay}>
-                    <SearchFeed blockSearch={this.state.blockBuscar} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
-        </div>
+          </div>
+        }
+        {
+        !user &&
+          <NewRegistry />
+        }
       </div>
-      }
-    </React.Fragment>
-  }
+    </div>
+    }
+  </React.Fragment>
 }
 
 export default MyPublications;

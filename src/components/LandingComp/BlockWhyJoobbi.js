@@ -30,7 +30,7 @@ export const WhyJooby = () => (
               <Link to='/registro-freelancer'><button className='button-line'>Ofrece tus servicios <hr className='border-button-botom-line'></hr></button></Link>
             </div>
             <div className='buttons-50'>
-              <Link to='/publicar-trabajo'><button className='button-joobbi'>Contacta un freelancer </button></Link>
+              <Link to='/works'><button className='button-joobbi'>Contacta un freelancer </button></Link>
             </div>
         </div>
       </div>

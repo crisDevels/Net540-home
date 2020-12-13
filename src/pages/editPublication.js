@@ -3,7 +3,7 @@ import firebase from 'firebase';
 
 import api from '../api'
 
-import NavBar from '../components/NavBar';
+import { NavBar } from '../components/NavBar';
 import FormService from '../components/editForm'
 import Footer from '../components/footer.js'
 import RegistroPage from '../components/registroPage';

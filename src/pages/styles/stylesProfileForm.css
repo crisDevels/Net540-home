@@ -1,0 +1,183 @@
+.col-70 {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  height: 92vh;
+}
+
+.block-center-form {
+  display: block;
+  height: fit-content;
+  margin: 0 0 40px 0;
+  width: 90%;
+  overflow-y: visible;
+}
+
+.col-50-freelancer {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  height: 92vh;
+}
+
+.col-70::-webkit-scrollbar, 
+.col-50-freelancer::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+}
+
+.col-70::-webkit-scrollbar-thumb,
+.col-50-freelancer::-webkit-scrollbar-thumb {
+  background: #f3f3f3;
+  border-radius: 4px;
+}
+
+.col-70::-webkit-scrollbar-thumb:hover,
+.col-50-freelancer::-webkit-scrollbar-thumb:hover {
+  background: #d4d4d4;
+}
+
+
+/* columnas de scroll */
+
+.flex-form-inset {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow-y: visible;
+}
+
+.block-avatar {
+  display: block;
+  width: 40%;
+}
+
+.block-info-profile {
+  display: block;
+  width: 50%;
+}
+
+.title-freelancer-profile {
+  color: #1daeff;
+  margin: 20px 0 20px 0;
+}
+
+.flex-input-form {
+  width: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* avatar selected in form */
+
+.flex-select-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+  width: 100%;
+  border-radius: 15px;
+  background: #f2f2f2;
+}
+
+.flex-select-avatar-blue {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+  width: 100%;
+  border-radius: 15px;
+  background: #1daeff;
+}
+
+.image-avatar-select {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: -3px 3px 15px rgba(0, 0, 0, .25);
+}
+
+.flex-avatar-options {
+  width: 80px;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.background-select-avatar {
+  width: 100%;
+}
+
+.image-avatar-choice {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: -3px 3px 10px rgba(0, 0, 0, .25);
+}
+
+.label-select-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 30px;
+}
+
+/* tu curriculum vitae user */
+
+.box-flex-curriculum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  background: #f2f2f2;
+  border-radius: 15px;
+}
+
+.flex-input-upload {
+  width: 95%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1daeff;
+  border: 2px white;
+  border-style: dotted;
+  border-radius: 15px;
+}
+
+.styles-file-input {
+  display: none;
+}
+
+@media screen and (max-width: 426px) {
+
+  .col-50-freelancer {
+    width: 100%;
+    height: auto;
+  }
+
+  .col-70 {
+    width: 100%;
+    height: auto;
+  }
+
+  .block-avatar {
+    width: 100%;
+  }
+
+  .block-info-profile {
+    width: 100%;
+  }
+
+  .title-freelancer-profile {
+    margin: 80px 0 20px 0;
+  }
+}

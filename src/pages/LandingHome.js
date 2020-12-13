@@ -1,49 +1,56 @@
-import React from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import firebase from 'firebase';
 import { CarruselPopular } from '../components/LandingComp/CarruselPopular'
 import { HeroContent } from '../components/LandingComp/HeroContent'
-import { HeroLanding } from '../components/LandingComp/HeroLanding'
-import { WhyJooby } from '../components/LandingComp/BlockWhyJoobbi'
 import { BlockAreaLanding } from '../components/LandingComp/BlockAreaLanding'
 import BlockLandingBlog from '../components/LandingComp/BlockBlogLanding'
 
-import NavLanding from '../components/LandingComp/NavLanding'
+import { NavLanding } from '../components/LandingComp/NavLanding'
 import Footer from '../components/footer'
 import BlockFunciona from '../components/LandingComp/BlockFunciona'
 import { BlockCallToAction } from '../components/LandingComp/BlockCallToAction'
 import PageLoading from './pageLoading'
+import { HeroILU } from '../components/LandingComp/ILUanimation/BlockILUHero';
+import { ServicesPopular } from '../components/LandingComp/ServicesPopular/blockServicesPopular';
+import { WhyJoobbiILU } from '../components/LandingComp/whyILUS/blockILUSWhy';
 
-class LandingHome extends React.Component {
-  state = {
-    user: null,
-    loading: true,
-  }
-  componentDidMount () {
+export const LandingHome = () => {
+  const [ user, setUser ] = useState(null)
+  const [ loading, setLoading ] = useState(true)
+
+  useEffect (()=> {
+    var mounted = true
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({ user, loading: false })
+      if(mounted) {
+        setUser(user)
+        setLoading(false)       
+      }
     })
-  }
+    return function cleanup () {
+       mounted = false
+    }
+  }, [])
 
-  render() {
-    return (
-      <React.Fragment>
-        {
-          this.state.user ? <div> <PageLoading /> {window.location.href= '/works'} </div> : <div>
-          <NavLanding />
-          <HeroLanding />
-          <HeroContent />
-          <CarruselPopular />
-          <WhyJooby />
-          <BlockAreaLanding />
-          <BlockFunciona />
-          <BlockLandingBlog />
-          <BlockCallToAction />
-          <Footer />
-        </div>
-        }
-      </React.Fragment>
-    )
-  }
+  return (
+    <Fragment>
+      {
+        loading ? <PageLoading /> : <Fragment>
+          {user ? <Fragment> {window.location.href= '/works'} </Fragment> : 
+            <Fragment>
+              <NavLanding />
+              <HeroILU />
+              <HeroContent />
+              <ServicesPopular />
+              <WhyJoobbiILU />
+              <BlockAreaLanding />
+              <BlockFunciona />
+              <BlockLandingBlog />
+              <BlockCallToAction />
+              <Footer />
+            </Fragment>
+          }
+      </Fragment>
+      }
+    </Fragment>
+  )
 }
-
-export default LandingHome

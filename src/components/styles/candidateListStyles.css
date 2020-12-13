@@ -1,0 +1,184 @@
+.list-container-candidates {
+  display: block;
+  margin: 40px 0 0 0;
+  text-align: left;
+}
+
+.list-candidate-item {
+  display: flex;
+  margin: 0 0 20px 0;
+}
+
+.flex-center-badge {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border: .5px solid #757575;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.container-block-badge {
+  width: 90%;
+  margin: 30px 0;
+}
+
+.profile-div-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container-profile-icon {
+  width: 60px;
+  height: 60px;
+  border: 3px solid #1daeff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-name-candidate {
+  color: #757575;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.subtitle-candidate {
+  color: #757575;
+  font-style: italic;
+  font-size: 14px;
+  margin: 0;
+}
+
+.border-button-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #14FF91;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-style: none;
+  animation: scaleButtonCandidate 1s ease forwards;
+  outline: none;
+  transition: .5s ease;
+}
+
+.border-button-deny {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c4c4c4;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-style: none;
+  animation: scaleButtonCandidate 1s ease forwards;
+  outline: none;
+  transition: .5s ease;
+}
+
+.border-button-check:hover,
+.border-button-deny:hover {
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, .25);
+}
+
+@keyframes scaleButtonCandidate {
+  0% {
+    transform: scale(.95);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.candidate-line {
+  background: #c4c4c4;
+}
+
+.p-description-candidate {
+  color: #757575;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* styles skills ul candidate */
+.title-skills-candidate {
+  color: #1daeff;
+}
+
+.list-skills-candidate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.container-skill-candidate {
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+  margin: 0 10px 0 0;
+}
+
+.p-skill {
+  color: #757575;
+  font-size: 14px;
+  margin: 0;
+}
+
+.profile-titles {
+  width: 65%;
+}
+
+@media screen and (max-width: 426px) {
+  .container-block-badge {
+    width: 95%;
+    margin: 30px 0;
+  }
+
+  .title-name-candidate {
+    color: #757575;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .profile-div-flex {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .profile-titles {
+    width: 80%;
+  }
+
+  .border-button-check {
+    margin: 20px 0 0 0;
+    width: 45%;
+    height: 40px;
+    border-radius: 7px;
+  }
+
+  .border-button-deny {
+    margin: 20px 0 0 0;
+    width: 45%;
+    height: 40px;
+    border-radius: 7px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .profile-titles {
+    width: 100%;
+    text-align: center;
+  }
+}

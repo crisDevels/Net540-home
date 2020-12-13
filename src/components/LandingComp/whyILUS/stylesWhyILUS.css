@@ -1,0 +1,78 @@
+.wrapper-why-ILUS {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.grid-why {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 150px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.render-ilus {
+  width: 600px;
+}
+
+.joobbi-title-why {
+  font-size: 30px;
+  color: #1daeff;
+  text-align: center;
+  margin: 100px 0 50px 0;
+}
+
+.title-grand-why {
+  font-size: 40px;
+  color: #757575;
+  font-weight: 800;
+}
+
+.subtitle-why-font {
+  font-size: 20px;
+  color: #757575;
+  line-height: 38px;
+  font-weight: 500;
+}
+
+.flex-titles-why {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-titles-why-l {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 769px) {
+  .wrapper-why-ILUS {
+    max-width: 90%;
+  }
+  .grid-why {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+
+  .render-ilus {
+    width: 100%;
+  }
+  
+  .subtitle-why-font {
+    font-size: 16px;
+    color: #757575;
+    line-height: 30px;
+    font-weight: 500;
+  }
+
+  .flex-titles-why-l {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+}

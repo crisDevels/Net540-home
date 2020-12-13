@@ -1,0 +1,108 @@
+.fixed-panel-candidates {
+  position: sticky;
+  top: 20px;
+  z-index: 1;
+  height: 100px;
+  width: 100%;
+  background: #f3f3f3;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button-panel-candidates {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-style: none;
+  background: none;
+  font-size: 16px;
+  color: #757575;
+  position: relative;
+  width: 160px;
+  outline: none;
+}
+
+.button-panel-candidates:hover .text-index {
+  color: white;
+}
+
+.button-panel-candidates:hover .background-button-icon-check,
+.button-panel-candidates:hover .background-button-icon-deny {
+  width: 150px;
+  border-radius: 35px;
+  justify-content: flex-start;
+}
+
+.p-panel-candidates {
+  text-align: center;
+}
+
+.text-index {
+  position: relative;
+  z-index: 1;
+  transition: 1s ease;
+}
+
+.icon-container {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+
+.background-button-icon-check {
+  position: absolute;
+  left: 0;
+  background: #14FF91;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 35px;
+  transition: 1s ease;
+}
+
+.background-button-icon-deny {
+  position: absolute;
+  left: 0;
+  background: #c4c4c4;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 35px;
+  transition: 1s ease;
+}
+
+@media screen and (max-width: 426px) {
+  .p-panel-candidates {
+    width: 100%;
+  }
+
+  .button-panel-candidates {
+    width: 45%;
+  }
+
+  .button-panel-candidates:hover .background-button-icon-check,
+  .button-panel-candidates:hover .background-button-icon-deny {
+    width: 100%;
+    border-radius: 35px;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .fixed-panel-candidates {
+    height: auto;
+  }
+  .button-panel-candidates {
+    width: 95%;
+  }
+}

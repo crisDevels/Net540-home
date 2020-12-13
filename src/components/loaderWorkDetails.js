@@ -26,36 +26,16 @@ function LoaderSkeletonWorkDetails() {
                     </p>
                   </div>
                 </div>
-                <div className="blockSubs">
-                  <p className="subtitleVacant">
-                    < Skeleton height={15} width={250} />
-                  </p>
-                  <p className="subtitleVacant">
-                    < Skeleton height={15} width={250} />
-                  </p>
-                </div>
                 <hr></hr>
                 <div className="description-vacant">
                   <div className="description-loader">
                     <p style={{ lineHeight: 2 }}>< Skeleton height={15} count={5} /></p>
                   </div>
                 </div>
-                <div>
-                  <div className="flex-items">
-                    <div className="col-1">
-                      <p className="subtitleVacant">
-                        < Skeleton height={15} width={150} />
-                      </p>
-                      <p className="subtitleVacant">
-                        < Skeleton height={15} width={150} />
-                      </p>
-                    </div>
-                    <div className="col-1">
-                      <p className="subtitleVacant">
-                        < Skeleton height={15} width={150} />
-                      </p>
-                    </div>
-                  </div>
+                <div style={{margin: "10px 0 20px 0"}} className='flex-items'>
+                  < Skeleton height={60} width={150} />
+                  < Skeleton height={60} width={150} />
+                  < Skeleton height={60} width={150} />
                 </div>
                 <hr className="linea-form-service"></hr>
                 <div>

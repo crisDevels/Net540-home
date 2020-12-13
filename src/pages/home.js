@@ -4,7 +4,7 @@ import firebase from 'firebase';
 import Footer from '../components/footer.js'
 import './styles/homeStyles.css'
 
-import NavBar from '../components/NavBar'
+import { NavBar } from '../components/NavBar'
 import HeroHome from '../components/heroHome'
 
 import PageLoading from './pageLoading'

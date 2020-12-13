@@ -32,22 +32,25 @@ class MyVacant extends React.Component {
             <div className='info-service'>
               <div className="flex-title-vacant">
                 <div className="div-TypeCompany">
-                  <img alt="modelo ilutración compañias" className="icon-sector-style" src={typeCompanyImage} width="35px"/>
+                  <img alt="modelo ilutración compañias" className="icon-sector-style" src={typeCompanyImage}/>
                   <div className={this.props.checkVerify}>
                     <img alt="solo es un check" src={checkIcon} className="check-icon-publication" />
                   </div>
                 </div>
                 <div className="title-vacant-general">
                   <p className="titleVacant">
-                    {this.props.area} 
+                    {this.props.specialty}
                     <strong> {this.props.urgent && "URGENTE"}</strong>
+                  </p>
+                  <p className="subtitleVacant-fecha">
+                    {this.props.area} 
                   </p>
                   <p className="subtitleVacant-fecha">
                     Trabajo {this.props.modality}
                   </p>
                 </div>
                 <div className='container-rate'>
-                  <p>USD {this.props.rate}</p>
+                  <p className='p-rate-service'>$ {this.props.rate}</p>
                 </div>
               </div>
               <hr className="linea-form-service"></hr>
@@ -75,16 +78,31 @@ class MyVacant extends React.Component {
               </div>
               <div className="flex-items">
                 <div className='container-item-service'>
-                  <MdPlace style={styleIcon} size='30px'/>
-                  <p className='p-item-service'>{this.props.location}</p>
+                  <div className='container-border-icon'>
+                    <MdPlace style={styleIcon} size='25px'/>
+                  </div>
+                  <div className='container-feactures'>
+                    <p className='p-item-service-strong'>Ubicación</p>
+                    <p className='p-item-service'>{this.props.location}</p>
+                  </div>
                 </div>
                 <div className='container-item-service'>
-                  <BiTimeFive style={styleIcon} size='30px'/>
-                  <p className='p-item-service'>Tiempo: {this.props.time}</p>
+                  <div className='container-border-icon'>
+                    <BiTimeFive style={styleIcon} size='25px'/>
+                  </div>
+                  <div className='container-feactures'>
+                    <p className='p-item-service-strong'>Tiempo</p>
+                    <p className='p-item-service'>{this.props.time}</p>
+                  </div>
                 </div>
                 <div className='container-item-service'>
-                  <SiCashapp style={styleIcon} size='27px'/>
-                  <p className='p-item-service'>Pago por {this.props.timeRate}</p>
+                  <div className='container-border-icon'>
+                    <SiCashapp style={styleIcon} size='22px'/>
+                  </div>
+                  <div className='container-feactures'>
+                    <p className='p-item-service-strong'>Pago por</p>
+                    <p className='p-item-service'>{this.props.timeRate}</p>
+                  </div>
                 </div>
               </div>
               <hr className="linea-form-service"></hr>

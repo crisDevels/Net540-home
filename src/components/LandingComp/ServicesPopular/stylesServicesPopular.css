@@ -1,0 +1,243 @@
+/* nuestros servicios block */
+
+.block-nuestros-servicios {
+  margin: 200px 0 0 0;
+}
+
+.wrapper-services {
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.title-joobbi {
+  color: #1DAEFF;
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+.flex-services-joobbi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-services {
+  width: 30%;
+}
+
+.container-service-item-1 {
+  width: 100%;
+  height: 250px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  position: relative;
+  transition: 1s ease;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.20);
+}
+
+.container-service-item-2 {
+  width: 100%;
+  height: 250px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  position: relative;
+  transition: 1s ease;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.20);
+}
+
+.container-service-item-3 {
+  width: 100%;
+  height: 250px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  position: relative;
+  transition: 1s ease;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.20);
+}
+
+.container-service-item-4 {
+  width: 100%;
+  height: 250px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  position: relative;
+  transition: 1s ease;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.20);
+}
+
+.container-service-item-5 {
+  width: 100%;
+  height: 250px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  position: relative;
+  transition: 1s ease;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.20);
+}
+
+.container-service-item-6 {
+  width: 100%;
+  height: 250px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  position: relative;
+  transition: 1s ease;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.20);
+}
+
+.cover-color-blue {
+  width: 100%;
+  height: 100%;
+  background: #f3f3f3;
+  top: 0;
+  position: absolute;
+  border-radius: 15px;
+}
+
+.container-service-item-1:hover,
+.container-service-item-2:hover,
+.container-service-item-3:hover,
+.container-service-item-4:hover,
+.container-service-item-5:hover,
+.container-service-item-6:hover {
+  transform: scale(1.1);
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.20);
+}
+
+.container-image-ilu {
+  position: absolute;
+  display: flex;
+  width: 40%;
+  height: 100%;
+  align-items: center;
+  right: 0;
+}
+
+.block-image-relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.circle-blue {
+  position: absolute;
+  background: #1DAEFF;
+  border-radius: 20px;
+  width: 150px;
+  height: 185px;
+  right: -60px;
+  transform: rotateZ(-45deg);
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  box-shadow: -15px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.position-image-services {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 75%;
+}
+
+.flex-description-services {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  height: 100%;
+}
+
+.container-description-service {
+  width: 70%;
+}
+
+.title-services-home {
+  color: #1DAEFF;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+.subtitle-services-home {
+  color: #757575;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+}
+
+.rate-service-home {
+  color: #1DAEFF;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.rate-service-home strong {
+  color: #ff9c39;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 426px) {
+  /* home services responsive */
+
+  .block-nuestros-servicios {
+    margin: 150px 0 0 0;
+  }
+
+  .wrapper-services {
+    width: 90%;
+  }
+  .flex-services-joobbi {
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .link-services {
+    width: 100%;
+  }
+
+  .container-service-item-1,
+  .container-service-item-2,
+  .container-service-item-3,
+  .container-service-item-4,
+  .container-service-item-5,
+  .container-service-item-6 {
+    box-shadow: none;
+  }
+
+  .container-service-item-1:hover,
+  .container-service-item-2:hover,
+  .container-service-item-3:hover,
+  .container-service-item-4:hover,
+  .container-service-item-5:hover,
+  .container-service-item-6:hover {
+  transform: scale(1);
+  box-shadow: none;
+  }
+}

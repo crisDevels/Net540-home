@@ -47,7 +47,7 @@ a:-webkit-any-link {
 }
 
 a {
-  color: #1DAEFF;
+  color: #757575;
 }
 
 hr { 
@@ -59,6 +59,12 @@ hr {
   margin-inline-end: auto;
   overflow: hidden;
   border: 1px solid #c4c4c4;
+}
+
+.ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 input { 
@@ -167,6 +173,22 @@ textarea {
   transition: 1s ease;
 }
 
+.button-joobbi-demo {
+  font-family: 'Lato', sans-serif;
+  font-size: .9rem;
+  background: #1DAEFF;
+  border-radius: 7px;
+  color: white;
+  border-style: none;
+  padding: 20px 25px 20px 35px;
+  outline: none;
+  font-weight: 700;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  transition: 1s ease;
+  letter-spacing: 10px;
+  justify-content: center;
+}
+
 .button-joobbi-white {
   border-style: none;
   background:  white;
@@ -179,12 +201,33 @@ textarea {
   border-radius: 7px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.25);
   transition: 1s ease;
+  animation: jumpButton 1s .5s linear infinite;
+}
+
+@keyframes jumpButton {
+  0% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  65% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .button-joobbi:active,
 .button-joobbi-white:active,
 .button-joobbi:hover,
-.button-joobbi-white:hover {
+.button-joobbi-white:hover,
+.button-joobbi-demo:hover,
+.button-joobbi-demo:active {
   box-shadow: 0 1px 2px rgba(0,0,0,0.25);
   transform: scale(.95);
   background: #1DAEFF;
@@ -262,7 +305,7 @@ textarea {
   background: white;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
 
   .wrapper-border {
     flex: 1;
@@ -283,13 +326,13 @@ textarea {
     
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 
 
 }
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
 
   .wrapper-border {
     padding-bottom: 30px;
@@ -326,12 +369,11 @@ textarea {
 
   .button-joobbi {
     font-size: 12px;
-    margin: 0 10px;
   }
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 321px) {
 
   /* body {
     margin: 15px 10px;

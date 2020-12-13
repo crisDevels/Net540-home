@@ -2,9 +2,11 @@ import React from 'react'
 
 import Skeleton from 'react-loading-skeleton'
 
+import './styles/PublicationStyle.css'
+
 function LoaderSkeletonWorkList() {
   return (
-    <React.Fragment>
+    <div className='publication-list'>
       <ul className="list-unstyled-feed">
         <div className="title-works">
           <h2 className='title-list-works-feed'>Trabajos que pueden ser de tu interés</h2>
@@ -26,13 +28,9 @@ function LoaderSkeletonWorkList() {
                   </p>
                 </div>
               </div>
-              <div className="blockSubs">
-                <p className="subtitleVacant">
-                  < Skeleton height={15} width={250} />
-                </p>
-                <p className="subtitleVacant">
-                  < Skeleton height={15} width={250} />
-                </p>
+              <div style={{margin: "10px 0 20px 0"}} className='flex-items'>
+                < Skeleton style={{margin: '5px 0'}} height={80} width={260} />
+                < Skeleton style={{margin: '5px 0'}} height={80} width={260} />
               </div>
               <div>
                 <div className="description">
@@ -46,7 +44,7 @@ function LoaderSkeletonWorkList() {
         ))
         }
       </ul>
-    </React.Fragment>
+    </div>
   )
 }
 

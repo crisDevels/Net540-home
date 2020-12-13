@@ -33,7 +33,7 @@
 
 .block-buttons-inicio {
   background-color: transparent;
-  position: sticky;
+  position: relative;
   z-index: 2;
   padding: 20px 0;
 }
@@ -445,11 +445,11 @@
 }
 
 /* daremos estilos al content del HEROhome */
-.block-content-hero {
+.block-content-hero-animate {
   position: relative;
   top: 0;
   z-index: 1;
-  height: 350px;
+  height: 70vh;
   animation: fade 2s ease;
 }
 
@@ -638,7 +638,7 @@
 .list-why-joobbi {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0;
 }
 
@@ -741,7 +741,7 @@
 /* se daran estilos al block list blog */
 
 .block-blog {
-  margin: 0 0 50px 0;
+  margin: 100px 0;
 }
 
 .list-ul-blog-landing {
@@ -896,82 +896,7 @@
   line-height: 25px;
 }
 
-/* footer styles */
-
-.listTerms a {
-    text-decoration: none;
-    color: #1DAEFF;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    margin: 0 10px;
-    font-size: 15px;
-    text-align: center;
-}
-
-
-.listTerms {
-  width: 60%;
-  margin: 0;
-}
-
-.logofooter {
-    display: flex;
-    align-items: center;
-    width: 20%;
-    color: #1DAEFF;
-    font-weight: 700;
-    /* margin-right: 40px; */
-}
-
-.footer-flex {
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.logo-footer-case {
-    color: #1DAEFF;
-    margin: 0;
-}
-
-.container-block-footer {
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding: 20px 0;
-}
-
-.footer-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-
-.logofooter img{
-    margin-right: 10px;
-}
-
-
-.socialMedia {
-    align-items: center;
-    justify-content: flex-end;
-    width: 20%;
-}
-
-
-.socialMedia a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    margin: 0 10px;
-    font-size: 0.9rem;
-}
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
   
   /* daremos estilos al navLanding */
 
@@ -1004,52 +929,13 @@
     overflow-y: hidden;
   }
 
-  /* responsive footer styles */
-  .footer-flex {
-    width: 95%;
-}
-
-.container-block-footer {
-    display: block;
-    text-align: center;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.footer-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-
-.logofooter {
-    width: 20%;
-}
-
-.listTerms a {
-    margin: 0 10px;
-    text-align: center;
-    font-size: 0.8rem;
-}
-
-ol,
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    justify-content: center;
-}
-
-
-li {
-    display: flex;
-}
+  .block-call-to { 
+    border-radius: 0;
+  }
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
 
   /* daremos estilos al buttons Joobbi */
   .button-line-white {
@@ -1108,14 +994,15 @@ li {
   /* responsive de why joobbi */
 
   .item-list-why {
-    width: 25%;
+    width: 40%;
     text-align: center;
+    justify-content: center;
   }
 
   /* estilos a las areas responsive */
 
   .areas-item-list {
-    width: 25%;
+    width: 26%;
   }
 
   /* se dan estilos responsive al paso a paso */
@@ -1208,62 +1095,9 @@ li {
     font-size: 18px;
   }
 
-  /* responsive footer styles */
-  .logofooter img{
-    width: 60px;
-  }
-
-  .logofooter {
-    width: 30%;
-  }
-
-  .listTerms {
-    width: 40%;
-  }
-
-  .socialMedia {
-    width: 30%;
-  }
-
-  .listTerms a {
-    margin: 0 10px;
-    text-align: center;
-    font-size: 0.6rem;
-  }
-
-  ol,
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-  }
-
-  li {
-    display: flex;
-  }
-
-  .icon-Logo_youtube {
-    font-size: 20px;
-  }
-
-  .icon-Logo_instagram {
-    font-size: 20px;
-  }
-
-  .icon-Logo_linkedin {
-    font-size: 20px;
-  }
-
-  .icon-Logo_facebook {
-    font-size: 20px;
-  }
-
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 427px) {
 
   body.hidden {
     overflow-y: hidden;
@@ -1435,10 +1269,9 @@ li {
     width: 80%;
   }
 
-  .block-content-hero {
-    z-index: 2;
+  .block-content-hero-animate {
     margin: 0 10px;
-    height: 400px;
+    height: 75vh;
   }
 
   .container-hero-design-resume {
@@ -1796,65 +1629,9 @@ li {
     width: 100%;
   }
 
-  /* respnsive footer styles */
-  .footer-flex {
-    width: 100%;
-    display: block;
-    padding-bottom: 30px;
 }
 
-  .logofooter img{
-    width: 150px;
-  }
-
-  .logofooter {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 1.2rem;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0px;
-  }
-
-.listTerms a {
-    text-decoration: none;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    margin: 10px 5px;
-    text-align: center;
-    font-size: .9rem;
-    display: block;
-}
-
-.listTerms {
-    width: 100%;
-    margin-right: 0px;
-}
-
-ol,
-ul {
-    display: flex;
-    width: 100%;
-}
-
-.puntoNone {
-    display: none;
-}
-
-.politicaNone {
-    display: none;
-}
-
-.socialMedia {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 376px) {
 
   /* se realizan estilos al content hero */
   .hero-text {

@@ -3,7 +3,7 @@ import firebase from 'firebase'
 import api from '../api'
 import ReactDOM from 'react-dom'
 
-import NavBar from '../components/NavBar';
+import { NavBar } from '../components/NavBar';
 
 import ListWorks from '../components/listWorks'
 import WorkLarge from '../components/workLarge'
@@ -13,8 +13,9 @@ import PageLoading from '../pages/pageLoading'
 import '../components/styles/popRegistro.css'
 import './styles/feedStyles.css'
 
-class FeedVacantDetails extends React.Component {
-    
+var mounted = false
+
+class FeedVacantDetails extends React.Component { 
   state = {
     user: null,
     isLoading: true,
@@ -31,14 +32,21 @@ class FeedVacantDetails extends React.Component {
   }
    
   componentDidMount () {
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({
-        user: user,
-        LoadingUser: false,
+    mounted = true
+    if (mounted) {
+      firebase.auth().onAuthStateChanged(user => {
+        this.setState({
+          user: user,
+          LoadingUser: false,
+        })
       })
-    })
-    this.readFetchData()
-    this.fetchDataWorks()
+      this.readFetchData()
+      this.fetchDataWorks()
+    }
+  }
+  
+  componentWillUnmount () {
+    mounted = false
   }
 
   readFetchData = async () => {
@@ -104,34 +112,41 @@ class FeedVacantDetails extends React.Component {
         <NavBar />
         <div onClick={this.AplicationCup} className={this.state.overlay}></div>
         <div className="wrapper-border">
-          {this.state.user && <div>
+          <div>
             <div className="flex-feed">
               <div className="col-50">
-                <div className="container-worksList">
-                  <ListWorks  handleClick={this.infoCarge}
-                              feed={this.state.dataWorks} />
+                <div className='block-center-feed'>
+                  <div className="container-worksList">
+                    <ListWorks 
+                    handleClick={this.infoCarge}
+                    feed={this.state.dataWorks} />
+                  </div>
                 </div>
               </div>
               <div className="col-50-">
-                <WorkLarge onAplication={this.AplicationCup} 
-                           block={this.state.blockWorkExtend}
-                           dataNull = {this.state.dataWorksLarge}
-                           reLoading = {this.state.LoadingReData}
-                           id={this.state.dataWorksLarge.id}
-                           title={this.state.dataWorksLarge.titleService}
-                           area={this.state.dataWorksLarge.areaService}
-                           modality={this.state.dataWorksLarge.modalityJob}
-                           specialty={this.state.dataWorksLarge.specialtyService}
-                           location={this.state.dataWorksLarge.locationJob}
-                           time={this.state.dataWorksLarge.timeService}
-                           rate={this.state.dataWorksLarge.rateJob}
-                           timeRate={this.state.dataWorksLarge.timeRateJob}
-                           titleDescription={this.state.dataWorksLarge.titleDescription}
-                           description={this.state.dataWorksLarge.descriptionService}
-                           descriptions={this.state.dataWorksLarge.dataDescriptions}
-                           skills={this.state.dataWorksLarge.dataSkills}
-                           urgent={this.state.dataWorksLarge.urgentJob}
-                           verify={this.state.dataWorksLarge.verify} />
+                <div className='block-center-feed-details'>
+                  <WorkLarge
+                  user={this.state.user}
+                  onAplication={this.AplicationCup} 
+                  block={this.state.blockWorkExtend}
+                  dataNull = {this.state.dataWorksLarge}
+                  reLoading = {this.state.LoadingReData}
+                  id={this.state.dataWorksLarge.id}
+                  title={this.state.dataWorksLarge.titleService}
+                  area={this.state.dataWorksLarge.areaService}
+                  modality={this.state.dataWorksLarge.modalityJob}
+                  specialty={this.state.dataWorksLarge.specialtyService}
+                  location={this.state.dataWorksLarge.locationJob}
+                  time={this.state.dataWorksLarge.timeService}
+                  rate={this.state.dataWorksLarge.rateJob}
+                  timeRate={this.state.dataWorksLarge.timeRateJob}
+                  titleDescription={this.state.dataWorksLarge.titleDescription}
+                  description={this.state.dataWorksLarge.descriptionService}
+                  descriptions={this.state.dataWorksLarge.dataDescriptions}
+                  skills={this.state.dataWorksLarge.dataSkills}
+                  urgent={this.state.dataWorksLarge.urgentJob}
+                  verify={this.state.dataWorksLarge.verify} />
+                </div>
               </div>
               {ReactDOM.createPortal(
                 <ModalAplication 
@@ -142,44 +157,6 @@ class FeedVacantDetails extends React.Component {
               )}
             </div>
           </div>
-          }
-          {!this.state.user && <div className="flex-feed">
-            <div className="col-50">
-              <div className="container-worksList">
-                <ListWorks  handleClick={this.infoCarge}
-                            feed={this.state.dataWorks} />
-              </div>
-            </div>
-            <div className="col-50-">
-              <WorkLarge onAplication={this.AplicationCup} 
-                         block={this.state.blockWorkExtend}
-                         dataNull = {this.state.dataWorksLarge}
-                         reLoading = {this.state.LoadingReData}
-                         id={this.state.dataWorksLarge.id}
-                         title={this.state.dataWorksLarge.titleService}
-                         area={this.state.dataWorksLarge.areaService}
-                         modality={this.state.dataWorksLarge.modalityJob}
-                         specialty={this.state.dataWorksLarge.specialtyService}
-                         location={this.state.dataWorksLarge.locationJob}
-                         time={this.state.dataWorksLarge.timeService}
-                         rate={this.state.dataWorksLarge.rateJob}
-                         timeRate={this.state.dataWorksLarge.timeRateJob}
-                         titleDescription={this.state.dataWorksLarge.titleDescription}
-                         description={this.state.dataWorksLarge.descriptionService}
-                         descriptions={this.state.dataWorksLarge.dataDescriptions}
-                         skills={this.state.dataWorksLarge.dataSkills}
-                         urgent={this.state.dataWorksLarge.urgentJob}
-                         verify={this.state.dataWorksLarge.verify} />
-            </div>
-            {ReactDOM.createPortal(
-              <ModalAplication 
-              onAplication={this.AplicationCup} 
-              isOpenAplication={this.state.isOpenAplication} 
-              modal={this.state.modalAplication} />,
-              document.getElementById('modalAplication')
-            )}
-          </div>
-          }
         </div>
       </div>
       }

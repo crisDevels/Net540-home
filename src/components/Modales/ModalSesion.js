@@ -46,7 +46,7 @@ export const ModalInicioSesion = (props) => {
         <form className='formRegitreInicio'>
           <input
             value={props.email}
-            onChange={props.handleChange} 
+            onChange={props.handleEmail}
             className='space-form-input' 
             type='email' 
             name='email' 
@@ -55,7 +55,7 @@ export const ModalInicioSesion = (props) => {
             size='40' required/>
           <input
             value={props.password}
-            onChange={props.handleChange} 
+            onChange={props.handlePassword}
             className='space-form-input' 
             type='password' 
             name='password'
@@ -79,7 +79,7 @@ export const ModalInicioSesion = (props) => {
           <button style={iconLinked} className='linkedin-auth' onClick={props.handleAuth} type='buttton'>Continuar con Linkedin</button>
         </div>
         <div>
-          <p>¿Eres nuevo en Net540? < Link to='/registro-joobbi'> Regístrate ahora</Link></p>
+          <p>¿Eres nuevo en Joobbi? < Link to='/registro-joobbi'> Regístrate ahora</Link></p>
         </div>
       </div>
     </div>

@@ -20,11 +20,13 @@ export const ButtonRegistreDemo = (props) => {
         blockModalRegistro={props.blockModalRegistro}
         isOpenRegistro={props.isOpenRegistro}
         email={props.email}
+        name={props.name}
         password={props.password}
         registryEmail={props.registryEmail}
         registryPassword={props.registryPassword}
         handleChange={props.handleChange}
         handleAuth={props.handleAuth}
+        handleAuthFacebook={props.handleAuthFacebook}
         createUser={props.createUser}
         cerrarModalRegistro={props.cerrarModalRegistro}/>,
       document.getElementById('modalRegistre')

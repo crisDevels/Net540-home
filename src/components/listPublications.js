@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 import './styles/stylesListWork.css'
 import './styles/PublicationStyle.css'
 import './styles/modales.css'
 import './styles/searchAnimated.css'
 
-import iconRate from './FormularioRegistro/images/iconRate.svg'
-import iconLocation from './FormularioRegistro/images/locationIcon.svg'
-import VisualitationIcono from '../images/VisualitationIcon.svg'
-import LoaderSkeletonPublicationList from './loaderPublicationList'
-import searchIcono from '../images/searchIconBlanco.svg'
+import { ComponentPublication } from './componentMyPublication'
+import { NotFoundPublication } from './nonFoundPublication'
+import { ImSearch } from 'react-icons/im'
 
-var iconVisual = {
-    backgroundImage: "url("+ VisualitationIcono + ")"
+var styleSearch = {
+  color: '#757575'
 }
 
 function ListPublications(props) {
@@ -32,6 +29,9 @@ function ListPublications(props) {
   function SearchShort() {
     return (
       <div className="form-group">
+        <div className="background-logo-search">
+          <ImSearch style={styleSearch} size={'15px'}/>
+        </div>
         <input
         autoFocus
         type="text" 
@@ -39,9 +39,6 @@ function ListPublications(props) {
         value={query}
         onChange={changeQuery} 
         />
-        <div className="background-logo-search">
-          <img src={searchIcono} alt="icono de buscar" width="10px" />
-        </div>
       </div>
     )
   }
@@ -56,49 +53,12 @@ function ListPublications(props) {
         </div>
       </div>
       {
-      filteredPublication.length === 0 ? <LoaderSkeletonPublicationList /> : <div>
+      filteredPublication.length === 0 ? <NotFoundPublication /> : <div>
         {
         filteredPublication.map((dataWork) => {
           return (
-            <li onClick={props.handleClick} key={dataWork.id}>
-              <div className="my-publication">
-                <div className="flex-title-myService">
-                  <div className="title-publication-general">
-                    <p className="titleVacant">
-                      {dataWork.titleService}<strong> {dataWork.urgentJob && "URGENTE"}</strong>
-                    </p>
-                    <p className="subtitleVacant-fecha">
-                      30 de Septiembre, 2020
-                    </p>
-                  </div>
-                  <div className="flex-description-candidates">
-                    <div>
-                      <Link to={`/my-publications/${dataWork.id}/edit`}>
-                        <button style={iconVisual} className="buttonVer">Ver solicitud</button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex-description-candidates">
-                  <div className="blockSubs-candidates">
-                    <p className="subtitleVacant">
-                      <img alt="icono salario" src={iconRate} height="15px"/>
-                      Valor del servicio: USD {dataWork.rateJob}
-                    </p>
-                    <p className="subtitleVacant">
-                      <img alt="icono localización" src={iconLocation} height="19px" />
-                      Ubicación: {dataWork.locationJob}
-                    </p>
-                  </div>
-                  <div className="border-candidate">
-                    <p className="candidates-p">Tienes <strong>0 candidatos</strong> para este trabajo
-                      <Link to="/works">
-                        <button className="button-candidates">Ver candidatos</button>
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <li key={dataWork.id}>
+              <ComponentPublication handleClick={props.handleClick} dataWork={dataWork} />
             </li>
           );
         }).reverse()

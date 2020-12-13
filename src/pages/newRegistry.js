@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import firebase from 'firebase';
 
 import PageLoading from './pageLoading'
@@ -9,44 +10,39 @@ import ILUfemMano from '../images/Registro-ilustracion-mano.svg'
 
 import '../components/styles/registreStyles.css'
 
-class NewRegistry extends React.Component {
-  state = {
-    user: null,
-    loading: true,
-    email:'',
-    password:'',
-    name:'',
-    apellido: '',
-    registryEmail: '',
-    registryPassword: '',
-  }
-  componentDidMount () {
+export const NewRegistry = ()=> {
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [name, setName] = useState('')
+  const [registryEmail, setRegistryEmail] = useState('')
+  const [registryPassword, setRegistryPassword] = useState('')
+  
+  useEffect (()=> {
+    var mounted = true
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({ user, loading: false })
+      if (mounted) {
+       setUser(user)
+       setLoading(false) 
+      }
     })
-  }
-
-  //handle de registro de usuarios
-  handleChange = (e)=> {
-    const { value, name } = e.target;    
-    this.setState({
-      [name]: value 
-    })
-  }
+    return function cleanup() {
+      mounted = false
+    }
+  }, [])
 
   //metodo para crear usuarios con firebase
-  createUser = (e)=> {
+  const createUser = (e)=> {
     e.preventDefault()
-    firebase.auth().createUserWithEmailAndPassword(this.state.registryEmail, this.state.registryPassword)
+    firebase.auth().createUserWithEmailAndPassword(registryEmail, registryPassword)
     .then(() => {
       // window.location.reload(true)
       window.location.href = '/works'
-      const nameUser = this.state.name
+      const nameUser = name
       console.log(nameUser)
       var user = firebase.auth().currentUser;
       //Actualizando nombre de usuario 
       user.updateProfile({
-        displayName: this.state.name
+        displayName: name
       })
     }).catch((error)=> {
       // Handle Errors here.
@@ -61,14 +57,13 @@ class NewRegistry extends React.Component {
     });    
   }
 
-  render () {
     return (
       <React.Fragment>
         {
-        this.state.loading ? <PageLoading /> :
+        loading ? <PageLoading /> :
           <div>
             {
-            this.state.user ? <div> <PageLoading /> {window.location.href = '/works'} </div> : <div className='block-registre-page'>
+            user ? <div> <PageLoading /> {window.location.href = '/works'} </div> : <div className='block-registre-page'>
               <div className="wrapper-border">
                 <div className="background-registro">
                   <div className="flex-registry">
@@ -76,81 +71,58 @@ class NewRegistry extends React.Component {
                       <img src={LOGOhero} alt='LOGO png Joobbi sin fondo' className='styles-logo-hero' />
                       <p className="hero-p">Queremos transformar el estilo y calidad de vida para las personas, el futuro del trabajo está aquí. Regístrate<strong className="subtitle-strong"> ¿Qué estas esperando?</strong></p>  
                     </div>
-                    <div className="border-form">
+                    <div className="border-form-registro">
                       <div className='container-form-registre'>
                         <div className='obsolute-image'>
                           <img src={ILUfem} alt='ilustracion de una mujer curioseando' />
                         </div>
                         <div className='background-form-registre'>
-                          <form className="formRegitre-pages">
-                            <div className="flex-Registre-names">
+                          <div className='div-form-inicio'>
+                            <form className="formRegitre-pages">
                               <input
-                              value={this.state.name}
-                              onChange={this.handleChange} 
-                              className="space-form-input-50" 
+                              value={name}
+                              onChange={(e) => {setName(e.target.value)}} 
+                              className="space-form-input" 
                               type="text" 
                               name="name" 
                               placeholder="Nombre"
                               id="registryName"
                               size="40" required/>
                               <input
-                              value={this.state.lastName}
-                              onChange={this.handleChange}
-                              className="space-form-input-50" 
+                              value={registryEmail}
+                              onChange={(e) => {setRegistryEmail(e.target.value)}}  
+                              className="space-form-input" 
                               type="text" 
-                              name="lastName" 
-                              placeholder="Apellido"
-                              id="registryApellido" 
+                              name="registryEmail" 
+                              placeholder="Correo Electrónico"
+                              id="registryEmail" 
                               size="40" required/>
+                              <input
+                              value={registryPassword}
+                              onChange={(e) => {setRegistryPassword(e.target.value)}}  
+                              className="space-form-input" 
+                              type="password" 
+                              name="registryPassword"
+                              id="registryPassword" 
+                              placeholder="Contraseña" required /><br/>         
+                              <label className="check">
+                                <input 
+                                type="checkbox" 
+                                id="check-politicas" 
+                                name="checkedPoliticas" 
+                                value="checkbox-politicas" 
+                                className="checkbox"/> Estoy de acuerdo con la <a href="/"><strong>política de privacidad</strong></a> y con los <a href="/"><strong>terminos y condiciones</strong></a></label><br/>
+                              <div className='container-button-registre'>
+                                <button
+                                onClick={createUser}
+                                className="button-joobbi" 
+                                type="submit">Registrar</button>                      
+                              </div>
+                            </form>
+                            <div className='align-center-style'>
+                              <p>¿Ya tienes una cuenta? < Link className='link-color' to='/inicio-joobbi'> Inicia Sesión</Link></p>
                             </div>
-                            <input
-                            value={this.state.phone}
-                            onChange={this.handleChange} 
-                            className="space-form-input" 
-                            type="phone" 
-                            name="phoneNumber" 
-                            placeholder="Celular"
-                            id="registryPhone" 
-                            size="40" required/>
-                            <input
-                            value={this.state.registryEmail}
-                            onChange={this.handleChange} 
-                            className="space-form-input" 
-                            type="text" 
-                            name="registryEmail" 
-                            placeholder="Correo Electrónico"
-                            id="registryEmail" 
-                            size="40" required/>
-                            <input
-                            value={this.state.registryPassword}
-                            onChange={this.handleChange} 
-                            className="space-form-input" 
-                            type="password" 
-                            name="registryPassword"
-                            id="registryPassword" 
-                            placeholder="Contraseña" required />           
-                            <input
-                            value={this.state.registryPasswordConf}
-                            onChange={this.handleChange} 
-                            className="space-form-input" 
-                            type="password" 
-                            name="confregistryPassword"
-                            id="confRegistryPassword" 
-                            placeholder="Confirmar Contraseña" required /><br/>
-                            <label className="check">
-                              <input 
-                              type="checkbox" 
-                              id="check-politicas" 
-                              name="checkedPoliticas" 
-                              value="checkbox-politicas" 
-                              className="checkbox"/> Estoy de acuerdo con la <a href="/"><strong>política de privacidad</strong></a> y con los <a href="/"><strong>terminos y condiciones</strong></a></label><br/>
-                            <div className='container-button-registre'>
-                              <button
-                              onClick={this.createUser}
-                              className="button-joobbi" 
-                              type="submit">Registrar</button>                      
-                            </div>
-                          </form>
+                          </div>
                         </div>
                         <div className='obsolute-image-mano'>
                           <img src={ILUfemMano} alt='ilustracion de una mujer curioseando mano' />
@@ -167,6 +139,3 @@ class NewRegistry extends React.Component {
       </React.Fragment>
     )
   }
-}
-
-export default NewRegistry

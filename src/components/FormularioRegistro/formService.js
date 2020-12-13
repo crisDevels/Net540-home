@@ -11,11 +11,29 @@ import equis from './images/cerrar.svg'
 import descriptionIcon from './images/iconDescriptions.svg'
 import { ButtonRegistreDemo } from '../buttonRegistreDemo';
 import { ModalAreaSelection } from '../Modales/modalAreaSelection';
+import { ModalSpecialSelection } from '../Modales/modalSpecialSelection'
+
+import { MdClose } from 'react-icons/md'
+import { BsPlus } from 'react-icons/bs'
+
+import { GoBriefcase } from 'react-icons/go'
+import { RiEditCircleFill } from 'react-icons/ri'
+import { BsFillCollectionFill } from 'react-icons/bs'
+import { BsAwardFill } from 'react-icons/bs'
+import { VscLightbulbAutofix } from 'react-icons/vsc'
+import { SiCashapp } from 'react-icons/si'
+import { IoIosTime } from 'react-icons/io'
+import { MdPlace } from 'react-icons/md'
+import { IoIosCash } from 'react-icons/io'
+import { RiBuildingFill } from 'react-icons/ri'
+import { ImTarget } from "react-icons/im"
+
+import remoterWork from '../../images/remoter-work.png'
+import presencialWork from '../../images/presencial-work.png'
+import duoWork from '../../images/presencial-remoter-work.png'
 
 class FormService extends React.Component {
   state = {
-    user: null,
-    loading: false,
     blockModalRegistro: 'none',
     isOpenRegistro: false,
     overlay: 'none',
@@ -25,12 +43,6 @@ class FormService extends React.Component {
     password:'',
     name:'',
     apellido: '',
-  }
-
-  componentDidMount = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({ user, loading: false })
-    })
   }
 
   //conjunto metodos para formulario de registro de usuarios
@@ -95,8 +107,7 @@ class FormService extends React.Component {
   handleAuth = (e)=> {
     e.preventDefault()
     var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithRedirect(provider);
-    firebase.auth().getRedirectResult()
+    firebase.auth().signInWithPopup(provider)
       .then(result => {
         console.log(`${result.user.email} ha iniciado sesión`)
       }).catch(error => {
@@ -121,22 +132,30 @@ class FormService extends React.Component {
         <div>
           <form onSubmit={this.props.onSubmitForm}>
             <div className='formBlock-service'>
-              <div className='block-input-flex-title'>
-                <label>Título</label><br/>  
-                <input
-                onChange={this.props.onChange} 
-                className='space-form-input' 
-                type='text'
-                placeholder='Ejemplo: Diseño de Interfaces, Estructuras para construcción, etc...'
-                value={this.props.formValues.titleService} 
-                name='titleService' required />
-              </div>
-              <div className='flex-form'>    
-                <div className='col-1'>
+              <div className='grid-form'>
+                <div className='col-one'>
                   <div className='block-input-service'>
-                    <label>Área del servicio</label><br/>
+                    <div className='flex-titles-labels'>
+                      <GoBriefcase size='20px' />
+                      <label className='titles-labels'>Título</label><br/>
+                    </div>
+                    <input
+                    onChange={this.props.onChange} 
+                    className='space-form-input-title' 
+                    type='text'
+                    placeholder='Ejemplo: Diseño de Interfaces, Estructuras para construcción, etc...'
+                    value={this.props.formValues.titleService} 
+                    name='titleService' required />
+                  </div>   
+                </div>
+                <div className='col-two'>
+                  <div className='block-input-service'>
+                    <div className='flex-titles-labels'>
+                      <BsFillCollectionFill size='20px' />
+                      <label className='titles-labels'>Área Profesional</label><br/>
+                    </div>
                     <div className='relative-options-area'>
-                      <button type='button' onClick={this.props.clickOpenModalArea} className='selected-area-input'>{this.props.areaSelected}</button>
+                      <button disabled={this.props.disableArea} type='button' onClick={this.props.clickOpenModalArea} className='selected-area-input'>{this.props.areaSelected}</button>
                       <div onClick={this.props.closeModalArea} className={this.props.overlay}></div>
                       {ReactDOM.createPortal(
                         <ModalAreaSelection
@@ -148,39 +167,94 @@ class FormService extends React.Component {
                       }
                     </div>
                   </div>
+                </div>
+                <div className='col-three'>
                   <div className='block-input-service'>
-                    <label>Modalidad de trabajo</label><br/>
-                    <div className='form-input-selection'>          
-                      <select
-                      onChange={this.props.onChange} 
-                      className='input-no-styles-selection' 
-                      name='modalityJob'
-                      value={this.props.formValues.modalityJob} 
-                      required>
-                        <option>Remoto</option>
-                        <option>Presencial</option>
-                        <option>Presencial y Remoto</option>
-                      </select>
+                    <div className='flex-titles-labels'>
+                      <VscLightbulbAutofix size='20px' />
+                      <label className='titles-labels'>Especialidad Profesional</label><br/>
+                    </div>
+                    <div className='relative-options-area'>
+                      <button disabled={this.props.disableSpecialty} type='button' onClick={this.props.clickOpenModalSpecial} className='selected-area-input'>{this.props.specialty}</button>
+                      <div onClick={this.props.closeModalSpecial} className={this.props.overlay}></div>
+                      {ReactDOM.createPortal(
+                        <ModalSpecialSelection
+                        modalSpecial={this.props.modalSpecial}
+                        onChange={this.props.onChange}
+                        closeModalSpecial={this.props.closeModalSpecial}
+                        isOpenModalSpecial={this.props.isOpenModalSpecial} />,
+                      document.getElementById('modalSpecialSelection'))
+                      }
                     </div>
                   </div>
+                </div>               
+              </div>
+              <div>
+                <div className='flex-titles-labels'>
+                  <RiBuildingFill size='20px' />
+                  <label className='titles-labels'>Modalidad de trabajo</label><br/>
+                </div>
+                <div className='flex-modality-work'>
+                  <div className='background-select-modality'>
+                    <label className='label-select-avatar'>
+                      <input onClick={this.props.onClickInput} disabled={this.props.disableModality} onChange={this.props.onChange} type='radio' className='selected-radio' name='modalityJob' value='Remoto' />
+                      <div className='block-select-modality'>
+                        <img className='image-modality-choice' src={remoterWork} alt='avatar de perfil profesional' />
+                        <p className='p-modality-select'>Remoto</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div className='background-select-modality'>
+                    <label className='label-select-avatar'>
+                      <input onClick={this.props.onClickInput} disabled={this.props.disableModality} onChange={this.props.onChange} type='radio' className='selected-radio' name='modalityJob' value='Presencial'/>
+                      <div className='block-select-modality'>
+                        <img className='image-modality-choice' src={presencialWork} alt='avatar de perfil profesional' />
+                        <p className='p-modality-select'>Presencial</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div className='background-select-modality'>
+                    <label className='label-select-avatar'>
+                      <input onClick={this.props.onClickInput} disabled={this.props.disableModality} onChange={this.props.onChange} type='radio' className='selected-radio' name='modalityJob' value='Remoto y presencial'/>
+                      <div className='block-select-modality'>
+                        <img className='image-modality-choice' src={duoWork} alt='avatar de perfil profesional' />
+                        <p className='p-modality-select'>Remoto y presencial</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <hr className='linea-form-service'></hr>
+              <div className='grid-form'>    
+                <div className='col-four'>
                   <div className='block-input-service'>
-                    <label>Inversion estimada</label>
+                    <div className='flex-titles-labels'>
+                      <SiCashapp size='20px' />
+                      <label className='titles-labels'>Inversion estimada</label><br/>
+                    </div>
                     <div className='flex-skills'>
-                      <input 
+                      <input
+                      onClick={this.props.onClickInput}
+                      disabled={this.props.disableRate}
                       className='form-input-text-col'
                       onChange={this.props.onChange} 
                       value={this.props.formValues.rateJob}
-                      placeholder='Ej: USD 15' 
-                      type='text'
+                      placeholder='$ 15'
+                      type='number'
                       name={'rateJob'} />
                     </div>
                   </div>
-                </div>  
-                <div className='col-1'>
+                </div>
+                <div className='col-five'>
                   <div className='block-input-service'>
-                    <label>Tiempo estimado</label><br/>
+                    <div className='flex-titles-labels'>
+                      <IoIosTime size='20px' />
+                      <label className='titles-labels'>Tiempo estimado</label><br/>
+                    </div>
                     <div className='form-input-selection'>          
-                      <select 
+                      <select
+                      onClick={this.props.onClickInput} 
+                      disabled={this.props.disableTimeService}
                       onChange={this.props.onChange}
                       className='input-no-styles-selection' 
                       name='timeService'
@@ -193,9 +267,16 @@ class FormService extends React.Component {
                       </select>
                     </div>
                   </div>
+                </div>  
+                <div className='col-six'>
                   <div className='block-input-service'>
-                    <label>Ubicación</label><br/>      
+                    <div className='flex-titles-labels'>
+                      <MdPlace size='20px' />
+                      <label className='titles-labels'>Ubicación</label><br/>
+                    </div>      
                     <input
+                    onClick={this.props.onClickInput}
+                    disabled={this.props.disableLocation}
                     onChange={this.props.onChange} 
                     className='form-input-text-col'
                     placeholder='Ejemplo: Lima, Bogotá, etc...' 
@@ -203,10 +284,17 @@ class FormService extends React.Component {
                     value={this.props.formValues.locationJob}
                     name='locationJob' required />
                   </div>
+                </div>
+                <div className='col-seven'>
                   <div className='block-input-service'>
-                    <label>Modalidad de pago</label><br/>
+                    <div className='flex-titles-labels'>
+                      <IoIosCash size='20px' />
+                      <label className='titles-labels'>Modalidad de pago</label><br/>
+                    </div> 
                     <div className='form-input-selection'>
-                      <select 
+                      <select
+                      onClick={this.props.onClickInput}
+                      disabled={this.props.disableTimeRate}
                       className='input-no-styles-selection'
                       onChange={this.props.onChange} 
                       value={this.props.formValues.timeRateJob}                    
@@ -222,8 +310,13 @@ class FormService extends React.Component {
               </div>
               <hr className='linea-form-service'></hr>
               <div>
-                <p className='h2-description'>Descripción del servicio</p>  
-                <textarea 
+                <div className='flex-titles-labels'>
+                  <RiEditCircleFill />
+                  <label className='titles-labels'>Descripción del servicio</label><br/>
+                </div> 
+                <textarea
+                onClick={this.props.onClickInput}
+                disabled={this.props.disableDescription}
                 className='textarea-description-work'
                 type='text'
                 onChange={this.props.onChange}
@@ -235,9 +328,14 @@ class FormService extends React.Component {
               <hr className='linea-form-service'></hr>
               <div className='block-habilidades-laborales'>
                 <div className='block-input-service'>
-                  <label>Habilidades laborales</label><br/>
+                  <div className='flex-titles-labels'>
+                    <BsAwardFill />
+                    <label className='titles-labels'>Habilidades requeridas</label><br/>
+                  </div>
                   <div className='flex-skills-service'>
                     <input
+                    onClick={this.props.onClickInput}
+                    disabled={this.props.disableSkills}
                     onKeyPress={this.props.onKeyPress}
                     onChange={this.props.onChangeSkill} 
                     className='space-form-input' 
@@ -263,10 +361,14 @@ class FormService extends React.Component {
                 </div>
               </div>
               <hr className='linea-form-service'></hr>
-              <p className='h2-description'>Otras características</p>  
+              <div className='flex-titles-labels'>
+                <ImTarget />
+                <label className='titles-labels'>Características específicas</label><br/>
+              </div> 
               <input
+              disabled={this.props.disableTitleCharacters}
               onChange={this.props.onChange} 
-              className='title-input-description-work' 
+              className='space-form-input-title' 
               type='text'
               placeholder='Agrega un título. Ej: aptitudes, actividades, beneficios del trabajo'
               value={this.props.formValues.titleDescription} 
@@ -274,6 +376,7 @@ class FormService extends React.Component {
               <div className='label-description'>
                 <label>Agrega al menos 2 características para recomendar tu solicitud al 100%</label>
                 <textarea
+                disabled={this.props.disableCharacters}
                 className='textarea-description-work'
                 onKeyPress={this.props.onKeyPressDescriptions}
                 placeholder='Ej: Este trabajo require conocimientos...' 
@@ -319,27 +422,30 @@ class FormService extends React.Component {
               </div>
             </div>
             {
-            this.state.user &&
+            this.props.user &&
               <div className='centerButton-block'>
                   <button className='button-joobbi'>Publicar ( -10 cupones )</button>
               </div>                            
             }
           </form>
-          <ButtonRegistreDemo 
-          blockModalRegistro={this.state.blockModalRegistro}
-          isOpenRegistro={this.state.isOpenRegistro}
-          email={this.state.email}
-          password={this.state.password}
-          registryEmail={this.state.registryEmail}
-          registryPassword={this.state.registryPassword}
-          handleChange={this.handleChange}
-          createUser={this.createUser}
-          handleAuth={this.handleAuth}
-          handleAuthFacebook={this.handleAuthFacebook}
-          cerrarModalRegistro={this.cerrarModalRegistro}
-          abrirModalRegistro= {this.abrirModalRegistro}
-          overlay={this.state.overlay}
-          user={this.state.user} />
+          {!this.props.user && 
+            <ButtonRegistreDemo 
+            blockModalRegistro={this.state.blockModalRegistro}
+            isOpenRegistro={this.state.isOpenRegistro}
+            name={this.state.name}
+            email={this.state.email}
+            password={this.state.password}
+            registryEmail={this.state.registryEmail}
+            registryPassword={this.state.registryPassword}
+            handleChange={this.handleChange}
+            createUser={this.createUser}
+            handleAuth={this.handleAuth}
+            handleAuthFacebook={this.handleAuthFacebook}
+            cerrarModalRegistro={this.cerrarModalRegistro}
+            abrirModalRegistro= {this.abrirModalRegistro}
+            overlay={this.state.overlay}
+            user={this.state.user} />
+          }
         </div>
       </div>   
     </React.Fragment>

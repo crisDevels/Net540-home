@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Footer from "../components/footer";
-import NavLanding from "../components/LandingComp/NavLanding";
+import { NavLanding } from "../components/LandingComp/NavLanding";
 
 import './styles/aboutUs.css'
 
@@ -74,8 +75,8 @@ class AboutUs extends React.Component {
         </div>
         <div className='container-areas-title'>
           <div className="block-items">
-            <div className='wrapper-areas'>
-              <h3 className='title-gran-areas'>Crecer, construir, conectar</h3>
+            <div className='wrapper-vision'>
+              <h3 className='title-gran-vision'>Crecer, construir, conectar</h3>
               <div className='container-vision'>
                 <div className='container-50-text'>
                   <p className='text-p-vision'>Queremos conectar a Freelancers con una red global de clientes, para desarrollar nuevos proyectos que aporten al crecimiento de la comunidad. El contacto y la autenticidad es la clave. </p>
@@ -114,9 +115,9 @@ class AboutUs extends React.Component {
               </div>
               <div className='background-container-blog'>
                 <div className='position-button-blog'>
-                  <a href='/blog'>
+                  <Link to='/works'>
                     <button className='button-joobbi'>Ir al blog</button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -138,10 +139,10 @@ class AboutUs extends React.Component {
                 </div>
                 <div className='button-flex-call-to'>
                   <div className='buttons-50'>
-                    <a href='https://joobbi.com/soy-freelancer/'><button className='button-line'>Ofrece tus servicios <hr className='border-button-botom-line'></hr></button></a>
+                    <Link to='/registro-freelancer'><button className='button-line'>Ofrece tus servicios <hr className='border-button-botom-line'></hr></button></Link>
                   </div>
                   <div className='buttons-50'>
-                    <a href='https://joobbi.com/solicitud-servicios/'><button className='button-joobbi'>Contacta un freelancer </button></a>
+                    <Link to='/works'><button className='button-joobbi'>Contacta un freelancer </button></Link>
                   </div>
                 </div>
               </div>

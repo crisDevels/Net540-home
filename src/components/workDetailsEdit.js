@@ -7,38 +7,26 @@ import './FormularioRegistro/stylesForm/formStyles.css'
 import '../components/styles/modales.css'
 
 import typeCompanyImage from './FormularioRegistro/images/factoryTypeCompany.svg'
-import iconRate from './FormularioRegistro/images/iconRate.svg'
-import iconLocation from './FormularioRegistro/images/locationIcon.svg'
-import iconModality from './FormularioRegistro/images/modalityIcon.svg'
-import iconSector from './FormularioRegistro/images/sectorIcon.svg'
-import iconTime from './FormularioRegistro/images/timeIcon.svg'
-import imagePubli from './FormularioRegistro/images/image-publication.svg'
-import URLink from '../images/URLink.svg'
 import descriptionIcon from '../images/iconDescriptions.svg'
 import checkIcon from '../images/check.svg'
-import iconProfile from '../images/profileIconn.svg'
-import deleteIcon from '../images/deleteIcon.svg'
-import desactiveIcon from '../images/DesactiveIcon.svg'
+
+import { RiUser6Fill } from 'react-icons/ri'
+import { AiOutlineLink } from 'react-icons/ai'
+import { IoMdRemoveCircleOutline } from 'react-icons/io'
+import { BiBlock } from 'react-icons/bi'
 
 import imageDEFAULT from '../images/ILUSTRACIONESSECTORESdesign.png'
 
 import LoaderSkeletonWorkDetails from './loaderWorkDetails'
 
-var desactiveIcons = {
-  backgroundImage: "url("+ desactiveIcon + ")"
+import { MdPlace } from 'react-icons/md'
+import { BiTimeFive } from 'react-icons/bi'
+import { SiCashapp } from 'react-icons/si'
+
+var styleIcon = {
+  color: '#1DAEFF'
 }
 
-var deleteIcons = {
-  backgroundImage: "url("+ deleteIcon + ")"
-}
-
-var URLicon = {
-  backgroundImage: "url("+ URLink + ")"
-}
-
-var saveProfile = {
-  backgroundImage: "url("+ iconProfile + ")"
-}
 
 class WorkDetailsEdit extends React.Component {
   state = {
@@ -54,26 +42,14 @@ class WorkDetailsEdit extends React.Component {
         modalStyle: "modal-options",
         option: true,
       })
-    }else {
+    } else {
       this.setState({
         modalStyle: "none",
         option: false,
       })
     }
   }
-  saveWork = () => {
-    if(!this.state.save) {
-      this.setState({
-        save: true,
-        buttonGuardar: "button-guardar",
-      })
-    } else {
-      this.setState({
-        save: false,
-        buttonGuardar: "button-guardado",
-      })
-    }
-  }
+
   render() {
     if(this.props.dataNull.length === 0 || this.props.reLoading) {
       return(
@@ -82,7 +58,6 @@ class WorkDetailsEdit extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className={this.props.block}>
           <div className='container-publication-large'>
             <div className="publication">
               <div className='cabecera-publication-large'>
@@ -105,43 +80,38 @@ class WorkDetailsEdit extends React.Component {
                     </div>
                     <div className="title-vacant-general">
                       <p className="titleVacant">
-                        {this.props.title}
+                        {this.props.area}  
                         <strong> {this.props.urgent && "URGENTE"}</strong>
                       </p>
                       <p className="subtitleVacant-fecha">
-                        30 de Septiembre, 2020
+                        Trabajo {this.props.modality}
                       </p>
                     </div>
-                  </div>
-                  <div className="blockSubs">
-                    <p className="subtitleVacant">
-                      <img alt="icono salario" src={iconRate} width="15px"/>
-                      Valor del servicio: USD {this.props.rate}
-                    </p>
-                    <p className="subtitleVacant">
-                      <img alt="icono localización" src={iconLocation} height="19px"/>
-                      Ubicación: {this.props.location}
-                    </p>
+                    <div className='container-rate'>
+                      <p className='p-rate-service'> $ {this.props.rate}</p>
+                    </div>
                   </div>
                   <div className="flex-buttons-large">
-                    <div>
-                      <Link to={`/my-publications`}>
-                        <div>
-                          <button onClick={this.saveWork} save={this.state.saveWorks} style={saveProfile} type="button" className="buttonEdit">Ver candidatos</button>
-                        </div>
+                    <button onClick={this.saveWork} save={this.state.saveWorks} type="button" className="buttonEdit">    
+                      <RiUser6Fill style={styleIcon} size='15px'/>
+                      <Link to={`/my-candidates/${this.props.id}/candidates`}>
+                        Ver candidatos
                       </Link>
-                    </div>
-                    <div>
-                      <CopyToClipboard text={`http://localhost:3000/works/${this.props.id}`} onCopy={()=> this.setState({ copied: true })}>
-                        <button style={URLicon} className="buttonEdit">Copiar URL</button>
-                      </CopyToClipboard>
-                    </div>
-                    <div>
-                      <button style={desactiveIcons} onClick={this.props.DesactiveOpenModal} type="button" className="buttonEdit">Desactivar</button>
-                    </div>
-                    <div>
-                      <button style={deleteIcons} onClick={this.props.DeleteOpenModal} type="button" className="buttonEdit">Borrar</button>
-                    </div>
+                    </button>
+                    <CopyToClipboard text={`http://localhost:3000/works/${this.props.id}`} onCopy={()=> this.setState({ copied: true })}>
+                      <button className="buttonEdit">
+                        <AiOutlineLink style={styleIcon} size='15px'/>
+                        Copiar URL
+                      </button>
+                    </CopyToClipboard>
+                    <button onClick={this.props.DesactiveOpenModal} type="button" className="buttonEdit">
+                      <BiBlock style={styleIcon} size='15px'/>
+                      Desactivar
+                    </button>
+                    <button onClick={this.props.DeleteOpenModal} type="button" className="buttonEdit">
+                      <IoMdRemoveCircleOutline style={styleIcon} size='15px'/>
+                      Borrar
+                    </button>
                   </div>
                   <hr></hr>
                   <div className="description-vacant">
@@ -154,7 +124,7 @@ class WorkDetailsEdit extends React.Component {
                             {
                             this.props.descriptions.map((descriptions, i)=>{
                               return (
-                                <li key={descriptions.conteoDescriptions} className="containerDescriptions">
+                                <li key={descriptions.conteoDescriptions} className="container-descriptions-publication">
                                   <div className="descriptions-p">
                                     <img alt="icon-items-descriptions" className="icon-items" src={descriptionIcon} width="12px"/>
                                     {descriptions.descriptionsService}
@@ -167,23 +137,32 @@ class WorkDetailsEdit extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div>
-                    <div className="flex-items">
-                      <div className="col-1">
-                        <p className="subtitleVacant">
-                          <img alt="icono localización" src={iconModality} width="15px"/>
-                          Modalidad: {this.props.modality}
-                        </p>
-                        <p className="subtitleVacant">
-                          <img alt="icono localización" src={iconSector} width="15px"/>
-                          Sector: {this.props.area}
-                        </p>
+                  <div className="flex-items">
+                    <div className='container-item-service'>
+                      <div className='container-border-icon'>
+                        <MdPlace style={styleIcon} size='25px'/>
                       </div>
-                      <div className="col-1">
-                        <p className="subtitleVacant">
-                          <img alt="icono localización" src={iconTime} width="15px"/>
-                          Duración: {this.props.time}
-                        </p>
+                      <div className='container-feactures'>
+                        <p className='p-item-service-strong'>Ubicación</p>
+                        <p className='p-item-service'>{this.props.location}</p>
+                      </div>
+                    </div>
+                    <div className='container-item-service'>
+                      <div className='container-border-icon'>
+                        <BiTimeFive style={styleIcon} size='25px'/>
+                      </div>
+                      <div className='container-feactures'>
+                        <p className='p-item-service-strong'>Tiempo</p>
+                        <p className='p-item-service'>{this.props.time}</p>
+                      </div>
+                    </div>
+                    <div className='container-item-service'>
+                      <div className='container-border-icon'>
+                        <SiCashapp style={styleIcon} size='22px'/>
+                      </div>
+                      <div className='container-feactures'>
+                        <p className='p-item-service-strong'>Pago por</p>
+                        <p className='p-item-service'>{this.props.timeRate}</p>
                       </div>
                     </div>
                   </div>
@@ -204,15 +183,11 @@ class WorkDetailsEdit extends React.Component {
                         </ul>
                       </div>
                     </div>
-                  </div>
-                  <div className="image-center">
-                    <img src={imagePubli} width="400px" alt="contexto publicación de vacantes" />
                   </div> 
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </React.Fragment>
     )
   }

@@ -1,0 +1,140 @@
+.container-ILU-hero {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background: linear-gradient(#1daeff, #ededed);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.container-relative-ILU {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper-ILU {
+  max-width: 1500px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+.container-skyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+}
+
+.container-nube {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+}
+
+.container-build-back-logo {
+  position: absolute;
+  width: 400px;
+  bottom: 0;
+  left: 120px;
+}
+
+.back-gradient {
+  background: linear-gradient(90deg, black, transparent);
+  left: -50vw;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+}
+
+.container-logo {
+  position: absolute;
+  width: 500px;
+  left: 120px;
+  top: 30%;
+}
+
+.container-build-front-logo {
+  position: absolute;
+  width: 300px;
+  bottom: 0;
+  left: -150px;
+}
+
+.container-scene-front {
+  width: 1450px;
+  position: absolute;
+  bottom: 0px;
+  right: -250px;
+}
+
+.container-nube-animation-left {
+  width: 400px;
+  position: absolute;
+  bottom: 300px;
+  left: -90px;
+  animation: moveLeft 300s linear alternate infinite forwards;
+}
+
+.container-nube-animation-rigth {
+  width: 200px;
+  position: absolute;
+  top: 50px;
+  right: -90px;
+  animation: moveRigth 500s linear alternate infinite forwards;
+}
+
+.container-globo-animation-rigth {
+  width: 100px;
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  animation: moveRigth 100s linear forwards;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(2000px);
+  }
+}
+
+@keyframes moveRigth {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-2000px);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .container-scene-front {
+    right: -290px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .container-build-front-logo {
+    display: none;
+  }
+
+  .container-scene-front {
+    right: -290px;
+  }
+}

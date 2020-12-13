@@ -5,38 +5,33 @@ grisMedio: #757575
 grisClaro: #C4C4C4 */
 
 
-ol,
-ul {
-margin: 0;
-padding: 0;
-list-style: none;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
+.listTerms {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.socialMedia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10%;
+}
 
-.listTerms a {
+.listTerms-item a {
     text-decoration: none;
     color: #1DAEFF;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
-    margin: 0 10px;
     font-size: 0.8rem;
     text-align: center;
-}
-
-
-.listTerms {
-    /* margin-right: 60px; */
-    width: 60%;
 }
 
 .logofooter {
     display: flex;
     align-items: center;
-    width: 20%;
+    width: 10%;
     color: #1DAEFF;
     font-weight: 700;
     /* margin-right: 40px; */
@@ -73,19 +68,11 @@ text-align: center;
 }
 
 
-.socialMedia {
-    align-items: center;
-    justify-content: flex-end;
-    width: 20%;
-}
-
-
 .socialMedia a {
     text-decoration: none;
     color: white;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
-    margin: 0 10px;
     font-size: 0.9rem;
 }
 
@@ -140,21 +127,6 @@ text-align: center;
         text-align: center;
         font-size: 0.8rem;
     }
-
-    ol,
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-    }
-
-
-    li {
-        display: flex;
-    }
     
 }
 
@@ -173,16 +145,6 @@ text-align: center;
         margin: 0 10px;
         text-align: center;
         font-size: 0.6rem;
-    }
-
-    ol,
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        text-align: center;
-        justify-content: center;
     }
 
     li {
@@ -208,69 +170,48 @@ text-align: center;
 
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
 
-    .footer-flex {
-        width: 100%;
-        display: block;
-        padding-bottom: 50px;
-    }
+  .footer-flex {
+    width: 100%;
+    display: block;
+    padding-bottom: 50px;
+  }
 
-    .logofooter img{
-        width: 150px;
-    }
+  .logo-footer-case {
+    font-size: 18px;
+    color: #1DAEFF;
+  }
 
-    .logofooter {
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        font-size: 1.2rem;
-        align-items: center;
-        justify-content: center;
-        margin-right: 0px;
-    }
+  .logofooter {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+  }
 
-    .listTerms a {
-        text-decoration: none;
-        font-family: 'Lato', sans-serif;
-        font-weight: 600;
-        margin: 10px 5px;
-        text-align: center;
-        font-size: .75rem;
-        display: block;
-    }
+  .listTerms a {
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    margin: 10px 5px;
+    text-align: center;
+    font-size: .9rem;
+    display: block;
+  }
 
-    .listTerms {
-        width: 100%;
-        margin-bottom: 20px;
-        margin-right: 0px;
-    }
+  .listTerms {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
 
-    ol,
-    ul {
-        display: flex;
-        width: 100%;
-    }
-
-    .puntoNone {
-        display: none;
-    }
-
-    .politicaNone {
-        display: none;
-    }
-
-    .socialMedia {
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 320px) {
-
-    .listTerms a {
-        font-size: .7rem;
-    }
+  .socialMedia {
+    width: 100%;
+    justify-content: space-around;
+  }
 }

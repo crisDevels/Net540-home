@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import firebase from 'firebase'
 import api from '../api'
 
-import NavBar from '../components/NavBar';
+import { NavBar } from '../components/NavBar';
 
 import ListWorks from '../components/listWorks'
 import SearchFeed from '../components/searchFeed'
@@ -12,123 +12,112 @@ import PageLoading from '../pages/pageLoading'
 import '../components/styles/popRegistro.css'
 import './styles/feedStyles.css'
 
-class FeedVacant extends React.Component {
-  state = {
-    user: null,
-    isLoading: true,
-    modalOverlay: "col-50-modal",
-    blockBuscar: "flex-search",
-    dataWorks: [],
-    query: "",
-    //modal de areas estados
-    areaService: 'Selecciona un área',
-    modalArea: "none",
-    isOpenModalArea: false,
-    overlay: 'none'
-  }
-  componentDidMount () {
+const  FeedVacant = ()=> {
+  const [ user, setUser ] = useState(null)
+  const [ isLoading, setLoading ] = useState(true)
+  const [ dataWorks, setDataWorks ] = useState([])
+  const [ areaService, setAreaService ] = useState('Selecciona un área')
+  const [ modalArea, setModalArea ] = useState('none')
+  const [ isOpenModalArea, setisOpenModalArea ] = useState(false)
+  const [ overlay, setOverlay ] = useState('none')
+  const [ specialty, setSpecialty ] = useState('Selecciona una especialidad')
+  const [ isOpenModalSpecial, setIsOpenModalSpecial ] = useState(false)
+  const [ modalSpecial, setModalSpecial ] = useState('none')
+  const [ error, setError ] = useState(null)
+  
+  useEffect (() => {
+    var mounted = true
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({
-        user: user,
-        isLoading: false,
-      })
+      if (mounted) {
+        setUser(user)
+        setLoading(false)
+      }
     })
-    this.fetchDataWorks()
-  }
-  fetchDataWorks =  async () => {
-    this.setState({isLoading: true, error: null})
+    return function cleanup() {
+      mounted = false
+    }
+  }, [])
+
+  useEffect (() => {
+    fetchDataWorks()
+  }, [])
+
+  const fetchDataWorks =  async () => {
+    setLoading(true)
+    setError(null)
     try {
       const dataWorks = await api.works.list();
-      this.setState({ loading: false, dataWorks: dataWorks })
+      setLoading(false)
+      setDataWorks(dataWorks)
     } catch(error) {
-      this.setState({ loading: false, error: error})
+      setLoading(false)
+      setError(error)
     }
   }
-  changeQuery = (e)=> {
-    this.setState ({
-      query: e.target.value
-    })
-  }
-  //metodo change para el formulario de buscar
-  handleChange = (e)=> {
-    const { value, name } = e.target;    
-    this.setState({
-      [name]: value 
-    })
-  }
+
   //click Modal Area 
-  clickOpenModalArea = ()=> {
-    this.setState({
-      modalArea: "modal-options-area",
-      isOpenModalArea: true,
-      overlay: 'overlayActive'
-    }) 
+  const clickOpenModalArea = ()=> {
+    setModalArea('modal-options-area')
+    setisOpenModalArea(true)
+    setOverlay('overlayActive')
   }
 
-  closeModalArea = ()=> {
-    this.setState({
-      modalArea: "none",
-      overlay: 'none'
-    })
+  const closeModalArea = ()=> {
+    setModalArea('none')
+    setOverlay('none')
   }
-  render () {
-    return <React.Fragment>
-      {this.state.isLoading ? <PageLoading /> :
-        <div>
-          <NavBar />
-          <div className="wrapper-border">
-            {this.state.user &&
-              <div>
-                <div className="flex-feed">
-                  <div className="col-50">
-                    <ListWorks feed={this.state.dataWorks} />
-                  </div>
-                  <div className="col-50-">
-                    <div className={this.state.modalOverlay}>
-                      <SearchFeed
-                      areaSelected={this.state.areaService}
-                      blockSearch={this.state.blockBuscar}
-                      modalArea={this.state.modalArea}
-                      overlay={this.state.overlay}
-                      isOpenModalArea={this.state.isOpenModalArea}
-                      onChange={this.handleChange}
-                      clickOpenModalArea={this.clickOpenModalArea}
-                      closeModalArea={this.closeModalArea} />
-                    </div>
+
+  //metodos para abrir y cerrar modal de special
+  const openModalSpecial = ()=> {
+    setModalSpecial('modal-options-area')
+    setIsOpenModalSpecial(true)
+    setOverlay('overlayActive')
+  }
+
+  const closeModalSpecial = ()=> {
+    setModalSpecial('none')
+    setOverlay('none')
+  }
+
+  return <React.Fragment>
+    {isLoading ? <PageLoading /> :
+      <div>
+        <NavBar />
+        <div className="wrapper-border">
+          <div>
+            <div className="flex-feed">
+              <div className="col-50">
+                <div className='block-center-feed'>
+                  <ListWorks feed={dataWorks} />
+                </div>
+              </div>
+              <div className="col-50-search">
+                <div className='block-center-feed'>
+                  <div className='col-50-modal'>
+                    <SearchFeed
+                    areaSelected={areaService}
+                    modalArea={modalArea}
+                    overlay={overlay}
+                    isOpenModalArea={isOpenModalArea}
+                    onChangeArea={(ev) => {setAreaService(ev.target.value)}}
+                    clickOpenModalArea={clickOpenModalArea}
+                    closeModalArea={closeModalArea}
+                    /* props para modal special */
+                    specialty = {specialty}
+                    onChangeSpecialty={(ev) => {setSpecialty(ev.target.value)}}
+                    isOpenModalSpecial={isOpenModalSpecial}
+                    modalSpecial={modalSpecial}
+                    clickOpenModalSpecial={openModalSpecial}
+                    closeModalSpecial={closeModalSpecial} />
                   </div>
                 </div>
               </div>
-            }
-            {!this.state.user &&
-              <div>
-                <div className="flex-feed">
-                  <div className="col-50">
-                    <ListWorks 
-                    handleClick={this.infoComplete}         
-                    feed={this.state.dataWorks} />
-                  </div>
-                  <div className="col-50-">
-                    <div className={this.state.modalOverlay}>
-                      <SearchFeed 
-                      areaSelected={this.state.areaService}
-                      blockSearch={this.state.blockBuscar}
-                      modalArea={this.state.modalArea}
-                      overlay={this.state.overlay}
-                      isOpenModalArea={this.isOpenModalArea}
-                      onChange={this.handleChange}
-                      clickOpenModalArea={this.clickOpenModalArea}
-                      closeModalArea={this.closeModalArea}
-                       />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            }
+            </div>
           </div>
         </div>
-      }
-    </React.Fragment>
-  }
+      </div>
+    }
+  </React.Fragment>
 }
 
 export default FeedVacant;

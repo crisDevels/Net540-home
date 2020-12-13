@@ -3,7 +3,7 @@ import firebase from 'firebase'
 import api from '../api'
 import ReactDOM from 'react-dom'
 
-import NavBar from '../components/NavBar';
+import { NavBar } from '../components/NavBar';
 import Footer from '../components/footer.js'
 import RegistroPage from '../components/registroPage';
 
@@ -12,6 +12,8 @@ import WorkDetailsEdit from '../components/workDetailsEdit'
 import ModalDelete from '../components/Modales/modalDelete';
 import ModalDesactive from '../components/Modales/modalDesactive';
 import PageLoading from '../pages/pageLoading'
+
+import LoaderSkeletonPublicationList from '../components/loaderPublicationList'
 
 import '../components/styles/popRegistro.css'
 import './styles/feedStyles.css'
@@ -147,12 +149,18 @@ class FeedPublicationsDetails extends React.Component {
             <div>
               <div className="flex-feed">
                 <div className="col-50">
+                <div className='block-center-feed'>
                   <div className="container-worksList">
-                    <ListPublications handleClick={this.infoCarge}
-                                      feed={this.state.dataWorks} />
+                    { this.state.isLoading ? <LoaderSkeletonPublicationList /> : 
+                      <ListPublications 
+                      handleClick={this.infoCarge}
+                      feed={this.state.dataWorks} />
+                    }
                   </div>
                 </div>
+                </div>
               <div className="col-50-">
+              <div className='block-center-feed-details'>
                 <WorkDetailsEdit DesactiveOpenModal={this.DesactiveOpenModal}
                                 DeleteOpenModal={this.DeleteOpenModal} 
                                 block={this.state.blockWorkExtend}
@@ -173,6 +181,7 @@ class FeedPublicationsDetails extends React.Component {
                                 skills={this.state.dataWorksLarge.dataSkills}
                                 urgent={this.state.dataWorksLarge.urgentJob}
                                 verify={this.state.dataWorksLarge.verify} />
+              </div>
               </div>
               {ReactDOM.createPortal(
                 <ModalDelete 

@@ -10,7 +10,6 @@
 }
 
 .background-registro {
-  overflow-y: auto;
   display: flex;
   align-items: center;
 }
@@ -57,7 +56,15 @@
 
 .border-form {
   width: 50%;
-  height: 420px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.border-form-registro {
+  width: 50%;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,7 +95,7 @@
 
 .formRegitre-pages {
   display: block;
-  width: 85%;
+  width: 100%;
   text-align: center;
 }
 
@@ -157,6 +164,19 @@
   justify-content: space-between;
 }
 
+/* inicio styles pages */
+.div-form-inicio {
+  width: 85%;
+}
+
+.align-center-style {
+  text-align: center;
+}
+
+.link-color {
+  color: #1DAEFF;
+}
+
 @media screen and (max-width: 768px) {
     
   .boxRegistre {
@@ -173,6 +193,7 @@
 
   .flex-registry {
     flex-wrap: wrap;
+    margin: 20px 0;
   }
 
   .col-registry {
@@ -183,6 +204,26 @@
 }
 
 @media screen and (max-width: 426px) {
+
+  .border-form-registro {
+    width: 90%;
+  }
+
+  .block-registre-page {
+    padding: 50px 0;
+  }
+
+  .container-form-registre {
+    width: 90%;
+  }
+
+  .obsolute-image {
+    display: none;
+  }
+
+  .obsolute-image-mano {
+    display: none;
+  }
 
   .border-form {
     width: 90%;

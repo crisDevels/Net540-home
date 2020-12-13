@@ -9,10 +9,11 @@ import '../components/styles/modales.css'
 
 import { MdClose } from 'react-icons/md'
 import { BsThreeDots } from 'react-icons/bs'
+import { BsBookmarkFill } from 'react-icons/bs'
+import { BsBookmark } from 'react-icons/bs'
 
 import typeCompanyImage from './FormularioRegistro/images/factoryTypeCompany.svg'
 import URLink from '../images/URLink.svg'
-import IconSave from '../images/saveIcon.svg'
 import descriptionIcon from '../images/iconDescriptions.svg'
 import checkIcon from '../images/check.svg'
 
@@ -34,21 +35,15 @@ var URLicon = {
   backgroundImage: "url("+ URLink + ")"
 }
 
-var saveIcon = {
-  backgroundImage: "url("+ IconSave + ")"
-}
-
 class WorkLarge extends React.Component {
   state = {
     modalStyle: "none",
     option: false,
     buttonGuardar: "button-guardar",
     contentButton: "Guardar trabajo",
-    save: true,
+    save: false,
     copied: false,
     // registre user
-    user: null,
-    loading: false,
     blockModalRegistro: 'none',
     isOpenRegistro: false,
     overlay: 'none',
@@ -58,12 +53,6 @@ class WorkLarge extends React.Component {
     password:'',
     name:'',
     apellido: '',
-  }
-
-  componentDidMount = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({ user, loading: false })
-    })
   }
 
   openOptions = () => {
@@ -76,22 +65,6 @@ class WorkLarge extends React.Component {
       this.setState({
         modalStyle: "none",
         option: false,
-      })
-    }
-  }
-
-  saveWork = () => {
-    if(!this.state.save) {
-      this.setState({
-        contentButton: "Guardar trabajo",
-        save: true,
-        buttonGuardar: "button-guardar",
-      })
-    } else {
-      this.setState({
-        contentButton: "Dejar de guardar",
-        save: false,
-        buttonGuardar: "button-guardado",
       })
     }
   }
@@ -182,10 +155,8 @@ class WorkLarge extends React.Component {
         <LoaderSkeletonWorkDetails />
       )
     }
-
     return (
       <React.Fragment>
-        <div className={this.props.block}>
           <div className='container-publication-large'>
             <div className="publication">
               <div className='cabecera-publication-large'>
@@ -198,7 +169,7 @@ class WorkLarge extends React.Component {
                 <div className='info-service'>
                   <div className="flex-title-vacant">
                     <div className="div-TypeCompany">
-                      <img alt="modelo ilutración compañias" className="icon-sector-style" src={typeCompanyImage} width="35px"/>
+                      <img alt="modelo ilutración compañias" className="icon-sector-style" src={typeCompanyImage}/>
                       {
                       this.props.verify &&
                         <div className="cirle-check-publication">
@@ -216,9 +187,12 @@ class WorkLarge extends React.Component {
                       </p>
                     </div>
                     <div className='container-rate'>
-                      <p>USD {this.props.rate}</p>
+                      <p className='p-rate-service'> $ {this.props.rate}</p>
                     </div>
                     <div className="option-title-vacant">
+                      <div onClick={()=> {this.setState({save: !this.state.save})}} className="spaceModal">
+                        { this.state.save ? <BsBookmarkFill style={styleIcon} size='20px' /> : <BsBookmark style={styleIcon} size='20px' /> }
+                      </div>
                       <div className="spaceModal">
                         <div onClick={this.openOptions} className="buttons-options">
                           <BsThreeDots style={styleIcon} size='20px' />
@@ -229,23 +203,13 @@ class WorkLarge extends React.Component {
                           </CopyToClipboard>
                         </div>
                       </div>
-                      <div className="spaceModal">
-                        <Link to="/works" >
+                      <Link to="/works" >
+                        <div className="spaceModal">
                           <MdClose style={styleIcon} size='20px' />
-                        </Link>
-                      </div>
+                        </div>
+                      </Link>
                     </div>
                   </div>
-                  {/* <div className="blockSubs">
-                    <p className="subtitleVacant">
-                      <img alt="icono salario" src={iconRate} width="15px"/>
-                      Valor del servicio: USD {this.props.rate}
-                    </p>
-                    <p className="subtitleVacant">
-                      <img alt="icono localización" src={iconLocation} height="19px"/>
-                      Ubicación: {this.props.location}
-                    </p>
-                  </div> */}
                   <hr></hr>
                   <div className="description-vacant">
                     <div>
@@ -256,7 +220,7 @@ class WorkLarge extends React.Component {
                           <ul className="list-descriptions">
                             {this.props.descriptions.map((descriptions, i)=>{
                               return (
-                                <li key={descriptions.conteoDescriptions} className="containerDescriptions">
+                                <li key={descriptions.conteoDescriptions} className="container-descriptions-publication">
                                   <div className="descriptions-p">
                                     <img alt="icon-items-descriptions" className="icon-items" src={descriptionIcon} width="12px"/>
                                     {descriptions.descriptionsService}
@@ -271,16 +235,31 @@ class WorkLarge extends React.Component {
                   </div>
                   <div className="flex-items">
                     <div className='container-item-service'>
-                      <MdPlace style={styleIcon} size='30px'/>
-                      <p className='p-item-service'>{this.props.location}</p>
+                      <div className='container-border-icon'>
+                        <MdPlace style={styleIcon} size='25px'/>
+                      </div>
+                      <div className='container-feactures'>
+                        <p className='p-item-service-strong'>Ubicación</p>
+                        <p className='p-item-service'>{this.props.location}</p>
+                      </div>
                     </div>
                     <div className='container-item-service'>
-                      <BiTimeFive style={styleIcon} size='30px'/>
-                      <p className='p-item-service'>Tiempo: {this.props.time}</p>
+                      <div className='container-border-icon'>
+                        <BiTimeFive style={styleIcon} size='25px'/>
+                      </div>
+                      <div className='container-feactures'>
+                        <p className='p-item-service-strong'>Tiempo</p>
+                        <p className='p-item-service'>{this.props.time}</p>
+                      </div>
                     </div>
                     <div className='container-item-service'>
-                      <SiCashapp style={styleIcon} size='27px'/>
-                      <p className='p-item-service'>Pago por {this.props.timeRate}</p>
+                      <div className='container-border-icon'>
+                        <SiCashapp style={styleIcon} size='22px'/>
+                      </div>
+                      <div className='container-feactures'>
+                        <p className='p-item-service-strong'>Pago por</p>
+                        <p className='p-item-service'>{this.props.timeRate}</p>
+                      </div>
                     </div>
                   </div>
                   <hr className="linea-form-service"></hr>
@@ -301,19 +280,14 @@ class WorkLarge extends React.Component {
                     </div>
                   </div>
                   <hr className="linea-form-service"></hr>
-                  {this.state.user ?
+                  {this.props.user ?
                     <div className="centerButton-block">
-                      {
-                      !this.props.save &&
-                        <div>
-                          <button onClick={this.saveWork} save={this.state.saveWorks} style={saveIcon} type="button" className={this.state.buttonGuardar}>{this.state.contentButton}</button>
-                        </div>
-                      }
                       <button onClick={this.props.onAplication} type="button" className="button-aplicar">Aplicar (-5 cupones)</button>
                     </div> :
                       <ButtonRegistreDemo 
                       blockModalRegistro={this.state.blockModalRegistro}
                       isOpenRegistro={this.state.isOpenRegistro}
+                      name={this.state.name}
                       email={this.state.email}
                       password={this.state.password}
                       registryEmail={this.state.registryEmail}
@@ -325,14 +299,12 @@ class WorkLarge extends React.Component {
                       cerrarModalRegistro={this.cerrarModalRegistro}
                       abrirModalRegistro= {this.abrirModalRegistro}
                       overlay={this.state.overlay}
-                      user={this.state.user} />
+                      user={this.props.user} />
                   } 
                 </div>
               </div>
             </div>
-
           </div>
-        </div>
       </React.Fragment>
     )
   }

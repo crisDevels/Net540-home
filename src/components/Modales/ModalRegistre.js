@@ -27,29 +27,18 @@ export const ModalRegistre = (props) => {
             </div>   
           </div>
           <form>
-            <div className='flex-registre'>
-              <input
-                value={props.name}
-                onChange={props.handleChange} 
-                className='space-form-input-50' 
-                type='text' 
-                name='name' 
-                placeholder='Nombre'
-                id='registryName'
-                size='40' required/>
-              <input
-                value={props.lastName}
-                onChange={props.handleChange}
-                className='space-form-input-50' 
-                type='text' 
-                name='lastName' 
-                placeholder='Apellido'
-                id='registryApellido' 
-                size='40' required/>
-            </div>
+            <input
+              value={props.name}
+              onChange={props.handleName} 
+              className='space-form-input'
+              type='text' 
+              name='name' 
+              placeholder='Nombre'
+              id='registryName'
+              size='40' required/>
             <input
               value={props.registryEmail}
-              onChange={props.handleChange} 
+              onChange={props.handleEmail}
               className='space-form-input' 
               type='text' 
               name='registryEmail' 
@@ -58,20 +47,12 @@ export const ModalRegistre = (props) => {
               size='40' required/>
             <input
               value={props.registryPassword}
-              onChange={props.handleChange} 
+              onChange={props.handlePassword} 
               className='space-form-input' 
               type='password' 
               name='registryPassword'
               id='RegistryPassword' 
-              placeholder='Contraseña' required />
-            <input
-              value={props.registryPassword}
-              onChange={props.handleChange} 
-              className='space-form-input' 
-              type='password' 
-              name='ConfregistryPassword'
-              id='ConfRegistryPassword' 
-              placeholder='Confirmar Contraseña' required /><br/>
+              placeholder='Contraseña' required /><br/>
             <div className='container-check-politic'>
               <label className='check-politic-terms'>
                 <input 

@@ -20,11 +20,11 @@ class Footer extends React.Component {
               <span className="logofooter">
                 <p className="logo-footer-case">Joobbi © 2020</p>
               </span>
-              <ol className="listTerms">
-                <li>
+              <div className="listTerms">
+                <div className="listTerms-item">
                   <Link to="/condiciones-de-uso">Términos y condiciones</Link>
-                </li>
-              </ol>
+                </div>
+              </div>
               <div className="socialMedia">
                 <a href="htts://youTube.com/channel/UCm9SvjlV-2Z4cEdlLgGf8TQ"><span style={colorIcon} className="icon-Logo_youtube"></span></a>
                 <a href="htts://instagram.com/net_540"><span style={colorIcon} className="icon-Logo_instagram"></span></a>

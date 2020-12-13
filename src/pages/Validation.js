@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './styles/forgetStyles.css'
-import NavBar from '../components/NavBar'
+import { NavBar } from '../components/NavBar'
 import Footer from '../components/footer'
 
 import ImagenILU from '../images/RECUPERACION.svg'
