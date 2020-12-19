@@ -44,6 +44,9 @@ const FlexComponent = styled.div`
   border-color: #c4c4c4;
   border-radius: 15px;
   height: 260px;
+  @media screen and (max-width: 769px) {
+    height: auto;
+  }
 `
 
 const BlockComponent = styled.div`
@@ -59,6 +62,10 @@ const BlockComponentBorder = styled.div`
   justify-content: center;
   width: 100%;
   animation: 1s ${fadeIn} ease;
+`
+
+const DivTitleVacant = styled.div`
+  margin: 15px 0;
 `
 
 export const ComponentPublication = ({ handleClick, dataWork }) => {
@@ -83,14 +90,14 @@ export const ComponentPublication = ({ handleClick, dataWork }) => {
         <BlockComponentBorder>
           <BlockComponent>
             <div className="flex-title-myService">
-              <div className="title-publication-general">
+              <DivTitleVacant>
                 <p className="titleVacant">
                   {dataWork.titleService}<strong> {dataWork.urgentJob && "URGENTE"}</strong>
                 </p>
                 <p className="subtitleVacant-fecha">
                   30 de Septiembre, 2020
                 </p>
-              </div>
+              </DivTitleVacant>
               <div className="flex-description-candidates">
                 <Link onClick={handleClick} to={`/my-publications/${dataWork.id}/edit`}>
                   <button className="buttonVer">

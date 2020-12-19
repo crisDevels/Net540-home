@@ -33,7 +33,7 @@ export const FeedProfesional = () => {
               </div>
             }
             {!user && <div className="containerRegistre">
-              Por favor Regístrate <Link to='registro-freelancer'>aquí</Link>
+              Por favor Regístrate <Link to='/registro-freelancer'>aquí</Link>
             </div> 
             }
           </div>
